@@ -13,3 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'haml'
 gem "minitest-rails-capybara", group: :test
+gem 'omniauth'
+gem 'omniauth-linkedin'
+gem 'omniauth-github'
