@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/profile'
-
-  get 'users/mentors'
-
-  get 'users/mentees'
+  get 'users/login'
+  get 'users/create_account'
+  get 'users/create_profile'
+  get 'users/edit_profile'
+  get 'users/intro'
+  get 'users/dashboard'
+  get 'users/browse'
+  get 'users/toolkit'
+  get 'users/tool'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  root 'users#login'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

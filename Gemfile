@@ -12,3 +12,4 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'haml'
+gem "minitest-rails-capybara", group: :test
