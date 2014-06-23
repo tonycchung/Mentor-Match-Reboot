@@ -1,15 +1,31 @@
 class UsersController < ApplicationController
-  before_action: authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:login]
 
-  def index
+  def login
   end
 
-  def profile
+  def create_account
   end
 
-  def mentors
+  def create_profile
   end
 
-  def mentees
+  def edit_profile
+  end
+
+  def intro
+  end
+
+  def dashboard
+  end
+
+  def browse
+  end
+
+  def toolkit
+  end
+
+  def tool
   end
 end
+
