@@ -1,0 +1,10 @@
+@include declare-font-face('Forza', 'forza-bold-webfont');
+@include declare-font-face('Forza'. 'forza-black-webfont', bold);
+@include declare-font-face('Mercury', 'MercuryTextG2-Bold-Pro', bold);
+@include declare-font-face('Mercury', 'MercuryTextG2-BoldItalic-Pro', bold italic);
+@include declare-font-face('Mercury', 'MercuryTextG2-Italic-Pro', italic);
+@include declare-font-face('Mercury', 'MercuryTextG2-Roman-Pro', 200);
+@include declare-font-face('Mercury', 'MercuryTextG2-Semibold-Pro', 400);
+@include declare-font-face('Mercury', 'MercuryTextG2-SemiItalic-Pro', 400, italic);
+@include declare-font-face('Montserrat', 'Montserrat regular');
+@include declare-font-face('Montserrat', 'Montserrat 700', 700, bold);
