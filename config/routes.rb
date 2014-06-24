@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#splash'
 
+  get '/create_account' => 'user#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

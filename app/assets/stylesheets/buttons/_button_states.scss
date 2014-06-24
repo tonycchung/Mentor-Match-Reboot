@@ -1,0 +1,9 @@
+.trans_wht_btn::hover {
+  border: none;
+  background-color: $alpha_light50;
+  color: $delta;
+}
+
+.trans_wht_btn::active {
+  background-color: $charlie;
+}
