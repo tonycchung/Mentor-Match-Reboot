@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 admin_user:
+  email: admin@admin.com
   first_name: john
   last_name: doe
   background: code
@@ -11,6 +12,7 @@ admin_user:
   admin: true
 
 mentor_user:
+  email: mentor@mentor.com
   first_name: bill
   last_name: smith
   background: coding
@@ -21,6 +23,7 @@ mentor_user:
   admin: false
 
 mentee_user:
+  email: mentee@mentee.com
   first_name: student
   last_name: person
   background: not coding
