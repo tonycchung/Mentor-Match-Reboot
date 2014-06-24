@@ -27,5 +27,6 @@ class UsersController < ApplicationController
 
   def tool
   end
+
 end
 
