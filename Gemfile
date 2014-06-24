@@ -18,6 +18,7 @@ gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
+gem 'quiet_assets', group: :development
 
 group :development do
   gem "better_errors"
