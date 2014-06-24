@@ -14,6 +14,8 @@
       <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
   <% end %>
 
+  <div><%= f.hidden_field :role, value: params[:user_type] %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
