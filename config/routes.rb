@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
-  get 'users/login'
-  get 'users/create_account'
-  get 'users/create_profile'
-  get 'users/edit_profile'
-  get 'users/intro'
-  get 'users/dashboard'
-  get 'users/browse'
-  get 'users/toolkit'
-  get 'users/tool'
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+    resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
