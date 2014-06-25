@@ -1,13 +1,30 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
+
+  def star
+    @user.liked_by current_user
+    redirect_to @user
+  end
+
+  def unstar
+    @user.unliked_by current_user
+    redirect_to @user
+  end
 
   def dashboard
-    @user = User.find(params[:id])
+  end
+
+  def history
+    @mentees = User.where("role = 'mentee'")
+    @mentors = User.where("role = 'mentor'")
+    @users = User.all
   end
 
   # GET /users
   # GET /users.json
   def index
+    @mentees = User.where("role = 'mentee'")
+    @mentors = User.where("role = 'mentor'")
     @users = User.all
   end
 

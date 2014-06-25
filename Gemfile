@@ -25,3 +25,4 @@ group :development do
 end
 gem 'bourbon'
 gem 'neat'
+gem 'acts_as_votable', '~> 0.10.0'
