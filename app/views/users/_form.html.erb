@@ -31,14 +31,28 @@
     <%= f.label :professional_summary %><br>
     <%= f.text_area :professional_summary %>
   </div>
-  <div class="field">
-    <%= f.label :personal_statement %><br>
-    <%= f.text_area :personal_statement %>
-  </div>
-  <div class="field">
-    <%= f.label :role %><br>
-    <%= f.text_field :role %>
-  </div>
+  
+  <% if current_user.role == "mentor" %>
+    <div class="field">
+      <%= f.label :company %><br>
+      <%= f.text_area :company %>
+    </div>
+    <div class="field">
+      <%= f.label :position %><br>
+      <%= f.text_area :position %>
+    </div>
+
+  <% else %>
+    <div class="field">
+      <%= f.label :graduating_class %><br>
+      <%= f.text_area :graduating_class %>
+    </div>
+    <div class="field">
+      <%= f.label :stack %><br>
+      <%= f.text_area :stack %>
+    </div>
+  <% end %>
+
   <div class="field">
     <%= f.label :admin %><br>
     <%= f.check_box :admin %>

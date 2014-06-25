@@ -23,3 +23,6 @@ gem 'quiet_assets', group: :development
 group :development do
   gem "better_errors"
 end
+gem 'bourbon'
+gem 'neat'
+gem 'acts_as_votable', '~> 0.10.0'

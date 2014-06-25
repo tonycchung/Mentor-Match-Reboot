@@ -9,13 +9,3 @@ one:
   personal_statement: MyText
   role: MyString
   admin: false
-
-two:
-  first_name: MyString
-  last_name: MyString
-  background: MyText
-  accomplishments: MyText
-  professional_summary: MyText
-  personal_statement: MyText
-  role: MyString
-  admin: false
