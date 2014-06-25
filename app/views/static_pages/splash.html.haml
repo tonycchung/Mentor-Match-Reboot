@@ -3,7 +3,8 @@
 = link_to "Find a Mentor | ", new_user_registration_path(user_type: "mentee")
 = link_to "Become a Mentor", new_user_registration_path(user_type: "mentor")
 %p= link_to "Login", new_user_session_path
-%p= link_to "Sign out", destroy_user_session_path, method: :delete
+- if current_user.present?
+  %p= link_to "Sign out", destroy_user_session_path, method: :delete
 
 .splash
   %figure
@@ -22,3 +23,4 @@
   %button= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "beMentor"}
   %button= link_to "Have an account?", new_user_session_path
   -# %p= link_to "Sign out", destroy_user_session_path, method: :delete
+
