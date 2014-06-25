@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'friendship/create'
+
+  get 'friendship/destroy'
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
     resources :users
   # The priority is based upon order of creation: first created -> highest priority.
