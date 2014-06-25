@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .trans_wht_btn:hover {
   border: none;
   background-color: $alpha_light50;
@@ -11,17 +10,16 @@
   -ms-transform: scale(1.2); /* IE 9 */
   -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
   transform: scale(1.2);
-=======
+}
+
 .trans_wht_btn::hover {
   border: none;
   background-color: $alpha_light50;
   color: $delta;
->>>>>>> 4c4837fce7eedcb5ef5038a474928ace02a905dd
 }
 
 .trans_wht_btn::active {
   background-color: $charlie;
-<<<<<<< HEAD
 }
 
 .wht_red_btn:hover, .btn_text_red:hover {
@@ -34,6 +32,4 @@
   -ms-transform: scale(1.2); /* IE 9 */
   -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
   transform: scale(1.2);
-=======
->>>>>>> 4c4837fce7eedcb5ef5038a474928ace02a905dd
 }
