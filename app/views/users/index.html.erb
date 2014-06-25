@@ -1,4 +1,4 @@
-<h1>Listing <%= "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}" %></h1>
+  <h1>Listing <%= "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}" %></h1>
 
 <table>
   <thead>
@@ -10,6 +10,23 @@
   </thead>
 
   <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.background %></td>
+        <td><%= user.accomplishments %></td>
+        <td><%= user.professional_summary %></td>
+        <td><%= user.personal_statement %></td>
+        <td><%= user.role %></td>
+        <td><%= user.admin %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Request Mentor', friendships_path(:friend_id => user), method: :post %></td>
+      </tr>
+    <% end %>
+
     <% if current_user.role == "mentee" %>
       <div>List of Mentors</div>
       <% @mentors.each do |mentor| %>
@@ -34,7 +51,8 @@
           <td><%= link_to 'Destroy', mentee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-    <% end %> 
+    <% end %>
+
   </tbody>
 </table>
 
