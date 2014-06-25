@@ -17,6 +17,7 @@
 %section.login-wrap
   %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
 
+
   - if current_user.present?
     %p= link_to "Sign out", destroy_user_session_path, method: :delete
 
