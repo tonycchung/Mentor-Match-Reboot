@@ -1,3 +1,9 @@
 input {
   border: none;
+  height: 2em;
+  background-color: $delta_light20;
+}
+
+label {
+ @extend %btn_txt_med
 }
