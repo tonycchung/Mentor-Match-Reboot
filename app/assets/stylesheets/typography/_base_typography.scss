@@ -1,0 +1,23 @@
+$title-font: 'Forza';
+$header-font:  'Montserrat';
+$body-font: 'Mercury';
+
+h1 {
+  font-family: $title-font;
+  font-size: 5em;
+  color: $delta;
+}
+
+h2 {
+  font-family: $header-font;
+  font-size: 3em;
+  color: $delta;
+}
+
+h3, p {
+  font-family: $body-font;
+  font-size: 1em;
+  color: $delta;
+}
+
+
