@@ -19,6 +19,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'haml-rails'
 gem 'quiet_assets', group: :development
+gem "binding_of_caller"
 
 group :development do
   gem "better_errors"

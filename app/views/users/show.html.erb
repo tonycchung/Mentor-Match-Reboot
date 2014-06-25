@@ -41,12 +41,25 @@
 </p>
 
 <p>
+  <strong>Mentorships</strong>
   <ul>
-  <strong>Mentorsips</strong>
-  <% for user in @user.friends %>
+  <% for friendship in @user.friendships %>
     <li>
-      <%= @user.first_name %>
-      <%= @user.last_name %>
+      <%= friendship.friend.first_name %>
+      <%= friendship.friend.last_name %>
+      (<%= link_to 'Destroy Relationship', friendship, method: :delete %>)
+    </li>
+  <% end %>
+  </ul>
+</p>
+
+<p>
+  <strong>Menteeships</strong>
+  <ul>
+  <% for user in @user.inverse_friends %>
+    <li>
+      <%= user.first_name %>
+      <%= user.last_name %>
     </li>
   <% end %>
   </ul>
