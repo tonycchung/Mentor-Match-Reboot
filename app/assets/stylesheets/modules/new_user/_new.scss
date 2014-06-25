@@ -1,0 +1,25 @@
+body.new {
+  background: $alpha;
+  display: flex;
+  justify-content: center;
+}
+
+.new h2, label, input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.new label {
+  color: $delta;
+}
+
+.new input, label {
+
+
+}
+
+form {
+  display: inline-block;
+
+}
