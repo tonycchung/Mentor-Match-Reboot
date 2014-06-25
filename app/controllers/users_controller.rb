@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def history
     @mentees = User.where("role = 'mentee'")
     @mentors = User.where("role = 'mentor'")
-    @users = User.all
+    @users = policy_scope(User)
   end
 
   # GET /users
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def index
     @mentees = User.where("role = 'mentee'", "available = 'true'")
     @mentors = User.where("role = 'mentor'")
-    @users = User.all
+    @users = policy_scope(User)
   end
 
   # GET /users/1

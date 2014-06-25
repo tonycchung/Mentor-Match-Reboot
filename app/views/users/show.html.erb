@@ -65,8 +65,6 @@
   <%= @user.stack %>
 </p>
 
-
-<%= link_to "Add mentee" %>
 <%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
 <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
 
