@@ -40,5 +40,19 @@
   <%= @user.admin %>
 </p>
 
+<p>
+  <ul>
+  <strong>Mentorsips</strong>
+  <% for user in @user.friends %>
+    <li>
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+    </li>
+  <% end %>
+  </ul>
+</p>
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
