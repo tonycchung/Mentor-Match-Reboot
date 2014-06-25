@@ -72,8 +72,6 @@ class UsersController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
-=======
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
@@ -94,6 +92,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available)
     end
->>>>>>> 4c4837fce7eedcb5ef5038a474928ace02a905dd
 end
 

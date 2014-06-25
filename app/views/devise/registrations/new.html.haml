@@ -1,5 +1,5 @@
 %body.new
-  %h2 Create Account
+  %h1 Create Account
   =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     =devise_error_messages!
     %article.inputs
@@ -11,14 +11,16 @@
           - if f.object.password_required?
             = f.label :password
             = f.password_field :password, autocomplete: "off"
+        %section.userConfirm
+          - if f.object.password_required?
+            = f.label :confirm_password
+            = f.password_field :password_confirmation, autocomplete: "off"
       = f.hidden_field :role, value: params[:user_type]
       = f.submit "Submit", {class: "trans_wht_btn btn_txt"}
     %p sign up with another account:
     %section.links-wrapper
       %a.linkedin
-        -# %svg#Layer_1{"enable-background" => "new 0 0 960 560", space: "preserve", version: "1.1", viewbox: "0 0 960 560", x: "0px", xmlns: "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", y: "0px"}
-        -#   %path.path{d: "M464 290.6c0 3 2.4 5.4 5.4 5.4h21.2c3 0 5.4-2.4 5.4-5.4v-21.2c0-3-2.4-5.4-5.4-5.4h-21.2 c-3 0-5.4 2.4-5.4 5.4", fill: "#404040"}
-        -#   %rect.shape{fill: "#404040", height: "14", width: "4", x: "472", y: "276"}
-        -#   %circle.shape{cx: "474", cy: "272", fill: "#404040", r: "2"}
-        -#   %path.path{d: "M490 290h-4v-8c0-1.1-0.9-2-2-2s-2 0.9-2 2v8h-4v-14h4v2.5c0.8-1.1 2.1-2.5 3.5-2.5c2.5 0 4.5 2.2 4.5 5V290 z", fill: "#404040"}
+        -# = link_to user_omniauth_authorize_path(:linkedin)
       %a.github
+        -# = link_to user_omniauth_authorize_path(:github)
+
