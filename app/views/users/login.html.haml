@@ -5,15 +5,17 @@
     = image_tag "cflogo.png"
   %article
     %section.student
-      %h2 Dexter
+      %h2
+        %span.name Dexter
       %h2 UX Student
-      %h3 I'm excited to get real-world insights
+      %h3 "I need real-world insight and advice"
     %section.mentor
       %h2 Sarah
       %h2 UX Mentor
-      %h3 I love watching young talent grow
-
-  %button= link_to "Find a Mentor | ", new_user_registration_path(user_type: "mentee"), {class: "findMentor"}
-  %button= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "beMentor"}
-  %button= link_to "Have an account?", new_user_session_path
+      %h3 "I love helping talent grow"
+  %section.button-wrap
+    %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
+    %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
+  %section.login-wrap
+    %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
   -# %p= link_to "Sign out", destroy_user_session_path, method: :delete

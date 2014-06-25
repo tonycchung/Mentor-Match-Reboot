@@ -1,0 +1,9 @@
+.btn_txt {
+  @extend %btn_txt_med;
+  color: $delta_light10;
+}
+
+.btn_txt_red {
+  @extend %btn_txt_med;
+  color: $charlie;
+}
