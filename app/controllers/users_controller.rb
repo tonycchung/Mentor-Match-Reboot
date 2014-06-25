@@ -15,16 +15,12 @@ class UsersController < ApplicationController
   end
 
   def history
-    @mentees = User.where("role = 'mentee'")
-    @mentors = User.where("role = 'mentor'")
     @users = policy_scope(User)
   end
 
   # GET /users
   # GET /users.json
   def index
-    @mentees = User.where("role = 'mentee'", "available = 'true'")
-    @mentors = User.where("role = 'mentor'")
     @users = policy_scope(User)
   end
 
