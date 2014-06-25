@@ -1,9 +1,30 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
+
+  def star
+    @user.liked_by current_user
+    redirect_to @user
+  end
+
+  def unstar
+    @user.unliked_by current_user
+    redirect_to @user
+  end
+
+  def dashboard
+  end
+
+  def history
+    @mentees = User.where("role = 'mentee'")
+    @mentors = User.where("role = 'mentor'")
+    @users = User.all
+  end
 
   # GET /users
   # GET /users.json
   def index
+    @mentees = User.where("role = 'mentee'", "available = 'true'")
+    @mentors = User.where("role = 'mentor'")
     @users = User.all
   end
 
@@ -69,7 +90,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack)
+      params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available)
     end
 end
 

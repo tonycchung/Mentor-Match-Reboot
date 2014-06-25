@@ -1,0 +1,7 @@
+- @mentors.each do |mentor|
+  - if current_user.voted_for? mentor
+    = link_to "#{mentor.first_name}", user_path(mentor.id)
+
+- @mentees.each do |mentor|
+  - if current_user.voted_for? mentor
+    = link_to "#{mentor.first_name}", user_path(mentor.id)

@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  acts_as_votable
+  acts_as_voter
+
   # Courtesy of https://gist.github.com/ivanoats/7076128
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
