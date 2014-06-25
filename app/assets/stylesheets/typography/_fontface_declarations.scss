@@ -1,0 +1,17 @@
+//Forza is Codefellows brand font for headers, titles and announcements
+@include declare-font-face('Forza', 'forza-bold-webfont');
+@include declare-font-face('Forza', 'forza-black-webfont', bold);
+
+//Montserrat is a bold, warm, clean sans which we will use for subheadings
+@include declare-font-face('Montserrat', 'montserrat_regular-webfont');
+@include declare-font-face('Montserrat', 'montserrat_700-webfont', 700, bold);
+
+//Due to licensing issues, we will not use Codefellows brand font for body copy, Mercury-text. Instead, we are using Merriweather, a simple readable serif.
+@include declare-font-face('Merriweather', 'merriweather_regular-webfont');
+@include declare-font-face('Merriweather', 'merriweather_italic-webfont');
+@include declare-font-face('Merriweather', 'merriweather_300-webfont', 300);
+@include declare-font-face('Merriweather', 'merriweather_300italic-webfont', 300, italic);
+@include declare-font-face('Merriweather', 'merriweather_700-webfont', 700);
+@include declare-font-face('Merriweather', 'merriweather_700italic-webfont', 700, italic);
+@include declare-font-face('Merriweather', 'merriweather_900-webfont', 900);
+@include declare-font-face('Merriweather', 'merriweather_900italic-webfont', 900, italic);
