@@ -423,3 +423,18 @@ td,
 th {
   padding: 0;
 }
+
+// remove margin from text elements
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+//remove text-decoration from links
+a {
+  text-decoration: none;
+}
+
+//remove padding from buttons
+button {
+  padding: 0;
+}

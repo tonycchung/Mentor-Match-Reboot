@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/create_account' => 'user#new'
 
+  get '/create_account' => 'user#new'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -23,8 +23,9 @@ gem 'uglifier', '>= 1.3.0'
 gem "binding_of_caller"
 
 group :development do
-  gem 'better_errors'
+gem 'better_errors'
 end
 gem 'bourbon'
 gem 'neat'
 gem 'acts_as_votable', '~> 0.10.0'
+

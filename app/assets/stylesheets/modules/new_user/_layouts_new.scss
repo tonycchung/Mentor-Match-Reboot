@@ -1,0 +1,76 @@
+.new h1 {
+  display: block;
+  text-align: center;
+  margin-top: 2em;
+}
+
+form#new_user{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#new_user {
+  & article{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2em;
+    width: 100%;
+  }
+  & .inputs-wrapper{
+    display: block;
+    width: 50%;
+    margin-right: 35%;
+  }
+  & section{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &.userEmail, &.userPassword, &.userConfirm {
+      justify-content: flex-end;
+      align-items: center;
+      margin: 1em 35% 1em 1em;
+      padding: .5em;
+    }
+  }
+  & label{
+    margin-right: 1em;
+  }
+  & input{
+    width: 15vw;
+  }
+}
+
+.new .trans_btn_wht{
+  margin: 1em;
+}
+
+.links-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding-top: 0;
+  a{
+    height: 2em;
+    width: 2em;
+    margin: 1em;
+    &.linkedin{
+      background-image: url(image-path("linkedin_icon.png"));
+    }
+    &.github{
+      background-image: url(image-path("github_icon.png"));
+    }
+  }
+}
+
+[name="commit"]{
+  display: block;
+  margin: 5vh auto;
+}
+
+.new p {
+  margin: 1em;
+}

@@ -1,8 +1,7 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+  <%if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,57 +10,4 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :background %><br>
-    <%= f.text_area :background %>
-  </div>
-  <div class="field">
-    <%= f.label :accomplishments %><br>
-    <%= f.text_area :accomplishments %>
-  </div>
-  <div class="field">
-    <%= f.label :professional_summary %><br>
-    <%= f.text_area :professional_summary %>
-  </div>
-  
-  <% if current_user.role == "mentor" %>
-    <div class="field">
-      <%= f.label :company %><br>
-      <%= f.text_area :company %>
-    </div>
-    <div class="field">
-      <%= f.label :position %><br>
-      <%= f.text_area :position %>
-    </div>
-    <div class="field">
-      <%= f.label :available %><br>
-      <%= f.check_box :available %>
-    </div>
 
-  <% else %>
-    <div class="field">
-      <%= f.label :graduating_class %><br>
-      <%= f.text_area :graduating_class %>
-    </div>
-    <div class="field">
-      <%= f.label :stack %><br>
-      <%= f.text_area :stack %>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :admin %><br>
-    <%= f.check_box :admin %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
