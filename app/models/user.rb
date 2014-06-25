@@ -20,12 +20,13 @@ class User < ActiveRecord::Base
     return 'Mentors'
   end
   # Courtesy of https://gist.github.com/ivanoats/7076128
-  def self.from_omniauth(auth)
+  def self.from_omniauth(auth, role)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.first_name = auth.info.nickname
       user.email = auth.info.email
+      user.role = role
     end
   end
 
