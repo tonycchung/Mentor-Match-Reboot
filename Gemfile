@@ -21,6 +21,8 @@ gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem "binding_of_caller"
+gem 'rails-reveal-js', '~> 2.6.1.2'
+
 
 group :development do
 gem 'better_errors'
@@ -28,4 +30,5 @@ end
 gem 'bourbon'
 gem 'neat'
 gem 'acts_as_votable', '~> 0.10.0'
+
 
