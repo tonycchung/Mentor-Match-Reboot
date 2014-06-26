@@ -3,47 +3,78 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  h1{
-    font-size: 5em;
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 1.5em;
-    // background-color:;
-
+  article {
+  display: block;
+  height: 500vh;
   }
-  h2 {
-    font-size: 3em;
-    text-align: center;
-    padding-bottom: 1em;
-    color: $charlie;
-  }
-  h3{
-    font-size: 1.5em;
-    text-align: center;
-  }
-}
-.intro article{
-display: block;
-// flex-flow: column;
-// align-items: center;
-height: 500vh;
-}
-
-section._1 {
+  section {
   display: flex;
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
+  }
   h1{
+    margin-top: 2em;
     font-size: 5em;
     width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 1em;
   }
-  h2{
+  h2 {
     width: 100%;
+    font-size: 3em;
+    text-align: center;
+    padding-bottom: 1em;
+    color: $delta;
   }
   h3{
     width: 100%;
+    font-size: 1.5em;
+    text-align: center;
     padding-bottom: -webkit-calc(100vh - 6em);
-    padding-bottom: calc(100vh - 6em);
+    padding-bottom: calc(100vh - 22em);
   }
+  a{
+    height: 1em;
+    width: 1em;
+    background-color: orange;
   }
+  span{
+    height: 1em;
+    width: auto;
+    color: $charlie;
+  }
+}
+
+#_1 h2 {
+  color: $charlie;
+}
+
+:target {
+  -webkit-animation: highlight 1s ease;
+  -moz-animation: highlight 1s ease;
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  -o-transform: translateX(20px);
+}
+
+// @-webkit-keyframes highlight {
+//   0% { border-left-color: red; }
+//   100% { border-left-color: white; }
+// }
+// @-moz-keyframes highlight {
+//   0% { border-left-color: red; }
+//   100% { border-left-color: white; }
+// }
+// .intro article > section {
+//   border-left: 40px solid white;
+//   padding: 10px;
+//   -webkit-transition: all 0.5s ease;
+//   -moz-transition: all 0.5s ease;
+//   -ms-transition: all 0.5s ease;
+//   -o-transition: all 0.5s ease;
+//   padding-right: 50px;
+//   margin-left: -20px;
+// }
