@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  has_many :friendships
+  has_many :friends, through: :friendships
+
+  has_many :inverse_friendships, class_name: :"Friendship", foreign_key: :"friend_id"
+  has_many :inverse_friends, through: :inverse_friendships, source: :user
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,6 +13,18 @@ class User < ActiveRecord::Base
   acts_as_votable
   acts_as_voter
 
+  def mentor?
+    role == 'mentor'
+  end
+
+  def mentee?
+    role == 'mentee'
+  end
+
+  def opposite_role
+    return 'Mentees' if role == 'mentor'
+    return 'Mentors'
+  end
   # Courtesy of https://gist.github.com/ivanoats/7076128
   def self.from_omniauth(auth, role)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

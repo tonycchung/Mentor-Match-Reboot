@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  # get 'friendship/create' => 'friendship#create'
+
+  # get 'friendship/destroy' => 'friendship#destroy'
+
+  resources :friendships
+
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
   resources :users do
     member do

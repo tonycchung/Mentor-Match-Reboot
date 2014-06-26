@@ -1,4 +1,4 @@
-<h1>Listing <%= "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}" %></h1>
+  <h1>Listing <%= "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}" %></h1>
 
 <table>
   <thead>
@@ -10,31 +10,18 @@
   </thead>
 
   <tbody>
-    <% if current_user.role == "mentee" %>
-      <div>List of Mentors</div>
-      <% @mentors.each do |mentor| %>
-        <% if mentor.available? %>
-          <tr>
-            <td><%= mentor.first_name %></td>
-            <td><%= mentor.role %></td>
-            <td><%= link_to 'Show', mentor %></td>
-            <td><%= link_to 'Edit', edit_user_path(mentor) %></td>
-            <td><%= link_to 'Destroy', mentor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    <% else %>
-      <p>"List of Mentees"</p>
-      <% @mentees.each do |mentee| %>
+    <div><%= current_user.mentor? ? "Browse Mentees" : "Browse Mentors" %></div>
+    <% @users.each do |user| %>
+      <% if user.available? %>
         <tr>
-          <td><%= mentee.first_name %></td>
-          <td><%= mentee.role %></td>
-          <td><%= link_to 'Show', mentee %></td>
-          <td><%= link_to 'Edit', edit_user_path(mentee) %></td>
-          <td><%= link_to 'Destroy', mentee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.role %></td>
+          <td><%= link_to 'Show', user %></td>
+          <td><%= link_to 'Edit', edit_user_path(user) %></td>
+          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
-    <% end %> 
+    <% end %>
   </tbody>
 </table>
 

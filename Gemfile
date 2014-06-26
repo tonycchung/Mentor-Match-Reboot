@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'binding_of_caller'
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'figaro'
@@ -8,6 +11,7 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'minitest-rails-capybara', group: :test
+gem 'neat'
 gem 'omniauth-github'
 gem 'omniauth-linkedin'
 gem 'pry'
@@ -23,12 +27,10 @@ gem 'uglifier', '>= 1.3.0'
 gem "binding_of_caller"
 gem 'rails-reveal-js', '~> 2.6.1.2'
 
-
 group :development do
-gem 'better_errors'
+  gem 'better_errors'
 end
+
 gem 'bourbon'
 gem 'neat'
 gem 'acts_as_votable', '~> 0.10.0'
-
-
