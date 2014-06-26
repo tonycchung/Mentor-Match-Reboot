@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require reveal
 //= require_tree .
-//= require intro.js
+//= require jquery.scrollTo
 

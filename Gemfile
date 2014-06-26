@@ -26,6 +26,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-reveal-js', '~> 2.6.1.2'
 gem 'font-awesome-sass'
+gem "bower-rails", "~> 0.7.3"
+gem "jquery-scrollto-rails"
 
 group :development do
   gem 'better_errors'
