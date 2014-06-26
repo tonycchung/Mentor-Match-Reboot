@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @pending_friendships = Friendship.where(friend_id: current_user.id)
+    @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
   end
 
   def history
