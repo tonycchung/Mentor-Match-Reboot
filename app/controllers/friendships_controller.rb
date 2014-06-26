@@ -20,4 +20,13 @@ class FriendshipsController < ApplicationController
     flash[:notice] = "Succesfully deleted relationship"
     redirect_to current_user
   end
+
+  def update
+    @friendship = Friendship.find(params[:id])
+    @friendship.state = params[:state]
+    @friendship.save!
+    flash[:notice] = "Mentorship approved"
+    redirect_to users_path
+  end
+
 end
