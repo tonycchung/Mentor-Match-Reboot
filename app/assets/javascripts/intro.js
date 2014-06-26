@@ -18,3 +18,8 @@ $(function() {
       $.scrollTo('#_5', 800, {easing:'swing'} );
     });
 });
+$(function() {
+    $('.linkage0').click(function() {
+      $.scrollTo('#_1', 200, {easing:'swing'} );
+    });
+});
