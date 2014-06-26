@@ -19,8 +19,12 @@
       = f.submit "Submit", {class: "trans_wht_btn btn_txt"}
     %p sign up with another account:
     %section.links-wrapper
-      %a.linkedin
-        -# = link_to user_omniauth_authorize_path(:linkedin)
-      %a.github
-        -# = link_to user_omniauth_authorize_path(:github)
+      =link_to user_omniauth_authorize_path(:linkedin) do
+        =image_tag "linkedin_icon.png"
+      =link_to user_omniauth_authorize_path(:github) do
+        =image_tag "github_icon.png"
 
+      / %a.linkedin
+      /   / = link_to 'Sign in with LinkedIn', user_omniauth_authorize_path(:linkedin)
+      / %a.github
+      /   / = link_to 'Sign in with Github', user_omniauth_authorize_path(:github)
