@@ -1,49 +1,50 @@
 <div class="reveal">
   <div class="slides">
-    <section>
-      <h2>We'll use a few quick questions to flesh out your profile. First of all, what's your name?
-      <div class="field">
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
-      </div>
-      <div class="field">
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-      </div>
-      <section>Progress Bar Here</section>
-    </section>
-    <section>
-      <h2>Tell us a little bit about yourself.
-      <div class="field">
-        <%= f.label :background %>
-        <%= f.text_area :background %>
-      </div>
-    </section>
-    <section>
-      <div class="field">
-        <%= f.label :accomplishments %>
-        <%= f.text_area :accomplishments %>
-      </div>
-    </section>
-    <section>
-      <div class="field">
-        <%= f.label :professional_summary %>
-        <%= f.text_area :professional_summary %>
-      </div>
-    </section>
-    <section>
-      <% if current_user.role == "mentor" %>
+    <%= form_for(@user) do |f| %>
+      <section>
+        <h2>We'll use a few quick questions to flesh out your profile. First of all, what's your name?
         <div class="field">
-          <%= f.label :company %>
-          <%= f.text_area :company %>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
         </div>
         <div class="field">
-          <%= f.label :position %>
-          <%= f.text_area :position %>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
         </div>
-      <% end %>
-    </section>
-</div>
+        <section>Progress Bar Here</section>
+      </section>
+      <section>
+        <h2>Tell us a little bit about yourself.
+        <div class="field">
+          <%= f.label :background %>
+          <%= f.text_area :background %>
+        </div>
+      </section>
+      <section>
+        <div class="field">
+          <%= f.label :accomplishments %>
+          <%= f.text_area :accomplishments %>
+        </div>
+      </section>
+      <section>
+        <div class="field">
+          <%= f.label :professional_summary %>
+          <%= f.text_area :professional_summary %>
+        </div>
+      </section>
+      <section>
+        <% if current_user.role == "mentor" %>
+          <div class="field">
+            <%= f.label :company %>
+            <%= f.text_area :company %>
+          </div>
+          <div class="field">
+            <%= f.label :position %>
+            <%= f.text_area :position %>
+          </div>
+        <% end %>
+      </section>
+  </div>
 </div>
 
 

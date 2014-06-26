@@ -31,6 +31,9 @@ class UsersController < ApplicationController
     if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
       @pending = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
     end
+    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
+      @approved_mentorship = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
+    end
   end
 
   # GET /users/new
