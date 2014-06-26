@@ -6,6 +6,7 @@ $(function() {
 });
 
 function next() {
+    alert("Success");
     if ($('this').hasClass('show')) {
         $('this').removeClass('show');
         $('this').addClass('hidden');
