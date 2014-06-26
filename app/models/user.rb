@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
   acts_as_votable
   acts_as_voter
 
+  def mentor?
+    role == 'mentor'
+  end
+
+  def mentee?
+    role == 'mentee'
+  end
+
+  def opposite_role
+    return 'Mentees' if role == 'mentor'
+    return 'Mentors'
+  end
   # Courtesy of https://gist.github.com/ivanoats/7076128
   def self.from_omniauth(auth, role)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
