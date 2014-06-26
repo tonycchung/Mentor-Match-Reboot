@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/create_account' => 'user#new'
 
   get "/profile_build" => 'haml_views#profile_build'
-
+  get "/intro" => 'haml_views#intro'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
