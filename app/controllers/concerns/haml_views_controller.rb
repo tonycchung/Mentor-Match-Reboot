@@ -1,2 +1,0 @@
-class hamlViewsController < ApplicationController
-end
