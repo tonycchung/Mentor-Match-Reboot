@@ -1,1 +1,4 @@
-=render "#{@user.role}"
+<h1><%= "#{current_user.first_name}'s Dashboard" %></h1>
+=link_to "Browse #{current_user.opposite_role}", users_path
+<div>Calendar</div>
+=link_to 'View your Favorites', history_path(current_user.id)
