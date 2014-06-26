@@ -28,6 +28,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
+      @pending = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
+    end
   end
 
   # GET /users/new

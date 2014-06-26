@@ -90,6 +90,12 @@
   <%= @user.stack %>
 </p>
 
+<% if @pending %>
+<% @pending.each do |p| %>
+  <%= link_to "Approve mentorship with #{User.find(p.user_id).first_name}", friendship_path(id: p.id, state: "approved"), method: :patch %>
+<% end %>
+<% end %>
+
 <%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
 <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
 
