@@ -7,74 +7,57 @@
   display: block;
   height: 500vh;
   }
-  section {
+  section{
   display: flex;
   justify-content: center;
   width: 100%;
   flex-wrap: wrap;
   }
-  h1{
+  h1 {
     margin-top: 2em;
-    font-size: 5em;
+    font-size: 7.85vh;
     width: 100%;
     text-transform: uppercase;
     text-align: center;
     padding-bottom: 1em;
   }
   h2 {
-    width: 100%;
-    font-size: 3em;
+    font-size: 4.854vh;
     text-align: center;
+    width: 100%;
     padding-bottom: 1em;
-    color: $delta;
+    margin-top: 2em;
   }
-  h3{
-    width: 100%;
-    font-size: 1.5em;
+  h3 {
+    font-size: 3vh;
     text-align: center;
-    padding-bottom: -webkit-calc(100vh - 6em);
-    padding-bottom: calc(100vh - 22em);
+    padding-bottom: 50vh;
+    width: 100%;
+  }
+  #_1 h1{
+    margin-top: 2em;
+  }
+  #_1 h2 {
+    margin-top: 0;
+    color: $charlie;
+  }
+  #_1 h3{
+    width: 100%;
+    padding-bottom: 40vh;
+    }
+  #_5 h3 {
+    padding-bottom: 30vh;
   }
   a{
-    height: 1em;
-    width: 1em;
-    background-color: orange;
+    height: 2em;
+    width: 2em;
+    // background-image: url(image-path("fangs.png"));
+    // background-position: center;
+    // background-size: cover;
   }
-  span{
-    height: 1em;
-    width: auto;
+  span.fa{
+    font-size: 4em;
     color: $charlie;
   }
 }
 
-#_1 h2 {
-  color: $charlie;
-}
-
-:target {
-  -webkit-animation: highlight 1s ease;
-  -moz-animation: highlight 1s ease;
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  -o-transform: translateX(20px);
-}
-
-// @-webkit-keyframes highlight {
-//   0% { border-left-color: red; }
-//   100% { border-left-color: white; }
-// }
-// @-moz-keyframes highlight {
-//   0% { border-left-color: red; }
-//   100% { border-left-color: white; }
-// }
-// .intro article > section {
-//   border-left: 40px solid white;
-//   padding: 10px;
-//   -webkit-transition: all 0.5s ease;
-//   -moz-transition: all 0.5s ease;
-//   -ms-transition: all 0.5s ease;
-//   -o-transition: all 0.5s ease;
-//   padding-right: 50px;
-//   margin-left: -20px;
-// }
