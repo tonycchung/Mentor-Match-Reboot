@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @pending_friendships = Friendship.where(friend_id: current_user.id)
   end
 
   def history
