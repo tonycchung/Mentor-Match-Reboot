@@ -5,6 +5,7 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = current_user.friendships.build(:friend_id => params[:friend_id])
+    @friendship.state = "pending"
     if @friendship.save
       flash[:notice] = "Added Mentor"
       redirect_to users_path
