@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% flash.each do |key, value|%>
+  <h4><%= value %></h4>
+<% end %>
+
   <div>
     <% if current_user.present? %>
       Signed in as <%= current_user.email %> Not you?
@@ -16,6 +21,7 @@
      <!--  <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %> or -->
     <% end %>
   </div>
+
 <%= yield %>
 
 </body>
