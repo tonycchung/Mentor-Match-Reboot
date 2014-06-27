@@ -1,0 +1,158 @@
+.profileBuild {
+  background-color: $alpha;
+  background-size: cover;
+  .viewWrapper {
+    height: 500vh;
+    overflow: hidden;
+    width: 800vw;
+    .viewCanvas {
+      section.show {
+        height: 100vh;
+        width: 100vw;
+        .progBar{
+          -webkit-transition: all .1s ease-in-out;
+          -moz-transition: all .1s ease-in-out;
+          -o-transition: all .1s ease-in-out;
+          transition: all .1s ease-in-out;
+          width: 100%;
+          height: 10vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        h2 {
+          min-width: 925px;
+          margin-top: 20vh;
+          font-size: 5vh;
+          width: 100%;
+          text-align: center;
+          display: flex;
+          // align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .fieldWrapper{
+          margin-top: -5vh;
+          display: flex;
+          width: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+          height: 20vh;
+        }
+        .field {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 10vh;
+          margin-bottom: 1em;
+          label{
+            min-width: 210px;
+            background-color: $alpha_light40;
+            font-family: "Forza";
+            color: $delta;
+            margin: 0;
+            font-size: 4vh;
+            padding: .5em;
+            width: 20vw;
+            text-align:center;
+            border-bottom:.15em solid $alpha_light20;
+            border-top-left-radius: .25em;
+            border-bottom-left-radius: .25em;
+           }
+           .stacked label{
+            font-size: 3vh;
+            border-radius: 0;
+            width: 100%;
+            border-bottom: .2em solid $alpha_light40;
+           }
+           input{
+            background: $delta;
+            padding: .5em;
+            font-size: 4vh;
+            color: $alpha;
+            border-bottom:.15em solid $alpha_light20;
+            border-top-right-radius: .25em;
+            border-bottom-right-radius: .25em;
+            ::-webkit-input-placeholder {
+              color: $delta;
+            }
+           }
+          }
+        }
+        }
+        .previous {
+          width: 0;
+          height: 0;
+          border-top: 3em solid transparent;
+          border-bottom: 3em solid transparent;
+          border-right: 3em solid $charlie;
+          }
+
+  }
+  section{
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+  }
+}
+section.hidden {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.next {
+      width: 100%;
+      font-size: 10vh;
+      color: $charlie;
+      display: flex;
+      justify-content: center;
+    }
+
+.showWrapper{
+  display: inline-block;
+}
+
+.showWrapper {
+  width: 1000vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.progDot{
+  display: inline-block;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background: $delta;
+  margin: 2em;
+  cursor: pointer;
+}
+
+.stacked{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+}
+
+.stacked textarea{
+    height: 30vh;
+    width: 100%;
+    border: .5em solid $charlie_light20;
+    padding: 1em;
+    text-align: center;
+  }
+
+

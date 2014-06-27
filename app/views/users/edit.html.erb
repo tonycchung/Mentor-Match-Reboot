@@ -1,157 +1,84 @@
-<%= form_for(@user) do |f| %>
-  <div class="reveal">
-    <div class="slides">
-        <section>
-          <h2>We'll use a few quick questions to flesh out your profile. First of all, what's your name?
-          <div class="field">
-            <%= f.label :first_name %>
-            <%= f.text_field :first_name %>
-          </div>
-          <div class="field">
-            <%= f.label :last_name %>
-            <%= f.text_field :last_name %>
-          </div>
-          <section>Progress Bar Here</section>
+<div class="profileBuild">
+  <div class="viewWrapper">
+    <div class="viewCanvas">
+      <%= form_for(@user) do |f| %>
+        <section class="_1 show">
+          <h2>We'll use a few quick questions to build your profile.<br>First of all, what's your name?</h2>
+            <div class="fieldWrapper">
+              <div class="field">
+                <%= f.label :first_name %>
+                <%= f.text_field :first_name, :placeholder => "Robert" %>
+              </div>
+              <div class="field">
+                <%= f.label :last_name %>
+                <%= f.text_field :last_name, :placeholder => "Baratheon"%>
+              </div>
+              <div class="hundo"><span id="next_1" class="next fa fa-angle-double-right"></span></div>
+            </div>
+            <div class="progBar">
+              <div class="progDot"></div>
+              <div class="progDot"></div>
+              <div class="progDot"></div>
+              <div class="progDot"></div>
+              <div class="progDot"></div>
+            </div>
         </section>
-        <section>
-          <h2>Tell us a little bit about yourself.
-          <div class="field">
-            <%= f.label :background %>
-            <%= f.text_area :background %>
+        <section id="_2" class="show">
+          <h2>Tell us a little about yourself.<br> Anything you want.</h2>
+          <div class="fieldWrapper">
+            <div class="field">
+              <div class="stacked">
+                <%= f.label :background %>
+                <%= f.text_area :background, :placeholder => "Well, on Saturdays I juggle chainsaws..." %>
+              </div>
+            </div>
+            <div class="hundo"><span id="next_2" class="next fa fa-angle-double-right"></span></div>
           </div>
         </section>
-        <section>
-          <div class="field">
-            <%= f.label :accomplishments %>
-            <%= f.text_area :accomplishments %>
+        <section id="_3" class="show">
+          <h2>What have you done?<br> What are you proud of?</h2>
+          <div class="fieldWrapper">
+            <div class="field">
+              <div class="stacked">
+                <%= f.label :accomplishments %>
+                <%= f.text_area :accomplishments %>
+              </div>
+            </div>
           </div>
+          <div class="hundo"><span id="next_3" class="next fa fa-angle-double-right"></span></div>
         </section>
-        <section>
-          <div class="field">
-            <%= f.label :professional_summary %>
-            <%= f.text_area :professional_summary %>
+        <section id="_4" class="show">
+          <h2>Briefly describe your professional history. Where have you been?</h2>
+          <div class="fieldWrapper">
+            <div class="field">
+              <div class="stacked">
+                <%= f.label :professional_summary  %>
+                <%= f.text_area :professional_summary %>
+              </div>
+            </div>
           </div>
+          <div class="hundo"><span id="next_4" class="next fa fa-angle-double-right"></span></div>
         </section>
-        <section>
+        <section id="_5" class="show">
+          <h2>Where do you work?</h2>
           <% if current_user.role == "mentor" %>
-            <div class="field">
-              <%= f.label :company %>
-              <%= f.text_area :company %>
+           <div class="fieldWrapper">
+              <div class="stacked">
+                <div class="field">
+                  <%= f.label :company %>
+                  <%= f.text_area :company %>
+                </div>
+                <h2>What is your position?  </h2>
+                <div class="field">
+                  <%= f.label :position, class: "stacked"  %>
+                  <%= f.text_area :position %>
+                </div>
+              </div>
             </div>
-            <div class="field">
-              <%= f.label :position %>
-              <%= f.text_area :position %>
-            </div>
+            <div c><span class="next fa fa-angle-double-right"></span></div>
           <% end %>
         </section>
-      </section>
+      <% end %>
     </div>
   </div>
-<% end %>
-
-<!-- <div class="field">
-    <%#= f.label :available %>
-    <%#= f.check_box :available %>
-</div> -->
-<!--   <%# else %>
-  <div class="field">
-    <%#= f.label :graduating_class %>
-    <%#= f.text_area :graduating_class %>
-  </div>
-  <div class="field">
-    <%#= f.label :stack %>
-    <%#= f.text_area :stack %>
-  </div>
-<%# end %> -->
-
-<!--  <div class="field">
-  <%#= f.label :admin %>
-  <%#= f.check_box :admin %>
 </div>
-<div class="actions">
-  <%#= f.submit %>
-</div> -->
-<%# end %>
-
-Reveal.initialize({
-
-  // Display controls in the bottom right corner
-  controls: true,
-
-  // Display a presentation progress bar
-  progress: true,
-
-  // Display the page number of the current slide
-  slideNumber: false,
-
-  // Push each slide change to the browser history
-  history: false,
-
-  // Enable keyboard shortcuts for navigation
-  keyboard: true,
-
-  // Enable the slide overview mode
-  overview: true,
-
-  // Vertical centering of slides
-  center: true,
-
-  // Enables touch navigation on devices with touch input
-  touch: true,
-
-  // Loop the presentation
-  loop: false,
-
-  // Change the presentation direction to be RTL
-  rtl: false,
-
-  // Turns fragments on and off globally
-  fragments: true,
-
-  // Flags if the presentation is running in an embedded mode,
-  // i.e. contained within a limited portion of the screen
-  embedded: false,
-
-  // Number of milliseconds between automatically proceeding to the
-  // next slide, disabled when set to 0, this value can be overwritten
-  // by using a data-autoslide attribute on your slides
-  autoSlide: 0,
-
-  // Stop auto-sliding after user input
-  autoSlideStoppable: true,
-
-  // Enable slide navigation via mouse wheel
-  mouseWheel: false,
-
-  // Hides the address bar on mobile devices
-  hideAddressBar: true,
-
-  // Opens links in an iframe preview overlay
-  previewLinks: false,
-
-  // Transition style
-  transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
-
-  // Transition speed
-  transitionSpeed: 'default', // default/fast/slow
-
-  // Transition style for full page slide backgrounds
-  backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
-
-  // Number of slides away from the current that are visible
-  viewDistance: 3,
-
-  // Parallax background image
-  parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
-
-  // Parallax background size
-  parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
-
-
-});
-
-<h1>Editing user</h1>
-
-<%= link_to 'First time here? Read this quick introduction!', intro_path %>
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>

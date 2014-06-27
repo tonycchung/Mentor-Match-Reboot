@@ -1,20 +1,18 @@
 
 .dash {
-  background-color: #262625;
+  background-color: $alpha;
   height: 100vh;
   width: 100vw;
-}
-
-
-.dash .logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 10vh;
-  width: 10vh;
-  background-image: url(image-path("cflogo.png"));
-  background-size: contain;
-  background-repeat: no-repeat;
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 10vh;
+    width: 10vh;
+    background-image: url(image-path("cflogo.png"));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
 
 .mainWrapper {
