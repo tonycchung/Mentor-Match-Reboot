@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "/intro" => 'haml_views#intro'
   get '/dashboard' => 'haml_views#dashboard'
   get '/new_dash'=> 'haml_views#new_dash'
+  get '/toolbox' => 'haml_views#toolbox'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
