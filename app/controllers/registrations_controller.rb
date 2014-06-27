@@ -13,6 +13,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     def set_confirmation
-      devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:password_confirmation)}
+      devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:password, :password_confirmation, :email, :role)}
     end
 end
