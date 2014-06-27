@@ -1,4 +1,4 @@
-span.fa:hover{
+.intro span.fa:hover{
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
@@ -9,7 +9,7 @@ span.fa:hover{
   color: $delta;
 }
 
-span.fa:active{
+.intro span.fa:active{
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
