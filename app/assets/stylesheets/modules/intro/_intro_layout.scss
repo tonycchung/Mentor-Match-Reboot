@@ -1,0 +1,114 @@
+
+.intro {
+  background-image: url(image-path("cf_background_bw_6.23.14.jpg"));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  article {
+  display: block;
+  height: 500vh;
+  }
+  section{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  }
+  h1 {
+    margin-top: 2em;
+    font-size: 7.85vh;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+  h2 {
+    font-size: 4.854vh;
+    text-align: center;
+    width: 100%;
+    margin-top: 1.75em;
+    margin-bottom: .75em;
+    background-color: $charlie_light10;
+    border-bottom: .2em solid $alpha_light40;
+    color: $delta;
+    border-radius: .2em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+  h3 {
+    font-size: 3vh;
+    text-align: center;
+    padding-bottom: 50vh;
+    width: 100%;
+  }
+  #_1 h1, #_5 h1{
+    margin-top: 2em;
+    background-color: $charlie_light10;
+    border-bottom: .1em solid $alpha_light40;
+    border-radius: .2em;
+    padding-top: .25em;
+    padding-bottom: .25em;
+  }
+  #_1 h2 {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-top: 0;
+    background: none;
+    border: none;
+  }
+  #_1 h3{
+    width: 100%;
+    padding-top: 5vh;
+    padding-bottom: 35vh;
+    }
+  #_5 h1{
+
+  }
+  #_5 h2 {
+    background: none;
+    border: none;
+  }
+  #_5 h3 {
+    padding-bottom: 20vh;
+  }
+  a{
+    height: 2em;
+    width: 2em;
+    // background-image: url(image-path("fangs.png"));
+    // background-position: center;
+    // background-size: cover;
+  }
+  span.fa{
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    font-size: 4em;
+    color: $charlie;
+  }
+  span.linkage0{
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+    font-size: 4em;
+    color: $charlie;
+    position: fixed;;
+    top: 20px;
+    right: 20px;
+  }
+  a.continue{
+    text-align: center;
+    background-color: $charlie_light10;
+    color: $delta;
+    width: 12em;
+    border: none;
+    // border-bottom: .2em solid $alpha_light40;
+    border-radius: .2em;
+    font-family: $header-font;
+    font-size: 4.854vh;
+    padding: .25em 0;
+    cursor: pointer;
+  }
+}
+
