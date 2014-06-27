@@ -1,0 +1,179 @@
+
+.dash {
+  background-color: #262625;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.dash .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: auto;
+  width: 5vh;
+}
+
+.dash .cfLogo {
+  width: 100%;
+  height: auto;
+}
+
+.mainWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20vh;
+}
+
+.main, .mainAside, .mainNav {
+  display: flex;
+  background: orange;
+  height: 40vh;
+}
+
+.mainNav {
+  margin: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 20vw;
+}
+/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainNav section {
+  background-image: url(image-path("arrowbutton.png"));
+  background-size: auto 80%;
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 80%;
+  padding: 0;
+  margin: .5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.mainNav section p {
+  height: 4vh;
+  margin: 0;
+  font-family: "Montserrat";
+  font-size: 2vh;
+  color: white;
+  width: 100%;
+  padding: 0 1em;
+  background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1em;
+  width: 60vw;
+}
+/* line 69, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.main section {
+  box-sizing: padding-box;
+  width: 100%;
+  height: calc(10vh+.5em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a9a9a7;
+  padding: 0;
+  border-bottom: .5em solid $bravo;
+}
+/* line 78, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.main section span {
+  background-color: blue;
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+  text-align: center;
+  font-size: 4vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+/* line 93, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.main section h2 {
+  width: 60%;
+  padding-left: 1em;
+  background-color: #525250;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+/* line 101, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.main section button {
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  background-color: #d03226;
+  padding: 0;
+  margin: 0;
+  height: 10vh;
+  width: 20%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 121, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside {
+  margin: 1em;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside section {
+  background-color: #525250;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+/* line 136, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside section figure {
+  background-color: purple;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+/* line 142, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside section figure img {
+  background-color: green;
+  border-radius: 50%;
+  width: auto;
+  height: 8vh;
+  border: 0.2em solid white;
+}
+/* line 149, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside section figure .paraWrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 80%;
+  background-color: red;
+  padding-left: 1em;
+}
+/* line 156, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainAside section figure .paraWrap p {
+  font-size: .2vh;
+  font-family: "Merryweather";
+}
