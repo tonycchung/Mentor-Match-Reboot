@@ -1,4 +1,4 @@
-.dash button:hover{
+.main button:hover{
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
@@ -10,7 +10,7 @@
   background-color: $charlie_light10;
 }
 
-.mainNav li:hover{
+.mainNav section:hover{
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;

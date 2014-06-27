@@ -1,69 +1,68 @@
 .dash
   %figure.logo
     =image_tag ("cflogo.png")
-  .wrapper
-    %nav.quickNav
-      %ul
-        %li.headshot
-          =image_tag ("gabe_square.jpg")
-        %li
-          %a.fa.fa-home(abbr title="home")
-        %li
-          %a.fa.fa-briefcase(abbr title="toolbox")
-        %li
-          %a.fa.fa-bullhorn(abbr title="feedback")
-        %li
-          %a.fa.fa-cog(abbr title="account")
-    %nav.mainNav
-      %ul
-        %li
-          %section
-            %a Home
-            %span.fa.fa-chevron-circle-right
-        %li
-          %a My Account
-        %li
-          %a My Mentor
-        %li
-          %a Browse
-        %li
-          %a My Toolbox
-        %li
-          %a About
-        %li
-          %a Feedback
+  %nav.quickNav
+    %ul
+      %li.headshot
+        =image_tag ("gabe_square.jpg")
+      %li
+        %a.fa.fa-home(abbr title="home")
+      %li
+        %a.fa.fa-briefcase(abbr title="toolbox")
+      %li
+        %a.fa.fa-bullhorn(abbr title="feedback")
+      %li
+        %a.fa.fa-cog(abbr title="account")
+  %article.mainNav
+    %ul
+      %li
+        %a Home
+      %li
+        %a My Account
+      %li
+        %a My Mentor
+      %li
+        %a Browse
+      %li
+        %a My Toolbox
+      %li
+        %a About
+      %li
+        %a Feedback
+    %span.fa.fa-chevron-circle-right
+  %articleWrapper
     %article
       %section
-        %figure
+        %div
           %span.fa.fa-users
         %h2 Find a mentor/Browse mentors
         %button
           %span.fa.fa-chevron-right
       %section
-        %figure
+        %div
           %span.fa.fa-clock-o
         %h2 Your next meeting is on...
         %button
           %span.fa.fa-chevron-right
       %section
-        %figure
+        %div
           %span.fa.fa-comments-o
         %h2 View Your history
         %button
           %span.fa.fa-chevron-right
-    %aside
-      %section
-        %figure
-          %img
-        %p
-        %p
-      %section
-        %figure
-          %img
-        %p
-        %p
-      %section
-        %figure
-          %img
-        %p
-        %p
+  %article.aside
+    %section
+      %figure
+        %img
+      %p
+      %p
+    %section
+      %figure
+        %img
+      %p
+      %p
+    %section
+      %figure
+        %img
+      %p
+      %p
