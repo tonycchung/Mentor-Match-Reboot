@@ -26,5 +26,4 @@
       %h1 Leverage what you learn
       %h2 Reach out to mentors simply,<br> smartly and with confidence.
       %h3 The power is in your hands.
-      = link_to dashboard_path(current_user.id) do
-        %a.continue Got it!
+      =link_to "Got it!", dashboard_path(current_user.id), class: "continue"
