@@ -1,6 +1,7 @@
 <div class="profileBuild">
   <div class="viewWrapper">
     <div class="viewCanvas">
+      <% if current_user.role == "mentee" %>
       <%= form_for(@user) do |f| %>
         <section class="_1 show">
           <h2>We'll use a few quick questions to build your profile.<br>First of all, what's your name?</h2>
@@ -65,31 +66,9 @@
             </div>
           </div>
           <div class="hundo"><span id="next_4" class="next fa fa-angle-double-right"></span></div>
-          <div class="progBar">
-              <div class="progDot"></div>
-              <div class="progDot"></div>
-              <div class="progDot"></div>
-              <div class="progDot"></div>
-              <div class="progDot"></div>
-            </div>
-        </section>
-        <section id="_5" class="show">
-          <h2>Where do you work?</h2>
-          <% if current_user.role == "mentor" %>
-           <div class="fieldWrapper">
-              <div class="stacked">
-                <div class="field">
-                  <%= f.label :company %>
-                  <%= f.text_area :company %>
-                </div>
-                <h2>What is your position?  </h2>
-                <div class="field">
-                  <%= f.label :position, class: "stacked"  %>
-                  <%= f.text_area :position %>
-                </div>
-              </div>
-            </div>
-            <div class="hundo"><span class="next fa fa-angle-double-right"></span></div>
+          <% if current_user.role == "mentee" %>
+            <div class="continueButton">Submit</div>
+          <% else %>
             <div class="progBar">
               <div class="progDot"></div>
               <div class="progDot"></div>
@@ -98,6 +77,32 @@
               <div class="progDot"></div>
             </div>
           <% end %>
+        </section>
+      <% end %>
+      <%= if current_user.role == "mentor" %>
+        <section id="_5" class="show">
+          <div class="fieldWrapper">
+            <h2>Where are you currently employed?</h2>
+              <div class="stacked">
+                <div class="field">
+                  <%= f.label :company %>
+                  <%= f.text_area :company %>
+                </div>
+            <h2>What is your position?  </h2>
+              <div class="field">
+                <%= f.label :position, class: "stacked"  %>
+                <%= f.text_area :position %>
+                  </div>
+                </div>
+              </div>
+              <div class="hundo"><span class="next fa fa-angle-double-right"></span></div>
+              <div class="progBar">
+                <div class="progDot"></div>
+                <div class="progDot"></div>
+                <div class="progDot"></div>
+                <div class="progDot"></div>
+                <div class="progDot"></div>
+              </div>
         </section>
       <% end %>
     </div>
