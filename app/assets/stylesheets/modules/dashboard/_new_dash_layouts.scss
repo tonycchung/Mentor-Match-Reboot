@@ -1,3 +1,7 @@
+.splashNav{
+  background: $alpha;
+}
+
 
 .dash {
   background-color: $alpha;
@@ -49,6 +53,7 @@
   justify-content: flex-end;
   flex-wrap: nowrap;
   height: 5vh;
+  border-bottom: .1em solid $alpha;
 }
 
 .mainNav section p {
@@ -162,9 +167,8 @@
 }
   img {
   border-radius: 50%;
-  padding-top: .25em;
-  width: 5vh;
-  height: 5vh;
+  width: 7vh;
+  height: 7vh;
   border: 0.1em solid white;
 }
   .paraWrapP {

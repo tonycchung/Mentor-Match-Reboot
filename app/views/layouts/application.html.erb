@@ -11,7 +11,7 @@
 <% flash.each do |key, value|%>
   <h4><%= value %></h4>
 <% end %>
-
+<%= yield %>
   <nav class="splashNav">
     <% if current_user.present? %>
       <p>Signed in as <%= current_user.email %> Not you?</p>
@@ -22,7 +22,7 @@
     <% end %>
   </div>
 
-<%= yield %>
+
 
 </body>
 </html>
