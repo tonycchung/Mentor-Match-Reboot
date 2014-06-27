@@ -21,7 +21,6 @@ gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
-gem 'sqlite3'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'rails-reveal-js', '~> 2.6.1.2'
@@ -30,7 +29,13 @@ gem 'font-awesome-sass'
 gem "bower-rails", "~> 0.7.3"
 gem "jquery-scrollto-rails"
 
-group :development do
+group :production do
+  gem "rails_12factor"
+  gem "pg"
+end
+
+group :development, :test do
+  gem 'sqlite3'
   gem 'better_errors'
 end
 
