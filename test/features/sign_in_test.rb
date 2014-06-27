@@ -31,6 +31,13 @@ feature "A user must be able to sign in in a variety of ways" do
     sign_in_mentor
     page.must_have_content "Signed in successfully."
   end
+
+  scenario "signed in users are taken to their dashboard" do
+    sign_in_mentee
+    visit root_path
+    page.must_have_content "Browse Mentors"
+  end
+
   # scenario "sign in with github works" do
   #   visit new_user_session_path
   #   OmniAuth.config.test_mode = true
