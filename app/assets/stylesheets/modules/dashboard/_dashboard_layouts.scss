@@ -4,9 +4,6 @@
   width: 100vw;
 }
 
-.mainNav{
-  display: inline-block;
-}
 .dash{
   .logo{
     position: absolute;
@@ -19,28 +16,14 @@
     width: 100%;
     height: auto
   }
-  // .wrapper{
-  //   display: flex;
-  //   justify-content: center;
-  //   flex-wrap: nowrap;
-  // }
+
   article{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 50%;
-    height: 30vh;
-    margin: 0 auto;
+    display: inline-block;
+    height: 40vh;
     section{
       background-color: $alpha_light60;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin: 1em 0;
       padding: 0;
       border-bottom: .5em solid $alpha;
-      margin: 0;
       span{
         font-size: 4vh;
         color: $delta;
@@ -53,32 +36,18 @@
         background-color: $charlie;
         height: 10vh;
         width: 20%;
-        border: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        border: none;Ï
         span{
           text-align: center;
           width: 100%;
         }
       }
       h2{
-        width: 60%;
-        font-size: 2vh;
-        min-width: 1080px;
-        height: 10vh;
-        padding-left: 1em;
-        background-color: $alpha_light20;
-        margin: 0;
-        display: flex;
-        align-items: center;
+
       }
-      figure{
+      div{
         background-color: $alpha_light40;
         width: 20%;
-        height: 10vh;
         // padding: 4em 0 4em 0;
         margin: 0;
         display: flex;
@@ -87,39 +56,45 @@
       }
     }
   }
+  .wrapper{
+    height: 30vh;
+    padding: 0;
+    margin: 20vh 0 0 0;
+    // display: flex;
+    // align-items: center;
+  }
+  // .asideWrapper, .articleWrapper, .mainNavWrapper{
+  //   display: block;
+  // }
   .mainNav{
     width: 20%;
-    height: 30vh;
+    height: 40vh;
     background-color: green;
     padding: 0;
+    margin: 0;
     display: inline-block;
+    span.fa{
+      color: $charlie;
+      font-size: 2em;
+    }
+    span{
+      display: inline-block;
+    }
     ul{
       margin: 0;
-      padding-top: 2%;
       margin-left: 2em;
       list-style-type: none;
       background-color: orange;
       width: 80%;
-      height: 100%;
+      height: 30vh;
+      display: inline-block;
       li{
         background-color: $alpha_light60;
         margin: .2em 1em .2em 3em;
         text-align: right;
-        padding: 4% 0;
         background: $alpha;
-        border: .2em solid $charlie;
+        border: .2em solid $delta;
         border-radius: 5px;
-        span{
-          -webkit-transition: all .1s ease-in-out;
-          -moz-transition: all .1s ease-in-out;
-          -o-transition: all .1s ease-in-out;
-          transition: all .1s ease-in-out;
-          font-size: 100%;
-          color: $charlie;
-          text-align: right;
-          z-index: 1;
-          visibility: hidden;
-        }
         a{
           -webkit-transition: all .1s ease-in-out;
           -moz-transition: all .1s ease-in-out;
@@ -130,19 +105,32 @@
           color: $delta;
           text-transform: uppercase;
           width: 100%;
-          z-index: 100;
         }
       }
     }
   }
-  aside{
+  article.aside{
     width: 20%;
     display: inline-block;
-    background: orange;
-    height: 30vh;
+    background: yellow;
+    height: 40vh;
+    article{
+      width: 80%;
+    }
     section{
+      height: 10vh;
       width: 100%;
+      border-bottom: .5em solid $alpha;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      background: blue;
     }
   }
 }
-
+// .mainNavWrapper{
+//     display: inline-block;
+//     height: auto;
+//     width: auto;
+//   }

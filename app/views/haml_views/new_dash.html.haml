@@ -6,22 +6,25 @@
         =image_tag ("gabe_square.jpg")
       %li
         %a.fa.fa-home(abbr title="home")
+      .verticalRule
       %li
         %a.fa.fa-briefcase(abbr title="toolbox")
+      .verticalRule
       %li
         %a.fa.fa-bullhorn(abbr title="feedback")
+      .verticalRule
       %li
         %a.fa.fa-cog(abbr title="account")
   .mainWrapper
     .mainNav
       %section
-        %p= link_to "Home", dashboard_path(current_user.id)
+        %p Home
       %section
-        %p= link_to "My Account", edit_user_path(current_user)
+        %p My Account
       %section
         %p My Mentor
       %section
-        %p= link_to "Browse", users_path
+        %p Browse
       %section
         %p My Toolbox
       %section

@@ -19,8 +19,14 @@ article {
 section{
   display: flex;
   flex-wrap: wrap;
-  padding: 2em;
   width: 50vw;
+    a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
 }
 
 section.student{
@@ -37,6 +43,7 @@ section.mentor{
 .splash h1, .splash h2, .splash h3 {
   width: 100%;
   display: flex;
+  min-width: 275px;
 }
 
 .button-wrap {
@@ -44,7 +51,9 @@ section.mentor{
   display: flex;
   justify-content: center;
 }
-
+button.findMentor, button.beMentor{
+  padding: 0;
+}
 button.findMentor {
   margin-right: 20vw;
 }

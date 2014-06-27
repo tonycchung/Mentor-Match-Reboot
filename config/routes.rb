@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get "/profile_build" => 'haml_views#profile_build'
   get "/intro" => 'haml_views#intro'
   get '/dashboard' => 'haml_views#dashboard'
+  get '/new_dash'=> 'haml_views#new_dash'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
