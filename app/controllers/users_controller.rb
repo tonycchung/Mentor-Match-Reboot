@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @pending_friendships = Friendship.where(friend_id: current_user.id)
+    @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
   end
 
   def history
@@ -28,6 +28,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
+      @pending = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
+    end
+    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
+      @approved_mentorship = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
+    end
   end
 
   # GET /users/new

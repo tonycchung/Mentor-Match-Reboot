@@ -50,9 +50,7 @@
   <ul>
   <% for friendship in @user.friendships %>
     <li>
-      <%= friendship.friend.first_name %>
-      <%= friendship.friend.last_name %>
-      (<%= link_to 'Destroy Relationship', friendship, method: :delete %>)
+      <%= friendship.friend.email %>
     </li>
   <% end %>
   </ul>
@@ -90,6 +88,21 @@
   <%= @user.stack %>
 </p>
 
+<% if @pending %>
+  <% @pending.each do |pending| %>
+    <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
+  <% end %>
+<% end %>
+
+<% if @approved_mentorship %>
+  <% @approved_mentorship.each do |approved_mentorship| %>
+    <%= link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch %>
+  <% end %>
+<% end %>
+
+<% if current_user.mentee? %>
+  <%= link_to 'Request Mentorship', friendships_path(:friend_id => user.id), method: :post %>
+<% end %>
 <%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
 <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
 

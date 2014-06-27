@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # get 'friendship/create' => 'friendship#create'
 
   # get 'friendship/destroy' => 'friendship#destroy'
-
   resources :friendships
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
@@ -16,6 +15,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  get 'static_pages/intro' => 'static_pages#intro', as: :intro
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
   # You can have the root of your site routed with "root"
