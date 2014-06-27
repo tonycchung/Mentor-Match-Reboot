@@ -16,10 +16,7 @@
         <tr>
           <td><%= user.email %></td>
           <td><%= user.role %></td>
-          <td><%= link_to 'View User', user %></td>
-          <% if current_user.mentee? %>
-          <td><%= link_to 'Request Mentor', friendships_path(:friend_id => user.id), method: :post %></td>
-          <% end %>
+          <td><%= link_to 'View Profile', user %></td>
         </tr>
       <% end %>
     <% end %>

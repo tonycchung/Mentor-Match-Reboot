@@ -427,6 +427,7 @@ th {
 // remove margin from text elements
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+  padding: 0;
 }
 
 //remove text-decoration from links
@@ -438,3 +439,7 @@ a {
 button {
   padding: 0;
 }
+
+// *{
+//   -webkit-margin-before 0;
+//   }
