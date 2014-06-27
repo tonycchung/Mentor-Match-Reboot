@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  get 'static_pages/splash' => 'static_pages#splash', as: :splash
   get 'static_pages/intro' => 'static_pages#intro', as: :intro
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
   # You can have the root of your site routed with "root"
-  root 'static_pages#splash'
+
+  root 'passthrough#index'
 
   get '/create_account' => 'user#new'
 
