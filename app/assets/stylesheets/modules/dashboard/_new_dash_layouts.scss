@@ -10,13 +10,11 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  height: auto;
-  width: 5vh;
-}
-
-.dash .cfLogo {
-  width: 100%;
-  height: auto;
+  height: 10vh;
+  width: 10vh;
+  background-image: url(image-path("cflogo.png"));
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .mainWrapper {
@@ -45,17 +43,21 @@
   background-repeat: no-repeat;
   width: 80%;
   padding: 0;
-  margin: .5em 0;
+  margin: 0 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: nowrap;
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: .2em;
 }
 
 .mainNav section p {
-  height: 4vh;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  height: 5vh;
   margin: 0;
   font-family: "Montserrat";
   font-size: 2vh;
@@ -85,7 +87,7 @@
   justify-content: center;
   background-color: #a9a9a7;
   padding: 0;
-  border-bottom: .5em solid $bravo;
+  border-bottom: .2em solid $bravo;
 }
 /* line 78, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .main section span {
@@ -109,6 +111,7 @@
   padding-left: 1em;
   background-color: #525250;
   height: 10vh;
+  font-size: 2vh;
   display: flex;
   align-items: center;
 }
@@ -124,6 +127,7 @@
   height: 10vh;
   width: 20%;
   border: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,9 +175,13 @@
   width: 80%;
   background-color: red;
   padding-left: 1em;
-}
+
 /* line 156, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section figure .paraWrap p {
+  .paraWrap p {
   font-size: .2vh;
   font-family: "Merryweather";
+    p{
+      font-size: 4vh;
+    }
+  }
 }
