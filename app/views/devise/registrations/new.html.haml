@@ -7,13 +7,12 @@
         %section.userEmail
           = f.label :email
           = f.email_field :email, autofocus: true
-        %section.userPassword
-          - if f.object.password_required?
+        - if f.object.password_required?
+          %section.userPassword
             = f.label :password
             = f.password_field :password, autocomplete: "off"
-        %section.userConfirm
-          - if f.object.password_required?
-            = f.label :confirm_password
+          %section.userConfirm
+            = f.label :password_confirmation
             = f.password_field :password_confirmation, autocomplete: "off"
       = f.hidden_field :role, value: params[:user_type]
       = f.submit "Submit", {class: "trans_wht_btn btn_txt"}
@@ -23,8 +22,3 @@
         =image_tag "linkedin_icon.png"
       =link_to user_omniauth_authorize_path(:github) do
         =image_tag "github_icon.png"
-
-      / %a.linkedin
-      /   / = link_to 'Sign in with LinkedIn', user_omniauth_authorize_path(:linkedin)
-      / %a.github
-      /   / = link_to 'Sign in with Github', user_omniauth_authorize_path(:github)

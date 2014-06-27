@@ -12,24 +12,16 @@ feature "root path takes you to the sign in path" do
   end
 
   scenario "visit find a mentor" do
-    click_on "Find a Mentor"
+    click_link "Find a Mentor"
     page.must_have_content "Create Account"
   end
 
   scenario "visit become a mentor" do
-    click_on "Become a Mentor"
+    click_link "Become a Mentor"
     page.must_have_content "Create Account"
   end
 
   scenario "sign out link wont be visible unless signed in" do
     page.wont_have_link "Sign out"
-  end
-
-  scenario "login link will be visible" do
-    page.must_have_link "Login"
-  end
-
-  scenario "login link will be visible" do
-    page.must_have_link "Login"
   end
 end

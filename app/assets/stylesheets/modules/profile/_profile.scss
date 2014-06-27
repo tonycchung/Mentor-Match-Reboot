@@ -1,0 +1,85 @@
+#site-wrapper{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#site-canvas{
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: .1 ease-in-out all;
+  -moz-transition: .1 ease-in-out all;
+  -o-transition: .1 ease-in-out all;
+  transition: .1 ease-in-out all;
+  -webkit-transform:translateX(100vw);
+  -moz-transform:translateX(100vw);
+  -o-transform:translateX(100vw);
+  transform:translateX(100vw);
+}
+
+section.hidden{
+  position: absolute;
+  top: 0;
+  left: -10000px;
+}
+
+.profileBuild{
+  background: $alpha;
+  & section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    h2{
+      font-size: 2em;
+      width: 80%;
+      display: block;
+      margin: 1em;
+    }
+    .inputWrapper{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -15%;
+    }
+    label{
+      font-size: 1em;
+      color: $delta;
+      margin-right: 1em;
+    }
+    input{
+      padding: .5em;
+    }
+    textarea{
+      display: block;
+      width: 80%;
+      height: 40%;
+    }
+    .progBar{
+      width: 100%;
+      text-align: center;
+      color: $delta;
+    }
+  }
+}
+
+.next {
+  width: 0;
+  height: 0;
+  border-top: 3em solid transparent;
+  border-bottom: 3em solid transparent;
+  border-left: 3em solid $charlie;
+}
+
+.previous {
+  width: 0;
+  height: 0;
+  border-top: 3em solid transparent;
+  border-bottom: 3em solid transparent;
+  border-right: 3em solid $charlie;
+}
+

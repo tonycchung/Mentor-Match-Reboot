@@ -1,0 +1,6 @@
+{
+  "name": "match",
+  "dependencies": {
+    "jquery.scrollTo": "~1.4.12"
+  }
+}

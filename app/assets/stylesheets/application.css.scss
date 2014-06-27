@@ -4,9 +4,16 @@
 @import "reset";
 @import "color/color";
 @import "typography/typography";
+@import "font-awesome";
 @import "ui_patterns/ui_patterns";
 @import "layouts/layouts";
 @import "modules/modules";
 @import "buttons/buttons";
 @import "vendors/vendors";
 @import "forms/forms";
+
+/*
+*= require reveal
+*= require font-awesome
+*= require jquery.scrollTo
+*/
