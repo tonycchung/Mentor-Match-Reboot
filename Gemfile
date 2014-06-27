@@ -28,6 +28,7 @@ gem 'font-awesome-rails', '~> 4.1.0.0'
 gem 'font-awesome-sass'
 gem "bower-rails", "~> 0.7.3"
 gem "jquery-scrollto-rails"
+gem "launchy"
 
 group :production do
   gem "rails_12factor"
