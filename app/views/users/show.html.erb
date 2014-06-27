@@ -50,7 +50,7 @@
   <ul>
   <% for friendship in @user.friendships %>
     <li>
-      <%= friendship.friend.email %>
+      <%= friendship.friend.first_name %>
     </li>
   <% end %>
   </ul>
@@ -101,7 +101,7 @@
 <% end %>
 
 <% if current_user.mentee? %>
-  <%= link_to 'Request Mentorship', friendships_path(:friend_id => user.id), method: :post %>
+  <%= link_to 'Request Mentorship', friendships_path(:friend_id => @user.id), method: :post %>
 <% end %>
 <%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
 <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
