@@ -23,7 +23,6 @@
 
 .main, .mainAside, .mainNav {
   display: flex;
-  background: orange;
   height: 40vh;
 }
 
@@ -32,13 +31,16 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
+  height: 40vh;
+  padding: .7em 0;
 }
 /* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainNav section {
-  background-image: url(image-path("arrowbutton.png"));
-  background-size: auto 80%;
-  background-position: right;
-  background-repeat: no-repeat;
+  // background-image: url(image-path("arrowbutton.png"));
+  // background-size: auto 80%;
+  // background-position: right;
+  // background-repeat: no-repeat;
+  background-color: $bravo_light40;
   width: 80%;
   padding: 0;
   margin: 0 0;
@@ -46,8 +48,7 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: nowrap;
-  border: 2px solid white;
-  border-radius: .2em;
+  height: 5vh;
 }
 
 .mainNav section p {
@@ -62,7 +63,7 @@
   color: white;
   width: 100%;
   padding: 0 1em;
-  background-color: green;
+  background-color: $alpha_light60;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -82,14 +83,14 @@
   height: calc(10vh+.5em);
   display: flex;
   align-items: center;
+  align-content: space-between;
   justify-content: center;
   background-color: #a9a9a7;
   padding: 0;
-  border-bottom: .2em solid $bravo;
 }
 /* line 78, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .main section span {
-  background-color: blue;
+  background-color: $alpha_light60;
   width: 20%;
   height: 10vh;
   display: flex;
@@ -103,23 +104,21 @@
   align-items: center;
   margin: 0 auto;
 }
-/* line 93, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .main section h2 {
   width: 60%;
   padding-left: 1em;
-  background-color: #525250;
+  background-color: $alpha_light20;
   height: 10vh;
   font-size: 2vh;
   display: flex;
   align-items: center;
 }
-/* line 101, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .main section button {
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  background-color: #d03226;
+  background-color: $charlie;
   padding: 0;
   margin: 0;
   height: 10vh;
@@ -129,6 +128,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  span{
+    background: transparent;
+  }
 }
 
 /* line 121, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
@@ -142,34 +144,36 @@
 }
 /* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainAside section {
-  background-color: #525250;
+  background-color: $alpha_light10;;
   width: 96%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  margin: 0;
   padding: 0;
   height: 10vh;
   figure {
-  background-color: purple;
+  background: $alpha_light20;
   width: 100%;
   margin: 0;
+  padding: .25em;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
   img {
   border-radius: 50%;
-  width: auto;
-  height: 8vh;
-  border: 0.2em solid white;
+  padding-top: .25em;
+  width: 5vh;
+  height: 5vh;
+  border: 0.1em solid white;
 }
   .paraWrapP {
-    font-size: 1.5vh;
-    background-color: orange;
+    font-size: 1.2vh;
+    background-color: $alpha_light10;
     text-align: center;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    background-color: red;
     padding-left: 1em;
   }
 }
