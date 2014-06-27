@@ -20,7 +20,8 @@ a.continue:hover{
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
-  background-color: $charlie;
+  transition: all .1s ease-in-out;
+  background-color: $alpha_light60;
   -webkit-transform: translateX(1em);
   -moz-transform: translateX(1em);
   -o-transform: translateX(1em);
