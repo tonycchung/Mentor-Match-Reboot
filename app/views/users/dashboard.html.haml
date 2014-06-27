@@ -1,7 +1,62 @@
-%h1= "#{current_user.first_name}'s Dashboard"
-=link_to "Browse #{current_user.opposite_role}", users_path
-=link_to 'View your Favorites', history_path(current_user.id)
-=link_to 'Edit your profile', edit_user_path(current_user)
-%h5 Pending Mentorships
-- @pending_friendships.each do |f|
-  %p= link_to "#{User.find(f.user_id).email}", user_path(f.user_id)
+.dash
+  .logo
+  %nav.quickNav
+    %ul
+      %li.headshot
+        =image_tag ("gabe_square.jpg")
+      %li
+        %a.fa.fa-home(abbr title="home")
+      %li
+        %a.fa.fa-briefcase(abbr title="toolbox")
+      %li
+        %a.fa.fa-bullhorn(abbr title="feedback")
+      %li
+        %a.fa.fa-cog(abbr title="account")
+  .mainWrapper
+    .mainNav
+      %section
+        %p= link_to "Home", dashboard_path(current_user.id)
+      %section
+        %p= link_to "My Account", edit_user_path(current_user)
+      %section
+        %p My Mentor
+      %section
+        %p= link_to "Browse", users_path
+      %section
+        %p My Toolbox
+      %section
+        %p About
+      %section
+        %p Feedback
+    .main
+      %section
+        %span.fa.fa-users
+        %h2 Find a mentor/Browse mentors
+        %button
+          %span.fa.fa-chevron-right
+      %section
+        %span.fa.fa-clock-o
+        %h2 Your next meeting is on...
+        %button
+          %span.fa.fa-chevron-right
+      %section
+        %span.fa.fa-comments-o
+        %h2 View Your history
+        %button
+          %span.fa.fa-chevron-right
+    .mainAside
+      %section
+        %figure
+          =image_tag ("dexter_square.jpg")
+        .paraWrap
+          %p.paraWrapP Bacon ipsum dolor sit amet enim
+      %section
+        %figure
+          =image_tag ("mark_square.jpg")
+        .paraWrap
+          %p.paraWrapP Bresaola landjaeger et filet mignon
+      %section
+        %figure
+          =image_tag ("gabe_square.jpg")
+        .paraWrap
+          %p.paraWrapP Strip steak labore frankfurter flank
