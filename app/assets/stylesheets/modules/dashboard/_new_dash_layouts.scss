@@ -145,43 +145,33 @@
 /* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainAside section {
   background-color: #525250;
-  width: 80%;
+  width: 96%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
-}
-/* line 136, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section figure {
+  height: 10vh;
+  figure {
   background-color: purple;
   width: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
 }
-/* line 142, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section figure img {
-  background-color: green;
+  img {
   border-radius: 50%;
   width: auto;
   height: 8vh;
   border: 0.2em solid white;
 }
-/* line 149, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section figure .paraWrap {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  width: 80%;
-  background-color: red;
-  padding-left: 1em;
-
-/* line 156, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-  .paraWrap p {
-  font-size: .2vh;
-  font-family: "Merryweather";
-    p{
-      font-size: 4vh;
-    }
+  .paraWrapP {
+    font-size: 1.5vh;
+    background-color: orange;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: red;
+    padding-left: 1em;
   }
 }

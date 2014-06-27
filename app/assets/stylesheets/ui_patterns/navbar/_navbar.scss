@@ -2,7 +2,7 @@
 .quickNav{
   display: flex;
   align-items: center;
-  margin: 5% 5% 0% 75%;
+  margin: 5% 10% 0% 75%;
   flex-wrap: nowrap;
   background-color: $alpha_light40;
   border: none;
@@ -13,6 +13,7 @@
   width: 30vw;
   height: auto;
     ul{
+      margin: 5% 10% 0% 75%;
       display: flex;
       justify-content: space-around;
       align-items: center;
