@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def splash
   end
 
+  def toolbox
+  end
+
 end

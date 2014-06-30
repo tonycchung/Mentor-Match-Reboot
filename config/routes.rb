@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'static_pages/splash' => 'static_pages#splash', as: :splash
   get 'static_pages/intro' => 'static_pages#intro', as: :intro
+  get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
   # You can have the root of your site routed with "root"

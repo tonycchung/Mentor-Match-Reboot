@@ -9,11 +9,41 @@
 @mentor = User.create(email: "mentor@mentor.com",
   password: "asdfasdf",
   password_confirmation: "asdfasdf",
+  first_name: "Brook",
+  last_name: "Riggio",
+  background: "Rails Developer",
+  accomplishments: "Code Fellows",
+  company: "Code Fellows",
+  position: "Teacher",
   role: "mentor")
 
 @mentee = User.create(email: "mentee@mentee.com",
   password: "asdfasdf",
   password_confirmation: "asdfasdf",
+  first_name: "Tony",
+  last_name: "Chung",
+  background: "Rails Developer",
+  accomplishments: "mentor match app",
+  role: "mentee")
+
+@mentor = User.create(email: "mentor1@mentor.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  first_name: "Ivan",
+  last_name: "Oats",
+  background: "Rails Developer",
+  accomplishments: "Code Fellows",
+  company: "Code Fellows",
+  position: "Teacher",
+  role: "mentor")
+
+@mentee = User.create(email: "mentee1@mentee.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  first_name: "Brian",
+  last_name: "Studwell",
+  background: "UX Developer",
+  accomplishments: "mentor match app",
   role: "mentee")
 
 @admin = User.create(email: "admin@admin.com",

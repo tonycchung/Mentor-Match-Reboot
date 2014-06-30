@@ -11,17 +11,20 @@
 <% flash.each do |key, value|%>
   <h4><%= value %></h4>
 <% end %>
-<%= yield %>
-  <nav class="splashNav">
+
+  <!-- <nav class="splashNav"> -->
     <% if current_user.present? %>
       <p>Signed in as <%= current_user.email %> Not you?</p>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signOut" %>
+      <%= link_to "Help", intro_path %>
+      <%=link_to 'View your Favorites', history_path(current_user.id) %>
       <%= link_to "Dashboard", dashboard_path(current_user.id), class: "dashLink" %>
     <% else %>
      <!--  <%= link_to "Sign up", new_user_registration_path %> / <%= link_to "Sign in", new_user_session_path %> or -->
     <% end %>
   </div>
 
+<%= yield %>
 
 
 </body>

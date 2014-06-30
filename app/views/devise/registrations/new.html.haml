@@ -7,13 +7,13 @@
         %section.userEmail
           = f.label :email
           = f.email_field :email, autofocus: true
-        - if f.object.password_required?
-          %section.userPassword
-            = f.label :password
-            = f.password_field :password, autocomplete: "off"
-          %section.userConfirm
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "off"
+        / - if f.object.password_required?
+        %section.userPassword
+          = f.label :password
+          = f.password_field :password, autocomplete: "off"
+        %section.userConfirm
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, autocomplete: "off"
       = f.hidden_field :role, value: params[:user_type]
       = f.submit "Submit", {class: "trans_wht_btn btn_txt"}
     %p sign up with another account:
