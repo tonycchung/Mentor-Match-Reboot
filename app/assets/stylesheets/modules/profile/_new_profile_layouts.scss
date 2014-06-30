@@ -27,7 +27,6 @@
           width: 100%;
           text-align: center;
           display: flex;
-          // align-items: center;
           flex-wrap: wrap;
           justify-content: center;
         }
@@ -170,16 +169,18 @@ span.next{
   justify-content: center;
 }
 
-.profileBuild button{
+button.submit{
   font-family: 'Forza';
   font-size: 3vh;
-  color: $delta;
   background-color: $charlie;
-  padding: 0;
   margin: 0 auto;
   border: none;
   border-bottom: .2em solid $bravo;
-  padding: .5em;
+  input{
+    margin: 0 auto;
+    background-color: transparent;
+    color: $delta;
+  }
 }
 .profileBuild h2{
   margin-bottom: 5vh;
