@@ -1,0 +1,30 @@
+<article class="quickNav">
+  <% if current_user.present? %>
+    <ul>
+      <li>
+        <%= image_tag ("gabe_square.jpg") %>
+        <p>Signed in as <%= current_user.email %> Not you?</p>
+      </li>
+      <li>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signOut" %>
+      </li>
+      <li>
+        <%= link_to "Help", intro_path %>
+      </li>
+      <li>
+        <%=link_to 'View your Favorites', history_path(current_user.id) %>
+      <li>
+        <%= link_to "Dashboard", dashboard_path(current_user.id), class: "dashLink" %>
+      </li>
+    </ul>
+  <% else %>
+    <section>
+      <button>
+        <%= link_to "Sign up", new_user_registration_path %>
+      </button>
+      <button>
+        <%= link_to "Log in", new_user_session_path %>
+      </button>
+    </section>
+  <% end %>
+<article>

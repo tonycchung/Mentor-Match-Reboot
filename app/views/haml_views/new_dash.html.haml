@@ -1,65 +1,66 @@
-.dash
-  .logo
-  %nav.quickNav
-    %ul
-      %li.headshot
-        =image_tag ("gabe_square.jpg")
-      %li
-        %a.fa.fa-home(abbr title="home")
-      .verticalRule
-      %li
-        %a.fa.fa-briefcase(abbr title="toolbox")
-      .verticalRule
-      %li
-        %a.fa.fa-bullhorn(abbr title="feedback")
-      .verticalRule
-      %li
-        %a.fa.fa-cog(abbr title="account")
-  .mainWrapper
-    .mainNav
-      %section
-        %p Home
-      %section
-        %p My Account
-      %section
-        %p My Mentor
-      %section
-        %p Browse
-      %section
-        %p My Toolbox
-      %section
-        %p About
-      %section
-        %p Feedback
-    .main
-      %section
-        %span.fa.fa-users
-        %h2 Find a mentor/Browse mentors
-        %button
-          %span.fa.fa-chevron-right
-      %section
-        %span.fa.fa-clock-o
-        %h2 Your next meeting is on...
-        %button
-          %span.fa.fa-chevron-right
-      %section
-        %span.fa.fa-comments-o
-        %h2 View Your history
-        %button
-          %span.fa.fa-chevron-right
-    .mainAside
-      %section
-        %figure
-          =image_tag ("dexter_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bacon ipsum dolor sit amet enim
-      %section
-        %figure
-          =image_tag ("mark_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bresaola landjaeger et filet mignon
-      %section
-        %figure
-          =image_tag ("gabe_square.jpg")
-        .paraWrap
-          %p.paraWrapP Strip steak labore frankfurter flank
+-# .dash
+-#   .logo
+-#   %nav.quickNav
+-#     -# %ul
+-#     -#   %li.headshot
+-#     -#     =image_tag ("gabe_square.jpg")
+-#     -#   %li
+-#     -#     %a.fa.fa-home(abbr title="home")
+-#     -#   .verticalRule
+-#     -#   %li
+-#     -#     %a.fa.fa-briefcase(abbr title="toolbox")
+-#     -#   .verticalRule
+-#     -#   %li
+-#     -#     %a.fa.fa-bullhorn(abbr title="feedback")
+-#     -#   .verticalRule
+-#     -#   %li
+-#     -#     %a.fa.fa-cog(abbr title="account")
+-#   = render "quickNav"
+-#   .mainWrapper
+-#     .mainNav
+-#       %section
+-#         %p Home
+-#       %section
+-#         %p My Account
+-#       %section
+-#         %p My Mentor
+-#       %section
+-#         %p Browse
+-#       %section
+-#         %p My Toolbox
+-#       %section
+-#         %p About
+-#       %section
+-#         %p Feedback
+-#     .main
+-#       %section
+-#         %span.fa.fa-users
+-#         %h2 Find a mentor/Browse mentors
+-#         %button
+-#           %span.fa.fa-chevron-right
+-#       %section
+-#         %span.fa.fa-clock-o
+-#         %h2 Your next meeting is on...
+-#         %button
+-#           %span.fa.fa-chevron-right
+-#       %section
+-#         %span.fa.fa-comments-o
+-#         %h2 View Your history
+-#         %button
+-#           %span.fa.fa-chevron-right
+-#     .mainAside
+-#       %section
+-#         %figure
+-#           =image_tag ("dexter_square.jpg")
+-#         .paraWrap
+-#           %p.paraWrapP Bacon ipsum dolor sit amet enim
+-#       %section
+-#         %figure
+-#           =image_tag ("mark_square.jpg")
+-#         .paraWrap
+-#           %p.paraWrapP Bresaola landjaeger et filet mignon
+-#       %section
+-#         %figure
+-#           =image_tag ("gabe_square.jpg")
+-#         .paraWrap
+-#           %p.paraWrapP Strip steak labore frankfurter flank
