@@ -11,8 +11,8 @@
 <% flash.each do |key, value|%>
   <h4><%= value %></h4>
 <% end %>
-<%= yield %>
-  <nav class="splashNav">
+
+  <!-- <nav class="splashNav"> -->
     <% if current_user.present? %>
       <p>Signed in as <%= current_user.email %> Not you?</p>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signOut" %>
@@ -24,6 +24,7 @@
     <% end %>
   </div>
 
+<%= yield %>
 
 
 </body>
