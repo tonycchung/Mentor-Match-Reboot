@@ -1,12 +1,16 @@
 div.splash {
   width: 100%;
 }
-
-.splash img{
+.splash {
+  figure{
+    margin: 0;
+  }
+  img{
   width: 4em;
   height: auto;
   display: block;
   margin: 0 auto;
+  }
 }
 
 article {
