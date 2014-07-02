@@ -4,6 +4,9 @@
   width: 100vw;
   header{
     padding: 5vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
   }
   .logo {
     height: 10vh;
@@ -24,49 +27,42 @@
   display: flex;
   height: 60vh;
 }
-
-.mainNav {
+/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainNav{
   margin: 1em;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
-  height: 60vh;
   padding: .7em 0;
-}
-/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainNav section {
-  // background-image: url(image-path("arrowbutton.png"));
-  // background-size: auto 80%;
-  // background-position: right;
-  // background-repeat: no-repeat;
-  background-color: $bravo_light40;
-  width: 80%;
-  padding: 0;
-  margin: 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  height: calc(100%/7);
-  border-bottom: .2em solid $alpha;
-}
-
-.mainNav section p {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  height: 100%;;
-  margin: 0;
-  font-family: "Montserrat";
-  font-size: 2vh;
-  color: white;
-  width: 100%;
-  padding: 0;
-  background-color: $alpha_light60;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  section {
+    background-color: $bravo_light40;
+    width: 80%;
+    padding: 0;
+    margin: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    height: calc(100%/7);
+    border-bottom: .2em solid $alpha;
+    p {
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      height: 100%;;
+      margin: 0;
+      font-family: "Montserrat";
+      font-size: 2vh;
+      color: white;
+      width: 100%;
+      padding: 0;
+      background-color: $alpha_light60;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .main {
@@ -75,65 +71,69 @@
   align-items: center;
   margin: 1em;
   width: 60vw;
-}
-/* line 69, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.main section {
-  box-sizing: padding-box;
-  width: 100%;
-  height: calc(10vh+.5em);
-  display: flex;
-  align-items: center;
-  align-content: space-between;
-  justify-content: center;
-  background-color: #a9a9a7;
-  padding: 0;
-}
-/* line 78, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.main section span {
-  background-color: $alpha_light60;
-  width: 20%;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-  text-align: center;
-  font-size: 4vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-.main section h2 {
-  width: 60%;
-  padding-left: 1em;
-  background-color: $alpha_light20;
-  height: 10vh;
-  font-size: 2vh;
-  display: flex;
-  align-items: center;
-}
-.main section button {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  background-color: $charlie;
-  padding: 0;
-  margin: 0;
-  height: 10vh;
-  width: 20%;
-  border: none;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  span{
-    background: transparent;
+  section {
+    box-sizing: padding-box;
+    width: 100%;
+    height: calc(10vh+.5em);
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    justify-content: center;
+    background-color: #a9a9a7;
+    padding: 0;
+    span{
+      background-color: $alpha_light60;
+      width: 20%;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 10vh;
+      text-align: center;
+      font-size: 4vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+    }
+    h2{
+      width: 60%;
+      padding-left: 1em;
+      background-color: $alpha_light20;
+      height: 10vh;
+      font-size: 2vh;
+      display: flex;
+      align-items: center;
+    }
+    button{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      background-color: $charlie;
+      padding: 0;
+      margin: 0;
+      height: 10vh;
+      width: 20%;
+      border: none;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span{
+        background: transparent;
+        }
+    }
   }
 }
+.main section h2 {
 
-/* line 121, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+}
+.main section button {
+
+
+}
+
 .mainAside {
   margin: 1em;
   width: 20vw;
