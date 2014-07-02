@@ -14,7 +14,7 @@
     -#     %a.fa.fa-bullhorn(abbr title="feedback")
     -#   %li
     -#     %a.fa.fa-cog(abbr title="account")
-
+  =link_to "sign out", destroy_user_session_path, method: :delete, class: "signout"
   .mainWrapper
     .mainNav
       %section
@@ -34,7 +34,7 @@
     .main
       %section
         %span.fa.fa-users
-        %h2 Browse
+        %h2 Browse the mentors/mentees
         %button
           %span.fa.fa-chevron-right
       %section
@@ -58,6 +58,11 @@
           =image_tag ("mark_square.jpg")
         .paraWrap
           %p.paraWrapP Bresaola landjaeger et filet mignon
+      %section
+        %figure
+          =image_tag ("gabe_square.jpg")
+        .paraWrap
+          %p.paraWrapP Strip steak labore frankfurter flank
       %section
         %figure
           =image_tag ("gabe_square.jpg")

@@ -19,21 +19,21 @@
 
 .mainWrapper {
   display: flex;
-  align-items: center;
+
   margin-top: 15vh;
 }
 
 .main, .mainAside, .mainNav {
-  display: flex;
+  // display: flex;
   height: 60vh;
 }
 /* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainNav{
-  margin: 1em;
+  margin: 0;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
-  padding: .7em 0;
+  padding: 0;
   section {
     background-color: $bravo_light40;
     width: 80%;
@@ -66,29 +66,27 @@
 }
 
 .main {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 1em;
+  // display: flex;
+  // flex-wrap: wrap;
+  margin: 0;
   width: 60vw;
   section {
-    box-sizing: padding-box;
     width: 100%;
-    height: calc(10vh+.5em);
+    height: 15vh;
     display: flex;
     align-items: center;
     align-content: space-between;
     justify-content: center;
     background-color: #a9a9a7;
     padding: 0;
+    margin-bottom: 1vh;
     span{
       background-color: $alpha_light60;
       width: 20%;
-      height: 10vh;
+      height: 15vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 10vh;
       text-align: center;
       font-size: 4vh;
       color: white;
@@ -100,7 +98,7 @@
       width: 60%;
       padding-left: 1em;
       background-color: $alpha_light20;
-      height: 10vh;
+      height: 15vh;
       font-size: 2vh;
       display: flex;
       align-items: center;
@@ -113,7 +111,7 @@
       background-color: $charlie;
       padding: 0;
       margin: 0;
-      height: 10vh;
+      height: 15vh;
       width: 20%;
       border: none;
       border-radius: 0;
@@ -126,53 +124,53 @@
     }
   }
 }
-.main section h2 {
-
-}
-.main section button {
-
-
-}
 
 .mainAside {
-  margin: 1em;
+  margin: 0;
   width: 20vw;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 }
 /* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section {
-  background-color: $alpha_light10;;
-  width: 96%;
-  display: flex;
-  justify-content: center;
+.mainAside {
   margin: 0;
-  padding: 0;
-  height: 10vh;
-  figure {
-  background: $alpha_light20;
-  width: 100%;
-  margin: 0;
-  padding: .25em;
+  width: 20vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-}
-  img {
-  border-radius: 50%;
-  width: 7vh;
-  height: 7vh;
-  border: 0.1em solid white;
-}
-  .paraWrapP {
-    font-size: 1.2vh;
-    background-color: $alpha_light10;
-    text-align: center;
+  section {
+    background-color: $alpha_light10;;
+    width: 80%;
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-left: 1em;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    margin-bottom: 1vh;
+    figure {
+    background: $alpha_light20;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    img {
+    border-radius: 50%;
+    width: auto;
+    height: 10vh;
+    border: 0.1em solid white;
+  }
+    .paraWrapP {
+      font-size: 2vh;
+      background-color: $alpha_light10;
+      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding-left: 1em;
+    }
   }
 }
