@@ -5,22 +5,23 @@
         <!-- make this image link to user home -->
       <li>
         <p>Hi, <%= current_user.first_name %><br> Not you?</p>
+       <!-- need sign out -->
       </li>
       <div class="verticalRule"></div>
       <li>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signOut" %>
+        <a class="fa fa-home"></a>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <%= link_to "Help", intro_path %>
+        <a class="fa fa-wrench"></a>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <%=link_to 'View your Favorites', history_path(current_user.id) %>
+        <a class="fa fa-bullhorn"></a>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <%= link_to "Dashboard", dashboard_path(current_user.id), class: "dashLink" %>
+        <a class="fa fa-cog"></a>
       </li>
     </ul>
   <% else %>

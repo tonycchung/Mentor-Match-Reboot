@@ -17,12 +17,12 @@
     align-items: center;
     flex-wrap: nowrap;
     list-style-type: none;
-    padding:0;
+    padding: 0 1em 0 0;
     margin: 0;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     width: 100%;
-    background-color: green;
+    background-color: $charlie;
     .verticalRule{
       display: flex;
       align-items: center;
@@ -36,7 +36,7 @@
       justify-content: center;
       width: 5vw;
       height: 5vh;
-      background-color: purple;
+      background-color: transparent;
       }
        p{
         display: flex;
@@ -44,7 +44,7 @@
         }
       a{
         display: flex;
-        font-size: 1vh;
+        font-size: 4vh;
         text-decoration: none;
         color: $delta;
       }
@@ -59,7 +59,7 @@
 
 
 a.fa{
-  font-size: 3vh;
+  font-size: 5vh;
   color: $delta;
   display: flex;
   justify-content: center;

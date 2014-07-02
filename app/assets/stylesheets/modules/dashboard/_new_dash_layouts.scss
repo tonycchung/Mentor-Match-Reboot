@@ -22,7 +22,7 @@
 
 .main, .mainAside, .mainNav {
   display: flex;
-  height: 40vh;
+  height: 60vh;
 }
 
 .mainNav {
@@ -30,7 +30,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
-  height: 40vh;
+  height: 60vh;
   padding: .7em 0;
 }
 /* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
@@ -47,8 +47,8 @@
   align-items: center;
   justify-content: flex-end;
   flex-wrap: nowrap;
-  height: 5vh;
-  border-bottom: .1em solid $alpha;
+  height: calc(100%/7);
+  border-bottom: .2em solid $alpha;
 }
 
 .mainNav section p {
@@ -56,13 +56,13 @@
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  height: 5vh;
+  height: 100%;;
   margin: 0;
   font-family: "Montserrat";
   font-size: 2vh;
   color: white;
   width: 100%;
-  padding: 0 1em;
+  padding: 0;
   background-color: $alpha_light60;
   display: flex;
   align-items: center;
