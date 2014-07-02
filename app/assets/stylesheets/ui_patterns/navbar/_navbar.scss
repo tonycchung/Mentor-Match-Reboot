@@ -1,27 +1,28 @@
 @import "navbar_states";
 
 .quickNav{
-  margin-left: 20vw;
+  margin-left: 65vw;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   background-color: $charlie;
   border: none;
-  padding: 0;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
-  justify-content: space-around;
-  width: 40vw;
-  height: 10vh;
+  width: 30vw;
+  height: 5vh;
   ul{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
     list-style-type: none;
     padding:0;
     margin: 0;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    width: 100%;
+    background-color: green;
     .verticalRule{
       display: flex;
       align-items: center;
@@ -51,7 +52,7 @@
         border-radius: 50%;
         border: solid .1em $delta;
         height: auto;
-        width: 100%;
+        width: 5vw;
     }
   }
 }

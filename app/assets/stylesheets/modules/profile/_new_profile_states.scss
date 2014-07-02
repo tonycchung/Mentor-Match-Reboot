@@ -4,10 +4,11 @@
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  -ms-transform: scaleX(1.1); /* IE 9 */
-  -webkit-transform: scaleX(1.1); /* Chrome, Safari, Opera */
-  transform: scaleX(1.1);
-  transform-origin: left;
+  // max-height:
+  // -ms-transform: scaleX(1.1); /* IE 9 */
+  // -webkit-transform: scaleX(1.1); Chrome, Safari, Opera
+  // transform: scaleX(1.1);
+  // transform-origin: left;
     }
   }
 .progBar:hover {

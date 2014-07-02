@@ -1,18 +1,24 @@
 <article class="quickNav">
   <% if current_user.present? %>
     <ul>
+      <%= image_tag ("gabe_square.jpg") %>
+        <!-- make this image link to user home -->
       <li>
-        <%= image_tag ("gabe_square.jpg") %>
-        <p>Signed in as <%= current_user.email %> Not you?</p>
+        <p>Hi, <%= current_user.first_name %><br> Not you?</p>
       </li>
+      <div class="verticalRule"></div>
       <li>
         <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "signOut" %>
       </li>
+      <div class="verticalRule"></div>
       <li>
         <%= link_to "Help", intro_path %>
       </li>
+      <div class="verticalRule"></div>
       <li>
         <%=link_to 'View your Favorites', history_path(current_user.id) %>
+      </li>
+      <div class="verticalRule"></div>
       <li>
         <%= link_to "Dashboard", dashboard_path(current_user.id), class: "dashLink" %>
       </li>
@@ -22,6 +28,7 @@
       <button>
         <%= link_to "Sign up", new_user_registration_path %>
       </button>
+      <div class="verticalRule"></div>
       <button>
         <%= link_to "Log in", new_user_session_path %>
       </button>
