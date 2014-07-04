@@ -1,0 +1,45 @@
+@media (max-width: 800px) {
+.splash{
+  h3{
+    font-size: 2vh;
+  }
+  section{
+    &.student{
+      padding-right: 20vw;
+    }
+    &.mentor{
+      padding-left: 20vw;
+    }
+    &.button-wrap
+    .findMentor{
+      margin-right: 40vw;
+    }
+  }
+}
+}
+
+@media (max-width: 640px){
+  .splash{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    article{
+      height: 20vh;
+      margin: 30vh 0 10vh 0;
+    }
+    section{
+      &.student{
+        padding: 0 10vw 0 0;
+      }
+      &.mentor{
+        padding: 0 0 0 10vw;
+      }
+      &.button-wrap{
+        flex-flow: column wrap;
+        .findMentor{
+          margin: 2vh;
+        }
+      }
+    }
+  }
+}

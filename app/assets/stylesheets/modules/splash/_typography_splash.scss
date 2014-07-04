@@ -1,4 +1,11 @@
-.splash h2 {
-  font-size: 5vmin;
-  font-family: $title-font;
+.splash {
+  h1 {
+    font-family: $header-font;
+    font-size: 5vmin;
+  }
+  h2{
+    font-family: $title-font;
+    font-size: 5vmin;
+    color: $charlie;
+  }
 }
