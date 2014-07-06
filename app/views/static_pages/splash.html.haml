@@ -1,7 +1,9 @@
 .splash
-  %figure
+  %header.mobileLanding
+    %figure
     = image_tag "cflogo.png"
-  %article
+    .triangleUp
+  %article.copy
     %section.student
       %h1 Dexter
       %h2 UX Student
@@ -10,8 +12,13 @@
       %h1 Sarah
       %h2 UX Mentor
       %h3 I love helping young talent grow
-  %section.button-wrap
-    %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
-    %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
-  %section.login-wrap
-    %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
+    .triangleUp
+  %article.roleButtons
+    %section.button-wrap
+      %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
+      .triangleUp
+    %section.button-wrap
+      %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
+  %article.haveAccount
+    %section.existingUser
+      %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}

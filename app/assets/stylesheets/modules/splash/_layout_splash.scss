@@ -2,10 +2,13 @@
   height: 100vh;
   width: 100vw;
   background-image: url(image-path("dexter-sarah3.jpg"));
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
   background-color: $alpha;
+.triangleUp {
+    display: none
+  }
   & h1, & h2, & h3 {
     width: 100%;
     display: flex;
@@ -20,48 +23,45 @@
   display: block;
   margin: 0 auto;
   }
-  article {
-    width: 100vw;
-    display: flex;
-    height: 50vh;
-    align-items: center;
-    justify-content: center;
+  article{
+    &.copy {
+      width: 100vw;
+      display: flex;
+      height: 50vh;
+      align-items: center;
+      justify-content: center;
+      }
+    &.roleButtons{
+      height: auto;
+      display: flex;
+      justify-content: center;
+    }
+    &.haveAccount{
+      display: flex;
+      justify-content: center;
+    }
   }
   section{
     display: flex;
     flex-wrap: wrap;
+    width: 50vw;
     &.student{
-      width: 50vw;
-      padding-right: 16vw;
+      padding-right: 20vw;
       & h1, h2, h3 {
         justify-content: flex-end;
+        text-align: right;
       }
     }
     &.mentor {
+      padding-left: 20vw;
+    }
+    &.button-wrap, &.existingUser{
+      display: flex;
       width: 50vw;
-      padding-left: 16vw;
-    }
-    &.button-wrap{
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
       justify-content: center;
-      .findMentor{
-        margin-right: 32vw;
-      }
     }
-    &.login-wrap {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin: 2vh auto;
+    &.existingUser{
+      margin: 5vw;
     }
-      a{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-      }
   }
 }
