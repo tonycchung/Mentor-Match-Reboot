@@ -26,29 +26,56 @@
       display: block;
       height: 0;
       width: 0;
-      border-right: 1vw solid transparent;
-      border-left: 1vw solid transparent;
-      border-bottom: 2vw solid $alpha_light90;
+      border-right: 1.5vw solid transparent;
+      border-left: 1.5vw solid transparent;
       position: absolute;
-      bottom: 0;
+      top: -2%;
       left: 49%;
     }
-    // header{
-    //   position: relative;
-    //   display: block;
-    //   width: 100%;
-    //   height: 60vh;
-    //   background-image: url(image-path("dexter-sarah3.jpg"));
-    //   background-size: cover;
-    //   background-position: center;
-    //   background-repeat: no-repeat;
-    //   figure, img{
-    //     display: none;
-    //   }
-    // }
+    header{
+      display: flex;
+      align-items: center;
+      background: $delta;
+      figure{
+        width: 20vw;
+        height: auto;
+        padding-bottom: 1vh;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background: $delta;
+        opacity: .7;
+      }
+      img{
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+      }
+      button{
+        &.mobileLogin, &.mobileSignup{
+          display: inline;
+          font-size: 2vh;
+          margin: 0 1vw;
+          padding: .1em;
+          width: 18vw;
+          height: 5vh;
+          border-radius: 0;
+          background: white;
+          opacity: .7;
+          color: $charlie;
+          border: none;
+          text-transform: uppercase;
+          font-family: $header-font;
+          border-radius: .2em;
+        }
+        &.mobileSignup{
+         margin-left: 40vw;
+        }
+      }
+    }
     article{
+      position: relative;
       &.copy{
-        position: relative;
         top: 0;
         height: auto;
         padding: 10vh 0 20vh 0;
@@ -58,27 +85,33 @@
         background-repeat: no-repeat;
         background-position: center top;
         // background: -webkit-linear-gradient(bottom, white, $alpha_light90);
-        .triangleUp{
-          border-right: 1vw solid transparent;
-          border-left: 1vw solid transparent;
-          border-bottom: 2vw solid $alpha;
-        }
-      }
-      &.roleButtons{
-        background: $alpha_light90;
       }
       h3{
         display: none;
       }
       &.roleButtons{
-        padding: 5vh 0;
+        background: $alpha_light90;
         flex-wrap: wrap;
+        p{
+          display: block;
+          font-size: 2vh;
+          color: $delta;
+          padding: 2em;
+          width: 100%;
+          background: $charlie;
+          text-align: center;
+        }
+      }
+      &.haveAccount{
+        background: $charlie;
+        padding: 5vh 0;
+        .triangleUp{
+          border-top: 2vh solid $alpha;
+        }
       }
     }
     section{
-      .triangleup{
-        display: block;
-      }
+      position: relative;
       &.student{
         padding: 0 16vw 0 0;
       }
@@ -88,22 +121,38 @@
       &.button-wrap{
         width: 100%;
         background: $alpha;
-        border-bottom: 2px solid $alpha_light20;
-        padding: 5vh 0;
-        // button{
-        //   border: 2px solid $alpha;
-        //   .btn_txt{
-        //     color: $alpha;
-        //   }
-        // }
+        padding: 8vh 0;
+        &.wht{
+          background: $delta;
+        }
         .triangleUp{
-          border-right: 1vw solid transparent;
-          border-left: 1vw solid transparent;
-          border-bottom: 2vw solid $alpha;
+          border-top: 2vh solid $alpha;
+          &.triRed{
+            border-top: 2vw solid $charlie;
+          }
+          &.triWht{
+            border-top: 2vw solid $delta;
+          }
         }
         .findMentor{
           margin: 0;
+          border-color: $alpha_light40;
+          a{
+          color: $alpha_light40;
         }
+        }
+        button{
+          background: transparent;
+
+          border: 2px solid $alpha_light80;
+          border-radius: .2em;
+          a{
+            color: $alpha_light80;
+          }
+        }
+      }
+      &.hero{
+        padding: 10vh 0;
       }
     }
   }

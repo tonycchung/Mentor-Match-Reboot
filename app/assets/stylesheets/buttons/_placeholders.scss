@@ -1,5 +1,12 @@
 %btn_txt_med {
   font-family: $header-font;
-  font-size: 1em;
+  font-size: 2vh;
   text-transform: uppercase;
+}
+
+%transition{
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
 }

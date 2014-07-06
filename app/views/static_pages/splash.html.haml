@@ -1,8 +1,9 @@
 .splash
   %header.mobileLanding
     %figure
-    = image_tag "cflogo.png"
-    .triangleUp
+      = image_tag "cflogo.png"
+    %button.mobileSignup.trans_wht_btn Signup
+    %button.mobileLogin.trans_wht_btn Login
   %article.copy
     %section.student
       %h1 Dexter
@@ -12,13 +13,23 @@
       %h1 Sarah
       %h2 UX Mentor
       %h3 I love helping young talent grow
-    .triangleUp
   %article.roleButtons
-    %section.button-wrap
+    %p <strong>MATCH:</strong> <br> A new way for students to meet mentors
+    %section.button-wrap.wht
       %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
-      .triangleUp
+      .triangleUp.triRed
     %section.button-wrap
       %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
+      .triangleUp.triWht
   %article.haveAccount
+    .triangleUp
     %section.existingUser
       %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
+  %section.hero
+    %h1 Students
+    %h2 just like you
+    %h3 learning from the pros
+  %section.hero
+    %h1 Mentors
+    %h2 working practicioners
+    %h3 at the top of their fields

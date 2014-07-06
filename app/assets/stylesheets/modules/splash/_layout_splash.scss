@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-color: $alpha;
+  button{
+    &.mobileLogin, &.mobileSignup{
+    display: none;
+    @extend %transition;
+    }
+  }
 .triangleUp {
     display: none
   }
@@ -14,6 +20,7 @@
     display: flex;
   }
   figure{
+    @extend %transition;
     padding: 1vh 0 0 0;
     margin: 0;
   }
@@ -35,6 +42,9 @@
       height: auto;
       display: flex;
       justify-content: center;
+      p{
+        display: none;
+      }
     }
     &.haveAccount{
       display: flex;
@@ -62,6 +72,28 @@
     }
     &.existingUser{
       margin: 5vw;
+    }
+    &.hero{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      h1, h2, h3{
+        color: $alpha;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      h1{
+        font-size: 8vh;
+        font-family: $title-font;
+      }
+      h2{
+        font-size: 5vh;
+        font-family: $header-font;
+      }
+      h3{
+        font-size: 3vh;
+      }
     }
   }
 }

@@ -1,0 +1,27 @@
+.splash{
+  .mobileSignup, .mobileLogin{
+    &:hover{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      opacity: 1;
+    }
+    &:active{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      color: $charlie;
+    }
+  }
+  figure {
+    &:hover{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      opacity: 1;
+    }
+  }
+}
