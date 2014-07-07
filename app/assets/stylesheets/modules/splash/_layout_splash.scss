@@ -71,7 +71,8 @@
       justify-content: center;
     }
     &.existingUser{
-      margin: 5vw;
+      margin: 5vw 0 17vh 0;
+      z-index: 1;
     }
     &.hero{
       display: flex;
@@ -79,9 +80,8 @@
       width: 100%;
       h1, h2, h3{
         color: $alpha;
-        width: 100%;
+        width: 50vw;
         display: flex;
-        justify-content: center;
       }
       h1{
         font-size: 8vh;
@@ -93,6 +93,31 @@
       }
       h3{
         font-size: 3vh;
+      }
+      figure{
+        z-index: -1;
+        width: 50vw;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        img {
+          width: 100%;
+        }
+      }
+      ul{
+        text-align: left;
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+    &.about{
+      width: 100%;
+      background: $alpha;
+      h1{
+        color: $charlie;
       }
     }
   }

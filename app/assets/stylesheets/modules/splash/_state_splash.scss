@@ -24,4 +24,28 @@
       opacity: 1;
     }
   }
+  .findMentor{
+    @extend %transition;
+    a{
+      &:hover{
+        @extend %transition;
+        color: black;
+      }
+      &:active{
+        @extend %transition;
+        color: $charlie;
+      }
+    }
+  }
+  .beMentor{
+    @extend %transition;
+    &:hover{
+      @extend %transition;
+      color: $delta;
+    }
+    &:active{
+      @extend %transition;
+      color: $charlie;
+    }
+  }
 }
