@@ -105,12 +105,30 @@
         }
       }
       ul{
-        text-align: left;
+        list-style-type: none;
         width: 50vw;
-        height: 50vh;
+        padding: 10vh 0 10vh 2vw;
+        background: $charlie;
         display: flex;
-        align-items: flex-start;
         flex-wrap: wrap;
+        justify-content: flex-end;
+        &.mentors{
+          h1, h2, h3{
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
+          }
+        }
+        h1{
+          color: $bravo;
+        }
+        h2{
+          color: $delta;
+        }
+        h3{
+          color: $alpha;
+          margin-top: 1vh;
+        }
       }
     }
     &.about{

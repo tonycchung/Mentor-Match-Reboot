@@ -103,7 +103,7 @@
         }
       }
       &.haveAccount{
-        background: $charlie;
+        background: $bravo;
         .triangleUp{
           border-bottom: 2vw solid $charlie;
         }
@@ -154,7 +154,14 @@
         margin: 0;
       }
       &.hero{
-        padding: 10vh 0;
+        padding: 0;
+        margin: 0;
+        ul{
+          margin: 0;
+          &.mentors{
+            padding-right: 2vw;
+          }
+        }
       }
     }
   }
