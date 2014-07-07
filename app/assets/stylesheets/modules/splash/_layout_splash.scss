@@ -11,11 +11,16 @@
     @extend %transition;
     }
     &.findMentor, &.beMentor{
-    }
-    a.btn_txt{
-      display: inline-block;
-      padding: .5em 0;
-      width: 12em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a.btn_txt{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .5em 0;
+        width: 100%;
+      }
     }
   }
 .triangleUp {
@@ -168,10 +173,17 @@
   }
 }
 
-p.learnMore{
+p.learnMore, p.whoFor{
   display: block;
   background: $alpha_light20;
   color: $alpha_light80;
   text-align: center;
   padding: 1em 0 .5em 0;
+}
+p.learnMore{
+
+}
+p.whoFor{
+  background: $charlie;
+  margin-top: 6vh;
 }
