@@ -29,7 +29,6 @@
     a{
       &:hover{
         @extend %transition;
-        color: black;
       }
       &:active{
         @extend %transition;

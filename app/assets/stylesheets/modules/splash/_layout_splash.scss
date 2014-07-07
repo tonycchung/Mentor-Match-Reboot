@@ -10,6 +10,13 @@
     display: none;
     @extend %transition;
     }
+    &.findMentor, &.beMentor{
+    }
+    a.btn_txt{
+      display: inline-block;
+      padding: .5em 0;
+      width: 12em;
+    }
   }
 .triangleUp {
     display: none

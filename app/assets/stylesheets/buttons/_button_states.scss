@@ -1,7 +1,7 @@
 .trans_wht_btn:hover {
   border: none;
-  background-color: $alpha_light50;
-  color: $delta;
+  background-color: $charlie;
+
    // @include animation(scale .1s ease-in-out);
   // -webkit-transition: all .1s ease-in-out;
   // -moz-transition: all .1s ease-in-out;
@@ -10,6 +10,9 @@
   // -ms-transform: scale(1.2); /* IE 9 */
   // -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
   // transform: scale(1.2);
+}
+.trans_wht_btn:hover > a{
+  color: $delta;
 }
 
 .trans_wht_btn::hover {
