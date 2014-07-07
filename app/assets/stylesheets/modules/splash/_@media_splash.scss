@@ -31,6 +31,15 @@
       position: absolute;
       top: -5%;
       left: 49%;
+      &.triWht{
+            border-bottom: 2vw solid $delta;
+          }
+      &.triBlk{
+        border-bottom: 2vw solid $alpha;
+      }
+      &.darkRed{
+        border-bottom: 2vw solid $charlie;
+      }
     }
     header{
       display: flex;
@@ -103,10 +112,7 @@
         }
       }
       &.haveAccount{
-        background: $bravo;
-        .triangleUp{
-          border-bottom: 2vw solid $charlie;
-        }
+        background: $charlie;
       }
     }
     section{
@@ -124,14 +130,6 @@
         &.wht{
           background: $delta;
         }
-        .triangleUp{
-          &.triWht{
-            border-bottom: 2vw solid $delta;
-          }
-          &.triBlk{
-            border-bottom: 2vw solid $alpha;
-          }
-        }
         .findMentor{
           margin: 0;
           border-color: $alpha_light40;
@@ -141,7 +139,6 @@
         }
         button{
           background: transparent;
-
           border: 2px solid $alpha_light80;
           border-radius: .2em;
           a{
@@ -161,6 +158,16 @@
           &.mentors{
             padding-right: 2vw;
           }
+          h1{
+            font-size: 5vh;
+          }
+          h2{
+            font-size: 4vh;
+          }
+          h3{
+            font-size: 2vh;
+          }
+
         }
       }
     }

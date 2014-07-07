@@ -22,7 +22,7 @@
       %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
       .triangleUp.triBlk
   %article.haveAccount
-    .triangleUp
+    .triangleUp.darkRed
     %section.existingUser
       %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
   %section.hero
@@ -41,5 +41,6 @@
         %h3 at the top of their fields
     %figure
       = image_tag "overshoulder-sq.jpg"
+  %p.learnMore Learn a little more...
   %section.about
     %button.wht_red_btn About Match

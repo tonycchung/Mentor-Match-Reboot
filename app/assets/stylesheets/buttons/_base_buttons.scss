@@ -2,9 +2,9 @@ button {
   width: 12em;
   height: 3em;
   border-radius: 5px;
+  padding: 0;
+  a.btn_txt {
+    display: inline-block;
+    height: 3em;
+  }
 }
-
-section button{
-  padding: .5em;
-}
-

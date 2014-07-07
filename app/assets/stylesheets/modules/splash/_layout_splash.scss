@@ -86,11 +86,6 @@
 //================================================
     &.hero{
       width: 100%;
-      h1, h2, h3{
-        color: $alpha;
-        width: 50vw;
-        display: flex;
-      }
       h1{
         font-size: 8vh;
         font-family: $title-font;
@@ -116,7 +111,7 @@
       .ulWrapper{
         width: 50vw;
         z-index: -1;
-        background: $charlie;
+        background: $alpha;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -130,18 +125,19 @@
           margin: 0 0 0 2em;
           list-style-type: none;
           &.mentors{
-            margin: 0 10% 0 10%;
+            margin: 0 10% 0 0;
             text-align: right;
+            display: flex;
             justify-content: flex-end;
             h1, h2, h3{
-              width: 100%;
+              width: auto;
               display: flex;
               align-items: flex-end;
               text-align: right;
             }
           }
           h1{
-            color: $bravo;
+            color: $charlie;
           }
           h2{
             color: $delta;
@@ -170,4 +166,12 @@
       }
     }
   }
+}
+
+p.learnMore{
+  display: block;
+  background: $alpha_light20;
+  color: $alpha_light80;
+  text-align: center;
+  padding: 1em 0 .5em 0;
 }
