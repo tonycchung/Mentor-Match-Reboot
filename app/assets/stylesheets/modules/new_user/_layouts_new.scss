@@ -1,6 +1,6 @@
 
 .new {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-image: url(image-path("3px-tile.png"));
   background-repeat: repeat;
@@ -8,11 +8,14 @@
 }
 
 .new {
+  header{
+    padding: 5vh 0;
+    background: transparent;
+  }
   h1, h2 {
-    margin-top: 10vh;
     display: block;
     text-align: center;
-    padding-top: 2em;
+    padding: 1em;
     background: $charlie;
     text-transform: uppercase;
   }
@@ -28,7 +31,7 @@ form#new_user{
     justify-content: center;
     flex-wrap: wrap;
     padding: 2em;
-    width: 100%;
+    width: 80%;
     background: $bravo;
   }
   section{
@@ -39,8 +42,7 @@ form#new_user{
     &.userEmail, &.userPassword, &.userConfirm, &.rememberMe {
       align-items: center;
       margin: 0;
-      padding: 0;
-      height: 10vh;
+      padding: 5vh 0;
       background: $alpha;
     }
     &.rememberMe{
