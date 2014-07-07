@@ -26,10 +26,10 @@
       display: block;
       height: 0;
       width: 0;
-      border-right: 1.5vw solid transparent;
-      border-left: 1.5vw solid transparent;
+      border-right: 2vw solid transparent;
+      border-left: 2vw solid transparent;
       position: absolute;
-      top: -2%;
+      top: -5%;
       left: 49%;
     }
     header{
@@ -78,7 +78,7 @@
       &.copy{
         top: 0;
         height: auto;
-        padding: 10vh 0 20vh 0;
+        padding: 10vh 0 25vh 0;
         margin:  0;
         background-image: url(image-path("dexter-sarah3.jpg"));
         background-size: cover;
@@ -96,7 +96,7 @@
           display: block;
           font-size: 2vh;
           color: $delta;
-          padding: 2em;
+          padding: 3em;
           width: 100%;
           background: $charlie;
           text-align: center;
@@ -104,9 +104,8 @@
       }
       &.haveAccount{
         background: $charlie;
-        padding: 5vh 0;
         .triangleUp{
-          border-top: 2vh solid $alpha;
+          border-bottom: 2vw solid $charlie;
         }
       }
     }
@@ -126,12 +125,11 @@
           background: $delta;
         }
         .triangleUp{
-          border-top: 2vh solid $alpha;
-          &.triRed{
-            border-top: 2vw solid $charlie;
-          }
           &.triWht{
-            border-top: 2vw solid $delta;
+            border-bottom: 2vw solid $delta;
+          }
+          &.triBlk{
+            border-bottom: 2vw solid $alpha;
           }
         }
         .findMentor{
@@ -139,7 +137,7 @@
           border-color: $alpha_light40;
           a{
           color: $alpha_light40;
-        }
+          }
         }
         button{
           background: transparent;
@@ -150,6 +148,10 @@
             color: $alpha_light80;
           }
         }
+      }
+      &.existingUser{
+        padding: 8vh 0;
+        margin: 0;
       }
       &.hero{
         padding: 10vh 0;
