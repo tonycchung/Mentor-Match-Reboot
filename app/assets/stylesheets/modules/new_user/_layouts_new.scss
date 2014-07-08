@@ -1,9 +1,10 @@
 
 .new {
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  background-image: url(image-path("3px-tile.png"));
-  background-repeat: repeat;
+  padding-bottom: 10vh;
+  // background-image: url(image-path("3px-tile.png"));
+  // background-repeat: repeat;
   background-color: $alpha;
 }
 
@@ -39,7 +40,7 @@ form#new_user{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    &.userEmail, &.userPassword, &.userConfirm, &.rememberMe {
+    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe {
       align-items: center;
       margin: 0;
       padding: 3vh 0;
@@ -82,7 +83,7 @@ form#new_user{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 2vh;
+    margin: 0 auto;
     input{
       width: 100%;
       height: 100%;
