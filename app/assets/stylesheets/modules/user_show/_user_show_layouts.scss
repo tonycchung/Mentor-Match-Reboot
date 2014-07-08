@@ -1,0 +1,30 @@
+.show{
+  height: 100vh;
+  color: $alpha;
+  padding-top: 5vh;
+  background: $charlie;
+  p{
+    color: $alpha;
+  }
+  figure{
+    background: $bravo;
+    height: 10vh;
+    width: 10vh;
+    border: 2px solid $alpha;
+    border-radius: 50%;
+    margin: 5vh auto;
+  }
+  .userProfile{
+    padding: 5vh;
+    background: $delta;
+    width: 60vw;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    p{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

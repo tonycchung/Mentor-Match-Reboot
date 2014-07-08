@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
+  before_action :set_user, only: [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
 
   def star
     @user.liked_by current_user
@@ -39,6 +39,10 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+  end
+
+  # GET /users/:id/profile_starter
+  def profile_starter
   end
 
   # GET /users/1/edit

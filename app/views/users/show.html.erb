@@ -1,111 +1,121 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div class="show">
+  <figure class="profilePic">
+    <img src="" alt="">
+  </figure>
+  <article class="userProfile">
+    <p>
+      <strong>Pumpkin name:</strong>
+      <%= @user.first_name %>
+    </p>
 
-<p>
-  <strong>Pumpkin name:</strong>
-  <%= @user.first_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @user.last_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+    <p>
+      <strong>Background:</strong>
+      <%= @user.background %>
+    </p>
 
-<p>
-  <strong>Background:</strong>
-  <%= @user.background %>
-</p>
+    <p>
+      <strong>Accomplishments:</strong>
+      <%= @user.accomplishments %>
+    </p>
 
-<p>
-  <strong>Accomplishments:</strong>
-  <%= @user.accomplishments %>
-</p>
+<!-- IF ROLE == MENTEE -->
+    <p>
+      <strong>Professional summary:</strong>
+      <%= @user.professional_summary %>
+    </p>
 
-<p>
-  <strong>Professional summary:</strong>
-  <%= @user.professional_summary %>
-</p>
+    <p>
+      <strong>Personal statement:</strong>
+      <%= @user.personal_statement %>
+    </p>
 
-<p>
-  <strong>Personal statement:</strong>
-  <%= @user.personal_statement %>
-</p>
+<!-- IF ROLE == MENTOR -->
+    <p>
+      <strong>Role:</strong>
+      <%= @user.role %>
+    </p>
 
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
+    <p>
+      <strong>Availability:</strong>
+      <%= @user.available %>
+    </p>
 
-<p>
-  <strong>Availability:</strong>
-  <%= @user.available %>
-</p>
+<!-- I'm unclear on this:
+    <p>
+      <strong>Admin:</strong>
+      <%= @user.admin %>
+    </p>
+-->
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+    <p>
+      <strong>Mentorships</strong>
+      <ul>
+      <% for friendship in @user.friendships %>
+        <li>
+          <%= friendship.friend.first_name %>
+        </li>
+      <% end %>
+      </ul>
+    </p>
 
-<p>
-  <strong>Mentorships</strong>
-  <ul>
-  <% for friendship in @user.friendships %>
-    <li>
-      <%= friendship.friend.first_name %>
-    </li>
-  <% end %>
-  </ul>
-</p>
-
-<p>
-  <strong>Menteeships</strong>
-  <ul>
-  <% for user in @user.inverse_friends %>
-    <li>
-      <%= user.first_name %>
-      <%= user.last_name %>
-    </li>
-  <% end %>
-  </ul>
-</p>
-
-
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @user.position %>
-</p>
-
-<p>
-  <strong>Graduating Class:</strong>
-  <%= @user.graduating_class %>
-</p>
-
-<p>
-  <strong>Stack:</strong>
-  <%= @user.stack %>
-</p>
-
-<% if @pending %>
-  <% @pending.each do |pending| %>
-    <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
-  <% end %>
-<% end %>
-
-<% if @approved_mentorship %>
-  <% @approved_mentorship.each do |approved_mentorship| %>
-    <%= link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch %>
-  <% end %>
-<% end %>
-
-<% if current_user.mentee? %>
-  <%= link_to 'Request Mentorship', friendships_path(:friend_id => @user.id), method: :post %>
-<% end %>
-<%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
-<%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
+    <p>
+      <strong>Menteeships</strong>
+      <ul>
+      <% for user in @user.inverse_friends %>
+        <li>
+          <%= user.first_name %>
+          <%= user.last_name %>
+        </li>
+      <% end %>
+      </ul>
+    </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <strong>Company:</strong>
+      <%= @user.company %>
+    </p>
+
+    <p>
+      <strong>Position:</strong>
+      <%= @user.position %>
+    </p>
+
+    <p>
+      <strong>Graduating Class:</strong>
+      <%= @user.graduating_class %>
+    </p>
+
+    <p>
+      <strong>Stack:</strong>
+      <%= @user.stack %>
+    </p>
+</article>
+
+    <% if @pending %>
+      <% @pending.each do |pending| %>
+        <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
+      <% end %>
+    <% end %>
+
+    <% if @approved_mentorship %>
+      <% @approved_mentorship.each do |approved_mentorship| %>
+        <%= link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch %>
+      <% end %>
+    <% end %>
+
+    <% if current_user.mentee? %>
+      <%= link_to 'Request Mentorship', friendships_path(:friend_id => @user.id), method: :post %>
+    <% end %>
+    <%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
+    <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
+
+
+    <%= link_to 'Edit', edit_user_path(@user) %> |
+    <%= link_to 'Back', users_path %>
+</div>
