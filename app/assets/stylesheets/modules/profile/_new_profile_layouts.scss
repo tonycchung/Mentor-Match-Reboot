@@ -26,16 +26,14 @@
           font-size: 5vh;
           width: 100%;
           text-align: center;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+          display: block;
+          text-align: center;
         }
         .fieldWrapper{
           display: flex;
           width: 100%;
           flex-wrap: wrap;
           justify-content: center;
-          height: 20vh;
         }
         .field {
           width: 100%;
@@ -45,6 +43,7 @@
           height: 10vh;
           margin-bottom: 1em;
           label{
+            display: block;
             min-width: 210px;
             background-color: $alpha_light40;
             font-family: "Forza";
@@ -162,6 +161,7 @@ section.hidden {
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 5vh;
 }
 span.next{
   display: flex;

@@ -22,6 +22,10 @@
   body{height: 1100px;}
   .splash{
     background: $alpha;
+    p.whoFor{
+      margin: 0;
+      background: $alpha_light40;
+    }
     .triangleUp{
       display: block;
       height: 0;
