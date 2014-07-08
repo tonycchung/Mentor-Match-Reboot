@@ -3,6 +3,9 @@ input {
   margin: 0;
   padding: 0;
   background-color: $delta_light20;
+  &:focus{
+    outline-color: $charlie;
+  }
 }
 
 label {

@@ -24,27 +24,39 @@
       opacity: 1;
     }
   }
-  .findMentor{
-    @extend %transition;
-    a{
-      &:hover{
+  button{
+    &.findMentor:hover{
+      @extend %transition;
+      border-color: transparent;
+      & a:hover{
         @extend %transition;
+        color: black;
       }
       &:active{
         @extend %transition;
-        color: $charlie;
+        background: $charlie;
       }
     }
-  }
-  .beMentor{
-    @extend %transition;
-    &:hover{
+    &.beMentor:hover{
       @extend %transition;
-      color: $delta;
+      border-color: transparent;
+      & a:hover{
+        @extend %transition;
+        color: $delta;
+      }
+      &:active{
+        @extend %transition;
+        background: $charlie;
+      }
     }
-    &:active{
+    &.haveAccount:hover{
       @extend %transition;
-      color: $charlie;
+      background: transparent;
+      border: 2px solid $delta;
+      & a:hover{
+        @extend %transition;
+        color: $delta;
+      }
     }
   }
 }

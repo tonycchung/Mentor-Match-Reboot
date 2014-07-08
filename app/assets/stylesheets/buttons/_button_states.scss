@@ -11,9 +11,6 @@
   // -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
   // transform: scale(1.2);
 }
-.trans_wht_btn:hover > a{
-  color: $delta;
-}
 
 .trans_wht_btn::hover {
   border: none;
@@ -27,14 +24,10 @@
 
 
 .wht_red_btn:hover {
-  // @include animation(scale .1s ease-in-out);
   background-color: $delta;
   opacity: 1;
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
-  transform: scale(1.2);
 }

@@ -14,7 +14,7 @@
       %h2 UX Mentor
       %h3 I love helping young talent grow
   %article.roleButtons
-    %p <strong>MATCH:</strong> <br> A new way for students to meet mentors
+    %p <strong>MATCH:</strong> A new way for students to meet mentors
     %section.button-wrap.wht
       %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
       .triangleUp.triWht
@@ -24,7 +24,7 @@
   %article.haveAccount
     .triangleUp.darkRed
     %section.existingUser
-      %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
+      %button.haveAccount.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
   %p.whoFor Who is Match for?
   %section.hero
     %figure

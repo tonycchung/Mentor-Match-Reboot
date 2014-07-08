@@ -1,6 +1,7 @@
 
 .new {
   height: auto;
+  min-height: 100vh;
   width: 100vw;
   padding-bottom: 10vh;
   // background-image: url(image-path("3px-tile.png"));
@@ -46,6 +47,12 @@ form#new_user{
       padding: 3vh 0;
       background: $alpha;
     }
+    &.userEmail{
+      padding-top: 5vh;
+    }
+    &.submitBtn{
+      padding-bottom: 5vh;
+    }
     &.rememberMe{
       label, input{
         width: auto;
@@ -71,6 +78,7 @@ form#new_user{
     width: 15em;
     height: 2em;
     display: flex;
+    padding-left: 1em;
     &.trans_wht_btn{
       width: 16vw;
       height: 5vw;
@@ -86,12 +94,11 @@ form#new_user{
     margin: 0 auto;
     input{
       width: 100%;
-      height: 100%;
       height: 3em;
       display: flex;
       align-items: center;
-      align-self: center;
       text-align: center;
+      padding: 0;
       margin: 0 auto;
       background: transparent;
       &.btn_txt{

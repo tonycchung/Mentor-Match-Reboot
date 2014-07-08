@@ -12,14 +12,12 @@
     }
     &.button-wrap
     .findMentor{
-      margin-right: 40vw;
     }
   }
 }
 }
 
 @media (max-width: 640px){
-  body{height: 1100px;}
   .splash{
     background: $alpha;
     p.whoFor{
@@ -90,8 +88,8 @@
       position: relative;
       &.copy{
         top: 0;
-        height: auto;
-        padding: 10vh 0 25vh 0;
+        padding: 15vh 0;
+        height: 65vh;
         margin:  0;
         background-image: url(image-path("dexter-sarah3.jpg"));
         background-size: cover;
@@ -107,12 +105,17 @@
         flex-wrap: wrap;
         p{
           display: block;
-          font-size: 2vh;
+          font-size: 3vh;
           color: $delta;
-          padding: 3em;
+          padding: 10vh 0;
           width: 100%;
           background: $charlie;
           text-align: center;
+          strong{
+            margin-right: .5em;
+            border-bottom: 2px solid $delta;
+            padding: .25em;
+          }
         }
       }
       &.haveAccount{
@@ -145,14 +148,24 @@
           background: transparent;
           border: 2px solid $alpha_light80;
           border-radius: .2em;
+          height: 10vh;
+          width: 40vw;
           a{
             color: $alpha_light80;
+            font-size: 3vh;
           }
         }
       }
       &.existingUser{
         padding: 8vh 0;
         margin: 0;
+        button{
+          height: 10vh;
+          width: 40vw;
+          a{
+            font-size: 3vh;
+          }
+        }
       }
       &.hero{
         padding: 0;
@@ -172,6 +185,39 @@
             font-size: 2vh;
           }
 
+        }
+      }
+      &.about{
+        button{
+          height: 10vh;
+          width: 40vw;
+          a{
+            font-size: 3vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 30em){
+  .splash{
+    article{
+      &.copy{
+        padding: 15vh 0;
+      }
+    }
+    .ulWrapper, ul.mentors{
+      h3{
+        display: none;
+      }
+    }
+    section.button-wrap, section.existingUser{
+      button{
+        height: 10vh;
+        width: 50vw;
+        a{
+          font-size: 2vh;
         }
       }
     }
