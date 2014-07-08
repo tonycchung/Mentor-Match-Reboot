@@ -149,7 +149,7 @@
             color: $delta;
           }
           h3{
-            color: $alpha_light90;
+            color: $delta;
             margin-top: 1vh;
           }
         }
@@ -177,12 +177,9 @@
 p.learnMore, p.whoFor{
   display: block;
   background: $alpha_light20;
-  color: $alpha_light80;
+  color: $delta;
   text-align: center;
   padding: 1em 0;
-}
-p.learnMore{
-
 }
 p.whoFor{
   background: $charlie;

@@ -1,8 +1,40 @@
-.show{
-  height: 100vh;
+.profileBuild{
   color: $alpha;
   padding-top: 5vh;
-  background: $charlie;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  button.skip{
+  border: 2px solid $delta;
+  background: transparent;
+  color: $delta;
+  text-transform: uppercase;
+  font-family: Montserrat;
+  &:hover{
+    background: $charlie;
+    border: none;
+  }
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  }
+  h1{
+    position: absolute;
+    top: 20px;
+    left: 43%;
+    font-size: 5vh;
+    margin-bottom: 5vh;
+  }
+  section{
+    height: 100vh;
+    width: 100vw;
+  }
+  h2{
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 3vh;
+  }
   p{
     color: $alpha;
   }
@@ -13,6 +45,63 @@
     border: 2px solid $alpha;
     border-radius: 50%;
     margin: 5vh auto;
+  }
+  .fieldWrap {
+    padding: 5vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5vh;
+    height: auto;
+    input, label{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    margin: 2vh 0;
+    border-top: 2px solid $bravo;
+    border-bottom: 2px solid $bravo;
+    }
+    label{
+      width: 35%;
+      color: $charlie;
+      justify-content: center;
+      text-align: center;
+    }
+    textarea{
+      width: 100%;
+      height: 20vh;
+      border: 4px solid $charlie;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    textarea::-webkit-input-placeholder{
+      text-align: center;
+      font-family: $body-font;
+      padding-top: 1em;
+    }
+    input{
+      width: 35%;
+      padding-left: 1em;
+      placeholder{
+        font-family: $body-font;
+      }
+    }
+  }
+  .nameField{
+    label{
+      padding-right: 2em;
+      justify-content: flex-end;
+    }
+  }
+  span{
+    display: inline-block;
+    text-align: center;
+  }
+  ul{
+    margin-top: 20vh;
+    display: flex;
+    justify-content: center;
   }
   .userProfile{
     padding: 5vh;
