@@ -24,9 +24,6 @@
           min-width: 925px;
           margin-top: 10vh;
           font-size: 5vh;
-          width: 100%;
-          text-align: center;
-          display: block;
           text-align: center;
         }
         .fieldWrapper{
@@ -51,20 +48,14 @@
             margin: 0;
             font-size: 4vh;
             padding: .5em;
-            width: 20vw;
             text-align:center;
-            border-bottom:.15em solid $alpha_light20;
-            border-top-left-radius: .25em;
-            border-bottom-left-radius: .25em;
            }
            .stacked label{
             margin-top: 2em;
             font-size: 3vh;
             border-radius: 0;
-            width: 100%;
             border-bottom: .2em solid $alpha_light40;
             display: block;
-            width: 80%;
            }
            input{
             background: $delta;
@@ -148,15 +139,15 @@ section.hidden {
   justify-content: center;
   width: 100%;
   margin-top: 5vh;
-}
-
-.stacked textarea{
+  textarea{
     height: 30vh;
     width: 80%;
     border: .5em solid $charlie_light20;
     padding: 1em;
     text-align: center;
   }
+}
+
 .hundo{
   width: 100%;
   display: flex;
@@ -182,8 +173,6 @@ button.submit{
     color: $delta;
   }
 }
-.profileBuild h2{
-  margin-bottom: 5vh;
-}
+
 
 

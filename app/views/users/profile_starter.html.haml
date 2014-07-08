@@ -1,0 +1,88 @@
+.profileBuild
+  %button Save for Later
+  = form_for(@user) do |f|
+      %section#s1
+        %h2 We'll use a few quick questions to build your profile.<br>First of all, what's your name?
+          .fieldWrap
+            = f.label :first_name
+            = f.input :first_name{placeholder: => "Robert", type: => "text"}
+            = f.label :last_name
+            = f.input :last_name{placeholder: => "Baratheon", type: => "text"}
+            %span.next.fa.fa-angle-double-right
+          %nav.progBar
+            %ul
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+      %section#s2
+        %h2 Tell us a little about yourself.<br> Anything you want.
+          .fieldWrap
+            = f.label :your_background
+            = f.text_area :your_background{placeholder: => "Well, on Saturday's I like to juggle chainsaws dressed like a sailor..."}
+            %span.next.fa.fa-angle-double-right
+           %nav.progBar
+            %ul
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+      %section#s3
+        %h2 Say a bit about what you've done.<br> What are you proud of?
+          .fieldWrap
+            = f.label :accomplishments
+            = f.text_area :accomplishments{placeholder: => "I arm wrestled Deniro once."}
+            %span.next.fa.fa-angle-double-right
+          %nav.progBar
+            %ul
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+    - if current_user.role == "mentee"
+      %section#s4
+        %h2 Briefly describe your professional history. <br> Where have you been?
+          .fieldWrap
+            = f.label :professional_summary
+            = f.text_area :professional_summary{placeholder: => "Spent 7 years fighting the robot uprising"}
+            %span.next.fa.fa-angle-double-right
+          %nav.progBar
+            %ul
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+              %li.progDot
+      %section#s5
+        %h2 Finally, throw in something random. <br> Go nuts. But not too nuts.
+          .fieldwrap
+            = f.label :factoid
+            = f.text_area :factoid{placeholder: => "I can raise each of my eyebrows independently"}
+            %button.submit{form: => "user_profile"}
+              =f.submit 'Submit', class: "submit"
+    - if current_user.role == "mentor"
+      %section#s6
+        %h2 Where do you work? <br> Just the company name is fine.
+          = f.label :company
+          = f.input :company, type: "text", placeholder: "ACME Corp."
+      %section#s7
+        %h2 What is your role right now? <br> briefly describe your position.
+          = f.label :current_position
+          = f.text_area :current_position, placeholder: "Senior Lunch Quality Assurance Engineer leading a team of 7 expert sandwich developers"
+          %button.submit{form: => "user_profile"}
+            =f.submit 'Submit', class: "submit"
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+
+
+
+
+
