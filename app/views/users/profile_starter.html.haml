@@ -64,10 +64,10 @@
       %section#s5
         %h2
           Finally, throw in something random. <br> Go nuts. But not too nuts.
-        .fieldwrap
-          = f.label :factoid
-          = f.text_area :factoid, placeholder: "I can raise each of my eyebrows independently"
-          %button.submitn
+        .fieldWrap
+          = f.label :personal_statement
+          = f.text_area :personal_statement, placeholder: "I can raise each of my eyebrows independently"
+          %button.submit
             =f.submit 'Submit', class: "submit"
     - if current_user.role == "mentor"
       %section#s6
