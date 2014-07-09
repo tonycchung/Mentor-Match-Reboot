@@ -11,3 +11,11 @@ input {
 label {
  @extend %btn_txt_med
 }
+
+textarea{
+  resize: none;
+  &:focus{
+    outline-width: 20px;
+    outline-color: $bravo;
+  }
+}
