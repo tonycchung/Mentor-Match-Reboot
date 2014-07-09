@@ -1,0 +1,19 @@
+<section>
+  <label for="mentorships">Mentorships</label>
+    <ul>
+      <% for friendship in @user.friendships %>
+        <li>
+          <%= friendship.friend.first_name %>
+        </li>
+      </ul>
+</section>
+<section>
+  <label for="menteeships">Menteeships</label>
+    <ul>
+      <% for user in @user.inverse_friends %>
+        <li>
+          <%= user.first_name %>
+          <%= user.last_name %>
+        </li>
+    </ul>
+</section>

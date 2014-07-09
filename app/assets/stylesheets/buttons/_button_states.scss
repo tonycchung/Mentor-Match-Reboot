@@ -31,3 +31,11 @@
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
 }
+
+button{
+  &:focus{
+    outline-color: $charlie;
+    outline-width: 10px;
+    outline-offset: -2px;
+  }
+}

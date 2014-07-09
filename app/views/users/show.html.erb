@@ -48,47 +48,43 @@
       <%= @user.admin %>
     </p>
 -->
-
-    <p>
-      Mentorships
-      <ul>
-      <% for friendship in @user.friendships %>
-        <li>
-          <%= friendship.friend.first_name %>
-        </li>
-      <% end %>
-      </ul>
-    </p>
-
-    <p>
-      Menteeships
-      <ul>
-      <% for user in @user.inverse_friends %>
-        <li>
-          <%= user.first_name %>
-          <%= user.last_name %>
-        </li>
-      <% end %>
-      </ul>
-    <p>
-      Company:
-      <%= @user.company %>
-    </p>
-
-    <p>
-      Position:
-      <%= @user.position %>
-    </p>
-
-    <p>
-      Graduating Class:
-      <%= @user.graduating_class %>
-    </p>
-
-    <p>
-      Stack:
-      <%= @user.stack %>
-    </p>
+    <section>
+      <label for="mentorships">Mentorships</label>
+        <ul>
+          <% for friendship in @user.friendships %>
+            <li>
+              <%= friendship.friend.first_name %>
+            </li>
+          <% end %>
+        </ul>
+    </section>
+    <section>
+      <label for="menteeships">Menteeships</label>
+        <ul>
+          <% for user in @user.inverse_friends %>
+            <li>
+              <%= user.first_name %>
+              <%= user.last_name %>
+            </li>
+          <% end %>
+        </ul>
+    </section>
+    <section>
+      <label for= "company"> Company</label>
+      <p id="company"><%= @user.company %></p>
+    </section>
+    <section>
+      <label for= "position">Position</label>
+      <p id="position"><%= @user.position %></p>
+    </section>
+    <section>
+      <label for="gradClass">Graduating Class</label>
+      <p id="gradClass"><%= @user.graduating_class %></p>
+    </section>
+    <section>
+      <label for="stack">Stack</label>
+      <p><%= @user.stack %></p>
+    </section>
 </article>
     <% if @pending %>
       <% @pending.each do |pending| %>
