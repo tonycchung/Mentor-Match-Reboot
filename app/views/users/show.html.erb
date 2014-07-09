@@ -1,4 +1,5 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<!-- This is the view where a user would review and edit their profile information -->
 <div class="show">
   <header>
     <figure class="profilePic">
@@ -7,57 +8,49 @@
     <%= link_to 'Edit', edit_user_path(@user), id: "edit" %>
   </header>
   <article class="userProfile">
-    <p>
-      <strong>Pumpkin name:</strong>
-      <%= @user.first_name %>
-    </p>
-
-    <p>
-      <strong>Last name:</strong>
-      <%= @user.last_name %>
-    </p>
-
-    <p>
-      <strong>Background:</strong>
-      <%= @user.background %>
-    </p>
-
-    <p>
-      <strong>Accomplishments:</strong>
-      <%= @user.accomplishments %>
-    </p>
-
+    <section>
+      <label for="firstName">Name:</label>
+      <p id="firstName"><%= @user.first_name %></p>
+    </section>
+    <section>
+      <label for="lastName">Last name:</label>
+      <p id="lastName"><%= @user.last_name %></p>
+    </section>
+    <section>
+      <label for="background">Background:</label>
+      <p id="background"><%= @user.background %></p>
+    </section>
+    <section>
+      <label for="accomplishments">Accomplishments:</label>
+      <p id="accomplishments"><%= @user.accomplishments %></p>
+    </section>
 <!-- IF ROLE == MENTEE -->
-    <p>
-      <strong>Professional summary:</strong>
-      <%= @user.professional_summary %>
-    </p>
-
-    <p>
-      <strong>Personal statement:</strong>
-      <%= @user.personal_statement %>
-    </p>
-
+    <section>
+      <label for="profSum">Professional summary:</label>
+      <p id="profSum"><%= @user.professional_summary %></p>
+    </section>
+    <section>
+      <label for="personal">Personal statement:</label>
+      <p><%= @user.personal_statement %></p>
+    </section>
 <!-- IF ROLE == MENTOR -->
-    <p>
-      <strong>Role:</strong>
-      <%= @user.role %>
-    </p>
-
-    <p>
-      <strong>Availability:</strong>
-      <%= @user.available %>
-    </p>
-
+    <section>
+      <label for="role">Role:</label>
+      <p id="role"><%= @user.role %></p>
+    </section>
+    <section>
+      <label for="availability">Availability:</label>
+      <p id="availability"><%= @user.available %></p>
+    </section>
 <!-- I'm unclear on this:
     <p>
-      <strong>Admin:</strong>
+      Admin:
       <%= @user.admin %>
     </p>
 -->
 
     <p>
-      <strong>Mentorships</strong>
+      Mentorships
       <ul>
       <% for friendship in @user.friendships %>
         <li>
@@ -68,7 +61,7 @@
     </p>
 
     <p>
-      <strong>Menteeships</strong>
+      Menteeships
       <ul>
       <% for user in @user.inverse_friends %>
         <li>
@@ -77,25 +70,23 @@
         </li>
       <% end %>
       </ul>
-    </p>
-
-
-      <strong>Company:</strong>
+    <p>
+      Company:
       <%= @user.company %>
     </p>
 
     <p>
-      <strong>Position:</strong>
+      Position:
       <%= @user.position %>
     </p>
 
     <p>
-      <strong>Graduating Class:</strong>
+      Graduating Class:
       <%= @user.graduating_class %>
     </p>
 
     <p>
-      <strong>Stack:</strong>
+      Stack:
       <%= @user.stack %>
     </p>
 </article>

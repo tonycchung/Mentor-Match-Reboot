@@ -5,31 +5,48 @@
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
+  background: $alpha;
   button{
     &.skip{
-    border: 2px solid $delta;
-    background: transparent;
-    color: $delta;
-    text-transform: uppercase;
-    font-family: Montserrat;
-    &:hover{
-      background: $charlie;
-      border: none;
-    }
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    }
+      height: auto;
+      padding: .5em 1em;
+      font-size: 1.5vh;
+      border: 1px solid $delta;
+      background: transparent;
+      color: $delta;
+      text-transform: uppercase;
+      font-family: Montserrat;
+      &:hover{
+        background: $charlie;
+        border-color: transparent;
+      }
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      }
     &.submit{
-      margin: 5vh;
+      margin: 15vh 0 5vh 0;
       padding: 0;
+      background: transparent;
+      border: 1px solid $charlie;
+      color: $charlie;
+      font-family: $header-font;
+      &:hover{
+        border-color: $delta;
+        & input:hover {
+          color: $delta;
+        }
+      }
       input.submit{
         display: inline-block;
         width: 100%;
+        background: transparent;
         border: none;
         padding: 0;
         margin: 0;
         height: 3em;
+        color: $charlie;
+        text-transform: uppercase;
         }
     }
   }
@@ -112,11 +129,29 @@
   span{
     display: inline-block;
     text-align: center;
+    width: 100%;
+    color: $charlie;
+    font-size: 8vh;
   }
   ul{
     margin-top: 20vh;
     display: flex;
     justify-content: center;
+  }
+  nav{
+    .progDot{
+      background: $alpha_light70;
+      border-radius: 50%;
+      height: 5vh;
+      width: 5vh;
+      margin: 3vw;
+      &:hover{
+        background: $bravo;
+      }
+      &:active{
+        background: $delta;
+      }
+    }
   }
   .userProfile{
     padding: 5vh;

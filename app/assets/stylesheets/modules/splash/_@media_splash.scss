@@ -70,14 +70,12 @@
           padding: .1em;
           width: 18vw;
           height: 5vh;
-          border-radius: 0;
           background: white;
           opacity: .7;
           color: $charlie;
           border: none;
           text-transform: uppercase;
           font-family: $header-font;
-          border-radius: .2em;
         }
         &.mobileSignup{
          margin-left: 40vw;
@@ -145,7 +143,7 @@
         }
         button{
           background: transparent;
-          border: 2px solid $alpha_light80;
+          border: 1px solid $alpha_light80;
           border-radius: .2em;
           height: 10vh;
           width: 40vw;

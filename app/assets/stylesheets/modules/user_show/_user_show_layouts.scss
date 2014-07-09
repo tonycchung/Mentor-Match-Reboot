@@ -1,5 +1,5 @@
 .show{
-  padding-top: 10vh;
+  padding-top: 5vh;
   header{
     display: flex;
     justify-content: center;
@@ -24,8 +24,22 @@
     padding: 2em;
     border: 2px solid $alpha;
     background: $charlie;
-    width: 40%;
+    width: 80%;
     margin: 0 auto;
+    section{
+      display: flex;
+      align-items: center;
+      background: transparent;
+      width: 100%;
+    }
+    label{
+      width: 35%;
+      background: purple;
+    }
+    p{
+      width: 65%;
+      background: blue;
+    }
   }
   .request, .addFav, .remFav{
     text-decoration: none;
@@ -55,5 +69,12 @@
     height: 10vh;
     width: 30vh;
     margin: 0 auto;
+  }
+  p{
+    height: 8vh;
+    width: 100%;
+  }
+  p:nth-of-type(odd){
+    background: $bravo;
   }
 }
