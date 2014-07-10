@@ -69,6 +69,6 @@ class CodefellowsCoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def codefellows_course_params
-      params.require(:codefellows_course).permit(:course, :course_id, :section, :start_date, :end_date, :instructor)
+      params.require(:codefellows_course).permit(:kind, :stack, :code, :section, :starts_at, :ends_at, :instructor)
     end
 end

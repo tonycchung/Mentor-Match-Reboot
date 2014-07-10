@@ -79,3 +79,40 @@
     }
   }
 }
+.courseSummary{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0 auto;
+  section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: $header-font;
+    font-style: normal;
+    justify-content: center;
+    label{
+      color: $charlie;
+      width: 25%;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1em;
+    }
+    p{
+      font-family: $header-font;
+      font-style: normal;
+      color: $delta;
+      width: 65%;
+      margin: 1em 10% 0 0;
+      border-bottom: 1px solid $delta;
+      padding-bottom: .5em;
+      }
+  }
+  a{
+    margin-top: 5vh;
+    width: 20vw;
+  }
+}
