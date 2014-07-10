@@ -8,8 +8,9 @@
   background: $alpha;
   button{
     &.skip{
+      width: auto;
       height: auto;
-      padding: .5em 1em;
+      padding: 1em 2em;
       font-size: 1.5vh;
       border: 1px solid $delta;
       background: transparent;
@@ -21,8 +22,8 @@
         border-color: transparent;
       }
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: 5%;
+      right: 10%;
       }
     &.submit{
       margin: 15vh 0 5vh 0;

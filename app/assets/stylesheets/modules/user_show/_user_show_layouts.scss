@@ -1,4 +1,5 @@
 .show{
+  background: $alpha;
   padding-top: 5vh;
   header{
     display: flex;
@@ -7,23 +8,24 @@
     align-items: center;
   }
   #edit{
-
+    background: yellow;
+    text-decoration: none;
+    height: 8vh;
+    width: 16vh;
   }
   figure{
-    height: 10vh;
-    width: 10vh;
-    border: 2px solid $alpha;
-    background: $bravo;
+    height: 20vh;
+    width: 20vh;
+    background: $alpha_light90;
+    border: 10px solid $bravo;
     border-radius: 50%;
-    margin-left: 10%;
+    margin-bottom: 0 0 2vh 0;
   }
   article{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 2em;
-    border: 2px solid $alpha;
-    background: $charlie;
+    padding: 1em;
     width: 80%;
     margin: 0 auto;
     section{
@@ -32,16 +34,40 @@
       align-items: center;
       background: $bravo;;
       width: 100%;
+      &:hover{
+        @extend %transition;
+        outline-color: $charlie;
+        outline-width: 10px;
+      }
     }
     label{
+      @extend %transition;
       width: 35%;
       background: transparent;
       color: $delta;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 8vh;
+      background: $alpha_light40;
+      padding-right: 1em;
+      &:hover{
+        @extend %transition;
+        -ms-transform: translateX(-5px);
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+      }
     }
     p{
+      background: $charlie;
       width: 65%;
-      background: blue;
-      border: 1px solid $delta;
+      // border: 1px solid $delta;
+      display: flex;
+      align-items: center;
+      &:hover{
+        @extend %transition;
+        box-shadow: 3px 3px 3px $alpha_light80;
+      }
     }
   }
   .request, .addFav, .remFav{
@@ -81,8 +107,16 @@
     background: $bravo;
   }
   ul{
-    border: 1px solid $delta;
+    // border: 1px solid $delta;
     width: 65%;
     height: 8vh;
+  }
+  aside{
+    margin-top: 2vh;
+    background: purple;
+    width: 100%;
+    a{
+      margin: 1em;
+    }
   }
 }

@@ -2,12 +2,12 @@
 <!-- This is the view where a user would review and edit their profile information -->
 <div class="show">
   <header>
-    <figure class="profilePic">
-      <img src="" alt="">
-    </figure>
     <%= link_to 'Edit', edit_user_path(@user), id: "edit" %>
   </header>
   <article class="userProfile">
+    <figure class="profilePic">
+      <img src="" alt="">
+    </figure>
     <section>
       <label for="firstName">Name:</label>
       <p id="firstName"><%= @user.first_name %></p>
@@ -24,7 +24,11 @@
       <label for="accomplishments">Accomplishments:</label>
       <p id="accomplishments"><%= @user.accomplishments %></p>
     </section>
-<!-- IF ROLE == MENTEE -->
+
+<!--============================================
+              MENTEE SPECIFIC DATA
+==============================================-->
+  <% if current_user.role == "mentee" %>
     <section>
       <label for="profSum">Professional summary:</label>
       <p id="profSum"><%= @user.professional_summary %></p>
@@ -33,7 +37,29 @@
       <label for="personal">Personal statement:</label>
       <p><%= @user.personal_statement %></p>
     </section>
-<!-- IF ROLE == MENTOR -->
+    <section>
+      <label for="gradClass">Graduating Class</label>
+      <p id="gradClass"><%= @user.graduating_class %></p>
+    </section>
+    <section>
+      <label for="stack">Stack</label>
+      <p><%= @user.stack %></p>
+    </section>
+  <% end %>
+
+
+<!--============================================
+              MENTOR SPECIFIC DATA
+==============================================-->
+  <% if current_user.role == "mentor" %>
+    <section>
+      <label for= "company"> Company</label>
+      <p id="company"><%= @user.company %></p>
+    </section>
+    <section>
+      <label for= "position">Position</label>
+      <p id="position"><%= @user.position %></p>
+    </section>
     <section>
       <label for="role">Role:</label>
       <p id="role"><%= @user.role %></p>
@@ -42,12 +68,13 @@
       <label for="availability">Availability:</label>
       <p id="availability"><%= @user.available %></p>
     </section>
-<!-- I'm unclear on this:
+  <% end %>
+
+  <% if current_user.role == "admin" %>
     <p>
       Admin:
       <%= @user.admin %>
     </p>
--->
     <section>
       <label for="mentorships">Mentorships</label>
         <ul>
@@ -69,24 +96,10 @@
           <% end %>
         </ul>
     </section>
-    <section>
-      <label for= "company"> Company</label>
-      <p id="company"><%= @user.company %></p>
-    </section>
-    <section>
-      <label for= "position">Position</label>
-      <p id="position"><%= @user.position %></p>
-    </section>
-    <section>
-      <label for="gradClass">Graduating Class</label>
-      <p id="gradClass"><%= @user.graduating_class %></p>
-    </section>
-    <section>
-      <label for="stack">Stack</label>
-      <p><%= @user.stack %></p>
-    </section>
+  <% end% %>
+
 </article>
-    <% if @pending %>
+    <% if @pending%>
       <% @pending.each do |pending| %>
         <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
       <% end %>

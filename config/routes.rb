@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :codefellows_courses
+
   # get 'friendship/create' => 'friendship#create'
 
   # get 'friendship/destroy' => 'friendship#destroy'

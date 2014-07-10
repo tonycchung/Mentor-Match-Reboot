@@ -1,0 +1,31 @@
+.courses
+  %h1 Listing codefellows_courses
+
+  %table
+    %tr
+      %th kind
+      %th stack
+      %th code
+      %th section
+      %th starts_at
+      %th ends_at
+      %th instructor
+      %th
+      %th
+
+    - @codefellows_courses.each do |codefellows_course|
+      %tr
+        %td= codefellows_course.kind
+        %td= codefellows_course.stack
+        %td= codefellows_course.code
+        %td= codefellows_course.section
+        %td= codefellows_course.starts_at
+        %td= codefellows_course.ends_at
+        %td= codefellows_course.instructor
+        %td= link_to 'Show', codefellows_course
+        %td= link_to 'Edit', edit_codefellows_course_path(codefellows_course)
+        %td= link_to 'Destroy', codefellows_course, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Codefellows course', new_codefellows_course_path

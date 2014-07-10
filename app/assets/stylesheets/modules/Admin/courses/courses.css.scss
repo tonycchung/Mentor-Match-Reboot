@@ -1,0 +1,81 @@
+.courses{
+  background: $alpha;
+  min-height: 100vh;
+  padding: 5vh 0;
+  h1{
+    margin: 0 auto .5em auto;
+    text-align: center;
+  }
+  table{
+    background: transparent;
+    width: auto;
+    margin: 0 auto;
+    tr{
+      padding: 1em;
+    }
+    th{
+      color: $charlie;
+      width: 10vw;
+      border-left: 1px solid $delta;
+      padding: 1em 0;
+    }
+  }
+  a{
+    margin: 10vh auto 0 auto;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding: 1em;
+    background: $charlie;
+    text-decoration: none;
+    color: $delta;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    width: auto;
+    border-radius: .5em;
+  }
+  #new_codefellows_course{
+    background: $charlie;
+    width: 60vw;
+    margin: 0 auto;
+    padding: 5vh;
+    .field{
+      display: flex;
+      align-items: center;
+      padding: 1em;
+    }
+    label{
+      display: flex;
+      color: $delta;
+      width: 35%;
+      justify-content: flex-end;
+      padding-right: 2em;
+    }
+    input{
+      padding: .5em 1em;
+      display: flex;
+      width: 65%;
+      height: 5vh;
+      &[type="submit"]{
+        height: 10vh;
+        background: $bravo;
+        color: $delta;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+  section{
+    &.backButton{
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      a{
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+      }
+    }
+  }
+}
