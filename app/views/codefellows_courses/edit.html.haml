@@ -2,7 +2,7 @@
   %h1 Editing codefellows_course
 
   = render 'form'
-
-  = link_to 'Show', @codefellows_course
-  \|
-  = link_to 'Back', codefellows_courses_path
+  %section.backButton
+    = link_to 'View', @codefellows_course
+    \|
+    = link_to 'Back', codefellows_courses_path

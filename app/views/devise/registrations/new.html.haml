@@ -16,12 +16,13 @@
         = f.label :confirm_password
         = f.password_field :password_confirmation, autocomplete: "off"
         .break
+      %section.stack
+        = f.label :stack
+        = f.select :stack, options_for_select([["Front End"], ["Javascript"], ["Python"], ["Ruby on Rails"], ["iOS"]],)
+        .break
       %section.submitBtn
         %button.trans_wht_btn
           = f.submit "Submit", {class: "btn_txt"}
-      %section.stack
-        = f.label :stack
-        = f.text_f
     = f.hidden_field :role, value: params[:user_type]
     %section.submitOptions
       %p or sign up with another account:

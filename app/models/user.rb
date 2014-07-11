@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
 
   acts_as_votable
   acts_as_voter
+  include Gravtastic
+  gravtastic
+
 
   def mentor?
     role == 'mentor'
@@ -19,6 +22,10 @@ class User < ActiveRecord::Base
 
   def mentee?
     role == 'mentee'
+  end
+
+  def admin?
+    admin == true
   end
 
   def opposite_role

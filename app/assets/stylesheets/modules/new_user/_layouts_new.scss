@@ -41,7 +41,7 @@ form#new_user{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe {
+    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe, &.stack {
       align-items: center;
       margin: 0;
       padding: 3vh 0;
@@ -86,6 +86,15 @@ form#new_user{
         margin: 0;
       }
     }
+  }
+  select{
+    border: none;
+    border-radius: 0;
+    width: 15em;
+    height: 2em;
+    display: flex;
+    padding-left: 1em;
+
   }
   button.trans_wht_btn{
     display: flex;

@@ -6,7 +6,7 @@
   </header>
   <article class="userProfile">
     <figure class="profilePic">
-      <img src="" alt="">
+      <%= image_tag @user.gravatar_url %>
     </figure>
     <section>
       <label for="firstName">Name:</label>
@@ -28,7 +28,7 @@
 <!--============================================
               MENTEE SPECIFIC DATA
 ==============================================-->
-  <% if current_user.role == "mentee" %>
+  <% if current_user.mentee? %>
     <section>
       <label for="profSum">Professional summary:</label>
       <p id="profSum"><%= @user.professional_summary %></p>
@@ -51,7 +51,7 @@
 <!--============================================
               MENTOR SPECIFIC DATA
 ==============================================-->
-  <% if current_user.role == "mentor" %>
+  <% if current_user.mentor? %>
     <section>
       <label for= "company"> Company</label>
       <p id="company"><%= @user.company %></p>
@@ -69,8 +69,6 @@
       <p id="availability"><%= @user.available %></p>
     </section>
   <% end %>
-
-  <% if current_user.role == "admin" %>
     <p>
       Admin:
       <%= @user.admin %>
@@ -96,10 +94,8 @@
           <% end %>
         </ul>
     </section>
-  <% end% %>
-
 </article>
-    <% if @pending%>
+    <% if @pending %>
       <% @pending.each do |pending| %>
         <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
       <% end %>

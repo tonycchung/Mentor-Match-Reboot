@@ -8,20 +8,40 @@
   }
   table{
     background: transparent;
-    width: auto;
+    width: 90vw;
     margin: 0 auto;
     tr{
-      padding: 1em;
     }
     th{
       color: $charlie;
-      width: 10vw;
+      width: auto;
+      min-width: 10%;
+      font-size: .75 em;
       border-left: 1px solid $delta;
+      border-bottom: 1px solid $delta;
+      padding: 1em .5em;
+    }
+    td{
+      color: $delta;
+      font-family: $header-font;
       padding: 1em 0;
+      border-left: 1px solid $delta;
+      text-align: center;
+      margin: 1em 0;
+      .fa{
+        font-size: 5vh;
+        height: auto;
+        width: auto;
+        color: $delta;
+      }
+      a{
+        margin: 0;
+        padding: .25em;
+      }
     }
   }
   a{
-    margin: 10vh auto 0 auto;
+    // margin: 10vh auto 0 auto;
     display: inline-block;
     width: 30%;
     text-align: center;
@@ -34,7 +54,7 @@
     width: auto;
     border-radius: .5em;
   }
-  #new_codefellows_course{
+  #new_codefellows_course, .edit_codefellows_course{
     background: $charlie;
     width: 60vw;
     margin: 0 auto;
@@ -67,10 +87,11 @@
     }
   }
   section{
-    &.backButton{
+    &.backButton, &.newCourseButton{
       width: 100vw;
       display: flex;
       justify-content: center;
+      margin-top: 5vh;
       a{
         display: flex;
         justify-content: center;
