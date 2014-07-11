@@ -37,48 +37,46 @@
     padding: 1em;
     width: 80%;
     margin: 0 auto;
-    background: $alpha_light90;
+    background: transparent;
+    &:hover > section{
+      opacity: .8;
+    }
     section{
+      @extend %tranasition;
       margin: 1vh;
       display: flex;
       align-items: center;
-      background: $bravo;
+      background: transparent;
       width: 100%;
       &:hover{
         @extend %transition;
-        outline-color: $charlie;
-        outline-width: 10px;
+        opacity: 1;
+        background-color: $charlie;
+        & label{
+          @extend %transition;
+          color: $delta;
+        }
       }
     }
     label{
       @extend %transition;
       width: 35%;
       background: transparent;
-      color: $delta;
+      color: $charlie;
       display: flex;
       align-items: center;
       justify-content: flex-end;
       height: 8vh;
-      background: $alpha_light40;
+      background: transparent;
       padding-right: 1em;
-      &:hover{
-        @extend %transition;
-        -ms-transform: translateX(-5px);
-        -webkit-transform: translateX(-5px);
-        transform: translateX(-5px);
-      }
     }
     p{
       padding-left: 1em;
-      background: $charlie;
+      background: transparent;
       width: 65%;
       // border: 1px solid $delta;
       display: flex;
       align-items: center;
-      &:hover{
-        @extend %transition;
-        box-shadow: 3px 3px 3px $alpha_light80;
-      }
     }
   }
   .request, .addFav, .remFav{
@@ -115,7 +113,6 @@
     width: 100%;
   }
   p:nth-of-type(odd){
-    background: $bravo;
   }
   ul{
     // border: 1px solid $delta;
