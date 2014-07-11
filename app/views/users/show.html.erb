@@ -1,111 +1,135 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<!--============================================
+ This is the view where a user would review and edit their profile information.
+==============================================-->
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+<div class="show">
+  <header>
+    <%= link_to 'Edit', edit_user_path(@user), id: "edit" %> <!-- this button should toggle an editable state for all fields, and only be visible when you're viewing your own profile -->
+  </header>
+  <article class="userProfile">
+    <figure class="profilePic">
+      <%= image_tag @user.gravatar_url%>
+      <figcaption><small><a href="http://en.gravatar.com/">get a Gravatar!</a></small></figcaption>
+    </figure>
+    <section><!-- I would like to combine first and last names into one entry -->
+      <label for="firstName">Name:</label>
+      <p id="firstName"><%= @user.first_name %></p>
+    </section>
+    <section>
+      <label for="lastName">Last name:</label>
+      <p id="lastName"><%= @user.last_name %></p>
+    </section>
+    <section>
+      <label for="background">Background:</label>
+      <p id="background"><%= @user.background %></p>
+    </section>
+    <section>
+      <label for="accomplishments">Accomplishments:</label>
+      <p id="accomplishments"><%= @user.accomplishments %></p>
+    </section>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+<!--============================================
+              MENTEE SPECIFIC SECTION
+==============================================-->
 
-<p>
-  <strong>Background:</strong>
-  <%= @user.background %>
-</p>
-
-<p>
-  <strong>Accomplishments:</strong>
-  <%= @user.accomplishments %>
-</p>
-
-<p>
-  <strong>Professional summary:</strong>
-  <%= @user.professional_summary %>
-</p>
-
-<p>
-  <strong>Personal statement:</strong>
-  <%= @user.personal_statement %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Availability:</strong>
-  <%= @user.available %>
-</p>
-
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
-
-<p>
-  <strong>Mentorships</strong>
-  <ul>
-  <% for friendship in @user.friendships %>
-    <li>
-      <%= friendship.friend.email %>
-    </li>
+  <% if current_user.mentee? %>
+    <section>
+      <label for="profSum">Professional summary:</label>
+      <p id="profSum"><%= @user.professional_summary %></p>
+    </section>
+    <section>
+      <label for="personal">Personal statement:</label>
+      <p><%= @user.personal_statement %></p>
+    </section>
+    <section>
+      <label for="gradClass">Graduating Class</label>
+      <p id="gradClass"><%= @user.graduating_class %></p>
+    </section>
+    <section>
+      <label for="stack">Stack</label>
+      <p><%= @user.stack %></p>
+    </section>
   <% end %>
-  </ul>
-</p>
 
-<p>
-  <strong>Menteeships</strong>
-  <ul>
-  <% for user in @user.inverse_friends %>
-    <li>
-      <%= user.first_name %>
-      <%= user.last_name %>
-    </li>
+
+<!--============================================
+              MENTOR SPECIFIC SECTION
+==============================================-->
+
+  <% if current_user.mentor? %>
+    <section>
+      <label for= "company"> Company</label>
+      <p id="company"><%= @user.company %></p>
+    </section>
+    <section>
+      <label for= "position">Position</label>
+      <p id="position"><%= @user.position %></p>
+    </section>
+    <section>
+      <label for="role">Role:</label>
+      <p id="role"><%= @user.role %></p>
+    </section>
+    <section>
+      <label for="availability">Availability:</label>
+      <p id="availability"><%= @user.available %></p>
+    </section>
   <% end %>
-  </ul>
-</p>
 
+<!--============================================
+              ADMIN-SPECIFIC SECTION
+==============================================-->
+    <p>
+      Admin:
+      <%= @user.admin %>
+    </p>
+    <section>
+      <label for="mentorships">Mentorships</label>
+        <ul>
+          <% for friendship in @user.friendships %>
+            <li>
+              <%= friendship.friend.first_name %>
+            </li>
+          <% end %>
+        </ul>
+    </section>
+    <section>
+      <label for="menteeships">Menteeships</label>
+        <ul>
+          <% for user in @user.inverse_friends %>
+            <li>
+              <%= user.first_name %>
+              <%= user.last_name %>
+            </li>
+          <% end %>
+        </ul>
+    </section>
+</article>
 
-  <strong>Company:</strong>
-  <%= @user.company %>
-</p>
+<!--============================================
+      INTERACTIONS FOR EXPRESSING INTEREST
+==============================================-->
 
-<p>
-  <strong>Position:</strong>
-  <%= @user.position %>
-</p>
+    <% if @pending %>
+      <% @pending.each do |pending| %>
+      <!-- I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.-->
+        <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
+      <% end %>
+    <% end %>
 
-<p>
-  <strong>Graduating Class:</strong>
-  <%= @user.graduating_class %>
-</p>
-
-<p>
-  <strong>Stack:</strong>
-  <%= @user.stack %>
-</p>
-
-<% if @pending %>
-  <% @pending.each do |pending| %>
-    <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
-  <% end %>
-<% end %>
-
-<% if @approved_mentorship %>
-  <% @approved_mentorship.each do |approved_mentorship| %>
-    <%= link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch %>
-  <% end %>
-<% end %>
-
-<% if current_user.mentee? %>
-  <%= link_to 'Request Mentorship', friendships_path(:friend_id => user.id), method: :post %>
-<% end %>
-<%= link_to "Add to Favorites", star_user_path(@user), method: :put %>
-<%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put %>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <% if @approved_mentorship %>
+      <% @approved_mentorship.each do |approved_mentorship| %>
+      <!-- I also think we should change this to mean not 'end', but something along the lines of, 'transition'. Ending a mentorship for reasons of inappropriate behavior etc. should be an admin function. Mentors can effectively move their mentees to an inactive pile -->
+        <%= link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch %>
+      <% end %>
+    <% end %>
+    <aside>
+    <!-- I think the below if statement needs to be if current user is a mentee && the user being viewed is a mentor && that mentor has availability -->
+      <% if current_user.mentee? %>
+        <%= link_to 'Request Mentorship', friendships_path(:friend_id => @user.id), method: :post, class: "request" %>
+      <% end %>
+      <%= link_to "Add to Favorites", star_user_path(@user), method: :put, class: "addFav" %>
+      <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put, class: "remFav" %>\
+    </aside>
+    <%= link_to 'Apply', users_path, id: "back", class: "trans.wht.btn" %> <!-- This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'-->
+</div>

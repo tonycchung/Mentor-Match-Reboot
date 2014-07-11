@@ -1,0 +1,139 @@
+.courses{
+  background: $alpha;
+  min-height: 100vh;
+  padding: 5vh 0;
+  h1{
+    margin: 0 auto .5em auto;
+    text-align: center;
+  }
+  table{
+    background: transparent;
+    width: 90vw;
+    margin: 0 auto;
+    tr{
+    }
+    th{
+      color: $charlie;
+      width: auto;
+      min-width: 10%;
+      font-size: .75 em;
+      border-left: 1px solid $delta;
+      border-bottom: 1px solid $delta;
+      padding: 1em .5em;
+    }
+    td{
+      color: $delta;
+      font-family: $header-font;
+      padding: 1em 0;
+      border-left: 1px solid $delta;
+      text-align: center;
+      margin: 1em 0;
+      .fa{
+        font-size: 5vh;
+        height: auto;
+        width: auto;
+        color: $delta;
+      }
+      a{
+        margin: 0;
+        padding: .25em;
+      }
+    }
+  }
+  a{
+    // margin: 10vh auto 0 auto;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    padding: 1em;
+    background: $charlie;
+    text-decoration: none;
+    color: $delta;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    width: auto;
+    border-radius: .5em;
+  }
+  #new_codefellows_course, .edit_codefellows_course{
+    background: $charlie;
+    width: 60vw;
+    margin: 0 auto;
+    padding: 5vh;
+    .field{
+      display: flex;
+      align-items: center;
+      padding: 1em;
+    }
+    label{
+      display: flex;
+      color: $delta;
+      width: 35%;
+      justify-content: flex-end;
+      padding-right: 2em;
+    }
+    input{
+      padding: .5em 1em;
+      display: flex;
+      width: 65%;
+      height: 5vh;
+      &[type="submit"]{
+        height: 10vh;
+        background: $bravo;
+        color: $delta;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+  section{
+    &.backButton, &.newCourseButton{
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      margin-top: 5vh;
+      a{
+        display: flex;
+        justify-content: center;
+        width: 20vw;
+      }
+    }
+  }
+}
+.courseSummary{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 40%;
+  margin: 0 auto;
+  section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: $header-font;
+    font-style: normal;
+    justify-content: center;
+    label{
+      color: $charlie;
+      width: 25%;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1em;
+    }
+    p{
+      font-family: $header-font;
+      font-style: normal;
+      color: $delta;
+      width: 65%;
+      margin: 1em 10% 0 0;
+      border-bottom: 1px solid $delta;
+      padding-bottom: .5em;
+      }
+  }
+  a{
+    margin-top: 5vh;
+    width: 20vw;
+  }
+}

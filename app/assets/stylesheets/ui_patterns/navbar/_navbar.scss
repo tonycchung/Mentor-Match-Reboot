@@ -1,27 +1,28 @@
 @import "navbar_states";
 
 .quickNav{
+  margin-left: 65vw;
   display: flex;
   align-items: center;
-  margin: 5% 10% 0% 78%;
   flex-wrap: nowrap;
   background-color: $charlie;
   border: none;
-  padding: 0;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
-  justify-content: space-around;
-  width: 20vw;
+  width: 30vw;
   height: 5vh;
   ul{
-    margin: 5% 10% 0% 75%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: nowrap;
     list-style-type: none;
-    padding:0;
+    padding: 0 1em 0 0;
     margin: 0;
-    border-top-left-radius: 50%;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+    width: 100%;
+    background-color: $charlie;
     .verticalRule{
       display: flex;
       align-items: center;
@@ -31,30 +32,35 @@
     }
     li{
       display: flex;
-      font-size: 4vh;
       align-items: center;
       justify-content: center;
-      width: 4vw;
+      width: 5vw;
+      height: 5vh;
+      background-color: transparent;
+      }
+       p{
+        display: flex;
+        font-size: 1vh;
+        }
+      a{
+        display: flex;
+        font-size: 4vh;
+        text-decoration: none;
+        color: $delta;
       }
       img{
         border-radius: 50%;
         border: solid .1em $delta;
         height: auto;
-        width: 100%;
+        width: 5vw;
     }
   }
 }
 
 
 a.fa{
-  font-size: 3vh;
+  font-size: 5vh;
   color: $delta;
   display: flex;
   justify-content: center;
-}
-
-.splashNav{
-  position: absolute;
-  top: 10px;
-  right: 40px;
 }

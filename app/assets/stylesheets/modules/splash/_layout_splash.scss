@@ -1,72 +1,187 @@
-div.splash {
-  width: 100%;
-}
-
-.splash img{
-  width: 4em;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-article {
-  display: flex;
-  justify-content: center;
-  height: 50vh;
-  align-items: center;
-}
-
-section{
-  display: flex;
-  flex-wrap: wrap;
-  width: 50vw;
-    a{
+.splash {
+  height: 110vh;
+  background-image: url(image-path("dexter-sarah3.jpg"));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: $alpha;
+  button{
+    &.mobileLogin, &.mobileSignup{
+    display: none;
+    @extend %transition;
+    }
+    &.findMentor, &.beMentor, &.haveAccount{
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      height: 100%;
+      a.btn_txt, a.btn_txt_red{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+        height: 3em;
+      }
     }
-}
+  }
+.triangleUp {
+    display: none
+  }
+  & h1, & h2, & h3 {
+    width: 100%;
+    display: flex;
+  }
+  figure{
+    @extend %transition;
+    padding: 1vh 0 0 0;
+    margin: 0;
+  }
+  img{
+  width: 5vw;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  }
+  article{
+    &.copy {
+      width: 100vw;
+      display: flex;
+      height: 50vh;
+      padding: 15vh 0;
+      align-items: center;
+      justify-content: center;
+      }
+    &.roleButtons{
+      height: auto;
+      display: flex;
+      justify-content: center;
+      p{
+        display: none;
+      }
+    }
+    &.haveAccount{
+      display: flex;
+      justify-content: center;
+    }
+  }
+  section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    &.student{
+      padding-right: 20vw;
+      & h1, h2, h3 {
+        justify-content: flex-end;
+        text-align: right;
+      }
+    }
+    &.mentor {
+      padding-left: 20vw;
+    }
+    &.button-wrap, &.existingUser{
+      display: flex;
+      width: 50vw;
+      justify-content: center;
+      padding-top: 10vh;
+    }
+    &.existingUser{
+      padding-top: 4vh;
+      margin: 4vh 0 6.5vh 0;
+    }
 
-section.student{
-  padding-right: 20vw;
-  & h1, h2, h3 {
-    justify-content: flex-end;
+// Hero Images & Copy (need to refactor typography here)
+//================================================
+    &.hero{
+      width: 100%;
+      h1{
+        font-size: 8vh;
+        font-family: $title-font;
+      }
+      h2{
+        font-size: 5vh;
+        font-family: $header-font;
+      }
+      h3{
+        font-size: 3vh;
+      }
+      figure{
+        z-index: -1;
+        width: 50vw;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .ulWrapper{
+        width: 50vw;
+        z-index: -1;
+        background: $alpha;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &.mentors{
+          justify-content: flex-end;
+        }
+        ul{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 0 0 2em;
+          list-style-type: none;
+          &.mentors{
+            margin: 0 10% 0 0;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            h1, h2, h3{
+              width: auto;
+              align-items: flex-end;
+              text-align: right;
+            }
+          }
+          h1{
+            color: $charlie;
+          }
+          h2{
+            color: $delta;
+          }
+          h3{
+            color: $delta;
+            margin-top: 1vh;
+          }
+        }
+      }
+    }
+
+// "Learn more" button footer
+//================================================
+    &.about{
+      width: 100%;
+      height: 30vh;
+      background: $alpha;
+      button{
+        text-transform: uppercase;
+        font-family: $header-font;
+        background: transparent;
+        color: $charlie;
+        margin: 10vh auto;
+        border: 1px solid $charlie;
+      }
+    }
   }
 }
 
-section.mentor{
-  padding-left: 20vw;
+p.learnMore, p.whoFor{
+  display: block;
+  background: $alpha_light20;
+  color: $delta;
+  text-align: center;
+  padding: 1em 0;
 }
-
-.splash h1, .splash h2, .splash h3 {
-  width: 100%;
-  display: flex;
-  min-width: 275px;
-}
-
-.button-wrap {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-button.findMentor, button.beMentor{
-  padding: 0;
-}
-button.findMentor {
-  margin-right: 20vw;
-}
-
-button.beMentor {
-  margin-left: 20vw;
-}
-
-.login-wrap {
-  display: flex;
-  width: 100%;
-}
-
-.login-wrap>button {
-  margin: 10vh auto;
+p.whoFor{
+  background: $charlie;
+  margin-top: 6vh;
 }

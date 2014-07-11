@@ -1,0 +1,130 @@
+.show{
+  background: $alpha;
+  padding-top: 5vh;
+  header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  #edit{
+    background: yellow;
+    text-decoration: none;
+    height: 8vh;
+    width: 16vh;
+  }
+  figure{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    figcaption{
+      width: 100%;
+      text-align: center;
+    }
+  }
+  img{
+    height: 20vh;
+    width: 20vh;
+    background: $alpha_light90;
+    border: 10px solid $bravo;
+    border-radius: 50%;
+    margin-bottom: 0 0 2vh 0;
+  }
+  article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+    width: 80%;
+    margin: 0 auto;
+    background: transparent;
+    &:hover > section{
+      opacity: .8;
+    }
+    section{
+      @extend %tranasition;
+      margin: 1vh;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      width: 100%;
+      &:hover{
+        @extend %transition;
+        opacity: 1;
+        background-color: $charlie;
+        & label{
+          @extend %transition;
+          color: $delta;
+        }
+      }
+    }
+    label{
+      @extend %transition;
+      width: 35%;
+      background: transparent;
+      color: $charlie;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 8vh;
+      background: transparent;
+      padding-right: 1em;
+    }
+    p{
+      padding-left: 1em;
+      background: transparent;
+      width: 65%;
+      // border: 1px solid $delta;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .request, .addFav, .remFav{
+    text-decoration: none;
+    color: $alpha;
+    height: 10vh;
+    width: 30vh;
+    display: block;
+    background: $charlie;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  aside{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $alpha;
+    background: transparent;
+    color: $alpha;
+    height: 10vh;
+    width: 30vh;
+    margin: 0 auto;
+  }
+  p{
+    height: 8vh;
+    width: 100%;
+  }
+  p:nth-of-type(odd){
+  }
+  ul{
+    // border: 1px solid $delta;
+    width: 65%;
+    height: 8vh;
+  }
+  aside{
+    margin-top: 2vh;
+    background: purple;
+    width: 100%;
+    a{
+      margin: 1em;
+    }
+  }
+}

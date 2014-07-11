@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626000327) do
+ActiveRecord::Schema.define(version: 20140710184028) do
+
+  create_table "codefellows_courses", force: true do |t|
+    t.string   "kind"
+    t.string   "stack"
+    t.string   "code"
+    t.string   "section"
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.string   "instructor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendships", force: true do |t|
     t.integer  "user_id"

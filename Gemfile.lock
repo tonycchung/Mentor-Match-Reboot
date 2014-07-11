@@ -73,6 +73,7 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
+    gravtastic (3.2.6)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -239,6 +240,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails (~> 4.1.0.0)
   font-awesome-sass
+  gravtastic
   haml
   haml-rails
   jbuilder (~> 2.0)

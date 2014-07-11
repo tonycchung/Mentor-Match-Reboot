@@ -1,16 +1,17 @@
-.splashNav{
-  background: $alpha;
-}
-
-
 .dash {
   background-color: $alpha;
+  background-image: url(image-path("bottle_wide.jpg"));
+  background-size: cover;
+  background-position: center top;
   height: 100vh;
   width: 100vw;
+  header{
+    padding: 5vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
   .logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
     height: 10vh;
     width: 10vh;
     background-image: url(image-path("cflogo.png"));
@@ -21,163 +22,145 @@
 
 .mainWrapper {
   display: flex;
-  align-items: center;
-  margin-top: 20vh;
 }
 
 .main, .mainAside, .mainNav {
-  display: flex;
-  height: 40vh;
+  // display: flex;
+  height: 60vh;
 }
-
-.mainNav {
-  margin: 1em;
+/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+.mainNav{
+  margin: 0;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
-  height: 40vh;
-  padding: .7em 0;
-}
-/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainNav section {
-  // background-image: url(image-path("arrowbutton.png"));
-  // background-size: auto 80%;
-  // background-position: right;
-  // background-repeat: no-repeat;
-  background-color: $bravo_light40;
-  width: 80%;
   padding: 0;
-  margin: 0 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
-  height: 5vh;
-  border-bottom: .1em solid $alpha;
-}
-
-.mainNav section p {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  height: 5vh;
-  margin: 0;
-  font-family: "Montserrat";
-  font-size: 2vh;
-  color: white;
-  width: 100%;
-  padding: 0 1em;
-  background-color: $alpha_light60;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  section {
+    background-color: transparent;
+    width: 80%;
+    padding: 0;
+    margin: 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    height: calc(100%/7);
+    border-bottom: .2em solid $alpha;
+    p {
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      height: 100%;;
+      margin: 0;
+      font-family: "Montserrat";
+      font-size: 2vh;
+      color: white;
+      width: 100%;
+      padding: 0;
+      background-color: $alpha_light60;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .main {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 1em;
-  width: 60vw;
-}
-/* line 69, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.main section {
-  box-sizing: padding-box;
-  width: 100%;
-  height: calc(10vh+.5em);
-  display: flex;
-  align-items: center;
-  align-content: space-between;
-  justify-content: center;
-  background-color: #a9a9a7;
-  padding: 0;
-}
-/* line 78, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.main section span {
-  background-color: $alpha_light60;
-  width: 20%;
-  height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-  text-align: center;
-  font-size: 4vh;
-  color: white;
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-}
-.main section h2 {
-  width: 60%;
-  padding-left: 1em;
-  background-color: $alpha_light20;
-  height: 10vh;
-  font-size: 2vh;
-  display: flex;
-  align-items: center;
-}
-.main section button {
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  background-color: $charlie;
-  padding: 0;
+  flex-wrap: nowrap;
   margin: 0;
-  height: 10vh;
-  width: 20%;
-  border: none;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  span{
-    background: transparent;
+  width: 60vw;
+  background: transparent;
+  section {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0;
+    margin: 1vh;
+    &.main{
+      background: transparent;
+    }
+    h2{
+      width: 100%;
+      padding-left: 1em;
+      background-color: $alpha_light20;
+      height: 20vh;
+      font-size: 2vh;
+      display: flex;
+      align-items: center;
+    }
+    button{
+      background-color: $charlie;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      height: 15vh;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span{
+        background: transparent;
+        display: block;
+        width: 100%;
+        text-align: center;
+        }
+    }
   }
 }
 
-/* line 121, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainAside {
-  margin: 1em;
+  margin: 0;
   width: 20vw;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 }
 /* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside section {
-  background-color: $alpha_light10;;
-  width: 96%;
-  display: flex;
-  justify-content: center;
+.mainAside {
   margin: 0;
-  padding: 0;
-  height: 10vh;
-  figure {
-  background: $alpha_light20;
-  width: 100%;
-  margin: 0;
-  padding: .25em;
+  width: 20vw;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-}
-  img {
-  border-radius: 50%;
-  width: 7vh;
-  height: 7vh;
-  border: 0.1em solid white;
-}
-  .paraWrapP {
-    font-size: 1.2vh;
-    background-color: $alpha_light10;
-    text-align: center;
+  section {
+    background-color: $alpha_light10;;
+    width: 80%;
     display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding-left: 1em;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    margin-bottom: 1vh;
+    figure {
+    background: $alpha_light20;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    img {
+    border-radius: 50%;
+    width: auto;
+    height: 10vh;
+    border: 0.1em solid white;
+  }
+    .paraWrapP {
+      font-size: 2vh;
+      background-color: $alpha_light10;
+      text-align: center;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding-left: 1em;
+    }
   }
 }

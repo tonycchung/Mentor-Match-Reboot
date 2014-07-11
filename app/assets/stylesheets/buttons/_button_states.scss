@@ -1,15 +1,15 @@
 .trans_wht_btn:hover {
   border: none;
-  background-color: $alpha_light50;
-  color: $delta;
+  background-color: $charlie;
+
    // @include animation(scale .1s ease-in-out);
-  -webkit-transition: all .1s ease-in-out;
-  -moz-transition: all .1s ease-in-out;
-  -o-transition: all .1s ease-in-out;
-  transition: all .1s ease-in-out;
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
-  transform: scale(1.2);
+  // -webkit-transition: all .1s ease-in-out;
+  // -moz-transition: all .1s ease-in-out;
+  // -o-transition: all .1s ease-in-out;
+  // transition: all .1s ease-in-out;
+  // -ms-transform: scale(1.2); /* IE 9 */
+  // -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
+  // transform: scale(1.2);
 }
 
 .trans_wht_btn::hover {
@@ -24,14 +24,18 @@
 
 
 .wht_red_btn:hover {
-  // @include animation(scale .1s ease-in-out);
   background-color: $delta;
   opacity: 1;
   -webkit-transition: all .1s ease-in-out;
   -moz-transition: all .1s ease-in-out;
   -o-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out;
-  -ms-transform: scale(1.2); /* IE 9 */
-  -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
-  transform: scale(1.2);
+}
+
+button{
+  &:focus{
+    outline-color: $charlie;
+    outline-width: 10px;
+    outline-offset: -2px;
+  }
 }

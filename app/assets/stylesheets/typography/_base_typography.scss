@@ -17,11 +17,9 @@ h2 {
 h3, p {
   font-family: $body-font;
   font-size: 1em;
-  color: $delta;
-}
-
-h3 {
+  font-weight: 300;
   font-style: italic;
+  color: $delta;
 }
 
 
