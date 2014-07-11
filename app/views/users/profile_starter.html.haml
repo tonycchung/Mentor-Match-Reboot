@@ -46,8 +46,8 @@
           %li.progDot
           %li.progDot
           %li.progDot
-    - if current_user.role == "mentee"
-      %section#s4
+    - if current_user.mentee?
+          %section#s4
         %h2
           Briefly describe your professional history. <br> Where have you been?
         .fieldWrap
@@ -69,7 +69,7 @@
           = f.text_area :personal_statement, placeholder: "I can raise each of my eyebrows independently"
           %button.submit
             =f.submit 'Submit', class: "submit"
-    - if current_user.role == "mentor"
+    - if current_user.mentor?
       %section#s6
         %h2
           Where do you work? <br> Just the company name is fine.
