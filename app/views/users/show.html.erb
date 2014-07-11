@@ -85,6 +85,7 @@
 <!--============================================
               ADMIN-SPECIFIC SECTION
 ==============================================-->
+<% if current_user.admin? %>
     <p>
       Admin:
       <%= @user.admin %>
@@ -111,6 +112,8 @@
         </ul>
     </section>
 </article>
+<% end %>
+
 
 <!--============================================
       INTERACTIONS FOR EXPRESSING INTEREST
