@@ -31,6 +31,7 @@
     margin-bottom: 0 0 2vh 0;
   }
   article{
+    @extend %transition;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -60,7 +61,7 @@
     }
     label{
       @extend %transition;
-      width: 35%;
+      width: 50%;
       background: transparent;
       color: $charlie;
       display: flex;
@@ -71,12 +72,16 @@
       padding-right: 1em;
     }
     p{
-      padding-left: 1em;
+      padding: .7em 0 .3em 1em;
+      vertical-align: center;
       background: transparent;
-      width: 65%;
+      width: 50%;
       // border: 1px solid $delta;
-      display: flex;
+      display: block;
       align-items: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
   }
   .request, .addFav, .remFav{
