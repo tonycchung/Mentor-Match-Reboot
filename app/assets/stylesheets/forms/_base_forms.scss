@@ -3,9 +3,6 @@ input {
   margin: 0;
   padding: 0;
   background-color: $delta_light20;
-  &:focus{
-    outline-color: $charlie;
-  }
 }
 
 label {
@@ -14,8 +11,12 @@ label {
 
 textarea{
   resize: none;
+}
+
+select, input, textarea {
   &:focus{
-    outline-width: 20px;
-    outline-color: $bravo;
+    outline-color: $charlie;
+    outline-width: .5em;
+    outline-offset: .1em;
   }
 }

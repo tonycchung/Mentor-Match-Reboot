@@ -13,6 +13,15 @@
     height: 8vh;
     width: 16vh;
   }
+  figure{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    figcaption{
+      width: 100%;
+      text-align: center;
+    }
+  }
   img{
     height: 20vh;
     width: 20vh;
@@ -33,7 +42,7 @@
       margin: 1vh;
       display: flex;
       align-items: center;
-      background: $bravo;;
+      background: $bravo;
       width: 100%;
       &:hover{
         @extend %transition;
@@ -60,6 +69,7 @@
       }
     }
     p{
+      padding-left: 1em;
       background: $charlie;
       width: 65%;
       // border: 1px solid $delta;

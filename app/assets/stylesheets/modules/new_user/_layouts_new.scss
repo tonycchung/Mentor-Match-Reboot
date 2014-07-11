@@ -41,7 +41,7 @@ form#new_user{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe, &.stack {
+    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe, &.stack, &.gradClass {
       align-items: center;
       margin: 0;
       padding: 3vh 0;
