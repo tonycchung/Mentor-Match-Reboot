@@ -49,6 +49,9 @@
       align-items: center;
       background: transparent;
       width: 100%;
+      // &:hover ~ section{
+      //   opacity: .8;
+      // }
       &:hover{
         @extend %transition;
         opacity: 1;
@@ -86,11 +89,13 @@
   }
   .request, .addFav, .remFav{
     text-decoration: none;
-    color: $alpha;
+    color: $delta;
+    border: 1px solid $delta;
+    border-radius: .25em;
     height: 10vh;
     width: 30vh;
     display: block;
-    background: $charlie;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,8 +111,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid $alpha;
-    background: transparent;
     color: $alpha;
     height: 10vh;
     width: 30vh;
@@ -126,10 +129,20 @@
   }
   aside{
     margin-top: 2vh;
-    background: purple;
     width: 100%;
     a{
       margin: 1em;
+      padding: 1em;
+      font-family: $header-font;
+      font-size: 2vh;
+      text-transform: uppercase;
+      border: 2px solid $alpha;
+      border-radius: .25em;
+      &:hover{
+        @extend %transition;
+        color: $charlie;
+        border-color: $charlie;
+      }
     }
   }
 }

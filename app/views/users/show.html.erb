@@ -74,6 +74,12 @@
       <label for="availability">Availability:</label>
       <p id="availability"><%= @user.available %></p>
     </section>
+     <% if @pending %>
+      <% @pending.each do |pending| %>
+      <!-- I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.-->
+        <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
+      <% end %>
+    <% end %>
   <% end %>
 
 <!--============================================
@@ -110,12 +116,7 @@
       INTERACTIONS FOR EXPRESSING INTEREST
 ==============================================-->
 
-    <% if @pending %>
-      <% @pending.each do |pending| %>
-      <!-- I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.-->
-        <%= link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch %>
-      <% end %>
-    <% end %>
+
 
     <% if @approved_mentorship %>
       <% @approved_mentorship.each do |approved_mentorship| %>
@@ -126,10 +127,12 @@
     <aside>
     <!-- I think the below if statement needs to be if current user is a mentee && the user being viewed is a mentor && that mentor has availability -->
       <% if current_user.mentee? %>
-        <%= link_to 'Request Mentorship', friendships_path(:friend_id => @user.id), method: :post, class: "request" %>
-      <% end %>
+        <%= link_to 'Introduce Yourself', friendships_path(:friend_id => @user.id), method: :post, class: "request" %>
+      <% end %> <!--how does this post request work? can we formulate a message or give the user the option to write one?-->
+    <!-- This needs to be depended on 'available' status -->
       <%= link_to "Add to Favorites", star_user_path(@user), method: :put, class: "addFav" %>
+    <!-- this option is only visible when user being viewed is a mentor, who is already in a mentees favorites list -->
       <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put, class: "remFav" %>\
     </aside>
-    <%= link_to 'Apply', users_path, id: "back", class: "trans.wht.btn" %> <!-- This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'-->
+    <%= link_to 'Apply', users_path, id: "back", class: "btn_txt" %> <!-- This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'-->
 </div>
