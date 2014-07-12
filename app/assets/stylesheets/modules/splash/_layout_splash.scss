@@ -64,6 +64,8 @@
     flex-wrap: wrap;
     width: 50vw;
     &.student{
+      @extend %transition_1s;
+      opacity: 0;
       padding-right: 20vw;
       & h1, h2, h3 {
         justify-content: flex-end;
@@ -71,6 +73,8 @@
       }
     }
     &.mentor {
+      @extend %transition_1s;
+      opacity: 0;
       padding-left: 20vw;
     }
     &.button-wrap, &.existingUser{
