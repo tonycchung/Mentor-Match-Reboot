@@ -1,6 +1,6 @@
 .show{
   background: $alpha;
-  padding-top: 5vh;
+  padding: 5vh;
   header{
     display: flex;
     justify-content: center;
@@ -18,17 +18,46 @@
     justify-content: center;
     flex-wrap: wrap;
     figcaption{
+      @extend %transition;
       width: 100%;
+      padding: .5em;
       text-align: center;
+      margin-top: 1em;
+      &:hover{
+        @extend %transition;
+        color: $alpha_light90;
+        background: $alpha_light10;
+        border-radius: .5em;
+       }
+      a{
+        @extend %transition;
+        padding: 1em;
+        color: $alpha_light70;
+        font-family: $header-font;
+      }
+      span{
+        @extend %transition;
+        color: $alpha;
+      }
+      &:hover > span{
+        @extend %transition;
+        color: $charlie;
+        margin-left: 1em;
+      }
     }
   }
   img{
+    @extend %transition_pt1s;
     height: 20vh;
     width: 20vh;
     background: $alpha_light90;
     border: 10px solid $bravo;
     border-radius: 50%;
     margin-bottom: 0 0 2vh 0;
+    &:hover{
+      @extend %transition_pt1s;
+      border-color: $charlie;
+    }
   }
   article{
     @extend %transition;
@@ -186,5 +215,31 @@
         border-color: $charlie;
       }
     }
+  }
+  button.lookGoodBtn{
+    display: block;
+    margin: 2vh auto 5vh auto;
+    border: 1px solid $bravo;
+    border-bottom: 3px solid $bravo;
+    background: $charlie;
+    height: auto;
+    padding: 0;
+    a#lookGood{
+      @extend %transition_pt1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8em;
+      height: 3em;
+      width: auto;
+      color: $delta;
+      font-family: $header-font;
+      text-transform: uppercase;
+      &:hover{
+        @extend %transition_pt1s;
+        background: $charlie_light20;
+      }
+    }
+
   }
 }
