@@ -8,12 +8,12 @@
     align-items: center;
   }
   #edit{
-    background: yellow;
     text-decoration: none;
     height: 8vh;
     width: 16vh;
   }
   figure{
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -32,6 +32,7 @@
   }
   article{
     @extend %transition;
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -59,6 +60,47 @@
         & label{
           @extend %transition;
           color: $delta;
+        }
+      }
+      &#editContainer{
+        @extend %transition_pt1s;
+        border-radius: .25em;
+        width: auto;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 6em;
+        right: 10vw;
+        padding: 1em;
+        justify-content: center;
+        &:hover{
+          @extend %transition_pt1s;
+          background-color: $alpha_light10;
+        }
+        &:hover > span{
+          @extend %transition;
+          color: $charlie;
+          margin-top: .5em;
+        }
+        &:hover > a{
+          @extend %transition;
+          color: $alpha_light90;
+        }
+        a{
+          @extend %transition;
+          height: auto;
+          text-align: center;
+          padding: 0;
+          margin: 0;
+          color: $alpha_light50;
+          width: 100%;
+          text-transform: uppercase;
+          font-family: $title-font;
+        }
+        span{
+          @extend %transition;
+          color: $alpha;
+          font-size: 3vh;
+          margin-top: -.25em;
         }
       }
     }

@@ -5,10 +5,14 @@
 
 <div class="show">
   <header>
-    <%= link_to 'Edit', edit_user_path(@user), id: "edit" %> <!-- this button should toggle an editable state for all fields, and only be visible when you're viewing your own profile -->
+
   </header>
   <article class="userProfile">
     <figure class="profilePic">
+      <section id="editContainer">
+        <%= link_to 'Edit', edit_user_path(@user), id: "edit" %>
+        <span class="fa fa-chevron-circle-down"></span>
+      </section>
       <%= image_tag @user.gravatar_url%>
       <figcaption><small><a href="http://en.gravatar.com/">get a Gravatar!</a></small></figcaption>
     </figure>
