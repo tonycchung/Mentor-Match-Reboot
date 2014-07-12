@@ -15,35 +15,10 @@
       color: $charlie;
     }
   }
-  figure {
-    &:hover{
-      -webkit-transition: all .1s ease-in-out;
-      -moz-transition: all .1s ease-in-out;
-      -o-transition: all .1s ease-in-out;
-      transition: all .1s ease-in-out;
-      opacity: 1;
-    }
-  }
   button{
-    &.findMentor:hover{
+    &.findMentor:hover, &.beMentor:hover{
       @extend %transition;
       border-color: transparent;
-      & a:hover{
-        @extend %transition;
-        color: black;
-      }
-      &:active{
-        @extend %transition;
-        background: $charlie;
-      }
-    }
-    &.beMentor:hover{
-      @extend %transition;
-      border-color: transparent;
-      & a:hover{
-        @extend %transition;
-        color: $delta;
-      }
       &:active{
         @extend %transition;
         background: $charlie;
@@ -52,7 +27,7 @@
     &.haveAccount:hover{
       @extend %transition;
       background: transparent;
-      border: 2px solid $delta;
+      border: 1px solid $delta;
       & a:hover{
         @extend %transition;
         color: $delta;

@@ -13,12 +13,8 @@
       <figcaption><small><a href="http://en.gravatar.com/">get a Gravatar!</a></small></figcaption>
     </figure>
     <section><!-- I would like to combine first and last names into one entry -->
-      <label for="firstName">Name:</label>
-      <p id="firstName"><%= @user.first_name %></p>
-    </section>
-    <section>
-      <label for="lastName">Last name:</label>
-      <p id="lastName"><%= @user.last_name %></p>
+      <label for="Name">Name:</label>
+      <p id="Name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></p>
     </section>
     <section>
       <label for="background">Background:</label>
@@ -111,16 +107,23 @@
           <% end %>
         </ul>
     </section>
-</article>
+  </article>
 <% end %>
 
+<!--============================================
+      ACCOUNT CREATION SESSION ONLY
+==============================================-->
+
+    <% if current_user.sign_in_count == 1 %>
+      <%= link_to "Look Good?", dashboard_path %>
+    <% end %>
 
 <!--============================================
       INTERACTIONS FOR EXPRESSING INTEREST
 ==============================================-->
 
 
-
+  <% if current_user.sign_in_count != 1 %>
     <% if @approved_mentorship %>
       <% @approved_mentorship.each do |approved_mentorship| %>
       <!-- I also think we should change this to mean not 'end', but something along the lines of, 'transition'. Ending a mentorship for reasons of inappropriate behavior etc. should be an admin function. Mentors can effectively move their mentees to an inactive pile -->
@@ -138,4 +141,6 @@
       <%= link_to "Remove from Favorites", unstar_user_path(@user), method: :put, class: "remFav" %>\
     </aside>
     <%= link_to 'Apply', users_path, id: "back", class: "btn_txt" %> <!-- This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'-->
+  <% end %>
 </div>
+

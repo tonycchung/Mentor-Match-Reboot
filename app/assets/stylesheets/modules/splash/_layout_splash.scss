@@ -29,16 +29,13 @@
   }
   & h1, & h2, & h3 {
     width: 100%;
-    display: flex;
   }
   figure{
-    @extend %transition;
     padding: 1vh 0 0 0;
     margin: 0;
   }
   img{
   width: 5vw;
-  height: auto;
   display: block;
   margin: 0 auto;
   }
@@ -47,9 +44,7 @@
       width: 100vw;
       display: flex;
       height: 50vh;
-      padding: 15vh 0;
       align-items: center;
-      justify-content: center;
       }
     &.roleButtons{
       height: auto;

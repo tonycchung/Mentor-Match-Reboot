@@ -17,6 +17,5 @@ select, input, textarea {
   &:focus{
     outline-color: $charlie;
     outline-width: .5em;
-    outline-offset: .1em;
   }
 }
