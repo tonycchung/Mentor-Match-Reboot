@@ -17,24 +17,25 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    a{
+      @extend %transition;
+      width: 100%;
+      display: block;
+      color: $alpha_light70;
+      font-family: $header-font;
+    }
     figcaption{
       @extend %transition;
       width: 100%;
       padding: .5em;
       text-align: center;
-      margin-top: 1em;
+      margin-top: .25em;
       &:hover{
         @extend %transition;
         color: $alpha_light90;
         background: $alpha_light10;
         border-radius: .5em;
        }
-      a{
-        @extend %transition;
-        padding: 1em;
-        color: $alpha_light70;
-        font-family: $header-font;
-      }
       span{
         @extend %transition;
         color: $alpha;
@@ -42,7 +43,6 @@
       &:hover > span{
         @extend %transition;
         color: $charlie;
-        margin-left: 1em;
       }
     }
   }
@@ -132,6 +132,11 @@
           margin-top: -.25em;
         }
       }
+      span{
+        width: 5%;
+        display: inline;
+
+      }
     }
     label{
       @extend %transition;
@@ -149,7 +154,7 @@
       padding: .7em 0 .3em 1em;
       vertical-align: center;
       background: transparent;
-      width: 50%;
+      width: 45%;
       // border: 1px solid $delta;
       display: block;
       align-items: center;

@@ -14,11 +14,17 @@
         <span class="fa fa-chevron-circle-down"></span>
       </section>
       <%= image_tag @user.gravatar_url%>
-      <figcaption><small><a href="http://en.gravatar.com/">Don't see your picture? Get a Gravatar!</a></small><span class="fa fa-chevron-circle-right"></span></figcaption>
+      <a href="http://en.gravatar.com/">
+        <figcaption>
+          <small>Don't see your picture? Get a Gravatar!</small>
+          <span class="fa fa-chevron-circle-right"></span>
+        </figcaption>
+      </a>
     </figure>
     <section><!-- I would like to combine first and last names into one entry -->
       <label for="Name">Name:</label>
       <p id="Name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></p>
+      <span class="fa fa-angle-down">
     </section>
     <section>
       <label for="background">Background:</label>

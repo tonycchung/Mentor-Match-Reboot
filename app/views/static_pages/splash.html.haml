@@ -16,10 +16,10 @@
   %article.roleButtons
     %p <strong>MATCH:</strong> A new way for students to meet mentors
     %section.button-wrap.wht
-      %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
+      %button.findMentor.trans_wht_btn#findMentor= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
       .triangleUp.triWht
     %section.button-wrap
-      %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
+      %button.beMentor.trans_wht_btn#beMentor= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
       .triangleUp.triBlk
   %article.haveAccount
     .triangleUp.darkRed
@@ -28,7 +28,7 @@
   %p.whoFor Who is Match for?
   %section.hero
     %figure
-      = image_tag "tony_portrait-sq.jpg"
+      = image_tag "tony_portrait-sq.jpg", class: "heroImg"
     .ulWrapper
       %ul
         %h1 Our Students
@@ -41,7 +41,7 @@
         %h2 are working practicioners
         %h3 at the top of their fields
     %figure
-      = image_tag "overshoulder-sq.jpg"
+      = image_tag "overshoulder-sq.jpg", class: "heroImg"
   %p.learnMore Learn a little more...
   %section.about
     %button.wht_red_btn About Match
