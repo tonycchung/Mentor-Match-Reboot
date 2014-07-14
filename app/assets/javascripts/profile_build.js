@@ -20,12 +20,12 @@ $(function() {
 });
 
 // $(function(){
-//   if($("#_1:in-viewport").$(function(){
-//     $("ul > li").slice(1).css("background-color", "red"));
+//   if($('#_1:in-viewport').$(function(){
+//     $('ul > li').slice(1).css('background-color', 'red'));
 //   }
 // })
 //     $('.next').click(function() {
-//       alert("booya");
+//       alert('booya');
 //       if($(this).parents().hasClass('show'));
 //       $(this).parents().removeClass('show');
 //       $(this).parents().addClass('hidden');
@@ -34,9 +34,9 @@ $(function() {
 //     });
 // });
 
-// $("next")function()
+// $('next')function()
 // function next() {
-//     alert("Success");
+//     alert('Success');
 //     if ($(this).hasClass('show')) {
 //         $(this).removeClass('show');
 //         $(this).addClass('hidden');

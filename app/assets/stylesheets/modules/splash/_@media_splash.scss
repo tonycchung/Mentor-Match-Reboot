@@ -1,0 +1,222 @@
+@media (max-width: 800px) {
+.splash{
+  h3{
+    font-size: 2vh;
+  }
+  section{
+    &.student{
+      padding-right: 20vw;
+    }
+    &.mentor{
+      padding-left: 20vw;
+    }
+    &.button-wrap
+    .findMentor{
+    }
+  }
+}
+}
+
+@media (max-width: 640px){
+  .splash{
+    background: $alpha;
+    p.whoFor{
+      background: $alpha_light20;
+      margin: 0;
+    }
+    .triangleUp{
+      display: block;
+      height: 0;
+      width: 0;
+      border-right: 2vw solid transparent;
+      border-left: 2vw solid transparent;
+      position: absolute;
+      top: -5%;
+      left: 49%;
+      &.triWht{
+            border-bottom: 2vw solid $delta;
+          }
+      &.triBlk{
+        border-bottom: 2vw solid $alpha;
+      }
+      &.darkRed{
+        border-bottom: 2vw solid $charlie;
+      }
+    }
+    header{
+      display: flex;
+      align-items: center;
+      background: $delta;
+      figure{
+        width: 20vw;
+        height: auto;
+        padding-bottom: 1vh;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background: $delta;
+        opacity: .7;
+      }
+      img{
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+      }
+      button{
+        &.mobileLogin, &.mobileSignup{
+          display: inline;
+          font-size: 2vh;
+          margin: 0 1vw;
+          padding: .1em;
+          width: 18vw;
+          height: 5vh;
+          background: white;
+          opacity: .7;
+          color: $charlie;
+          border: none;
+          text-transform: uppercase;
+          font-family: $header-font;
+        }
+        &.mobileSignup{
+         margin-left: 40vw;
+        }
+      }
+    }
+    article{
+      position: relative;
+      &.copy{
+        top: 0;
+        padding: 15vh 0;
+        height: 65vh;
+        margin:  0;
+        background-image: url(image-path("dexter-sarah3.jpg"));
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center top;
+        // background: -webkit-linear-gradient(bottom, white, $alpha_light90);
+      }
+      h3{
+        display: none;
+      }
+      &.roleButtons{
+        background: $alpha_light90;
+        flex-wrap: wrap;
+        p{
+          display: block;
+          color: $delta;
+          padding: 10vh 0;
+          width: 100%;
+          background: $charlie;
+          text-align: center;
+          strong{
+            margin-right: .5em;
+            border-bottom: 2px solid $delta;
+            padding: .25em;
+          }
+        }
+      }
+      &.haveAccount{
+        background: $charlie;
+      }
+    }
+    section{
+      position: relative;
+      &.student{
+        padding: 0 16vw 0 0;
+      }
+      &.mentor{
+        padding: 0 0 0 16vw;
+      }
+      &.button-wrap{
+        width: 100%;
+        background: $alpha;
+        padding: 8vh 0;
+        &.wht{
+          background: $delta;
+        }
+        .findMentor{
+          margin: 0;
+          border-color: $alpha_light40;
+          a{
+          color: $alpha_light40;
+          }
+        }
+        button{
+          background: transparent;
+          border: 1px solid $alpha_light80;
+          border-radius: .2em;
+          height: 10vh;
+          width: 40vw;
+          a{
+            color: $alpha_light80;
+            font-size: 3vh;
+          }
+        }
+      }
+      &.existingUser{
+        padding: 8vh 0;
+        margin: 0;
+        button{
+          height: 10vh;
+          width: 40vw;
+          a{
+            font-size: 3vh;
+          }
+        }
+      }
+      &.hero{
+        padding: 0;
+        margin: 0;
+        ul{
+          margin: 0;
+          &.mentors{
+            padding-right: 2vw;
+          }
+          h1{
+            font-size: 5vh;
+          }
+          h2{
+            font-size: 4vh;
+          }
+          h3{
+            font-size: 2vh;
+          }
+
+        }
+      }
+      &.about{
+        button{
+          height: 10vh;
+          width: 40vw;
+          a{
+            font-size: 3vh;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 30em){
+  .splash{
+    article{
+      &.copy{
+        padding: 15vh 0;
+      }
+    }
+    .ulWrapper, ul.mentors{
+      h3{
+        display: none;
+      }
+    }
+    section.button-wrap, section.existingUser{
+      button{
+        height: 10vh;
+        width: 50vw;
+        a{
+          font-size: 2vh;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<article class="quickNav">
+  <% if current_user.present? %>
+    <ul>
+      <%= image_tag ("gabe_square.jpg") %>
+        <!-- make this image link to user home -->
+      <li>
+        <p>Hi, <%= current_user.first_name %><br> Not you?</p>
+       <!-- need sign out -->
+      </li>
+      <div class="verticalRule"></div>
+      <li>
+        <a class="fa fa-home"></a>
+      </li>
+      <div class="verticalRule"></div>
+      <li>
+        <a class="fa fa-wrench"></a>
+      </li>
+      <div class="verticalRule"></div>
+      <li>
+        <a class="fa fa-bullhorn"></a>
+      </li>
+      <div class="verticalRule"></div>
+      <li>
+        <a class="fa fa-cog"></a>
+      </li>
+    </ul>
+  <% else %>
+    <section>
+      <button>
+        <%= link_to "Sign up", new_user_registration_path %>
+      </button>
+      <div class="verticalRule"></div>
+      <button>
+        <%= link_to "Log in", new_user_session_path %>
+      </button>
+    </section>
+  <% end %>
+<article>

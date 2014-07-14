@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :codefellows_courses
+
   # get 'friendship/create' => 'friendship#create'
 
   # get 'friendship/destroy' => 'friendship#destroy'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   get 'static_pages/splash' => 'static_pages#splash', as: :splash
   get 'static_pages/intro' => 'static_pages#intro', as: :intro
+  get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
   # You can have the root of your site routed with "root"
@@ -30,6 +33,8 @@ Rails.application.routes.draw do
   get "/intro" => 'haml_views#intro'
   get '/dashboard' => 'haml_views#dashboard'
   get '/new_dash'=> 'haml_views#new_dash'
+  get '/toolbox' => 'haml_views#toolbox'
+  get 'users/:id/profile_starter' => 'users#profile_starter'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

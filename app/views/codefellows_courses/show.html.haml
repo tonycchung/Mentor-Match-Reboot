@@ -1,0 +1,35 @@
+.courses
+  %p#notice= notice
+  %article.courseSummary
+    %section
+      %label Kind:
+      %p
+        = @codefellows_course.kind
+    %section
+      %label Stack:
+      %p
+        = @codefellows_course.stack
+    %section
+      %label Code:
+      %p
+        = @codefellows_course.code
+    %section
+      %label Section:
+      %p
+        = @codefellows_course.section
+    %section
+      %label Start date:
+      %p
+        = @codefellows_course.starts_at
+    %section
+      %label End Date:
+      %p
+        = @codefellows_course.ends_at
+    %section
+      %label Instructor:
+      %p
+        = @codefellows_course.instructor
+    %section
+      = link_to 'Edit', edit_codefellows_course_path(@codefellows_course)
+      \|
+      = link_to 'Back', codefellows_courses_path

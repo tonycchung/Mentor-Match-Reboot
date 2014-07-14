@@ -1,0 +1,55 @@
+.splash{
+  .mobileSignup, .mobileLogin{
+    &:hover{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      opacity: 1;
+    }
+    &:active{
+      -webkit-transition: all .1s ease-in-out;
+      -moz-transition: all .1s ease-in-out;
+      -o-transition: all .1s ease-in-out;
+      transition: all .1s ease-in-out;
+      color: $charlie;
+    }
+  }
+  button{
+    &.findMentor:hover, &.beMentor:hover{
+      @extend %transition;
+      border-color: transparent;
+      &:active{
+        @extend %transition;
+        background: $charlie;
+      }
+    }
+    &.haveAccount:hover{
+      @extend %transition;
+      background: transparent;
+      border: 1px solid $delta;
+      & a:hover{
+        @extend %transition;
+        color: $delta;
+      }
+    }
+  }
+  .heroImg{
+    &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, blue); /* Standard syntax */
+    opacity: .6;
+  }
+  }
+  .imgAfter{
+
+  }
+}

@@ -1,17 +1,47 @@
 .splash
-  %figure
-    = image_tag "cflogo.png"
-  %article
-    %section.student
-      %h2 Dexter
+  %header.mobileLanding
+    %figure
+      = image_tag "cflogo.png"
+    %button.mobileSignup.trans_wht_btn Signup
+    %button.mobileLogin.trans_wht_btn Login
+  %article.copy
+    %section.student#student
+      %h1 Dexter
       %h2 UX Student
       %h3 I need real-world insight and advice
-    %section.mentor
-      %h2 Sarah
+    %section.mentor#mentor
+      %h1 Sarah
       %h2 UX Mentor
-      %h3 I love helping talent grow
-%section.button-wrap
-  %button.findMentor.trans_wht_btn= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
-  %button.beMentor.trans_wht_btn= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
-%section.login-wrap
-  %button.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
+      %h3 I love helping young talent grow
+  %article.roleButtons
+    %p <strong>MATCH:</strong> A new way for students to meet mentors
+    %section.button-wrap.wht
+      %button.findMentor.trans_wht_btn#findMentor= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
+      .triangleUp.triWht
+    %section.button-wrap
+      %button.beMentor.trans_wht_btn#beMentor= link_to "Become a Mentor", new_user_registration_path(user_type: "mentor"), {class: "btn_txt"}
+      .triangleUp.triBlk
+  %article.haveAccount
+    .triangleUp.darkRed
+    %section.existingUser
+      %button.haveAccount.wht_red_btn= link_to "Have an account?", new_user_session_path, {class: "btn_txt_red"}
+  %p.whoFor Who is Match for?
+  %section.hero
+    %figure
+      = image_tag "tony_portrait-sq.jpg", class: "heroImg"
+    .ulWrapper
+      %ul
+        %h1 Our Students
+        %h2 are just like you
+        %h3 and they're learning from the pros
+  %section.hero
+    .ulWrapper.mentors
+      %ul.mentors
+        %h1 Our Mentors
+        %h2 are working practicioners
+        %h3 at the top of their fields
+    %figure
+      = image_tag "overshoulder-sq.jpg", class: "heroImg"
+  %p.learnMore Learn a little more...
+  %section.about
+    %button.wht_red_btn About Match

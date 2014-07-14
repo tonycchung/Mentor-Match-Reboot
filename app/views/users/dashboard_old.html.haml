@@ -1,7 +1,0 @@
-%h1= "#{current_user.first_name}'s Dashboard"
-=link_to "Browse #{current_user.opposite_role}", users_path
-=link_to 'View your Favorites', history_path(current_user.id)
-=link_to 'Edit your profile', edit_user_path(current_user)
-%h5 Pending Mentorships
-- @pending_friendships.each do |f|
-  %p= link_to "#{User.find(f.user_id).email}", user_path(f.user_id)

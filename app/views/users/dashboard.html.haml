@@ -1,17 +1,20 @@
 .dash
-  .logo
-  %nav.quickNav
-    %ul
-      %li.headshot
-        =image_tag ("gabe_square.jpg")
-      %li
-        %a.fa.fa-home(abbr title="home")
-      %li
-        %a.fa.fa-briefcase(abbr title="toolbox")
-      %li
-        %a.fa.fa-bullhorn(abbr title="feedback")
-      %li
-        %a.fa.fa-cog(abbr title="account")
+  %header
+    .logo
+      = render "quickNav"
+  -# %nav.quickNav
+    -# %ul
+    -#   %li.headshot
+    -#     =image_tag ("gabe_square.jpg")
+    -#   %li
+    -#     %a.fa.fa-home(abbr title="home")
+    -#   %li
+    -#     %a.fa.fa-briefcase(abbr title="toolbox")
+    -#   %li
+    -#     %a.fa.fa-bullhorn(abbr title="feedback")
+    -#   %li
+    -#     %a.fa.fa-cog(abbr title="account")
+  =link_to "sign out", destroy_user_session_path, method: :delete, class: "signout"
   .mainWrapper
     .mainNav
       %section
@@ -23,24 +26,21 @@
       %section
         %p= link_to "Browse", users_path
       %section
-        %p My Toolbox
+        %p= link_to "My Toolbox", toolbox_path
       %section
         %p About
       %section
         %p Feedback
     .main
       %section
-        %span.fa.fa-users
-        %h2 Find a mentor/Browse mentors
+        %h2 Browse the Roster
         %button
           %span.fa.fa-chevron-right
       %section
-        %span.fa.fa-clock-o
-        %h2 Your next meeting is on...
+        %h2 View your calendar...
         %button
           %span.fa.fa-chevron-right
       %section
-        %span.fa.fa-comments-o
         %h2 View Your history
         %button
           %span.fa.fa-chevron-right
@@ -55,6 +55,11 @@
           =image_tag ("mark_square.jpg")
         .paraWrap
           %p.paraWrapP Bresaola landjaeger et filet mignon
+      %section
+        %figure
+          =image_tag ("gabe_square.jpg")
+        .paraWrap
+          %p.paraWrapP Strip steak labore frankfurter flank
       %section
         %figure
           =image_tag ("gabe_square.jpg")

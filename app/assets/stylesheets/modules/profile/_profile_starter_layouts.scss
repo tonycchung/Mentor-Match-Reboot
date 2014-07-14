@@ -1,0 +1,175 @@
+.profileBuild{
+  color: $alpha;
+  padding-top: 5vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  background: $alpha;
+  button{
+    &.skip{
+      width: auto;
+      height: auto;
+      padding: 1em 2em;
+      font-size: 1.5vh;
+      border: 1px solid $delta;
+      background: transparent;
+      color: $delta;
+      text-transform: uppercase;
+      font-family: Montserrat;
+      &:hover{
+        background: $charlie;
+        border-color: transparent;
+      }
+      position: fixed;
+      top: 5%;
+      right: 10%;
+      }
+    &.submit{
+      margin: 15vh 0 5vh 0;
+      padding: 0;
+      background: transparent;
+      border: 1px solid $charlie;
+      color: $charlie;
+      font-family: $header-font;
+      &:hover{
+        border-color: $delta;
+        & input:hover {
+          color: $delta;
+        }
+      }
+      input.submit{
+        display: block;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+        height: 3em;
+        color: $charlie;
+        text-transform: uppercase;
+        }
+    }
+  }
+  h1{
+    position: absolute;
+    top: 2em;
+    left: 43%;
+    font-size: 5vh;
+    margin-bottom: 5vh;
+    color: $charlie_light10;
+  }
+  section{
+    height: 100vh;
+    width: 100vw;
+  }
+  h2{
+    margin-top: 15vh;
+    text-align: center;
+    font-size: 3vh;
+  }
+  p{
+    color: $alpha;
+  }
+  figure{
+    background: $bravo;
+    height: 10vh;
+    width: 10vh;
+    border: 2px solid $alpha;
+    border-radius: 50%;
+    margin: 5vh auto;
+  }
+  .fieldWrap {
+    padding: 5vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2vh auto 5vh auto;
+    height: auto;
+    input, label{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    margin: 2vh 0;
+    border-top: 2px solid $bravo;
+    border-bottom: 2px solid $bravo;
+    }
+    label{
+      width: 35%;
+      color: $charlie;
+      justify-content: center;
+      text-align: center;
+    }
+    textarea{
+      width: 80%;
+      margin: 0 5vh;
+      height: 20vh;
+      border: 4px solid $charlie;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5vh 5vw;
+    }
+    textarea::-webkit-input-placeholder{
+      text-align: center;
+      font-family: $body-font;
+      padding-top: 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    input{
+      width: 35%;
+      padding-left: 1em;
+      placeholder{
+        font-family: $body-font;
+      }
+    }
+  }
+  .nameField{
+    label{
+      padding-right: 2em;
+      justify-content: flex-end;
+    }
+  }
+  span{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: $charlie;
+    font-size: 8vh;
+  }
+  ul{
+    margin-top: 15vh;
+    display: flex;
+    justify-content: center;
+  }
+  nav{
+    .progDot{
+      background: $alpha_light70;
+      border-radius: 50%;
+      height: 5vh;
+      width: 5vh;
+      margin: 3vw;
+      &:hover{
+        background: $bravo;
+      }
+      &:active{
+        background: $delta;
+      }
+    }
+  }
+  .userProfile{
+    padding: 5vh;
+    background: $delta;
+    width: 60vw;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    p{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
