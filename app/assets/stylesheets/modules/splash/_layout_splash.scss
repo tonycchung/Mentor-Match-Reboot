@@ -1,3 +1,7 @@
+/*===========================================
+            LANDING PAGE STYLES
+============================================*/
+
 .splash {
   height: 110vh;
   background-image: url(image-path("dexter-sarah3.jpg"));
@@ -5,11 +9,36 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-color: $alpha;
+
+/*===========================================
+           MOBILE HEADER BUTTONS
+============================================*/
+
   button{
     &.mobileLogin, &.mobileSignup{
     display: none;
     @extend %transition;
     }
+    &.haveAccount{
+      @extend %transition;
+      border: none;
+      background: $charlie;
+      color: $delta;
+      &:hover{
+        @extend %transition;
+        border: 1px solid $charlie;
+        color: $charlie;
+        > a{
+          background: transparent;
+          color: $charlie;
+        }
+      }
+    }
+
+/*===========================================
+            MAIN LANDING BUTTONS
+============================================*/
+
     &.findMentor, &.beMentor, &.haveAccount{
       display: flex;
       align-items: center;
@@ -24,12 +53,20 @@
       }
     }
   }
+/*===========================================
+
+============================================*/
 .triangleUp {
     display: none
   }
   & h1, & h2, & h3 {
     width: 100%;
   }
+
+/*===========================================
+                   LOGO
+============================================*/
+
   figure{
     padding: 1vh 0 0 0;
     margin: 0;
@@ -39,6 +76,10 @@
   display: block;
   margin: 0 auto;
   }
+
+/*===========================================
+
+============================================*/
   article{
     &.copy {
       width: 100vw;
@@ -55,10 +96,16 @@
       }
     }
     &.haveAccount{
+
       display: flex;
       justify-content: center;
     }
   }
+
+/*===========================================
+
+============================================*/
+
   section{
     display: flex;
     flex-wrap: wrap;
@@ -88,8 +135,9 @@
       margin: 4vh 0 6.5vh 0;
     }
 
-// Hero Images & Copy (need to refactor typography here)
-//================================================
+/*===========================================
+            STUDENT/MENTOR HERO COPY
+============================================*/
     &.hero{
       width: 100%;
       h1{
@@ -155,8 +203,9 @@
       }
     }
 
-// "Learn more" button footer
-//================================================
+/*===========================================
+            LEARN MORE BUTTON FOOTER
+============================================*/
     &.about{
       width: 100%;
       height: 30vh;
