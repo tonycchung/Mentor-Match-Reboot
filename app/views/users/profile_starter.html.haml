@@ -10,7 +10,8 @@
         = f.text_field :first_name, placeholder: "Robert", type: "text"
         = f.label :last_name
         = f.text_field :last_name, placeholder: "Baratheon", type: "text"
-        %span.next.fa.fa-angle-double-right
+        %section.nextBtnWrap
+        %span.next.fa.fa-angle-double-right#next_1
       %nav.progBar
         %ul
           %li.progDot
@@ -24,7 +25,7 @@
       .fieldWrap
         = f.label :background
         = f.text_area :background, placeholder: "Well, on Saturday's I like to juggle chainsaws dressed like a sailor..."
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-right#next_2
       %nav.progBar
         %ul
           %li.progDot
@@ -38,7 +39,7 @@
       .fieldWrap
         = f.label :accomplishments
         = f.text_area :accomplishments, placeholder:  "I arm wrestled Deniro once."
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-right#next_3
       %nav.progBar
         %ul
           %li.progDot
@@ -53,7 +54,7 @@
         .fieldWrap
           = f.label :professional_summary
           = f.text_area :professional_summary, placeholder: "Spent 7 years fighting the robot uprising"
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-right#next_4
         %nav.progBar
           %ul
             %li.progDot

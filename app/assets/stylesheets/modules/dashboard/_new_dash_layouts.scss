@@ -78,7 +78,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: transparent;
+    background-color: $alpha_light60;
+    opacity: .7;
     padding: 0;
     margin: 1vh;
     &.main{
@@ -87,7 +88,8 @@
     h2{
       width: 100%;
       padding-left: 1em;
-      background-color: $alpha_light20;
+      color: $delta;
+      opacity: 1;
       height: 20vh;
       font-size: 2vh;
       display: flex;

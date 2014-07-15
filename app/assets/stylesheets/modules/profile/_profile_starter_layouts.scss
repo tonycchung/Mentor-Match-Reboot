@@ -132,11 +132,16 @@
       justify-content: flex-end;
     }
   }
+  section.nextBtnWrap{
+    background: #c9c9c9;
+    width: 100%;
+    height: 2em;
+  }
   span{
-    display: inline-block;
+    display: block;
     text-align: center;
     width: 100%;
-    color: $charlie;
+    color: $bravo;
     font-size: 8vh;
   }
   ul{

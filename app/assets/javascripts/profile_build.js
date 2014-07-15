@@ -1,23 +1,24 @@
 $(function() {
     $('#next_1').click(function() {
-      $.scrollTo('#_2', 800, {easing:'swing'} );
+      $.scrollTo('#s2', 800, {easing:'swing'} );
     });
 });
-$(function() {
-    $('#next_2').click(function() {
-      $.scrollTo('#_3', 800, {easing:'swing'} );
-    });
-});
-$(function() {
-    $('#next_3').click(function() {
-      $.scrollTo('#_4', 800, {easing:'swing'} );
-    });
-});
-$(function() {
-    $('#next_4').click(function() {
-      $.scrollTo('#_5', 800, {easing:'swing'} );
-    });
-});
+// $(function() {
+//     $('#next_2').click(function() {
+//       $.scrollTo('#s3', 800, {easing:'swing'} );
+//     });
+// });
+// $(function() {
+//     $('#next_3').click(function() {
+//       $.scrollTo('#s4', 800, {easing:'swing'} );
+//     });
+// });
+// $(function() {
+//     $('#next_4').click(function() {
+//       $.scrollTo('#s5', 800, {easing:'swing'} );
+//     });
+// });
+
 
 // $(function(){
 //   if($('#_1:in-viewport').$(function(){
