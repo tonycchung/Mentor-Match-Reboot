@@ -21,7 +21,8 @@
 }
 
 .mainWrapper {
-  display: flex;
+  width: 100%;
+  // display: flex;
 }
 
 .main, .mainAside, .mainNav {
@@ -30,11 +31,17 @@
 }
 /* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainNav{
-  margin: 0;
+  float: left;
+  margin: 0 0 0 -10vw;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
   padding: 0;
+  @extend %transition;
+  &:hover{
+    @extend %transition;
+    margin: 0 0 0 0;
+  }
   section {
     background-color: transparent;
     width: 80%;
@@ -67,10 +74,11 @@
 }
 
 .main {
+  position: absolute;
   display: flex;
   flex-wrap: nowrap;
-  margin: 0;
-  width: 60vw;
+  margin: 0 25%;
+  width: auto;
   background: transparent;
   section {
     width: 30%;
@@ -78,12 +86,13 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: $alpha_light60;
-    opacity: .7;
+    background-color: rgba(169,169,169, .7);
     padding: 0;
     margin: 1vh;
     &.main{
       background: transparent;
+    }
+    &:hover {
     }
     h2{
       width: 100%;
@@ -117,20 +126,21 @@
   }
 }
 
-.mainAside {
-  margin: 0;
-  width: 20vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 /* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
 .mainAside {
-  margin: 0;
+  margin: 0 -10vw 0 0;
   width: 20vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  float: right;
+  @extend %transition;
+  &:hover{
+    @extend %transition;
+    margin: 0;
+  }
+
   section {
     background-color: $alpha_light10;;
     width: 80%;
@@ -155,13 +165,15 @@
     height: 10vh;
     border: 0.1em solid white;
   }
+  .paraWrap{
+    display: flex;
+    align-items: center;
+  }
     .paraWrapP {
       font-size: 2vh;
       background-color: $alpha_light10;
       text-align: center;
       display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
       padding-left: 1em;
     }
   }
