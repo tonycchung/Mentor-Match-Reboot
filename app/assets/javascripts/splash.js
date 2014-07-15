@@ -18,6 +18,3 @@ window.onmousemove  = function(){
   document.getElementById('student').style.opacity='1';
   document.getElementById('mentor').style.opacity='1';
 }
-
-document.getElementById('findMentor').onFocus=function(){
-}
