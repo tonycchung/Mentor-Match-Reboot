@@ -1,0 +1,42 @@
+@media screen and (max-width: 640px){
+  .new{
+    header{
+      padding: 5vh 0 0 0;
+    }
+    h1{
+      padding: .25em;
+      font-size: 2em;
+    }
+    form#new_user{
+      article.inputs{
+        width: 100%;
+        padding: 0;
+        background: transparent;
+      }
+      label{
+        padding: 0 1em;
+        font-size: 1.5em;
+        text-align: right;
+        margin-right: 1em;
+      }
+      input{
+        color: $delta;
+        font-size: 1.5em;
+        background: transparent;
+        width: auto;
+        &.btn_txt{
+          font-size: 1em;
+        }
+      }
+      select{
+        font-size: 1.5em;
+        background: transparent;
+        color: $delta;
+        padding-right: 3em;
+        width: 10em;
+      }
+      section.submitBtn{
+        margin-top: 3em;      }
+    }
+  }
+}
