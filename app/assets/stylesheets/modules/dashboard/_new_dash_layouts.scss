@@ -1,3 +1,7 @@
+/*================================================
+              DASHBOARD BACKGROUND
+=================================================*/
+
 .dash {
   background-color: $alpha;
   background-image: url(image-path("bottle_wide.jpg"));
@@ -5,6 +9,11 @@
   background-position: center top;
   height: 100vh;
   width: 100vw;
+
+/*================================================
+               DASHBOARD HEADER
+=================================================*/
+
   header{
     padding: 5vh;
     display: flex;
@@ -19,6 +28,9 @@
     background-repeat: no-repeat;
   }
 }
+/*================================================
+          DASHBOARD CONTENT AREA WRAPPER
+=================================================*/
 
 .mainWrapper {
   display: flex;
@@ -28,7 +40,11 @@
   // display: flex;
   height: 60vh;
 }
-/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+
+/*================================================
+          SLIDE OUT MAIN NAV (FROM-LEFT)
+=================================================*/
+
 .mainNav{
   margin: 0;
   justify-content: center;
@@ -66,6 +82,10 @@
   }
 }
 
+/*================================================
+              CENTRAL CONTENT AREA
+=================================================*/
+
 .main {
   display: flex;
   flex-wrap: nowrap;
@@ -78,7 +98,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(129,129,129, .6);
     padding: 0;
     margin: 1vh;
     &.main{
@@ -86,12 +106,13 @@
     }
     h2{
       width: 100%;
-      padding-left: 1em;
-      background-color: $alpha_light20;
+      text-transform: uppercase;
+      background: transparent;
       height: 20vh;
       font-size: 2vh;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     button{
       background-color: $charlie;

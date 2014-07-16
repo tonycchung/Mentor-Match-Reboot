@@ -2,18 +2,6 @@
   %header
     .logo
       = render "quickNav"
-  -# %nav.quickNav
-    -# %ul
-    -#   %li.headshot
-    -#     =image_tag ("gabe_square.jpg")
-    -#   %li
-    -#     %a.fa.fa-home(abbr title="home")
-    -#   %li
-    -#     %a.fa.fa-briefcase(abbr title="toolbox")
-    -#   %li
-    -#     %a.fa.fa-bullhorn(abbr title="feedback")
-    -#   %li
-    -#     %a.fa.fa-cog(abbr title="account")
   =link_to "sign out", destroy_user_session_path, method: :delete, class: "signout"
   .mainWrapper
     .mainNav
