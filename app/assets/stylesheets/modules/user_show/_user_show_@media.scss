@@ -1,0 +1,16 @@
+@media screen and (max-width: 640px){
+  .show{
+    padding: 5vh 0;
+    article{
+      width: 100%;
+      margin: 0;
+      p{
+        width: 50%;
+      }
+      section#editContainer{
+      top: 2em;
+      }
+    }
+
+  }
+}
