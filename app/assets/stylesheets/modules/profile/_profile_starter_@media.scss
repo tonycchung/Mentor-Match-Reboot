@@ -1,0 +1,33 @@
+@media screen and (max-width: 640px){
+  .profileBuild{
+    span{
+      font-size: 4em;
+      margin-top: 2vh;
+    }
+    li.progDot{
+      margin: 3vw 4vw;
+    }
+    button.skip{
+      top: 3%;
+      right: 5%;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .profileBuild{
+    h2{
+      font-size: .75em;
+      line-height: 1.5em;
+    }
+    button.skip{
+      top: 2%;
+      right: 2%;
+    }
+    .fieldWrap{
+      textarea{
+        padding: 3vh 5vw;
+      }
+    }
+  }
+}
