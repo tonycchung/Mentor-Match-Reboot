@@ -12,7 +12,7 @@ feature "A user must be able to sign in in a variety of ways" do
     first(:link, "Become a Mentor").click
     fill_in "Email", with: users(:mentor_user).email
     fill_in "Password", with: 12345678
-    fill_in "Password confirmation", with: 12345678
+    fill_in "user_password_confirmation", with: 12345678
     click_on "Submit"
     page.must_have_content "Create Account"
   end
@@ -22,20 +22,16 @@ feature "A user must be able to sign in in a variety of ways" do
     first(:link, "Find a Mentor").click
     fill_in "Email", with: users(:mentee_user).email
     fill_in "Password", with: 12345678
-    fill_in "Password confirmation", with: 12345678
+    fill_in "user_password_confirmation", with: 12345678
     click_on "Submit"
     page.must_have_content "Create Account"
   end
 
-  scenario "As an existying user I want to sign in to my account " do
-    sign_in_mentor
-    page.must_have_content "Signed in successfully."
-  end
 
   scenario "signed in users are taken to their dashboard" do
     sign_in_mentee
     visit root_path
-    page.must_have_content "Browse Mentors"
+    page.must_have_content "Browse"
   end
 
   # scenario "sign in with github works" do
