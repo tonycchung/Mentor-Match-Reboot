@@ -78,13 +78,19 @@
       margin: 0;
       font-family: "Montserrat";
       font-size: 2vh;
-      color: white;
+      color: $delta;
       width: 100%;
       padding: 0;
-      background-color: $alpha_light60;
+      background-color: rgba(129,129,129, .6);
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      padding-right: 1em;
+      font-style: normal;
+    }
+    a{
+      color: $delta;
+      font-style: normal;
     }
   }
 }
@@ -97,8 +103,6 @@
   position: absolute;
   display: flex;
   flex-wrap: nowrap;
-  margin: 0 25%;
-  width: auto;
   background: transparent;
   section {
     width: 30%;
@@ -108,7 +112,6 @@
     justify-content: center;
     background-color: rgba(129,129,129, .6);
     padding: 0;
-    margin: 1vh;
     &.main{
       background: transparent;
     }
@@ -139,13 +142,20 @@
       justify-content: center;
       span{
         background: transparent;
-        display: block;
-        width: 100%;
+        display: flex;
         text-align: center;
+        padding: 1em;
+        color: $delta;
+        border-radius: 50%;
+        background: $alpha;
         }
     }
   }
 }
+
+/*================================================
+        SLIDE-OUT ACTIVITY FEED (FROM-RIGHT)
+=================================================*/
 
 .mainAside {
   margin: 0 -10vw 0 0;
@@ -161,16 +171,15 @@
   }
 
   section {
-    background-color: $alpha_light10;;
+    background-color: rgba(129,129,129, .6);
     width: 80%;
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
-    height: 15vh;
     margin-bottom: 1vh;
     figure {
-    background: $alpha_light20;
+    background: transparent;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -188,6 +197,7 @@
     display: flex;
     align-items: center;
   }
+<<<<<<< HEAD
     .paraWrapP {
       font-size: 2vh;
       background-color: $alpha_light10;
@@ -195,5 +205,16 @@
       display: flex;
       padding-left: 1em;
     }
+=======
+  .paraWrapP {
+    font-size: 2vh;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1em;
+  }
+>>>>>>> dashboard_layouts
   }
 }
