@@ -3,12 +3,6 @@ window.onscroll = function(){
   document.getElementById('mentor').style.opacity='1';
 }
 
-<<<<<<< HEAD
-window.onmousemove  = function(){
-  document.getElementById('student').style.opacity='1';
-  document.getElementById('mentor').style.opacity='1';
-}
-=======
 $(document).ready(function(){
   $('.splash').mouseenter=function(){
     document.getElementById('student').style.opacity='1';
@@ -31,4 +25,4 @@ document.getElementById('beMentor').onclick=assignRoleMentor();
 // studentRoleButton.addEventListener("click", assignRoleStudent());
 
 // mentorRoleButton.addeventListener("click", assignRoleMentor());
->>>>>>> profile_starter_layouts
+
