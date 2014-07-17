@@ -16,4 +16,3 @@
 //= require reveal
 //= require_tree .
 //= require jquery.scrollTo
-

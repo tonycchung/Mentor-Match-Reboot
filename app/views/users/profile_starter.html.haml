@@ -78,6 +78,13 @@
           = f.label :company
           = f.text_field :company, type: "text", placeholder: "ACME Corp."
           %span.next.fa.fa-angle-double-right
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
       %section#s7
         %h2
           What is your role right now? <br> briefly describe your position.
@@ -86,13 +93,6 @@
           = f.text_area :position, placeholder: "Senior Lunch Quality Assurance Engineer leading a team of 7 expert sandwich developers"
           %button.submit
             =f.submit 'Submit', class: "submit"
-      %nav.progBar
-        %ul
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
 
 
 
