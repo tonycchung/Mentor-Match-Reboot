@@ -53,7 +53,7 @@
   padding: 0;
   section {
     background-color: transparent;
-    width: 80%;
+    width: 100%;
     padding: 0;
     margin: 0 0;
     display: flex;
@@ -107,6 +107,7 @@
     justify-content: center;
     background-color: rgba(129,129,129, .6);
     padding: 0;
+    margin: 0 1vw;
     &.main{
       background: transparent;
     }
@@ -114,7 +115,7 @@
       width: 100%;
       text-transform: uppercase;
       background: transparent;
-      height: 20vh;
+      height: 50%;
       font-size: 2vh;
       display: flex;
       align-items: center;
@@ -139,7 +140,7 @@
         padding: 1em;
         color: $delta;
         border-radius: 50%;
-        background: $alpha;
+        margin: 0 auto;
         }
     }
   }
@@ -155,17 +156,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-/* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside {
-  margin: 0;
-  width: 20vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   section {
     background-color: rgba(129,129,129, .6);
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0;
