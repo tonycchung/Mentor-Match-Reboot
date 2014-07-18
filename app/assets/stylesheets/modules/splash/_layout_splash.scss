@@ -139,6 +139,21 @@
             STUDENT/MENTOR HERO COPY
 ============================================*/
     &.hero{
+      position: relative;
+      .overlay{
+        @extend %transition_1s;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: transparent;
+        &:hover{
+          @extend %transition_pt1s;
+          background-color: rgba(29,29,29, .5);
+        }
+      }
       width: 100%;
       h1{
         font-size: 8vh;
@@ -164,7 +179,7 @@
       }
       .ulWrapper{
         width: 50vw;
-        z-index: -1;
+        z-index: 1;
         background: $alpha;
         display: flex;
         align-items: center;
@@ -179,6 +194,7 @@
           flex-wrap: wrap;
           margin: 0;
           list-style-type: none;
+          z-index: 3;
           &.mentors{
             margin: 0 10% 0 0;
             text-align: right;
@@ -191,12 +207,15 @@
             }
           }
           h1{
+            z-index: 3;
             color: $charlie;
           }
           h2{
             color: $delta;
+            z-index: 3;
           }
           h3{
+            z-index: 3;
             color: $delta;
             margin-top: 1vh;
           }
