@@ -28,19 +28,19 @@ def sign_in_mentor(role = :mentor_user)
   visit new_user_session_path
   fill_in "Email", with: users(role).email
   fill_in "Password", with: 'password'
-  click_button "Sign in"
+  click_button "Go get 'em"
 end
 
 def sign_in_mentee(role = :mentee_user)
   visit new_user_session_path
   fill_in "Email", with: users(role).email
   fill_in "Password", with: 'password'
-  click_button "Sign in"
+  click_button "Go get 'em"
 end
 
 def sign_in_admin(role = :admin_user)
   visit new_user_session_path
   fill_in "Email", with: users(role).email
   fill_in "Password", with: 'password'
-  click_button "Sign in"
+  click_button "Go get 'em"
 end

@@ -18,7 +18,7 @@ class CodefellowsCoursesControllerTest < ActionController::TestCase
 
   test "should create codefellows_course" do
     assert_difference('CodefellowsCourse.count') do
-      post :create, codefellows_course: { course: @codefellows_course.course, course_id: @codefellows_course.course_id, end_date: @codefellows_course.end_date, instructor: @codefellows_course.instructor, section: @codefellows_course.section, start_date: @codefellows_course.start_date }
+      post :create, codefellows_course: { kind: @codefellows_course.kind, stack: @codefellows_course.stack, code: @codefellows_course.code, ends_at: @codefellows_course.ends_at, instructor: @codefellows_course.instructor, section: @codefellows_course.section, starts_at: @codefellows_course.starts_at }
     end
 
     assert_redirected_to codefellows_course_path(assigns(:codefellows_course))
@@ -35,7 +35,7 @@ class CodefellowsCoursesControllerTest < ActionController::TestCase
   end
 
   test "should update codefellows_course" do
-    patch :update, id: @codefellows_course, codefellows_course: { course: @codefellows_course.course, course_id: @codefellows_course.course_id, end_date: @codefellows_course.end_date, instructor: @codefellows_course.instructor, section: @codefellows_course.section, start_date: @codefellows_course.start_date }
+    patch :update, id: @codefellows_course, codefellows_course: { kind: @codefellows_course.kind, stack: @codefellows_course.stack, code: @codefellows_course.code, ends_at: @codefellows_course.ends_at, instructor: @codefellows_course.instructor, section: @codefellows_course.section, starts_at: @codefellows_course.starts_at }
     assert_redirected_to codefellows_course_path(assigns(:codefellows_course))
   end
 

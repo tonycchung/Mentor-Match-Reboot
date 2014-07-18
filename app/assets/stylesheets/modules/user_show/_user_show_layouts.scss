@@ -30,15 +30,19 @@
       padding: .5em;
       text-align: center;
       margin-top: .25em;
+      min-width: 315px;
       &:hover{
         @extend %transition;
         color: $alpha_light90;
         background: $alpha_light10;
-        border-radius: .5em;
+        border-radius: 1em;
        }
       span{
         @extend %transition;
         color: $alpha;
+        & .fa-chevron-circle-down{
+          padding-right: .5em;
+        }
       }
       &:hover > span{
         @extend %transition;
@@ -130,6 +134,7 @@
           color: $alpha;
           font-size: 3vh;
           margin-top: -.25em;
+          padding-right: .5em;
         }
       }
       span{

@@ -1,3 +1,7 @@
+/*================================================
+              DASHBOARD BACKGROUND
+=================================================*/
+
 .dash {
   background-color: $alpha;
   background-image: url(image-path("bottle_wide.jpg"));
@@ -5,6 +9,11 @@
   background-position: center top;
   height: 100vh;
   width: 100vw;
+
+/*================================================
+               DASHBOARD HEADER
+=================================================*/
+
   header{
     padding: 5vh;
     display: flex;
@@ -19,25 +28,39 @@
     background-repeat: no-repeat;
   }
 }
+/*================================================
+          DASHBOARD CONTENT AREA WRAPPER
+=================================================*/
 
 .mainWrapper {
-  display: flex;
+  width: 100%;
+  // display: flex;
 }
 
 .main, .mainAside, .mainNav {
   // display: flex;
   height: 60vh;
 }
-/* line 36, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
+
+/*================================================
+          SLIDE OUT MAIN NAV (FROM-LEFT)
+=================================================*/
+
 .mainNav{
-  margin: 0;
+  float: left;
+  margin: 0 0 0 -10vw;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
   padding: 0;
+  @extend %transition;
+  &:hover{
+    @extend %transition;
+    margin: 0 0 0 0;
+  }
   section {
     background-color: transparent;
-    width: 80%;
+    width: 100%;
     padding: 0;
     margin: 0 0;
     display: flex;
@@ -55,22 +78,31 @@
       margin: 0;
       font-family: "Montserrat";
       font-size: 2vh;
-      color: white;
+      color: $delta;
       width: 100%;
       padding: 0;
-      background-color: $alpha_light60;
+      background-color: rgba(129,129,129, .6);
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      padding-right: 1em;
+      font-style: normal;
+    }
+    a{
+      color: $delta;
+      font-style: normal;
     }
   }
 }
 
+/*================================================
+              CENTRAL CONTENT AREA
+=================================================*/
+
 .main {
+  position: absolute;
   display: flex;
   flex-wrap: nowrap;
-  margin: 0;
-  width: 60vw;
   background: transparent;
   section {
     width: 30%;
@@ -78,20 +110,24 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    background-color: transparent;
+    background-color: rgba(129,129,129, .6);
     padding: 0;
-    margin: 1vh;
+    margin: 0 1vw;
     &.main{
       background: transparent;
     }
+    &:hover {
+    }
     h2{
       width: 100%;
-      padding-left: 1em;
-      background-color: $alpha_light20;
-      height: 20vh;
+      color: $delta;
+      text-transform: uppercase;
+      background: transparent;
+      height: 50%;
       font-size: 2vh;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     button{
       background-color: $charlie;
@@ -107,39 +143,41 @@
       justify-content: center;
       span{
         background: transparent;
-        display: block;
-        width: 100%;
+        display: flex;
         text-align: center;
+        padding: 1em;
+        color: $delta;
+        border-radius: 50%;
+        margin: 0 auto;
         }
     }
   }
 }
 
+/*================================================
+        SLIDE-OUT ACTIVITY FEED (FROM-RIGHT)
+=================================================*/
+
 .mainAside {
-  margin: 0;
   width: 20vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-/* line 129, /Users/bwstud/Box Sync/Work/Codefellows/Mentor/final-repo/Mentor-Match-Reboot/app/assets/stylesheets/modules/dashboard/_new_dash.scss */
-.mainAside {
-  margin: 0;
-  width: 20vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  @extend %transition;
+  &:hover{
+    @extend %transition;
+    margin: 0;
+  }
   section {
-    background-color: $alpha_light10;;
-    width: 80%;
+    background-color: rgba(129,129,129, .6);
+    width: 100%;
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
-    height: 15vh;
     margin-bottom: 1vh;
     figure {
-    background: $alpha_light20;
+    background: transparent;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -153,14 +191,18 @@
     height: 10vh;
     border: 0.1em solid white;
   }
-    .paraWrapP {
-      font-size: 2vh;
-      background-color: $alpha_light10;
-      text-align: center;
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      padding-left: 1em;
+  .paraWrap{
+    display: flex;
+    align-items: center;
+  }
+  .paraWrapP {
+    font-size: 2vh;
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 1em;
     }
   }
 }

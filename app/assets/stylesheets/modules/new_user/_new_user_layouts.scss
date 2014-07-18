@@ -11,18 +11,23 @@
 
 .new {
   header{
-    padding: 3vh 0 5vh 0;
+    padding: 3vh 0 0 0;
     background: transparent;
   }
   h1{
     border-bottom: 5px solid $bravo;
+    background: $charlie;
+    text-transform: uppercase;
   }
   h1, h2 {
     display: block;
     text-align: center;
-    padding: 1em 0;
-    background: $charlie;
-    text-transform: uppercase;
+    padding: .5em 0;
+
+  }
+  h2{
+    background: transparent;
+    font-size: 1em;
   }
 }
 
@@ -35,9 +40,9 @@ form#new_user{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2em;
+    padding: 0 2em;
     width: 80%;
-    background: $bravo;
+    background: transparent;
   }
   section{
     position: relative;
@@ -82,6 +87,12 @@ form#new_user{
     height: 2em;
     display: flex;
     padding-left: 1em;
+    background: rgba(129,129,129, .5);
+    color: $alpha_light90;
+    &::-webkit-input-placeholder {
+      font-family: $header-font;
+      color: $alpha_light90;
+    }
     &.trans_wht_btn{
       width: 16vw;
       height: 5vw;
@@ -97,6 +108,8 @@ form#new_user{
     height: 2em;
     display: flex;
     padding-left: 1em;
+    background: rgba(129,129,129, .5);
+    color: $alpha_light90;
   }
   button.trans_wht_btn{
     display: flex;

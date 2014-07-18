@@ -1,0 +1,10 @@
+.profileBuild{
+  .fa:hover{
+    @extend %transition;
+    color: $charlie;
+  }
+  .fa:active{
+    @extend %transition;
+    color: $delta;
+  }
+}
