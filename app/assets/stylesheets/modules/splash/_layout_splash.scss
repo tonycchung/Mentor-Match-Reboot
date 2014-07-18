@@ -240,11 +240,15 @@
       background: $alpha;
       button{
         text-transform: uppercase;
+        text-decoration: none;
         font-family: $header-font;
         background: transparent;
         color: $charlie;
         margin: 10vh auto;
         border: 1px solid $charlie;
+        a{
+          color: $charlie;
+        }
       }
     }
   }
