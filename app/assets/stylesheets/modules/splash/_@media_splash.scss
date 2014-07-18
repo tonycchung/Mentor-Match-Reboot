@@ -151,46 +151,45 @@
             color: $delta;
             font-size: 3vh;
           }
+        }
       }
     }
-
 /*================================================
             MOBILE MAIN CONTENT SECTIONS
 =================================================*/
 
-    section{
-      position: relative;
-      &.student{
-        padding: 0 16vw 0 0;
+  section{
+    position: relative;
+    &.student{
+      padding: 0 16vw 0 0;
+    }
+    &.mentor{
+      padding: 0 0 0 16vw;
+    }
+    &.button-wrap{
+      width: 100%;
+      background: $alpha;
+      padding: 8vh 0;
+      &.wht{
+        background: $delta;
       }
-      &.mentor{
-        padding: 0 0 0 16vw;
+      .findMentor{
+        margin: 0;
+        border-color: $alpha_light40;
+        a{
+        color: $alpha_light40;
+        }
       }
-      &.button-wrap{
-        width: 100%;
-        background: $alpha;
-        padding: 8vh 0;
-        &.wht{
-          background: $delta;
+      button{
+        background: transparent;
+        border: 1px solid $alpha_light80;
+        border-radius: .2em;
+        height: 10vh;
+        width: 40vw;
         }
-        .findMentor{
-          margin: 0;
-          border-color: $alpha_light40;
-          a{
-          color: $alpha_light40;
-          }
-        }
-        button{
-          background: transparent;
-          border: 1px solid $alpha_light80;
-          border-radius: .2em;
-          height: 10vh;
-          width: 40vw;
-          }
-          a{
-            color: $delta;
-            font-size: 3vh;
-          }
+        a{
+          color: $delta;
+          font-size: 3vh;
         }
       }
       &.existingUser{
@@ -204,26 +203,6 @@
           }
         }
       }
-      &.hero{
-        padding: 0;
-        margin: 0;
-        ul{
-          margin: 0;
-          &.mentors{
-            padding-right: 2vw;
-          }
-          h1{
-            font-size: 5vh;
-          }
-          h2{
-            font-size: 4vh;
-          }
-          h3{
-            font-size: 2vh;
-          }
-
-        }
-      }
       &.about{
         button{
           height: 10vh;
@@ -233,7 +212,27 @@
           }
         }
       }
+    &.hero{
+      .overlay{
+        background: rgba(29,29,29, .8);
+      }
+      .ulWrapper{
+        opacity: 1;
+        ul{
+          opacity: 1;
+          h1{
+            font-size: 5vh;
+          }
+          h2{
+            font-size: 3vh;
+          }
+          h3{
+            font-size: 2vh;
+          }
+        }
+      }
     }
+  }
   }
 }
 
