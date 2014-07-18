@@ -27,4 +27,7 @@
       %h2 Reach out to mentors simply,<br> smartly and with confidence.
       %h3 The powerfssf
       %section.gotItWrapper
-        =link_to "Got it!", dashboard_path(current_user.id), class: "continue"
+        -if current_user.present?
+          = link_to "Got it!", dashboard_path(current_user.id), class: "continue"
+        -else
+          = link_to "Got it!", splash_path
