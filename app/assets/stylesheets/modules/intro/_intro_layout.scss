@@ -9,10 +9,13 @@
   height: 600vh;
   }
   section{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    &.gotItWrapper{
+
+    }
   }
   h1 {
     margin-top: 2em;
@@ -79,16 +82,7 @@
     margin-bottom: 20vh;
   }
   a{
-    height: 2em;
-    width: 2em;
-    margin-bottom: 20vh;
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
-    // background-image: url(image-path("fangs.png"));
-    // background-position: center;
-    // background-size: cover;
+    color: $delta;
   }
   span.fa{
     -webkit-transition: all .1s ease-in-out;
@@ -115,13 +109,15 @@
     border: none;
     margin: 0;
     padding: 0;
-    background-color: $bravo;
+    background-color: $charlie;
     font-size: 4.854vh;
     border-radius: .2em;
   }
-  a.continue{
+  a.continueBtn{
     height: 10vh;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $charlie_light10;
     color: $delta;
     width: 12em;

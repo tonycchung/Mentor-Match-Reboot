@@ -25,9 +25,9 @@
     %section#_5
       %h1 Leverage what you learn.
       %h2 Reach out to mentors simply,<br> smartly and with confidence.
-      %h3 The powerfssf
+      %h3 Get out there and meet someone!
       %section.gotItWrapper
         -if current_user.present?
-          = link_to "Got it!", dashboard_path(current_user.id), class: "continue"
+          = link_to "Got it!", dashboard_path(current_user.id), class: "continueBtn"
         -else
-          = link_to "Got it!", splash_path
+          = link_to "Got it!", splash_path, class: "continueBtn"
