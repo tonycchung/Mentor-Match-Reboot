@@ -1,3 +1,7 @@
+/*================================================
+                  TABLET STYLES
+=================================================*/
+
 @media (max-width: 800px) {
 .splash{
   h3{
@@ -17,6 +21,10 @@
 }
 }
 
+/*================================================
+                SMARTPHONE STYLES
+=================================================*/
+
 @media (max-width: 640px){
   .splash{
     background: $alpha;
@@ -24,6 +32,11 @@
       background: $alpha_light20;
       margin: 0;
     }
+
+/*================================================
+               DIVIDER CSS TRIANGLES
+=================================================*/
+
     .triangleUp{
       display: block;
       height: 0;
@@ -43,6 +56,11 @@
         border-bottom: 2vw solid $charlie;
       }
     }
+
+/*================================================
+                  MOBILE HEADER
+=================================================*/
+
     header{
       display: flex;
       align-items: center;
@@ -82,6 +100,11 @@
         }
       }
     }
+
+/*================================================
+              MOBILE MAIN CONTENT AREAS
+=================================================*/
+
     article{
       position: relative;
       &.copy{
@@ -93,7 +116,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center top;
-        // background: -webkit-linear-gradient(bottom, white, $alpha_light90);
       }
       h3{
         display: none;
@@ -117,8 +139,25 @@
       }
       &.haveAccount{
         background: $charlie;
+        button{
+          border: 1px solid $alpha_light80;
+          border-radius: .2em;
+          height: 10vh;
+          width: 40vw;
+          &:hover{
+            border-color: transparent;
+          }
+          a{
+            color: $delta;
+            font-size: 3vh;
+          }
       }
     }
+
+/*================================================
+            MOBILE MAIN CONTENT SECTIONS
+=================================================*/
+
     section{
       position: relative;
       &.student{
@@ -147,8 +186,9 @@
           border-radius: .2em;
           height: 10vh;
           width: 40vw;
+          }
           a{
-            color: $alpha_light80;
+            color: $delta;
             font-size: 3vh;
           }
         }
@@ -196,6 +236,10 @@
     }
   }
 }
+
+/*================================================
+          EM-BASED SMARTPHONE BREAKPOINT
+=================================================*/
 
 @media (max-width: 30em){
   .splash{
