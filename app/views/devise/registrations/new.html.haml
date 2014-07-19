@@ -3,7 +3,7 @@
     %h1 Create Account
   =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     =devise_error_messages!
-    %h2 Get Help. Get ahead. Get a job.
+    %h2 Get advice. Get ahead. Get a job.
     %article.inputs
       %section.userEmail
         = f.label :email
@@ -17,13 +17,9 @@
         = f.label :confirm_password
         = f.password_field :password_confirmation, autocomplete: "off", placeholder: "xxxxxxxx"
         .break
-      %section.stack
-        = f.label :stack
-        = f.select :stack, options_for_select([["Front End"], ["Javascript"], ["Python"], ["Ruby on Rails"], ["iOS"]],)
-        .break
-      %section.gradClass
-        = f.label :Class
-        = f.select :graduating_class, options_for_select([["May-June '14"], ["June-July '14"]])
+
+      = render "#{params[:user_type]}_stack", f: f
+
       %section.submitBtn
         %button.trans_wht_btn
           = f.submit "Submit", {class: "btn_txt"}
