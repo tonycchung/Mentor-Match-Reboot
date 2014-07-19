@@ -3,7 +3,7 @@
     %h1 Create Account
   =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     =devise_error_messages!
-    %h2 Get advice. Get ahead. Get a job.
+    = render "#{params[:user_type]}_h2"
     %article.inputs
       %section.userEmail
         = f.label :email
