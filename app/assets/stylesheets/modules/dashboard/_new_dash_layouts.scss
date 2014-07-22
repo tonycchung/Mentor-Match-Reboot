@@ -9,6 +9,9 @@
   background-position: center top;
   height: 100vh;
   width: 100vw;
+  img{
+    @extend %transition_pt1s
+  }
 
 /*================================================
                DASHBOARD HEADER
@@ -56,7 +59,7 @@
   @extend %transition;
   &:hover{
     @extend %transition;
-    margin: 0 0 0 0;
+    margin: 0 0 0 -2vw;
   }
   section {
     background-color: transparent;
@@ -101,6 +104,8 @@
 
 .main {
   position: absolute;
+  left: 20%;
+  float: left;
   display: flex;
   flex-wrap: nowrap;
   background: transparent;
@@ -159,13 +164,15 @@
 =================================================*/
 
 .mainAside {
+  float: right;
   width: 20vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @extend %transition;
+  margin: 0 -10vw 0 0;
+  @extend %transition_pt1s;
   &:hover{
-    @extend %transition;
+    @extend %transition_pt1s;
     margin: 0;
   }
   section {
