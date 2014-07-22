@@ -27,6 +27,7 @@
       %button.haveAccount= link_to "Have an account?", new_user_session_path, {class: "btn_txt"}
   %p.whoFor Who is Match for?
   %section.hero
+    .overlay
     %figure
       = image_tag "tony_portrait-sq.jpg", class: "heroImg"
     .ulWrapper
@@ -35,6 +36,7 @@
         %h2 are just like you
         %h3 and they're learning from the pros
   %section.hero
+    .overlay
     .ulWrapper.mentors
       %ul.mentors#mentorHeroCopy
         %h1 Our Mentors
