@@ -128,6 +128,10 @@
         font-family: $body-font;
       }
     }
+    button{
+      display: block;
+      margin: 2em 10em;
+    }
   }
   .nameField{
     label{
