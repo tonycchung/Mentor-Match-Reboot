@@ -24,15 +24,23 @@
     <section>
       <label for="Name">Name:</label>
       <p id="Name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></p>
-      <span class="fa fa-angle-down">
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
     <section>
       <label for="background">Background:</label>
       <p id="background"><%= @user.background %></p>
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
     <section>
       <label for="accomplishments">Accomplishments:</label>
       <p id="accomplishments"><%= @user.accomplishments %></p>
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
 
 <!--============================================
@@ -43,10 +51,16 @@
     <section>
       <label for="profSum">Professional summary:</label>
       <p id="profSum"><%= @user.professional_summary %></p>
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
     <section>
       <label for="personal">Personal statement:</label>
       <p><%= @user.personal_statement %></p>
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
     <section>
       <label for="gradClass">Graduating Class</label>
@@ -75,6 +89,9 @@
     <section>
       <label for="role">Role:</label>
       <p id="role"><%= @user.role %></p>
+
+        <span class="fa fa-angle-down"></span>
+
     </section>
     <section>
       <label for="availability">Availability:</label>

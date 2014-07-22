@@ -89,7 +89,17 @@
       span{
         @extend %transition;
         opacity: 0;
+        height: 2em;
+        width: 2em;
+        border-radius: 50%;
+        background: transparent;
+        border: 1px solid transparent;
         color: $delta;
+        background: $bravo;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: .5em;
+        font-size: 1em;
       }
       &:hover{
         @extend %transition;
@@ -103,6 +113,7 @@
       &:hover > span{
         @extend %transition;
         opacity: 1;
+        color: $delta;
       }
       &#editContainer{
         @extend %transition_pt1s;
@@ -118,15 +129,6 @@
           @extend %transition_pt1s;
           background-color: $alpha_light10;
         }
-        &:hover > span{
-          @extend %transition;
-          color: $charlie;
-          margin-top: .5em;
-        }
-        &:hover > a{
-          @extend %transition;
-          color: $alpha_light90;
-        }
         a{
           @extend %transition;
           height: auto;
@@ -138,6 +140,10 @@
           text-transform: uppercase;
           font-family: $title-font;
         }
+         &:hover > a{
+          @extend %transition;
+          color: $alpha_light90;
+        }
         span{
           @extend %transition;
           color: $alpha;
@@ -145,11 +151,11 @@
           margin-top: -.25em;
           padding-right: .5em;
         }
-      }
-      span{
-        width: 5%;
-        display: inline;
-
+        &:hover > span{
+          @extend %transition;
+          color: $charlie;
+          margin-top: .5em;
+        }
       }
     }
     label{
