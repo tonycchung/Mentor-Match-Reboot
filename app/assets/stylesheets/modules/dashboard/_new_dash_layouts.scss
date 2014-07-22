@@ -103,7 +103,8 @@
 =================================================*/
 
 .main {
-  position: relative;
+  position: absolute;
+  left: 20%;
   float: left;
   display: flex;
   flex-wrap: nowrap;
@@ -168,9 +169,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  @extend %transition;
+  margin: 0 -10vw 0 0;
+  @extend %transition_pt1s;
   &:hover{
-    @extend %transition;
+    @extend %transition_pt1s;
     margin: 0;
   }
   section {
