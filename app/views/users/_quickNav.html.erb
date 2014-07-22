@@ -1,7 +1,7 @@
 <article class="quickNav">
   <% if current_user.present? %>
     <ul>
-      <%= image_tag ("gabe_square.jpg") %>
+      <%= image_tag @user.gravatar_url%>
         <!-- make this image link to user home -->
       <li>
         <p>Hi, <%= current_user.first_name %><br> Not you?</p>
