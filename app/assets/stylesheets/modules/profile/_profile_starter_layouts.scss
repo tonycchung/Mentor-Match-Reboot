@@ -8,7 +8,7 @@
   background: $alpha;
   button{
     &.skip{
-      width: auto;
+      width: 13em;
       height: auto;
       padding: 1em 2em;
       font-size: 1.5vh;
@@ -16,7 +16,7 @@
       background: transparent;
       color: $delta;
       text-transform: uppercase;
-      font-family: Montserrat;
+      font-family: $header-font;
       &:hover{
         background: $charlie;
         border-color: transparent;
@@ -24,6 +24,10 @@
       position: fixed;
       top: 5%;
       right: 10%;
+      a{
+        text-decoration: none;
+        color: $delta;
+      }
       }
     &.submit{
       margin: 15vh 0 5vh 0;
