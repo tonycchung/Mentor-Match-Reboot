@@ -4,9 +4,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  padding-bottom: 20vh;
   article {
   display: block;
-  height: 600vh;
+  height: auto;
   }
   section{
     display: flex;
@@ -47,18 +48,12 @@
   #_1 h1, #_5 h1{
     width: 70%;
     margin-top: 2em;
-    background-color: $charlie_light10;
-    border-bottom: .1em solid $bravo;
-    border-radius: .2em;
-    padding-top: .25em;
-    padding-bottom: .25em;
-  }
+    background: transparent;
+    }
   #_1 h2 {
     padding-top: .5em;
     padding-bottom: .5em;
     margin-top: 0;
-    background: none;
-    border: none;
   }
   #_1 h3{
     width: 100%;
@@ -71,15 +66,13 @@
     margin-bottom: 52vh;
     }
   }
-  #_5 h1{
-    width: 90%;
-  }
-  #_5 h2 {
-    background: none;
-    border: none;
-  }
-  #_5 h3{
-    margin-bottom: 20vh;
+  #_5 {
+    h1{
+      width: 90%;
+    }
+    h3{
+      margin-bottom: 20vh;
+    }
   }
   a{
     color: $delta;
