@@ -1,5 +1,6 @@
 .profileBuild
-  %button.skip Save this Step<br>for Later
+  %button.skip
+   = link_to "Save this Step<br>for Later", intro_path
   %h1 SWEET!
   = form_for(@user) do |f|
     %section#s1
