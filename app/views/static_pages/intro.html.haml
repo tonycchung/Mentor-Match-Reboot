@@ -28,6 +28,6 @@
       %h3 Get out there and meet someone!
       %section.gotItWrapper
         -if current_user.present?
-          = link_to "Got it!", dashboard_path(current_user.id), class: "continueBtn"
+          = link_to "Got it!", user_path(current_user.id), class: "continueBtn"
         -else
           = link_to "Got it!", splash_path, class: "continueBtn"
