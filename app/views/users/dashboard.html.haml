@@ -1,14 +1,13 @@
 .dash
   %header
     .logo
-      = render "quickNav"
-  =link_to "sign out", destroy_user_session_path, method: :delete, class: "signout"
+    = render "quickNav"
   .mainWrapper
     .mainNav
       %section
         %p= link_to "Home", dashboard_path(current_user.id)
       %section
-        %p= link_to "My Account", edit_user_path(current_user)
+        %p= link_to "My Account", user_path(current_user)
       %section
         %p My Mentor
       %section
@@ -23,15 +22,15 @@
       %section
         %h2 Browse
         %button
-          %span.fa.fa-chevron-right
+          = link_to "", users_path, class: "fa fa-chevron-right"
       %section
         %h2 Calendar
         %button
-          %span.fa.fa-chevron-right
+          = link_to "", calendar_path, class: "fa fa-chevron-right"
       %section
         %h2 History
         %button
-          %span.fa.fa-chevron-right
+          = link_to "", history_path, class: "fa fa-chevron-right"
     .mainAside
       %section
         %figure
