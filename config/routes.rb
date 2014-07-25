@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
+  get 'static_pages/feedback' => 'static_pages#feedback', as: :feedback
   # You can have the root of your site routed with "root"
 
   root 'passthrough#index'
