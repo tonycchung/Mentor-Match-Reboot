@@ -18,14 +18,14 @@
 =================================================*/
 
   header{
-    padding: 5vh;
+    // background: purple;
+    padding-top: .25em;
     display: flex;
-    align-items: center;
-    align-content: center;
   }
   .logo {
-    height: 10vh;
-    width: 10vh;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 1em;
     background-image: url(image-path("cflogo.png"));
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,6 +37,7 @@
 
 .mainWrapper {
   width: 100%;
+  margin-top: 5em;
   // display: flex;
 }
 
@@ -104,7 +105,7 @@
 
 .main {
   position: absolute;
-  margin: 0 auto;
+  margin: 5em auto 0 auto;
   left: 0;
   right: 0;
   width: 50%;
@@ -131,7 +132,7 @@
       text-transform: uppercase;
       background: rgba(129,129,129, .6);
       height: 3em;
-      font-size: 2vh;
+      font-size: 1em;
       display: flex;
       align-items: center;
       justify-content: center;

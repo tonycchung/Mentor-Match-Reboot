@@ -3,28 +3,28 @@
     <ul>
       <%= image_tag @user.gravatar_url%>
         <!-- make this image link to user home -->
-      <li>
-        <p>Hi, <%= current_user.first_name %><br> Not you?</p>
-       <!-- need sign out -->
+      <li class="userCheck">
+        <p>Hi, <%= current_user.first_name %>.<br> Not you?</p>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "signout" %>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <a class="fa fa-home" id="home"></a>
+        <%= link_to "", dashboard_path, class: "fa fa-home", id: "home" %>
         <label for="home">home</label>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <a class="fa fa-wrench" id="toolbox"></a>
+        <%= link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox" %>
         <label for="toolbox">toolbox</label>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <a class="fa fa-bullhorn" id="feedback"></a>
+        <%= link_to "", feedback_path, class: "fa fa-bullhorn", id: "feedback" %>
         <label for="feedback">feedback</label>
       </li>
       <div class="verticalRule"></div>
       <li>
-        <a class="fa fa-cog" id="settings"></a>
+        <%= link_to "", user_path, class: "fa fa-cog", id: "settings" %>
         <label for="settings">settings</label>
       </li>
     </ul>
