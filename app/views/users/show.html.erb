@@ -24,23 +24,18 @@
     <section>
       <label for="Name">Name:</label>
       <p id="Name"><%= @user.first_name.capitalize + " " + @user.last_name.capitalize %></p>
-
-        <span class="fa fa-angle-down"></span>
-
     </section>
     <section>
+      <input id = "showMore" class = "showMore" type = checkbox ></input>
+      <label class = "showMore" for = "showMore"></label>
       <label for="background">Background:</label>
       <p id="background"><%= @user.background %></p>
-
-        <span class="fa fa-angle-down"></span>
-
     </section>
     <section>
+      <input id = "showMore" class = "showMore" type = checkbox ></input>
+      <label class = "showMore" for = "showMore"></label>
       <label for="accomplishments">Accomplishments:</label>
       <p id="accomplishments"><%= @user.accomplishments %></p>
-
-        <span class="fa fa-angle-down"></span>
-
     </section>
 
 <!--============================================
@@ -49,13 +44,14 @@
 
   <% if current_user.mentee? %>
     <section>
+      <input id = "showMore" class = "showMore" type = checkbox ></input>
+      <label class = "showMore" for = "showMore"></label>
       <label for="profSum">Professional summary:</label>
       <p id="profSum"><%= @user.professional_summary %></p>
-
-        <span class="fa fa-angle-down"></span>
-
     </section>
     <section>
+      <input id = "showMore" class = "showMore" type = checkbox ></input>
+      <label class = "showMore" for = "showMore"></label>
       <label for="personal">Personal statement:</label>
       <p><%= @user.personal_statement %></p>
 
@@ -87,6 +83,8 @@
       <p id="position"><%= @user.position %></p>
     </section>
     <section>
+      <input id = "showMore" class = "showMore" type = checkbox ></input>
+      <label class = "showMore" for = "showMore"></label>
       <label for="role">Role:</label>
       <p id="role"><%= @user.role %></p>
 
