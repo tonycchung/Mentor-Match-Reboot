@@ -4,7 +4,7 @@
       <%= image_tag @user.gravatar_url%>
         <!-- make this image link to user home -->
       <li class="userCheck">
-        <p>Hi, <%= current_user.first_name %>.<br> Not you?</p>
+        <p>Hi, <%= current_user.first_name %><p>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "signout" %>
       </li>
       <div class="verticalRule"></div>

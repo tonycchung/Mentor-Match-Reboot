@@ -36,6 +36,9 @@
         @extend %transition;
         color: $alpha_light50;
       }
+      &.userCheck:hover > a{
+        color: $delta;
+      }
       &:hover > label{
         @extend %transition_pt1s;
         margin-bottom: -2.5em;
