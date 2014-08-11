@@ -27,7 +27,7 @@
     </section>
     <section>
       <input id = "showMore" class = "showMore" type = checkbox ></input>
-      <label class = "showMore" for = "showMore"></label>
+      <label class = "showMore" for = "showMore"><span class="fa fa-angle-double-down"></span></label>
       <label for="background">Background:</label>
       <p id="background"><%= @user.background %></p>
     </section>
@@ -54,9 +54,6 @@
       <label class = "showMore" for = "showMore"></label>
       <label for="personal">Personal statement:</label>
       <p><%= @user.personal_statement %></p>
-
-        <span class="fa fa-angle-down"></span>
-
     </section>
     <section>
       <label for="gradClass">Graduating Class</label>

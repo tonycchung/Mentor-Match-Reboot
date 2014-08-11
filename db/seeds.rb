@@ -53,3 +53,17 @@
 
 @mentorship = Friendship.create(user_id: 2,
 friend_id: 1)
+
+#User.100.times do |user|
+  #User.create (
+    # email:
+    # password:
+    # password_confirmation:
+    # first_name:
+    # last_name:
+    # background:
+    # accomplishments:
+    # company:
+    # position:
+    # role:
+    # )
