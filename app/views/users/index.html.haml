@@ -2,32 +2,35 @@
   Listing
   = "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}"
 
-.con-1-sm
--# pull user from db
--# User profile photo
--# User title(mentor)/stack(mentee)
--# User Co.(mentor)/Class(mentee)
--# "View Details" Button which exands view to user show.
-.con-2-med
-.con-main
-.con-3-med
-.con-4-med
+.users
+  - @users.each do |user|
+    .userCard
+      = image_tag user.gravatar_url
+      %p#Name= user.fullname
+      - if current_user.mentee?
+        = user.stack
+        = user.graduating_class
+      - if current_user.mentor?
+        = user.position
+        = user.company
+      %button
+        = link_to("View Details", user)
 
 
-  <tbody>
-    <div><%= current_user.mentor? ? "Browse Mentees" : "Browse Mentors" %></div>
-    <% @users.each do |user| %>
-      <% if user.available? %>
-        <tr>
-          <td><%= user.email %></td>
-          <td><%= user.role %></td>
-          <td><%= link_to 'View Profile', user %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+-#   <tbody>
+-#     <div><%= current_user.mentor? ? "Browse Mentees" : "Browse Mentors" %></div>
+-#     <% @users.each do |user| %>
+-#       <% if user.available? %>
+-#         <tr>
+-#           <td><%= user.email %></td>
+-#           <td><%= user.role %></td>
+-#           <td><%= link_to 'View Profile', user %></td>
+-#         </tr>
+-#       <% end %>
+-#     <% end %>
+-#   </tbody>
+-# </table>
 
-<br>
+-# <br>
 
-<%= link_to 'New User', new_user_path %>
+-# <%= link_to 'New User', new_user_path %>
