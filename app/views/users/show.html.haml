@@ -19,14 +19,15 @@
       %label{for: "Name"} Name:
       %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
     %section
-      %input#showMore.showMore{type: "checkbox"}/
-      %label.showMore{for: "showMore"}
+      %input#showMoreBackground.showMore{type: "checkbox"}/
+      %label.showMore{for: "showMoreBackground"}
         %span.fa.fa-angle-double-down
       %label{for: "background"} Background:
       %p#background= @user.background
     %section
-      %input#showMore.showMore{type: "checkbox"}/
-      %label.showMore{for: "showMore"}
+      %input#showMoreAccomplishments.showMore{type: "checkbox"}/
+      %label.showMore{for: "showMoreAccomplishments"}
+        %span.fa.fa-angle-double-down
       %label{for: "accomplishments"} Accomplishments:
       %p#accomplishments= @user.accomplishments
     /
@@ -35,20 +36,22 @@
       \==============================================
     - if current_user.mentee?
       %section
-        %input#showMore.showMore{type: "checkbox"}/
-        %label.showMore{for: "showMore"}
+        %input#showMoreProfSum.showMore{type: "checkbox"}/
+        %label.showMore{for: "showMoreProfSum"}
+          %span.fa.fa-angle-double-down
         %label{for: "profSum"} Professional summary:
         %p#profSum= @user.professional_summary
       %section
-        %input#showMore.showMore{type: "checkbox"}/
-        %label.showMore{for: "showMore"}
+        %input#showMorePersonal.showMore{type: "checkbox"}/
+        %label.showMore{for: "showMorePersonal"}
+          %span.fa.fa-angle-double-down
         %label{for: "personal"} Personal statement:
-        %p= @user.personal_statement
+        %p#personal= @user.personal_statement
       %section
-        %label{for: "gradClass"} Graduating Class
+        %label{for: "gradClass"} Graduating Class:
         %p#gradClass= @user.graduating_class
       %section
-        %label{for: "stack"} Stack
+        %label{for: "stack"} Stack:
         %p= @user.stack
     /
       \============================================
@@ -64,9 +67,9 @@
       %section
         %input#showMore.showMore{type: "checkbox"}/
         %label.showMore{for: "showMore"}
+          %span.fa.fa-angle-double-down
         %label{for: "role"} Role:
         %p#role= @user.role
-        %span.fa.fa-angle-down
       %section
         %label{for: "availability"} Availability:
         %p#availability= @user.available

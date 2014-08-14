@@ -84,22 +84,52 @@
       background: transparent;
       width: 100%;
       position: relative;
-      input.showMore{
+      input#showMoreBackground.showMore{
         @extend %transition_pt5s;
         opacity: 0;
         position: absolute;
         left: 1em;
         top: 1em;
-        &:checked ~ p{
-          transition: all 5s ease-in-out;
+        &:checked ~ p#background{
           height: auto;
           white-space: normal;
           display: inline-block;
         }
-        &:checked ~ span{
-          @extend %transition_pt5s;
-          transform: rotate(180deg);
-          ms-transform: rotate(180deg);
+      }
+      input#showMoreAccomplishments.showMore{
+        @extend %transition_pt5s;
+        opacity: 0;
+        position: absolute;
+        left: 1em;
+        top: 1em;
+        &:checked ~ p#accomplishments{
+          height: auto;
+          white-space: normal;
+          display: inline-block;
+        }
+      }
+      input#showMoreProfSum.showMore{
+        @extend %transition_pt5s;
+        opacity: 0;
+        position: absolute;
+        left: 1em;
+        top: 1em;
+        &:checked ~ p#profSum{
+          height: auto;
+          white-space: normal;
+          display: inline-block;
+        }
+      }
+      input#showMorePersonal.showMore{
+        @extend %transition_pt5s;
+        opacity: 0;
+        position: absolute;
+        left: 1em;
+        top: 1em;
+        &:checked ~ p#personal{
+          height: auto;
+          white-space: normal;
+          display: inline-block;
         }
       }
       label.showMore{
@@ -108,7 +138,6 @@
         top: 0;
         width: 100%;
         height: 100%;
-        color: blue;
         background-color: transparent;
         cursor: pointer;
         display: flex;
@@ -121,6 +150,7 @@
           // right: -2em;
           padding-top: .5em;
           color: $charlie;
+          opacity: .5;
           height: 2em;
           width: 2em;
           border-radius: 50%;
@@ -128,6 +158,12 @@
           text-align: center;
           vertical-align: middle;
           font-size: 1.5em;
+        }
+        &:hover > span {
+          @extend %transition;
+          opacity: 1;
+          color: $charlie;
+          border: 2px solid $charlie;
         }
       }
       &:hover{
@@ -138,11 +174,6 @@
           @extend %transition;
           color: $delta;
         }
-      }
-      &:hover > span{
-        @extend %transition;
-        opacity: 1;
-        color: $delta;
       }
       &#editContainer{
         @extend %transition_pt1s;
@@ -201,7 +232,6 @@
     }
     p{
       @extend %transition_pt5s;
-      padding: .7em 0 .3em 1em;
       vertical-align: center;
       background: transparent;
       width: 45%;
@@ -244,10 +274,7 @@
     margin: 0 auto;
   }
   p{
-    height: 8vh;
     width: 100%;
-  }
-  p:nth-of-type(odd){
   }
   ul{
     // border: 1px solid $delta;

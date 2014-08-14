@@ -5,14 +5,13 @@
 .users
   - @users.each do |user|
     .userCard
-      %p= image_tag user.gravatar_url
-      %p= user.fullname
+      = image_tag user.gravatar_url
+      %p#Name= user.fullname
       - if current_user.mentee?
-        %p= user.stack
-        %p= user.graduating_class
+        = user.stack
+        = user.graduating_class
       - if current_user.mentor?
-        %p= user.company
-        %p= user.position
+        = user.position
+        = user.company
       %button
         = link_to("View Details", user)
-
