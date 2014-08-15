@@ -1,17 +1,22 @@
-%h1
-  Listing
-  = "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}"
+
 
 .users
+  = render 'quickNav'
+  -# %header
+  -#   Listing
+  -#   = "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}"
   - @users.each do |user|
-    .userCard
-      = image_tag user.gravatar_url
-      %p#Name= user.fullname
-      - if current_user.mentee?
-        = user.stack
-        = user.graduating_class
-      - if current_user.mentor?
-        = user.position
-        = user.company
+    %article.userCard
+      = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+      %p#name= user.fullname
+      - if user.mentee?
+        %p#stack= user.stack
+        %p#grad_class= user.graduating_class
+      - if user.mentor?
+        %p#position= user.position
+        %p#company= user.company
       %button
         = link_to("View Details", user)
+
+  -# %button
+  -#   = link_to "back", dashboard_path
