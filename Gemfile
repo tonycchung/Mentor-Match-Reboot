@@ -39,6 +39,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'faker', '~> 1.4.2'
 end
 
 

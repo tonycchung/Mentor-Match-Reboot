@@ -1,10 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first
+@admin = User.create(email: "admin@admin.com",
+  password: "asdfasdf",
+  password_confirmation: "asdfasdf",
+  admin: true)
 
 @mentor = User.create(email: "mentor@mentor.com",
   password: "asdfasdf",
@@ -26,30 +23,22 @@
   accomplishments: "mentor match app",
   role: "mentee")
 
-@mentor = User.create(email: "mentor1@mentor.com",
-  password: "asdfasdf",
-  password_confirmation: "asdfasdf",
-  first_name: "Ivan",
-  last_name: "Oats",
-  background: "Rails Developer",
-  accomplishments: "Code Fellows",
-  company: "Code Fellows",
-  position: "Teacher",
-  role: "mentor")
+@mentorship = Friendship.create(user_id: @mentor.id, friend_id: @mentee.id)
 
-@mentee = User.create(email: "mentee1@mentee.com",
-  password: "asdfasdf",
-  password_confirmation: "asdfasdf",
-  first_name: "Brian",
-  last_name: "Studwell",
-  background: "UX Developer",
-  accomplishments: "mentor match app",
-  role: "mentee")
+%w[mentor mentee].each do |ment|
+  10.times do |n|
+    User.create(
+      email: "#{ment}#{n}@example.com",
+      password: "asdfasdf",
+      password_confirmation: "asdfasdf",
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      background: "#{Faker::Hacker.ingverb.capitalize} #{Faker::Hacker.adjective} #{Faker::Hacker.noun} #{Faker::Hacker.abbreviation}.",
+      accomplishments: Faker::Company.bs.capitalize,
+      company: Faker::Company.name,
+      position: "#{Faker::Hacker.adjective.titleize} #{%w[Teacher Healer Instructor Engineer Developer].sample}",
+      role: "#{ment}"
+    )
+  end
+end
 
-@admin = User.create(email: "admin@admin.com",
-  password: "asdfasdf",
-  password_confirmation: "asdfasdf",
-  admin: true)
-
-@mentorship = Friendship.create(user_id: 2,
-friend_id: 1)

@@ -1,6 +1,7 @@
 .profileBuild
-  %button.skip
-   = link_to "Save this Step<br>for Later", intro_path
+  %button.skip{:tabIndex => "-1"}
+   = link_to "Save this Step<br>for Later", intro_path, tabindex: "1"
+  }
   %h1 SWEET!
   = form_for(@user) do |f|
     %section#s1

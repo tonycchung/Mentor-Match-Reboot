@@ -10,13 +10,15 @@
     &.skip{
       width: 13em;
       height: auto;
-      padding: 1em 2em;
       font-size: 1.5vh;
-      border: 1px solid $delta;
+      // border: 1px solid $delta;
       background: transparent;
       color: $delta;
       text-transform: uppercase;
       font-family: $header-font;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &:hover{
         background: $charlie;
         border-color: transparent;
@@ -25,6 +27,8 @@
       top: 5%;
       right: 10%;
       a{
+        padding: 1em;
+        display: flex;
         text-decoration: none;
         color: $delta;
       }
