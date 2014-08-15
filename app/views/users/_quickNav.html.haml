@@ -1,0 +1,34 @@
+%article.quickNav
+  - if current_user.present?
+    %ul
+      =image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+      / make this image link to user home
+      %li.userCheck
+        %p
+          Hi, #{current_user.first_name}
+        %p
+          = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "signout"
+      .verticalRule
+      %li
+        = link_to "", dashboard_path, class: "fa fa-home", id: "home"
+        %label{for: "home"} home
+      .verticalRule
+      %li
+        = link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox"
+        %label{for: "toolbox"} toolbox
+      .verticalRule
+      %li
+        = link_to "", feedback_path, class: "fa fa-bullhorn", id: "feedback"
+        %label{for: "feedback"} feedback
+      .verticalRule
+      %li
+        = link_to "", user_path, class: "fa fa-cog", id: "settings"
+        %label{for: "settings"} settings
+  - else
+    %section
+      %button
+        = link_to "Sign up", new_user_registration_path
+      .verticalRule
+      %button
+        = link_to "Log in", new_user_session_path
+  %article

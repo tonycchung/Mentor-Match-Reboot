@@ -1,0 +1,130 @@
+/ <p id="notice"><haml_loud> notice </haml_loud></p>
+/
+  \============================================
+  This is the view where a user would review and edit their profile information.
+  \==============================================
+.show
+  %header
+  %article.userProfile
+    %figure.profilePic
+      %section#editContainer
+        = link_to 'Edit', edit_user_path(@user), id: "edit"
+        %span.fa.fa-chevron-circle-down
+      = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+      %a{href: "http://en.gravatar.com/"}
+        %figcaption
+          %small Don't see your picture? Get a Gravatar!
+          %span.fa.fa-chevron-circle-right
+    %section
+      %label{for: "Name"} Name:
+      %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
+    %section
+      %input#showMoreBackground.showMore{type: "checkbox"}/
+      %label.showMore{for: "showMoreBackground"}
+        %span.fa.fa-angle-double-down
+      %label{for: "background"} Background:
+      %p#background= @user.background
+    %section
+      %input#showMoreAccomplishments.showMore{type: "checkbox"}/
+      %label.showMore{for: "showMoreAccomplishments"}
+        %span.fa.fa-angle-double-down
+      %label{for: "accomplishments"} Accomplishments:
+      %p#accomplishments= @user.accomplishments
+    /
+      \============================================
+      MENTEE SPECIFIC SECTION
+      \==============================================
+    - if current_user.mentee?
+      %section
+        %input#showMoreProfSum.showMore{type: "checkbox"}/
+        %label.showMore{for: "showMoreProfSum"}
+          %span.fa.fa-angle-double-down
+        %label{for: "profSum"} Professional summary:
+        %p#profSum= @user.professional_summary
+      %section
+        %input#showMorePersonal.showMore{type: "checkbox"}/
+        %label.showMore{for: "showMorePersonal"}
+          %span.fa.fa-angle-double-down
+        %label{for: "personal"} Personal statement:
+        %p#personal= @user.personal_statement
+      %section
+        %label{for: "gradClass"} Graduating Class:
+        %p#gradClass= @user.graduating_class
+      %section
+        %label{for: "stack"} Stack:
+        %p= @user.stack
+    /
+      \============================================
+      MENTOR SPECIFIC SECTION
+      \==============================================
+    - if current_user.mentor?
+      %section
+        %label{for: "company"} Company
+        %p#company= @user.company
+      %section
+        %label{for: "position"} Position
+        %p#position= @user.position
+      %section
+        %input#showMore.showMore{type: "checkbox"}/
+        %label.showMore{for: "showMore"}
+          %span.fa.fa-angle-double-down
+        %label{for: "role"} Role:
+        %p#role= @user.role
+      %section
+        %label{for: "availability"} Availability:
+        %p#availability= @user.available
+      - if @pending
+        - @pending.each do |pending|
+          / I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.
+          = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
+    /
+      \============================================
+      ADMIN-SPECIFIC SECTION
+      \==============================================
+    - if current_user.admin?
+      %p
+        Admin:
+        \#{@user.admin}
+      %section
+        %label{for: "mentorships"} Mentorships
+        %ul
+          - for friendship in @user.friendships
+            %li
+              = friendship.friend.first_name
+      %section
+        %label{for: "menteeships"} Menteeships
+        %ul
+          - for user in @user.inverse_friends
+            %li
+              = user.first_name
+              = user.last_name
+    /
+      \============================================
+      ACCOUNT CREATION SESSION ONLY
+      \==============================================
+  %button.lookGoodBtn
+    - if current_user.sign_in_count == 1
+      = link_to "Look Good?", dashboard_path, id: "lookGood"
+    - else
+      = link_to "Update", dashboard_path, id:"lookGood"
+  /
+    \============================================
+    INTERACTIONS FOR EXPRESSING INTEREST
+    \==============================================
+  - if current_user.sign_in_count != 1
+    - if @approved_mentorship
+      - @approved_mentorship.each do |approved_mentorship|
+        / I also think we should change this to mean not 'end', but something along the lines of, 'transition'. Ending a mentorship for reasons of inappropriate behavior etc. should be an admin function. Mentors can effectively move their mentees to an inactive pile
+        = link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch
+    %aside
+      / I think the below if statement needs to be if current user is a mentee && the user being viewed is a mentor && that mentor has availability
+      - if current_user.mentee?
+        = link_to 'Introduce Yourself', friendships_path(:friend_id => @user.id), method: :post, class: "request"
+      / how does this post request work? can we formulate a message or give the user the option to write one?
+      / This needs to be depended on 'available' status
+      = link_to "Add to Favorites", star_user_path(@user), method: :put, class: "addFav"
+      / this option is only visible when user being viewed is a mentor, who is already in a mentees favorites list
+      = link_to "Remove from Favorites", unstar_user_path(@user), method: :put, class: "remFav"
+      \\
+    = link_to 'Apply', users_path, id: "back", class: "btn_txt"
+    / This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'

@@ -9,4 +9,10 @@ class StaticPagesController < ApplicationController
   def toolbox
   end
 
+  def feedback
+  end
+
+  def calendar
+  end
+
 end

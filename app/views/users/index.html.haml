@@ -1,1 +1,17 @@
-Hi!
+%h1
+  Listing
+  = "#{current_user.role == "mentee" ? "Mentors" : "Mentees"}"
+
+.users
+  - @users.each do |user|
+    .userCard
+      = image_tag user.gravatar_url
+      %p#Name= user.fullname
+      - if current_user.mentee?
+        = user.stack
+        = user.graduating_class
+      - if current_user.mentor?
+        = user.position
+        = user.company
+      %button
+        = link_to("View Details", user)
