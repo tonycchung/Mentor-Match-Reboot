@@ -10,7 +10,7 @@
       %section#editContainer
         = link_to 'Edit', edit_user_path(@user), id: "edit"
         %span.fa.fa-chevron-circle-down
-      = image_tag @user.gravatar_url
+      = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
       %a{href: "http://en.gravatar.com/"}
         %figcaption
           %small Don't see your picture? Get a Gravatar!
@@ -105,6 +105,8 @@
   %button.lookGoodBtn
     - if current_user.sign_in_count == 1
       = link_to "Look Good?", dashboard_path, id: "lookGood"
+    - else
+      = link_to "Update", dashboard_path, id:"lookGood"
   /
     \============================================
     INTERACTIONS FOR EXPRESSING INTEREST

@@ -94,6 +94,12 @@
     a{
       color: $delta;
       font-style: normal;
+      width: 100%;
+      text-align: right;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 }

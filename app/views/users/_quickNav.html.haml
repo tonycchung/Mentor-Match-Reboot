@@ -1,7 +1,7 @@
 %article.quickNav
   - if current_user.present?
     %ul
-      = image_tag @user.gravatar_url
+      =image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
       / make this image link to user home
       %li.userCheck
         %p
