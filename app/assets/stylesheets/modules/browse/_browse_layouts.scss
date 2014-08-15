@@ -1,0 +1,55 @@
+.users{
+  background: $alpha_light20;
+  height: 100%;
+  .userCard{
+    position: relative;
+    height: 15rem;
+    width: 8rem;
+    padding: .5rem;
+    background: $alpha_light90;
+    display: inline-block;
+    margin: 2rem;
+    img, p{
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+    }
+    img{
+      width: 66%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    p{
+      color: $alpha;
+      font-size: .75rem;
+      font-family: $header-font;
+      font-style: normal;
+    }
+    p#name{
+      margin-bottom: .75rem;
+    }
+    p#position, p#company, p#stack, p#grad_class{
+      font-family: $body-font;
+      font-size: .5rem;
+      text-overflow: ellipsis;
+    }
+    button{
+      width: 100%;
+      font-family: $title-font;
+      text-transform: uppercase;
+      font-size: .75rem;
+      background-color: $charlie;
+      border: none;
+      border-bottom: 2px solid $bravo;
+      margin-top: 20%;
+      a{
+        color: $alpha_light90;
+        display: flex;
+        width: 100%;
+        height: 3em;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
