@@ -17,3 +17,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# A great place to stash gems, where everybody knows your name :)
+vendor/bundle
