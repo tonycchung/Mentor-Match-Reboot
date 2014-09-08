@@ -5,7 +5,7 @@
   .mainWrapper
     .mainNav
       %input{type: "checkbox", id: "navToggle"}
-      %label{for: "navToggle"} Toggle Me
+      %label{for: "navToggle", class: "fa fa-bars"}
       %section
         %p= link_to "Home", dashboard_path(current_user.id)
       %section

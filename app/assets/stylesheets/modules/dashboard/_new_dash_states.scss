@@ -4,21 +4,3 @@
   -webkit-transform: scale(1.2); /* Chrome, Safari, Opera */
   transform: scale(1.2);
 }
-
-.mainNav p:hover{
-  @extend %transition_pt1s;
-  -webkit-transform: translateX(.5em);
-  -moz-transform: translateX(.5em);
-  -o-transform: translateX(.5em);
-  transform: translateX(.5em);
-  background: $alpha_light40;
-}
-
-.mainNav p:active{
-   @extend %transition_pt1s;
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  background: $delta;
-}
