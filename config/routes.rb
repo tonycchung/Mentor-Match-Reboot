@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :friendships
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
+
   resources :users do
     member do
       put "star", to: "users#star"

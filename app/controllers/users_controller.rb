@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
+    @users = policy_scope(User)
   end
 
   def history
