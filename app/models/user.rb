@@ -67,6 +67,7 @@ class User < ActiveRecord::Base
   end
 
   def fullname
+    return 'Anonymous User' if first_name.blank? || last_name.blank?
     first_name + " " + last_name
   end
 

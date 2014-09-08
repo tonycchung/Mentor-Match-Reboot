@@ -10,15 +10,17 @@
         %p= link_to "Home", dashboard_path(current_user.id)
       %section
         %p= link_to "My Account", user_path(current_user)
-      %section
-        %p My Mentor
+      - if current_user.mentee? && !current_user.friends.empty?
+        %section
+          %p My Mentor
       %section
         %p= link_to "About", intro_path
   .users
     - @users.each do |user|
       %article.userCard
         = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
-        %p#name= user.fullname
+        - if user.fullname.present?
+          %p#name= user.fullname
         - if user.mentee?
           %p#stack= user.stack
           %p#grad_class= user.graduating_class
