@@ -55,22 +55,27 @@
 =================================================*/
 
 .mainNav{
+  position: relative;
   float: left;
-  margin: 0 0 0 -10vw;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
   padding: 0;
   @extend %transition;
-  &:hover{
-    @extend %transition;
-    margin: 0 0 0 -2vw;
+  label{
+    background: purple;
+    color: $delta;
+  }
+  #navToggle:checked ~ section{
+    @extend %transition_pt1s;
+    margin: 0 0;
   }
   section {
+    @extend %transition_pt1s;
     background-color: transparent;
     width: 100%;
     padding: 0;
-    margin: 0 0;
+    margin: 0 0 0 -100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
