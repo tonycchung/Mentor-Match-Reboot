@@ -65,6 +65,7 @@
     position: absolute;
   }
   label{
+    @extend %transition_pt3s;
     color: $delta;
     font-size: 1.5rem;
     margin: 1em .25em 1em 1rem;
@@ -72,9 +73,16 @@
       margin: 1em;
     }
   }
-  #navToggle:checked ~ section{
-    @extend %transition_pt1s;
-    margin: 0 0;
+  #navToggle:checked{
+    ~ section{
+      @extend %transition_pt1s;
+      margin: 0 0;
+    }
+    ~ label{
+      @extend %transition_pt3s;
+      color: $charlie;
+      margin-left: 1.25rem;
+    }
   }
   p{
     font-family: $header-font;
