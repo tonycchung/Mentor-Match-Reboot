@@ -1,11 +1,9 @@
 .profileBuild
-  %button.skip
-    = link_to "Save this Step for Later", intro_path
-  %h1 SWEET!
+  %h2 Before taking a look at the roster,  let's set you up with a profile.
   = form_for(@user) do |f|
     %section#s1
       %h2
-        We'll use a few quick questions to build your profile.<br>First of all, what's your name?
+        We'll use a few quick questions to get you started.<br>First of all, what's your name?
       .fieldWrap.nameField
         = f.label :first_name
         = f.text_field :first_name, placeholder: "Robert", type: "text"

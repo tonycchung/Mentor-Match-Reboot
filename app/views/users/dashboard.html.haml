@@ -10,7 +10,7 @@
         %p= link_to "Home", dashboard_path(current_user.id)
       %section
         %p= link_to "My Account", user_path(current_user)
-      - if current_user.mentee? && !current_user.friends.empty?
+      - if current_user.mentee? && ! current_user.friends.empty?
         %section
           %p My Mentor
       %section
@@ -28,4 +28,7 @@
           %p#position= user.position
           %p#company= user.company
         %button
-          = link_to("View Details", user)
+          - if current_user.fullname.present?
+            = link_to("View Details", edit_user_path(current_user))
+          - else
+            = link_to("View Details", user)
