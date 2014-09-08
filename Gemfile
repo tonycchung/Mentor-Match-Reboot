@@ -17,7 +17,7 @@ gem 'omniauth-linkedin'
 gem 'pry'
 gem 'pundit'
 gem 'quiet_assets', group: :development
-gem 'rails', '4.1.1'
+gem 'rails', '4.1.5'
 gem 'sass-rails', '~> 4.0.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
@@ -39,6 +39,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'better_errors'
+  gem 'faker', '~> 1.4.2'
 end
 
 

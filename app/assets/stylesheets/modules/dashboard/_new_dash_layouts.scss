@@ -3,7 +3,7 @@
 =================================================*/
 
 .dash {
-  background-color: $alpha;
+  // background-color: $alpha;
   background-image: url(image-path("bottle_wide.jpg"));
   background-size: cover;
   background-position: center top;
@@ -18,14 +18,13 @@
 =================================================*/
 
   header{
-    padding: 5vh;
+    padding-top: .25em;
     display: flex;
-    align-items: center;
-    align-content: center;
   }
   .logo {
-    height: 10vh;
-    width: 10vh;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 1em;
     background-image: url(image-path("cflogo.png"));
     background-size: contain;
     background-repeat: no-repeat;
@@ -37,6 +36,7 @@
 
 .mainWrapper {
   width: 100%;
+  margin-top: 5em;
   // display: flex;
 }
 
@@ -94,6 +94,12 @@
     a{
       color: $delta;
       font-style: normal;
+      width: 100%;
+      text-align: right;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 }
@@ -104,7 +110,7 @@
 
 .main {
   position: absolute;
-  margin: 0 auto;
+  margin: 5em auto 0 auto;
   left: 0;
   right: 0;
   width: 50%;
@@ -131,7 +137,7 @@
       text-transform: uppercase;
       background: rgba(129,129,129, .6);
       height: 3em;
-      font-size: 2vh;
+      font-size: 1em;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -152,6 +158,11 @@
       justify-content: center;
       border-bottom-right-radius: 3px;
       border-bottom-left-radius: 3px;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
       span{
         background: transparent;
         display: flex;
@@ -202,7 +213,7 @@
     border-radius: 50%;
     width: auto;
     height: 10vh;
-    border: 0.1em solid white;
+    border: 2px solid white;
   }
   .paraWrap{
     display: flex;

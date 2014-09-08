@@ -1,28 +1,23 @@
 @import "navbar_states";
 
 .quickNav{
-  margin-left: 65vw;
+  margin-left: 55vw;
   display: flex;
+  margin-top: .5em;
+  align-self: flex-start;
   align-items: center;
   flex-wrap: nowrap;
   border: none;
   border-top-left-radius: 2em;
   border-bottom-left-radius: 2em;
-  width: 30vw;
   height: 5vh;
   ul{
     display: flex;
-    opacity: 1;
-    justify-content: flex-start;
     align-items: center;
-    flex-wrap: nowrap;
-    list-style-type: none;
-    padding: 0 1em 0 0;
-    margin: 0;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
     width: 100%;
-    background-color: $charlie;
+    height: 3rem;
     .verticalRule{
       display: flex;
       align-items: center;
@@ -36,12 +31,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 5vw;
-      height: 5vh;
       background-color: transparent;
       &:hover > a{
-        @extend %transition_pt1s;
-        color: $alpha;
+        @extend %transition;
+        color: $alpha_light50;
+      }
+      &.userCheck:hover > a{
+        color: $delta;
       }
       &:hover > label{
         @extend %transition_pt1s;
@@ -49,37 +45,60 @@
         opacity: 1;
         font-size: .5em;
       }
-      label{
-        @extend %transition_pt1s;
-        color: $delta;
-        font-size: .1em;
-        border-radius: 3px;
-        padding: .25em;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        opacity: 0;
-        z-index: 1;
-        text-align: center;
+        label{
+          @extend %transition_pt1s;
+          color: $delta;
+          font-size: .1em;
+          border-radius: 3px;
+          padding: .25em;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          opacity: 0;
+          z-index: 1;
+          text-align: center;
+          }
+        &.userCheck{
+          // width: 10em;
         }
       }
        p{
         display: flex;
         font-size: .5em;
+        margin: 0 .25em 0 .5em;
         }
       a{
+        margin: 0 .25em;
         display: flex;
         font-size: 4vh;
         text-decoration: none;
         color: $delta;
+        &.signout{
+          @extend %transition;
+          height: 3rem;
+          width: 3rem;
+          font-size: .5em;
+          border-radius: 50%;
+          background: $charlie;
+          color: $delta;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-wrap: nowrap;
+          margin: 0 .5em;
+          &:hover{
+            @extend %transition;
+            background: $bravo;
+            color: $delta;
+          }
+        }
       }
       img{
         border-radius: 50%;
-        border: solid .1em $delta;
-        height: auto;
-        width: 5vw;
+        height: 3rem;
+        width: 3rem;
     }
   }
 }

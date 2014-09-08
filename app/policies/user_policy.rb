@@ -1,4 +1,9 @@
 class UserPolicy < ApplicationPolicy
+
+  def update?
+    user == record
+  end
+
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user.present? && user.admin?
