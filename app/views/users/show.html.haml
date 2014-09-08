@@ -7,14 +7,16 @@
   %header
   %article.userProfile
     %figure.profilePic
-      %section#editContainer
-        = link_to 'Edit', edit_user_path(@user), id: "edit"
-        %span.fa.fa-chevron-circle-down
+      - if policy(@user).update?
+        %section#editContainer
+          = link_to 'Edit', edit_user_path(@user), id: "edit"
+          %span.fa.fa-chevron-circle-down
       = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
-      %a{href: "http://en.gravatar.com/"}
-        %figcaption
-          %small Don't see your picture? Get a Gravatar!
-          %span.fa.fa-chevron-circle-right
+      - if policy(@user).update?
+        %a{href: "http://en.gravatar.com/"}
+          %figcaption
+            %small Don't see your picture? Get a Gravatar!
+            %span.fa.fa-chevron-circle-right
     %section
       %label{for: "Name"} Name:
       %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
