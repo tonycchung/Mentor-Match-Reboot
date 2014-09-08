@@ -4,6 +4,8 @@
     = render "quickNav"
   .mainWrapper
     .mainNav
+      %input{type: "checkbox", id: "navToggle"}
+      %label{for: "navToggle"} Toggle Me
       %section
         %p= link_to "Home", dashboard_path(current_user.id)
       %section
