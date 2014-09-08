@@ -11,44 +11,17 @@
       %section
         %p My Mentor
       %section
-        %p= link_to "Browse", users_path
-      %section
-        %p= link_to "My Toolbox", toolbox_path
-      %section
         %p= link_to "About", intro_path
-      %section
-        %p Feedback
-    -# .main
-    -#   %section
-    -#     %h2 Browse
-    -#     %button
-    -#       = link_to "", users_path, class: "fa fa-chevron-right"
-    -#   %section
-    -#     %h2 Calendar
-    -#     %button
-    -#       = link_to "", calendar_path, class: "fa fa-chevron-right"
-    -#   %section
-    -#     %h2 History
-    -#     %button
-    -#       = link_to "", history_path, class: "fa fa-chevron-right"
-    .mainAside
-      %section
-        %figure
-          =image_tag ("dexter_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bacon ipsum dolor sit amet enim
-      %section
-        %figure
-          =image_tag ("mark_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bresaola landjaeger et filet mignon
-      %section
-        %figure
-          =image_tag ("gabe_square.jpg")
-        .paraWrap
-          %p.paraWrapP Strip steak labore frankfurter flank
-      %section
-        %figure
-          =image_tag ("gabe_square.jpg")
-        .paraWrap
-          %p.paraWrapP Strip steak labore frankfurter flank
+  .users
+    - @users.each do |user|
+      %article.userCard
+        = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+        %p#name= user.fullname
+        - if user.mentee?
+          %p#stack= user.stack
+          %p#grad_class= user.graduating_class
+        - if user.mentor?
+          %p#position= user.position
+          %p#company= user.company
+        %button
+          = link_to("View Details", user)
