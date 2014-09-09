@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
-    @users = policy_scope(User)
+    @users = policy_scope(User).page(params[:page]).limit(3)
   end
 
   def history
@@ -103,4 +103,3 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available)
     end
 end
-

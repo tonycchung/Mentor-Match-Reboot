@@ -32,3 +32,6 @@
             = link_to("View Details", edit_user_path(current_user))
           - else
             = link_to("View Details", user)
+
+  .pages
+    = will_paginate @users

@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate'
 
 group :production do
   gem 'pg'
