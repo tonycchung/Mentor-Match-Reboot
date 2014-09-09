@@ -29,7 +29,7 @@
           %p#company= user.company
         %button
           - if current_user.fullname.present?
-            = link_to("View Details", edit_user_path(current_user))
+            = link_to("View Details", edit_user_path(current_user, return_to: user))
           - else
             = link_to("View Details", user)
 
