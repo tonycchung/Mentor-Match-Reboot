@@ -1,37 +1,56 @@
-/*================================================
-                  TABLET STYLES
-=================================================*/
-
-@media (max-width: 800px) {
-.splash{
-  h3{
-    font-size: 2vh;
-  }
-  section{
-    &.student{
-      padding-right: 20vw;
-    }
-    &.mentor{
-      padding-left: 20vw;
-    }
-    &.button-wrap
-    .findMentor{
-    }
-  }
-}
-}
 
 /*================================================
                 SMARTPHONE STYLES
 =================================================*/
 
-@media (max-width: 640px){
+@media (max-width: 40em){
   .splash{
     background: $alpha;
-    p.whoFor{
+    p{
+      &.newWay{
+        height: 27vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $charlie;
+        width: 100%;
+      }
+      &.whoFor{
       background: $alpha_light20;
       margin: 0;
+      }
     }
+    section{
+      &.button-wrap, .haveAccount{
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.hero{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .haveAccount{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    figure{
+      height: 50vh;
+      width: 50vw;
+      overflow: hidden
+    }
+    .heroImg{
+      height: 100%;
+      width: auto;
+    }
+
 
 /*================================================
                DIVIDER CSS TRIANGLES
@@ -44,11 +63,11 @@
       border-right: 2vw solid transparent;
       border-left: 2vw solid transparent;
       position: absolute;
-      top: -5%;
+      top: -2vw;
       left: 49%;
       &.triWht{
-            border-bottom: 2vw solid $delta;
-          }
+        border-bottom: 2vw solid $delta;
+      }
       &.triBlk{
         border-bottom: 2vw solid $alpha;
       }
@@ -65,6 +84,7 @@
       display: flex;
       align-items: center;
       background: $delta;
+      height: 8vh;
       figure{
         width: 20vw;
         height: auto;
@@ -109,7 +129,6 @@
       position: relative;
       &.copy{
         top: 0;
-        padding: 15vh 0;
         height: 65vh;
         margin:  0;
         background-image: url(image-path("dexter-sarah3.jpg"));
@@ -124,17 +143,7 @@
         background: $alpha_light90;
         flex-wrap: wrap;
         p{
-          display: block;
-          color: $delta;
-          padding: 10vh 0;
-          width: 100%;
-          background: $charlie;
-          text-align: center;
-          strong{
-            margin-right: .5em;
-            border-bottom: 2px solid $delta;
-            padding: .25em;
-          }
+          display: flex;
         }
       }
       &.haveAccount{
@@ -169,7 +178,6 @@
     &.button-wrap{
       width: 100%;
       background: $alpha;
-      padding: 8vh 0;
       &.wht{
         background: $delta;
       }
@@ -236,30 +244,3 @@
   }
 }
 
-/*================================================
-          EM-BASED SMARTPHONE BREAKPOINT
-=================================================*/
-
-@media (max-width: 30em){
-  .splash{
-    article{
-      &.copy{
-        padding: 15vh 0;
-      }
-    }
-    .ulWrapper, ul.mentors{
-      h3{
-        display: none;
-      }
-    }
-    section.button-wrap, section.existingUser{
-      button{
-        height: 10vh;
-        width: 50vw;
-        a{
-          font-size: 2vh;
-        }
-      }
-    }
-  }
-}
