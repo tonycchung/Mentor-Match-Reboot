@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
+    @users = policy_scope(User).page(params[:page]).limit(1)
   end
 
   def history
@@ -48,6 +49,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     authorize @user
+    session[:return_to] = params[:return_to]
   end
 
   # POST /users
@@ -72,7 +74,7 @@ class UsersController < ApplicationController
     authorize @user
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to user_path(session.delete(:return_to)), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -102,4 +104,3 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available)
     end
 end
-

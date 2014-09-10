@@ -5,7 +5,7 @@
         =image_tag current_user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
       / make this image link to user home
       %li.userCheck
-        %p
+        %p.hi
           Hi, #{current_user.first_name}
         %p
           = link_to "Sign Out", destroy_user_session_path, method: :delete, class: "signout"
@@ -14,10 +14,10 @@
         = link_to "", dashboard_path(id: current_user.id), class: "fa fa-home", id: "home"
         %label{for: "home"} home
       .verticalRule
-      %li
-        = link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox"
-        %label{for: "toolbox"} toolbox
-      .verticalRule
+      -# %li
+      -#   = link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox"
+      -#   %label{for: "toolbox"} toolbox
+      -# .verticalRule
       %li
         = link_to "", feedback_path, class: "fa fa-bullhorn", id: "feedback"
         %label{for: "feedback"} feedback

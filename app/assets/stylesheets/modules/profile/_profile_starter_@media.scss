@@ -1,33 +1,42 @@
-@media screen and (max-width: 640px){
-  .profileBuild{
-    span{
-      font-size: 4em;
-      margin-top: 2vh;
-    }
-    li.progDot{
-      margin: 3vw 4vw;
-    }
-    button.skip{
-      top: 3%;
-      right: 5%;
-    }
-  }
-}
-
-@media screen and (max-width: 480px){
+@media (max-width: 40em){
   .profileBuild{
     h2{
-      font-size: .75em;
-      line-height: 1.5em;
+      font-size: .75rem;
+      margin: 0;
+      &.first{
+      margin-top: 5rem;
+      margin-bottom: 3rem;
+      }
     }
-    button.skip{
-      top: 2%;
-      right: 2%;
+    span{
+      margin: 1rem;
+      background: $charlie;
+      color: $delta;
+      font-size: 1.5rem;
+      height: 3rem;
+      width: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      :active{
+        background: $bravo;
+      }
     }
     .fieldWrap{
-      textarea{
-        padding: 3vh 5vw;
-      }
+      margin: 0;
+    }
+    ul{
+      margin: 0;
+    }
+    textarea, input{
+      font-size: .75em;
+      font-style: normal;
+    }
+    button{
+      margin: 15vh 0 5vh 0;
+      border: $delta;
+      color: $delta;
     }
   }
 }

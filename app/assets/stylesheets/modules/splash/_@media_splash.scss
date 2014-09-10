@@ -1,37 +1,77 @@
-/*================================================
-                  TABLET STYLES
-=================================================*/
-
-@media (max-width: 800px) {
-.splash{
-  h3{
-    font-size: 2vh;
-  }
-  section{
-    &.student{
-      padding-right: 20vw;
-    }
-    &.mentor{
-      padding-left: 20vw;
-    }
-    &.button-wrap
-    .findMentor{
-    }
-  }
-}
-}
 
 /*================================================
                 SMARTPHONE STYLES
 =================================================*/
 
-@media (max-width: 640px){
+@media (max-width: 40em){
   .splash{
     background: $alpha;
-    p.whoFor{
+    .student, .mentor{
+      padding-top: 5em;
+    }
+    p{
+      &.whoFor{
       background: $alpha_light20;
       margin: 0;
+      font-style: normal;
+      }
+      &.learnMore{
+        font-style: normal;
+      }
     }
+    section{
+      &.newWay{
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        background: $charlie;
+        width: 100%;
+        font-size: .75em;
+        font-style: normal;
+        p{
+          margin: 0;
+          margin-top: -2em;
+          padding: 0;
+          font-style: normal;
+        }
+        span{
+          padding-top: 3em;
+          font-family: $header-font;
+          width: 100%;
+          color: $delta;
+          text-align: center;
+        }
+      }
+      &.button-wrap, .haveAccount{
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &.hero{
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .haveAccount{
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    figure{
+      height: 50vh;
+      width: 50vw;
+      overflow: hidden
+    }
+    .heroImg{
+      height: 100%;
+      width: auto;
+    }
+
 
 /*================================================
                DIVIDER CSS TRIANGLES
@@ -44,11 +84,11 @@
       border-right: 2vw solid transparent;
       border-left: 2vw solid transparent;
       position: absolute;
-      top: -5%;
+      top: -1.8vw;
       left: 49%;
       &.triWht{
-            border-bottom: 2vw solid $delta;
-          }
+        border-bottom: 2vw solid $delta;
+      }
       &.triBlk{
         border-bottom: 2vw solid $alpha;
       }
@@ -65,6 +105,7 @@
       display: flex;
       align-items: center;
       background: $delta;
+      height: 8vh;
       figure{
         width: 20vw;
         height: auto;
@@ -109,7 +150,6 @@
       position: relative;
       &.copy{
         top: 0;
-        padding: 15vh 0;
         height: 65vh;
         margin:  0;
         background-image: url(image-path("dexter-sarah3.jpg"));
@@ -124,17 +164,7 @@
         background: $alpha_light90;
         flex-wrap: wrap;
         p{
-          display: block;
-          color: $delta;
-          padding: 10vh 0;
-          width: 100%;
-          background: $charlie;
-          text-align: center;
-          strong{
-            margin-right: .5em;
-            border-bottom: 2px solid $delta;
-            padding: .25em;
-          }
+          display: flex;
         }
       }
       &.haveAccount{
@@ -161,15 +191,14 @@
   section{
     position: relative;
     &.student{
-      padding: 0 16vw 0 0;
+      padding: 30vh 16vw 0 0;
     }
     &.mentor{
-      padding: 0 0 0 16vw;
+      padding: 30vh 0 0 16vw;
     }
     &.button-wrap{
       width: 100%;
       background: $alpha;
-      padding: 8vh 0;
       &.wht{
         background: $delta;
       }
@@ -177,6 +206,7 @@
         margin: 0;
         border-color: $alpha_light40;
         a{
+          font-size: .75em;
         color: $alpha_light40;
         }
       }
@@ -184,31 +214,31 @@
         background: transparent;
         border: 1px solid $alpha_light80;
         border-radius: .2em;
-        height: 10vh;
-        width: 40vw;
+        height: 3em;
+        width: 12em;
         }
         a{
           color: $delta;
-          font-size: 3vh;
+          font-size: .75em;
         }
       }
       &.existingUser{
         padding: 8vh 0;
         margin: 0;
         button{
-          height: 10vh;
-          width: 40vw;
+          height: 3em;
+          width: 12em;
           a{
-            font-size: 3vh;
+            font-size: .75em;
           }
         }
       }
       &.about{
         button{
-          height: 10vh;
-          width: 40vw;
+          height: 3em;
+          width: 12em;
           a{
-            font-size: 3vh;
+            font-size: .75em;
           }
         }
       }
@@ -236,30 +266,3 @@
   }
 }
 
-/*================================================
-          EM-BASED SMARTPHONE BREAKPOINT
-=================================================*/
-
-@media (max-width: 30em){
-  .splash{
-    article{
-      &.copy{
-        padding: 15vh 0;
-      }
-    }
-    .ulWrapper, ul.mentors{
-      h3{
-        display: none;
-      }
-    }
-    section.button-wrap, section.existingUser{
-      button{
-        height: 10vh;
-        width: 50vw;
-        a{
-          font-size: 2vh;
-        }
-      }
-    }
-  }
-}

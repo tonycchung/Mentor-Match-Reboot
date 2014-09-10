@@ -18,8 +18,11 @@
 =================================================*/
 
   header{
-    padding-top: .25em;
+    padding-top: .5em;
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 8vh;
   }
   .logo {
     height: 3rem;
@@ -36,11 +39,9 @@
 
 .mainWrapper {
   width: 100%;
-  margin-top: 5em;
-  // display: flex;
 }
 
-.mainAside, .mainNav {
+.mainNav {
   // display: flex;
   height: 60vh;
 }
@@ -50,33 +51,57 @@
 =================================================*/
 
 .mainNav{
+  position: relative;
   float: left;
-  margin: 0 0 0 -10vw;
   justify-content: center;
   flex-wrap: wrap;
   width: 20vw;
   padding: 0;
   @extend %transition;
-  &:hover{
-    @extend %transition;
-    margin: 0 0 0 -2vw;
+  input{
+    opacity: 0;
+    position: absolute;
+  }
+  label{
+    @extend %transition_pt3s;
+    color: $delta;
+    font-size: 1.5rem;
+    margin: 1em .25em 1em 1rem;
+    ::before{
+      margin: 1em;
+    }
+  }
+  #navToggle:checked{
+    ~ section{
+      @extend %transition_pt1s;
+      margin-left: 0;
+    }
+    ~ label{
+      @extend %transition_pt3s;
+      color: $charlie;
+      margin-left: 0;
+    }
+  }
+  p{
+    font-family: $header-font;
+    font-style: normal;
+    font-variant: small-caps;
+    display: inline;
   }
   section {
+    @extend %transition_pt1s;
     background-color: transparent;
     width: 100%;
     padding: 0;
-    margin: 0 0;
+    margin: 0 0 0 -100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: nowrap;
     height: calc(100%/7);
-    border-bottom: .2em solid $alpha;
+    border-bottom: 1px solid transparent;
     p {
-      -webkit-transition: all .1s ease-in-out;
-      -moz-transition: all .1s ease-in-out;
-      -o-transition: all .1s ease-in-out;
-      transition: all .1s ease-in-out;
+      @extend %transition;
       height: 100%;;
       margin: 0;
       font-family: "Montserrat";
@@ -84,7 +109,7 @@
       color: $delta;
       width: 100%;
       padding: 0;
-      background-color: rgba(129,129,129, .6);
+      background-color: rgba(129,129,129, .8);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -100,133 +125,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-    }
-  }
-}
-
-/*================================================
-              CENTRAL CONTENT AREA
-=================================================*/
-
-.main {
-  position: absolute;
-  margin: 5em auto 0 auto;
-  left: 0;
-  right: 0;
-  width: 50%;
-  display: flex;
-  flex-wrap: nowrap;
-  background: transparent;
-  section {
-    width: 30%;
-    height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    // background-color: rgba(129,129,129, .6);
-    padding: 0;
-    margin: 0 1vw;
-    &.main{
-      background: transparent;
-    }
-    &:hover {
-    }
-    h2{
-      width: 100%;
-      color: $delta;
-      text-transform: uppercase;
-      background: rgba(129,129,129, .6);
-      height: 3em;
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top-right-radius: 3px;
-      border-top-left-radius: 3px;
-    }
-    button{
-      background-color: $charlie;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      height: 3em;
-      width: 100%;
-      border: none;
-      border-radius: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-      a{
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-      span{
-        background: transparent;
-        display: flex;
-        text-align: center;
-        padding: 1em;
-        color: $delta;
-        border-radius: 50%;
-        margin: 0 auto;
-        }
-    }
-  }
-}
-
-/*================================================
-        SLIDE-OUT ACTIVITY FEED (FROM-RIGHT)
-=================================================*/
-
-.mainAside {
-  float: right;
-  width: 20vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 -10vw 0 0;
-  @extend %transition_pt1s;
-  &:hover{
-    @extend %transition_pt1s;
-    margin: 0;
-  }
-  section {
-    background-color: rgba(129,129,129, .6);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 1vh;
-    figure {
-    background: transparent;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-    img {
-    border-radius: 50%;
-    width: auto;
-    height: 10vh;
-    border: 2px solid white;
-  }
-  .paraWrap{
-    display: flex;
-    align-items: center;
-  }
-  .paraWrapP {
-    font-size: 2vh;
-    background-color: transparent;
-    text-align: center;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    padding: 1em;
     }
   }
 }
