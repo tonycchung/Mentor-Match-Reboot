@@ -6,21 +6,42 @@
 @media (max-width: 40em){
   .splash{
     background: $alpha;
+    .student, .mentor{
+      padding-top: 5em;
+    }
     p{
-      &.newWay{
-        height: 27vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $charlie;
-        width: 100%;
-      }
       &.whoFor{
       background: $alpha_light20;
       margin: 0;
+      font-style: normal;
+      }
+      &.learnMore{
+        font-style: normal;
       }
     }
     section{
+      &.newWay{
+        height: 25vh;
+        display: flex;
+        justify-content: center;
+        background: $charlie;
+        width: 100%;
+        font-size: .75em;
+        font-style: normal;
+        p{
+          margin: 0;
+          margin-top: -2em;
+          padding: 0;
+          font-style: normal;
+        }
+        span{
+          padding-top: 3em;
+          font-family: $header-font;
+          width: 100%;
+          color: $delta;
+          text-align: center;
+        }
+      }
       &.button-wrap, .haveAccount{
         height: 100vh;
         padding: 0;
@@ -63,7 +84,7 @@
       border-right: 2vw solid transparent;
       border-left: 2vw solid transparent;
       position: absolute;
-      top: -2vw;
+      top: -1.8vw;
       left: 49%;
       &.triWht{
         border-bottom: 2vw solid $delta;
@@ -170,10 +191,10 @@
   section{
     position: relative;
     &.student{
-      padding: 0 16vw 0 0;
+      padding: 30vh 16vw 0 0;
     }
     &.mentor{
-      padding: 0 0 0 16vw;
+      padding: 30vh 0 0 16vw;
     }
     &.button-wrap{
       width: 100%;
@@ -185,6 +206,7 @@
         margin: 0;
         border-color: $alpha_light40;
         a{
+          font-size: .75em;
         color: $alpha_light40;
         }
       }
@@ -192,31 +214,31 @@
         background: transparent;
         border: 1px solid $alpha_light80;
         border-radius: .2em;
-        height: 10vh;
-        width: 40vw;
+        height: 3em;
+        width: 12em;
         }
         a{
           color: $delta;
-          font-size: 3vh;
+          font-size: .75em;
         }
       }
       &.existingUser{
         padding: 8vh 0;
         margin: 0;
         button{
-          height: 10vh;
-          width: 40vw;
+          height: 3em;
+          width: 12em;
           a{
-            font-size: 3vh;
+            font-size: .75em;
           }
         }
       }
       &.about{
         button{
-          height: 10vh;
-          width: 40vw;
+          height: 3em;
+          width: 12em;
           a{
-            font-size: 3vh;
+            font-size: .75em;
           }
         }
       }

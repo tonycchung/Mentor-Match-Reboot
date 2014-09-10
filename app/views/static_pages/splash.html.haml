@@ -14,7 +14,9 @@
       %h2 UX Mentor
       %h3 I love helping young talent grow
   %article.roleButtons
-    %p.newWay MATCH: A new way for students to meet mentors
+    %section.newWay
+      %span MENTOR MATCH:
+      %p A new way for students to find mentors
     %section.button-wrap.wht
       %button.findMentor.trans_wht_btn#findMentor= link_to "Find a Mentor", new_user_registration_path(user_type: "mentee"), {class: "btn_txt"}
       .triangleUp.triWht
@@ -25,7 +27,7 @@
     .triangleUp.darkRed
     %section.existingUser
       %button.haveAccount= link_to "Have an account?", new_user_session_path, {class: "btn_txt"}
-  %p.whoFor Who is Match for?
+  %p.whoFor Who is Mentor Match for?
   %section.hero
     .overlay
     %figure
@@ -47,4 +49,4 @@
   %p.learnMore Learn a little more...
   %section.about
     %button.wht_red_btn
-      = link_to "About Match", intro_path
+      = link_to "About Mentor Match", intro_path
