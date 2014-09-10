@@ -51,7 +51,7 @@
     .pages{
       width: 80%;
       margin: 0 auto;
-      padding: 2rem;
+      padding: 1rem;
     }
     .pagination{
       font-family: $header-font;
@@ -66,10 +66,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 5vh;
-        width: 5vh;
+        height: 3rem;
+        width: 3rem;
         background: $charlie;
-        padding: 2rem;
+        padding: 1rem;
         border-radius: 50%;
       }
     }

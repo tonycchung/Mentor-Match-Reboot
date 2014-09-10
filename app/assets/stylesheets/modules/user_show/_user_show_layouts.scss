@@ -37,17 +37,6 @@
         background: $alpha_light10;
         border-radius: 1em;
        }
-      span{
-        @extend %transition;
-        color: $alpha;
-        & .fa-chevron-circle-down{
-          padding-right: .5em;
-        }
-      }
-      &:hover > span{
-        @extend %transition;
-        color: $charlie;
-      }
     }
   }
   img{
@@ -130,40 +119,6 @@
           height: auto;
           white-space: normal;
           display: inline-block;
-        }
-      }
-      label.showMore{
-        @extend %transition_pt5s;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: transparent;
-        cursor: pointer;
-        display: flex;
-        justify-content: flex-start;
-        span{
-          @extend %transition_pt5s;
-          position: absolute;
-          top: .25em;
-          left: .5em;
-          // right: -2em;
-          padding-top: .5em;
-          color: $charlie;
-          opacity: .5;
-          height: 2em;
-          width: 2em;
-          border-radius: 50%;
-          border: 1px solid $charlie;
-          text-align: center;
-          vertical-align: middle;
-          font-size: 1.5em;
-        }
-        &:hover > span {
-          @extend %transition;
-          opacity: 1;
-          color: $charlie;
-          border: 2px solid $charlie;
         }
       }
       &:hover{
