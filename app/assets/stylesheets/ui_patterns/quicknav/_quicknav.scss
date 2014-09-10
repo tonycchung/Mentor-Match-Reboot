@@ -10,7 +10,6 @@
   height: 5vh;
   ul{
     display: flex;
-    align-self: flex-end;
     align-items: center;
     border-top-left-radius: 2em;
     border-bottom-left-radius: 2em;
@@ -68,6 +67,9 @@
         margin: 0 .25em 0 .5em;
         }
       a{
+        &#feedback{
+          color: $alpha_light20;
+        }
         margin: 0 .25em;
         display: flex;
         font-size: 4vh;

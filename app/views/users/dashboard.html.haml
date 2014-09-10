@@ -1,8 +1,5 @@
 .dash
   %header
-    .logo
-    = render "quickNav"
-  .mainWrapper
     .mainNav
       %input{type: "checkbox", id: "navToggle"}
       %label{for: "navToggle", class: "fa fa-bars"}
@@ -15,6 +12,8 @@
           %p My Mentor
       %section
         %p= link_to "About", intro_path
+    .logo
+    = render "quickNav"
   .users
     - @users.each do |user|
       %article.userCard
@@ -34,4 +33,4 @@
             = link_to("View Details", user)
 
   .pages
-    = will_paginate @users
+    = will_paginate @users, :page_links => false, :previous_label => "Last", :next_label => "Next"

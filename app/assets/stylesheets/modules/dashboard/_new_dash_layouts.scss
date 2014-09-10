@@ -18,10 +18,11 @@
 =================================================*/
 
   header{
-    padding-top: .25em;
+    padding-top: .5em;
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-
+    height: 8vh;
   }
   .logo {
     height: 3rem;
@@ -30,9 +31,6 @@
     background-image: url(image-path("cflogo.png"));
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  .quickNav{
-    align-self: flex-end;
   }
 }
 /*================================================
@@ -76,12 +74,12 @@
   #navToggle:checked{
     ~ section{
       @extend %transition_pt1s;
-      margin: 0 0;
+      margin-left: 0;
     }
     ~ label{
       @extend %transition_pt3s;
       color: $charlie;
-      margin-left: 1.25rem;
+      margin-left: 0;
     }
   }
   p{
@@ -101,7 +99,7 @@
     justify-content: flex-end;
     flex-wrap: nowrap;
     height: calc(100%/7);
-    border-bottom: .2em solid $alpha;
+    border-bottom: 1px solid transparent;
     p {
       @extend %transition;
       height: 100%;;
@@ -111,7 +109,7 @@
       color: $delta;
       width: 100%;
       padding: 0;
-      background-color: rgba(129,129,129, .6);
+      background-color: rgba(129,129,129, .8);
       display: flex;
       align-items: center;
       justify-content: flex-end;
