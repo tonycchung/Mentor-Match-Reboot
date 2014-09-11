@@ -50,6 +50,8 @@ GEM
     acts_as_votable (0.10.0)
     addressable (2.3.6)
     arel (6.0.0.beta1)
+    autoprefixer-rails (3.0.1.20140826)
+      execjs
     bcrypt (3.1.7)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -248,6 +250,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  autoprefixer-rails
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
