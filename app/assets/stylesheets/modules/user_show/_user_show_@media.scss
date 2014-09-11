@@ -13,6 +13,28 @@
       justify-content: center;
       align-items: center;
     }
+    #popCheck{
+      opacity: 0;
+      &:checked{
+        &~ .pop{
+          transition: all .5s ease-in-out;
+          opacity: 1;
+          background: rgba(0, 0, 0, .8);
+        }
+      }
+    }
+    .popCheck{
+      padding: 0;
+      background: transparent;
+      border: none;
+      z-index: 3;
+      height: 3.25rem;
+      width: 3.25rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 16%;
+      bottom: 5%;
+    }
     .pop{
       opacity: 0;
       transition: all .5s ease-in-out;
@@ -45,28 +67,6 @@
           margin-top: 3em;
         }
       }
-    }
-    #popCheck{
-      opacity: 0;
-      &:checked{
-        &~ .pop{
-          transition: all .5s ease-in-out;
-          opacity: 1;
-          background: rgba(0, 0, 0, .8);
-        }
-      }
-    }
-    .popCheck{
-      padding: 0;
-      background: transparent;
-      border: none;
-      z-index: 3;
-      height: 3.25rem;
-      width: 3.25rem;
-      border-radius: 50%;
-      position: absolute;
-      right: 16%;
-      bottom: 5%;
     }
     .popBox{
       transition: all .05s ease-in-out;
