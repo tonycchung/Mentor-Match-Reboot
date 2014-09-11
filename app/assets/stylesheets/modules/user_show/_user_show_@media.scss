@@ -1,5 +1,84 @@
 @media (max-width: 40em){
   .show{
+    overflow: hidden;
+    .popCheckContainer{
+      transition: all .05s ease-in-out;
+      background: transparent;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pop{
+      opacity: 0;
+      transition: all .5s ease-in-out;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      background: transparent;
+      border: 1px solid $delta;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      p{
+        display: block;
+        width: 100%;
+        white-space: normal;
+        font-family: $header-font;
+        font-size: 1.25em;
+        text-overflow: clip;
+        text-align: center;
+      }
+      button{
+        width: 8em;
+        height: 3em;
+        border-radius: 3px;
+        background: $charlie;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        &.yes{
+          margin-top: 3em;
+        }
+      }
+    }
+    #popCheck{
+      opacity: 0;
+      &:checked{
+        &~ .pop{
+          transition: all .5s ease-in-out;
+          opacity: 1;
+          background: rgba(0, 0, 0, .8);
+        }
+      }
+    }
+    .popCheck{
+      padding: 0;
+      background: transparent;
+      border: none;
+      z-index: 3;
+      height: 3.25rem;
+      width: 3.25rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 16%;
+      bottom: 5%;
+    }
+    .popBox{
+      transition: all .05s ease-in-out;
+      height: 8em;
+      width: 80vw;
+      margin-top: 45%;
+      margin-bottom: 5%;
+      display: block;
+      padding: 1em;
+      background: rgba(255, 255, 255, .2);
+      height: auto;
+    }
     padding: 0;
     height: auto;
     min-height: 100vh;
@@ -31,6 +110,7 @@
       display: flex;
     }
     button{
+      position: relative;
       height: 3.25rem;
       width: 3.25rem;
       background: transparent;

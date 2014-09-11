@@ -1,8 +1,3 @@
-/ <p id="notice"><haml_loud> notice </haml_loud></p>
-/
-  \============================================
-  This is the view where a user would review and edit their profile information.
-  \==============================================
 .show
   %article.userProfile
     %figure.profilePic
@@ -55,9 +50,19 @@
         %label{for: "gradClass"} Class:
         %p#gradClass= @user.graduating_class
       %button
+        = link_to "", dashboard_path, class: "fa  fa-angle-double-left"
+      %button
         = link_to "", star_user_path(@user), method: :put, class: "fa fa-star"
       %button
         = link_to "", friendships_path(:friend_id => @user.id), method: :post, class: "fa fa-comment-o"
+      .popCheckContainer
+        %input{type: "checkbox", id: "popCheck"}
+        %label{for: "popCheck", class: "popCheck"}
+        %article.pop
+          %section.popBox
+            %p Would you like to introduce yourself to ___?
+            %button.yes Yeah!
+            %button Maybe Later
     /
       \============================================
       MENTOR SPECIFIC SECTION
@@ -134,3 +139,5 @@
       \\
     = link_to 'Apply', users_path, id: "back", class: "btn_txt"
     / This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'
+
+
