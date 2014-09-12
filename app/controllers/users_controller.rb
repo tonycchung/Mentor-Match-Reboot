@@ -3,12 +3,18 @@ class UsersController < ApplicationController
 
   def star
     @user.liked_by current_user
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to :back, notice: "#{@user.first_name} added to favorites!" }
+      format.js {}
+    end
   end
 
   def unstar
     @user.unliked_by current_user
-    redirect_to @user
+    respond_to do |format|
+      format.html { redirect_to :back, notice: "#{@user.first_name} removed from favorites!" }
+      format.js {}
+    end
   end
 
   def dashboard

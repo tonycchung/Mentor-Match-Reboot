@@ -32,5 +32,9 @@
           - else
             = link_to("View Details", user)
 
+        / Links to add / remove from favorites
+        / = link_to "Favorite", star_user_path(user), method: :put
+        / = link_to "Unfavorite", unstar_user_path(user), method: :put
+
   .pages
     = will_paginate @users, :page_links => false, :previous_label => "Last", :next_label => "Next"
