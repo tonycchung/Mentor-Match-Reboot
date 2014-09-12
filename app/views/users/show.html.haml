@@ -58,11 +58,14 @@
       .popCheckContainer
         %input{type: "checkbox", id: "popCheck"}
         %label{for: "popCheck", class: "popCheck"}
-        %article.pop
-          %section.popBox
-            %p Would you like to introduce yourself to #{@user.first_name} ?
-            %button.yes Yeah!
-            %button Maybe Later
+        .popShadow
+        %section.popBox
+          %p Would you like to introduce yourself to #{@user.first_name} ?
+          %button.yes Yeah!
+          %button Maybe Later
+        %section.messageSent
+          %p Great! We've sent #{@user.first_name} an email letting them know how awesome you are. Keep an eye on your inbox.
+          = image_tag "cflogo.png", {alt: "Codefellows Logo"}
     /
       \============================================
       MENTOR SPECIFIC SECTION
