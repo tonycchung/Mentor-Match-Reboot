@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
+  before_action :set_user, only: [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :star, :unstar, :favorites]
 
   def star
     @user.liked_by current_user
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @users = policy_scope(User).page(params[:page]).limit(1)
   end
 
-  def history
+  def favorites
     @users = policy_scope(User)
   end
 

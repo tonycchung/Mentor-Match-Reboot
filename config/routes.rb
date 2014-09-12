@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'static_pages/intro' => 'static_pages#intro', as: :intro
   get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
-  get 'users/:id/history' => 'users#history', as: :history
+  get 'users/:id/favorites' => 'users#favorites', as: :favorites
   get 'static_pages/feedback' => 'static_pages#feedback', as: :feedback
   get 'static_pages/calendar' => 'static_pages#calendar', as: :calendar
   # You can have the root of your site routed with "root"
