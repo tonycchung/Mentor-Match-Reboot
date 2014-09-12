@@ -3,15 +3,16 @@
     .mainNav
       %input{type: "checkbox", id: "navToggle"}
       %label{for: "navToggle", class: "fa fa-bars"}
-      %section
-        %p= link_to "Home", dashboard_path(current_user.id)
-      %section
-        %p= link_to "My Account", user_path(current_user)
-      - if current_user.mentee? && ! current_user.friends.empty?
+      %nav
         %section
-          %p My Mentor
-      %section
-        %p= link_to "About", intro_path
+          %p= link_to "Home", dashboard_path(current_user.id)
+        %section
+          %p= link_to "My Account", user_path(current_user)
+        - if current_user.mentee? && ! current_user.friends.empty?
+          %section
+            %p My Mentor
+        %section
+          %p= link_to "About", intro_path
     .logo
     = render "quickNav"
   .users
