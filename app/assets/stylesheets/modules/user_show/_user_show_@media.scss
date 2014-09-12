@@ -1,5 +1,96 @@
 @media (max-width: 40em){
   .show{
+    overflow: hidden;
+
+// HIDDEN NOTIFICATION
+// When a user clicks or taps on the "contact" button within a users card, they trigger an invisible checkbox label. When the state of the checkbox changes to "checked", we invoke an opacity state change, revealing the hidden notification buttons.
+    .popCheckContainer{
+      transition: all .05s ease-in-out;
+      background: transparent;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    #popCheck{
+      display: none;
+      &:checked{
+        &~ .popBox{
+          transition: all .5s ease-in-out;
+          opacity: 1;
+          margin-bottom: 0;
+        }
+        &~ .popShadow{
+          transition: all .5s ease-in-out;
+          opacity: 1;
+        }
+      }
+    }
+    .popCheck{
+      padding: 0;
+      background: transparent;
+      border: none;
+      z-index: 3;
+      height: 3.25rem;
+      width: 3.25rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 16%;
+      bottom: 5%;
+    }
+    .popShadow{
+      opacity: 0;
+      transition: all .5s ease-in-out;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      background: rgba(0, 0, 0, .8);
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .popBox, .messageSent{
+      opacity: 0;
+      transition: all .05s ease-in-out;
+      width: 80vw;
+      margin-bottom: -100vh;
+      display: block;
+      padding: 1em;
+      background: rgba(255, 255, 255, .2);
+      height: auto;
+      p{
+        display: block;
+        width: 100%;
+        white-space: normal;
+        font-family: $header-font;
+        font-size: 1.25em;
+        text-overflow: clip;
+        text-align: center;
+      }
+      button{
+        width: 8em;
+        height: 3em;
+        border-radius: 3px;
+        background: $charlie;
+        margin-left: 20vw;
+        margin-right: 20vw;
+        &.yes{
+          margin-top: 3em;
+        }
+      }
+      img{
+        height: 5em;
+        width: auto;
+      }
+    }
+    .messageSent{
+
+    }
     padding: 0;
     height: auto;
     min-height: 100vh;
@@ -31,6 +122,7 @@
       display: flex;
     }
     button{
+      position: relative;
       height: 3.25rem;
       width: 3.25rem;
       background: transparent;
