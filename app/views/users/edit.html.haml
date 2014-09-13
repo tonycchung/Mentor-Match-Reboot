@@ -1,17 +1,20 @@
 .profileBuild
-  %button.skip
-    = link_to "Save this Step for Later", intro_path
-  %h1 SWEET!
+  %h2.first
+    Sweet! Your seconds away from the roster.
+    %br
+    First let's set you up with a profile.
   = form_for(@user) do |f|
     %section#s1
       %h2
-        We'll use a few quick questions to build your profile.<br>First of all, what's your name?
+        We'll use a few quick questions to get you started.
+        %br
+        First thing first: What's your name?
       .fieldWrap.nameField
         = f.label :first_name
         = f.text_field :first_name, placeholder: "Robert", type: "text"
         = f.label :last_name
         = f.text_field :last_name, placeholder: "Baratheon", type: "text"
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-down
       %nav.progBar
         %ul
           %li.progDot
@@ -25,7 +28,7 @@
       .fieldWrap
         = f.label :background
         = f.text_area :background, placeholder: "Well, on Saturday's I like to juggle chainsaws dressed like a sailor..."
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-down
       %nav.progBar
         %ul
           %li.progDot
@@ -39,7 +42,7 @@
       .fieldWrap
         = f.label :accomplishments
         = f.text_area :accomplishments, placeholder:  "I arm wrestled Deniro once."
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-down
       %nav.progBar
         %ul
           %li.progDot
@@ -54,7 +57,7 @@
         .fieldWrap
           = f.label :professional_summary
           = f.text_area :professional_summary, placeholder: "Spent 7 years fighting the robot uprising"
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-down
         %nav.progBar
           %ul
             %li.progDot
@@ -77,7 +80,7 @@
         .fieldWrap
           = f.label :company
           = f.text_field :company, type: "text", placeholder: "ACME Corp."
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-down
       %section#s7
         %h2
           What is your role right now? <br> briefly describe your position.

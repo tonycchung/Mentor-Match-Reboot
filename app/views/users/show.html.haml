@@ -1,10 +1,4 @@
-/ <p id="notice"><haml_loud> notice </haml_loud></p>
-/
-  \============================================
-  This is the view where a user would review and edit their profile information.
-  \==============================================
 .show
-  %header
   %article.userProfile
     %figure.profilePic
       - if policy(@user).update?
@@ -41,20 +35,37 @@
         %input#showMoreProfSum.showMore{type: "checkbox"}/
         %label.showMore{for: "showMoreProfSum"}
           %span.fa.fa-angle-double-down
-        %label{for: "profSum"} Professional summary:
+        %label{for: "profSum"} Summary:
         %p#profSum= @user.professional_summary
       %section
         %input#showMorePersonal.showMore{type: "checkbox"}/
         %label.showMore{for: "showMorePersonal"}
           %span.fa.fa-angle-double-down
-        %label{for: "personal"} Personal statement:
+        %label{for: "personal"} Statement:
         %p#personal= @user.personal_statement
-      %section
-        %label{for: "gradClass"} Graduating Class:
-        %p#gradClass= @user.graduating_class
       %section
         %label{for: "stack"} Stack:
         %p= @user.stack
+      %section
+        %label{for: "gradClass"} Class:
+        %p#gradClass= @user.graduating_class
+      %button
+        = link_to "", dashboard_path, class: "fa  fa-angle-double-left"
+      %button
+        = link_to "", star_user_path(@user), method: :put, class: "fa fa-star"
+      %button
+        = link_to "", friendships_path(:friend_id => @user.id), method: :post, class: "fa fa-comment-o"
+      .popCheckContainer
+        %input{type: "checkbox", id: "popCheck"}
+        %label{for: "popCheck", class: "popCheck"}
+        .popShadow
+        %section.popBox
+          %p Would you like to introduce yourself to #{@user.first_name} ?
+          %button.yes Yeah!
+          %button Maybe Later
+        %section.messageSent
+          %p Great! We've sent #{@user.first_name} an email letting them know how awesome you are. Keep an eye on your inbox.
+          = image_tag "cflogo.png", {alt: "Codefellows Logo"}
     /
       \============================================
       MENTOR SPECIFIC SECTION
@@ -78,7 +89,8 @@
       - if @pending
         - @pending.each do |pending|
           / I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.
-          = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
+          %button
+            = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
     /
       \============================================
       ADMIN-SPECIFIC SECTION
@@ -104,11 +116,11 @@
       \============================================
       ACCOUNT CREATION SESSION ONLY
       \==============================================
-  %button.lookGoodBtn
-    - if current_user.sign_in_count == 1
-      = link_to "Look Good?", dashboard_path, id: "lookGood"
-    - else
-      = link_to "Update", dashboard_path, id:"lookGood"
+  -# %button.lookGoodBtn
+  -#   - if current_user.sign_in_count == 1
+  -#     = link_to "Look Good?", dashboard_path, id: "lookGood"
+  -#   - else
+  -#     = link_to "Update", dashboard_path, id:"lookGood"
   /
     \============================================
     INTERACTIONS FOR EXPRESSING INTEREST
@@ -130,3 +142,5 @@
       \\
     = link_to 'Apply', users_path, id: "back", class: "btn_txt"
     / This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'
+
+

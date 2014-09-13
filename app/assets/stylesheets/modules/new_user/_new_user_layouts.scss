@@ -4,9 +4,10 @@
   min-height: 100vh;
   width: 100vw;
   padding-bottom: 10vh;
-  // background-image: url(image-path("3px-tile.png"));
-  // background-repeat: repeat;
   background-color: $alpha;
+  label{
+    color: $charlie;
+  }
 }
 
 .new {
@@ -48,11 +49,12 @@ form#new_user{
     position: relative;
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: nowrap;
     &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe, &.stack, &.gradClass {
       align-items: center;
       margin: 0;
-      padding: 3vh 0;
+      padding: 1em 0;
       background: $alpha;
     }
     &.userEmail{

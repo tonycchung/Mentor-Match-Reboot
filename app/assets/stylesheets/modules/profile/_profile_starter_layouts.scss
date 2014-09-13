@@ -1,51 +1,18 @@
 .profileBuild{
   color: $alpha;
-  padding-top: 5vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
   background: $alpha;
   button{
-    &.skip{
-      width: 13em;
-      height: auto;
-      font-size: 1.5vh;
-      // border: 1px solid $delta;
-      background: transparent;
-      color: $delta;
-      text-transform: uppercase;
-      font-family: $header-font;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover{
-        background: $charlie;
-        border-color: transparent;
-      }
-      position: fixed;
-      top: 5%;
-      right: 10%;
-      a{
-        padding: 1em;
-        display: flex;
-        text-decoration: none;
-        color: $delta;
-      }
-      }
     &.submit{
       margin: 15vh 0 5vh 0;
       padding: 0;
       background: transparent;
-      border: 1px solid $charlie;
-      color: $charlie;
+      border: 1px solid $delta;
+      color: $delta;
       font-family: $header-font;
-      &:hover{
-        border-color: $delta;
-        & input:hover {
-          color: $delta;
-        }
-      }
       input.submit{
         display: block;
         width: 100%;
@@ -54,18 +21,15 @@
         padding: 0;
         margin: 0;
         height: 3em;
-        color: $charlie;
+        color: $delta;
         text-transform: uppercase;
         }
     }
   }
   h1{
-    position: absolute;
-    top: 2em;
-    left: 43%;
     font-size: 5vh;
     margin-bottom: 5vh;
-    color: $charlie_light10;
+    color: $delta;
   }
   section{
     height: 100vh;
@@ -135,10 +99,6 @@
       placeholder{
         font-family: $body-font;
       }
-    }
-    button{
-      display: block;
-      margin: 2em 10em;
     }
   }
   .nameField{
