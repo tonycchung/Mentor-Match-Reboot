@@ -1,0 +1,49 @@
+%article.userProfile
+  %figure.profilePic
+    .profilePicPlaceholder
+  %section
+    %label{for: "Name"} Name:
+    %p#name
+      Iron Man
+      -# = @user.first_name.capitalize + " " + @user.last_name.capitalize
+  %section
+    %input#showMoreBackground.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMoreBackground"}
+      %span.fa.fa-angle-double-down
+    %label{for: "background"} Background:
+    %p#background Experienced supervillain-fighting expert. I specialize in robotics, advanced technology research, charming banter and quiet philanthropy.
+    -# = @user.background
+  %section
+    %input#showMoreAccomplishments.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMoreAccomplishments"}
+      %span.fa.fa-angle-double-down
+    %label{for: "accomplishments"} Accomplishments:
+    %p#accomplishments
+      Repeatedly saved humanity from certain destruction.
+  %section
+    %label{for: "organization"} Organization
+    %p#organization Stark Industries
+    -# = @user.company
+  %section
+    %label{for: "position"} Position
+    %p#position Boss
+    -# = @user.position
+  %section
+    %label{for: "availability"} Availability:
+    %p#availability True
+    -# = @user.available
+  %nav.buttonContainer
+    %button.back
+      %span{class: "fa  fa-angle-double-left"}
+    %button.addToFavorites
+      %span{class: "fa fa-star"}
+    %button.contactUser
+      %span{class: "fa fa-comment-o"}
+  .popShadow
+  %section.popBox
+    %p Would you like to introduce yourself to Iron Man?
+    %button#yes Yeah!
+    %button Maybe Later
+  %section.popMessage
+    %p Great! We've sent Iron Man an email saying how awesome you are. Keep an eye on your inbox.
+    = image_tag "cflogo.png", {alt: "Codefellows Logo"}

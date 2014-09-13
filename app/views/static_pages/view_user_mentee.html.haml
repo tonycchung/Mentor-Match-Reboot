@@ -1,0 +1,50 @@
+%article.userProfile
+  %figure.profilePic
+    .profilePicPlaceholder
+    -# = image_tag @user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+  %section
+    %label{for: "Name"} Name:
+    %p
+      Brian Studwell
+      -# = @user.first_name.capitalize + " " + @user.last_name.capitalize
+  %section
+    %input#showMoreBackground.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMoreBackground"}
+      %span.fa.fa-angle-double-down
+    %label{for: "background"} Background:
+    %p I’ve moved to tech from a background in experience and service design. I’m fascinated by the trajectory of our relationship with technology. I want to build rich, digital experiences that real people can use.
+    -# = @user.background
+  %section
+    %input#showMoreAccomplishments.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMoreAccomplishments"}
+      %span.fa.fa-angle-double-down
+    %label{for: "accomplishments"} Accomplishments:
+    %p
+      Developed strategy and UI for two successful digital products. Completed Codefellows Front End UX Development Accelerator. Once held a handstand for 43 seconds.
+      -# = @user.accomplishments
+  %section
+    %input#showMoreProfSum.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMoreProfSum"}
+      %span.fa.fa-angle-double-down
+    %label{for: "profSum"} Summary:
+    %p I graduated with a degree in English in 2009 and spent the following six years working my through hospitality and tourism, food and beverage and emergency medicine. I learned a lot about how people think, work, react and feel. I spent most of 2013 at a creative strategy firm in Portland, which introduced me to the field of User Experience. I'm aiming to leverage my educational and experientail background towards a career at the intersection of commerce and culture.
+    -# = @user.professional_summary
+  %section
+    %input#showMorePersonal.showMore{type: "checkbox"}/
+    %label.showMore{for: "showMorePersonal"}
+      %span.fa.fa-angle-double-down
+    %label{for: "personal"} Statement:
+    %p Put an interesting problem in front of me and I'll work myself to the bone finding the best solution.
+    -# = @user.personal_statement
+  %section
+    %label{for: "stack"} Stack:
+    %p Front End & UX
+    -# = @user.stack
+  %section
+    %label{for: "gradClass"} Class:
+    %p#gradClass May - June 2014
+    -# = @user.graduating_class
+  %button
+    %span.back
+  %button
+    %span.add
