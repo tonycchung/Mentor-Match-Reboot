@@ -1,11 +1,4 @@
 $(function(){
-  $(".contactUser").click(function(){
-    alert("alert");
-    $(".popBox").css({"margin-top": "0", "opacity": "1"});
-  });
-});
-
-$(function(){
   $('.detail_1').addClass("isVisible");
 });
 
@@ -43,4 +36,46 @@ $(function(){
       $(".detail_1").addClass("isVisible");
     }
   })
+});
+
+$(function(){
+  // when user taps "favorite" button, slide confirmation dialogue into view and shadow other elements
+  $(".addToFavorites").click(function(){
+    $(".popBox.favorite").css({"transform": "translateY(0)", "opacity": "1"});
+    $(".popShadow").css({"opacity": ".4", "z-index": "3"});
+  });
+  // If user taps "no" button, remove confirmation dialogue from view and reveal other elements.
+  $(".noAdd").click(function(){
+    $(".popBox.favorite").css({"transform": "translateY(100vh)", "opacity": "0"});
+    $(".popShadow").css({"opacity": "0", "z-index": "-1"});
+  });
+  // If user confirms "yes", remove confirmation dialogue from view and replace it with a notification that the user being viewed has been added to the current user's favorites list. Clicking on the Codefellows logo will navigate back to their homepage.
+  $(".yesAdd").click(function(){
+    $(".popBox.favorite").css({"transform": "translateZ(-500px)", "opacity": "0"});
+    $(".popMessage.favorite").css({"transform": "translateY(0)", "opacity": "1"})
+  });
+  $(".goHome").click(function(){
+    $(".popMessage.favorite").css({"transform": "translateZ(-500px)", "opacity": "0"});
+    $(".popShadow").css({"opacity": "0", "z-index": "-1"});
+  });
+  // If user taps "contact" button, slide confirmation dialogue into view and dim other elements.
+  $(".contactUser").click(function(){
+    $(".popBox.contact").css({"transform": "translateY(0)", "opacity": "1"});
+    $(".popShadow").css({"opacity": ".4", "z-index": "3"});
+  });
+  // If user taps "no" button, remove confirmation dialogue from view and reveal other elements.
+  $(".noIntro").click(function(){
+    $(".popBox.contact").css({"transform": "translateY(100vh)", "opacity": "0"});
+    $(".popShadow").css({"opacity": "0", "z-index": "-1"});
+  });
+  // If user confirms "yes", remove confirmation dialogue from view and replace it with a notification that the user being viewed has been sent a message. Clicking on the Codefellows logo will navigate back to the current user's homepage.
+  $(".yesIntro").click(function(){
+    $(".popBox.contact").css({"transform": "translateZ(-500px)", "opacity": "0"});
+    $(".popMessage.contact").css({"transform": "translateY(0)", "opacity": "1"})
+  });
+  $(".goHome").click(function(){
+    $(".popMessage.contact").css({"transform": "translateZ(-500px)", "opacity": "0"});
+    $(".popShadow").css({"opacity": "0", "z-index": "-1"});
+  });
+
 });
