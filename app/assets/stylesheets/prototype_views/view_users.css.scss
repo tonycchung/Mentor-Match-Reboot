@@ -18,7 +18,9 @@
     margin: 0 auto;
   }
   figure{
-    margin: 0;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
   }
   input{
     display: none;
@@ -29,11 +31,43 @@
     text-align: center;
   }
   section{
-    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 70%;
+    height: 10vh;
     color: $charlie;
+    text-overflow: ellipsis;
+    &.nameContainer{
+      top: 15%;
+    }
+  }
+  h3{
+    font-family: $header-font;
+    font-size: .618em;
+    color: $charlie;
+    text-transform: uppercase;
+    font-style: normal;
+    padding: 0 2em 2em 0;
+    opacity: 0;
+    transition: all .2s ease-out;
+    &.isVisible{
+      padding-right: 0;
+    }
   }
   p{
-    font-size: .75em;
+    transition: all .2s ease-in-out;
+    font-size: .618em;
+    height: 100%;
+    transform: translateX(-100px);
+    text-overflow: ellipsis;
+    display: block;
+    opacity: 0;
+    &.isVisible{
+      transform: translateX(0);
+    }
   }
   .buttonContainer{
     position: relative;
@@ -49,7 +83,25 @@
     width: 10vh;
     height: 10vh;
     border-radius: 50%;
-
+    border: none;
+  }
+  .next, .last{
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 1;
+  }
+  .next{
+    right: 2%;
+  }
+  .last{
+    left: 2%;
+  }
+  .isVisible{
+    opacity: 1;
   }
   // .popShadow{
   //   transition: all .5s ease-out;
