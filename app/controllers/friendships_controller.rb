@@ -4,13 +4,14 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendship = Friendship.new(friend_id: params[:friend_id], user_id: current_user.id, state: "pending")
+    user = User.find(params[:friend_id])
+    @friendship = Friendship.new(friend_id: user.id, state: "pending")
     if @friendship.save
-      flash[:notice] = "Added Mentor"
-      redirect_to users_path
+      flash[:notice] = "Request sent!"
+      redirect_to root_path
     else
-      flash[:notice] = "Unable to add Mentor"
-      redirect_to users_path
+      flash[:notice] = "Unable to send request."
+      redirect_to user_path(user)
     end
   end
 

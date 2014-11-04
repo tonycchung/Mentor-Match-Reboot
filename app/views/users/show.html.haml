@@ -109,6 +109,12 @@
       = link_to "Look Good?", dashboard_path, id: "lookGood"
     - else
       = link_to "Update", dashboard_path, id:"lookGood"
+
+  %button.lookGoodBtn
+    - if current_user.mentee?
+      = link_to "Request Mentor", friendships_path(friend_id: @user.id, state: 'pending'), method: :post, id:"lookGood"
+    - if current_user.mentor?
+      = link_to "Request Mentee", friendships_path(friend_id: @user.id), method: :post, id:"lookGood"
   /
     \============================================
     INTERACTIONS FOR EXPRESSING INTEREST
