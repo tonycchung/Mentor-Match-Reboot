@@ -49,7 +49,7 @@ form#new_user{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    &.userEmail, &.userPassword, &.userConfirm, &.submitBtn, &.rememberMe, &.stack, &.gradClass {
+    &.userEmail, &.userPassword, &.userConfirm, &.userFirstname, &.userLastname, &.submitBtn, &.rememberMe, &.stack, &.gradClass {
       align-items: center;
       margin: 0;
       padding: 3vh 0;
