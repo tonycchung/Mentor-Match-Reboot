@@ -53,6 +53,7 @@
         .paraWrap
           %p.paraWrapP Strip steak labore frankfurter flank
   .users
+    = will_paginate @users, previous_label: "<button>Previous</button>", next_label: "<button>Next</button>", page_links: false
     - @users.each do |user|
       %article.userCard
         = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")

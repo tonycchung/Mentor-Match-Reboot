@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @users = policy_scope(User)
+    @users = policy_scope(User).paginate(page: params[:page], per_page: 5)
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
   end
 
