@@ -7,6 +7,7 @@
   background-image: url(image-path("bottle_tall.jpg"));
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
   img{
     @extend %transition_pt1s
   }

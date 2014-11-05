@@ -38,6 +38,9 @@
       \==============================================
     - if current_user.mentee?
       %section
+        %label{for: 'technologies'} Technologies:
+        %p#technologies= @user.technologies
+      %section
         %input#showMoreProfSum.showMore{type: "checkbox"}/
         %label.showMore{for: "showMoreProfSum"}
           %span.fa.fa-angle-double-down

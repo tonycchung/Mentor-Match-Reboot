@@ -19,9 +19,9 @@ class User < ActiveRecord::Base
   pg_search_scope :super_search,
                   against: [:first_name, :last_name, :stack, :background,
                     :professional_summary, :accomplishments,
-                    :personal_statement, :company, :position],
+                    :personal_statement, :company, :position, :technologies],
                   using: {
-                    tsearch:    { dictionary: 'english' }
+                    tsearch:    { dictionary: 'english', prefix: true }
                     # trigram:    { threshold:  0.1 },
                     # dmetaphone: {}
                   }
