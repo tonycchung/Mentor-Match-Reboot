@@ -48,7 +48,7 @@ feature "A user must be able to sign in in a variety of ways" do
     fill_in 'Professional summary', with: 'I am a pro'
     fill_in 'Personal statement', with: 'I want a mentor'
     click_on 'Submit'
-    first(:link, 'Look Good?').click
+    first(:link, 'Home').click
 
     page.current_path.must_include 'dashboard'
   end
