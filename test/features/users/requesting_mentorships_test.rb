@@ -10,22 +10,31 @@ feature 'Mentorships' do
 
     visit user_path(users(:mentor_user))
     page.wont_have_content "Request Mentor"
-
-    visit root_path
-    click_on 'requests'
-    page.must_have_content users(:mentor_user).first_name
   end
 
-  # scenario 'a mentor accepts a request to mentor' do
-  #   sign_in_mentee
+  scenario 'a mentor accepts a request from a mentee' do
+    sign_in_mentee
 
-  #   visit user_path(users(:mentor_user))
-  #   find('Request Mentor').click
-  #   visit_destroy_user_session
+    visit user_path(users(:mentor_user))
+    click_on "Request Mentor"
+    click_on 'Sign Out'
 
-  #   sign_in_mentor
-  #   click_link 'requests'
-  #   click_button 'Accept'
-  #   page.must_have_content
-  # end
+    sign_in_mentor
+    page.must_have_content users(:mentee_user).first_name
+
+    first(:link, "Accept").click
+    page.wont_have_content users(:mentee_user).first_name
+  end
+
+  scenario 'a mentor declines a request from a mentee' do
+    sign_in_mentee
+
+    visit user_path(users(:mentor_user))
+    click_on "Request Mentor"
+    click_on 'Sign Out'
+
+    sign_in_mentor
+    first(:link, "Decline").click
+    page.wont_have_content users(:mentee_user).first_name
+  end
 end

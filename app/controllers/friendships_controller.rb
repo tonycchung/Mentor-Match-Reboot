@@ -15,15 +15,15 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
     flash[:notice] = "Succesfully deleted relationship"
-    redirect_to current_user
+    redirect_to root_path
   end
 
   def update
     @friendship = Friendship.find(params[:id])
-    @friendship.state = params[:state]
+    @friendship.accepted
     @friendship.save!
     flash[:notice] = "Mentorship approved"
-    redirect_to users_path
+    redirect_to root_path
   end
 
 end

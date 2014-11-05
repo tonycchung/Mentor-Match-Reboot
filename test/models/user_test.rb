@@ -17,7 +17,6 @@ describe 'User' do
 
     it 'returns false if the users have a friendship' do
       friendship = Friendship.create(user: @sally, friend: @jim, state: 'pending')
-      require 'pry'; binding.pry
       @sally.can_request?(@jim).must_equal false
       @jim.can_request?(@sally).must_equal false
     end
