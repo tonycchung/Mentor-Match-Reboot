@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @users = policy_scope(User).search(params[:search]).paginate(page: params[:page], per_page: 5)
     @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
   end
 
@@ -84,7 +83,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available)
+      params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :stack, :available, :technologies)
     end
 end
 

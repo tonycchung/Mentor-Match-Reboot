@@ -18,7 +18,7 @@
           %li.progDot
           %li.progDot
           %li.progDot
-    %section#s3
+    %section#s2
       %h2
         Say a bit about what you've done.<br> What are you proud of?
       .fieldWrap
@@ -33,6 +33,20 @@
           %li.progDot
           %li.progDot
     - if current_user.role == "mentee"
+      %section#s3
+        %h2
+          What technologies are you familiar with?
+        .fieldWrap
+          = f.label :technologies
+          = f.text_area :technologies, placeholder: 'Example: Python, JavaScript, and Node.js'
+          %span.next.fa.fa-angle-double-right
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
       %section#s4
         %h2
           Briefly describe your professional history. <br> Where have you been?
@@ -55,6 +69,13 @@
           = f.text_area :personal_statement, placeholder: "I can raise each of my eyebrows independently"
           %button.submit
             =f.submit 'Submit', class: "submit"
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
     - if current_user.role == "mentor"
       %section#s6
         %h2
@@ -63,6 +84,13 @@
           = f.label :company
           = f.text_field :company, type: "text", placeholder: "ACME Corp."
           %span.next.fa.fa-angle-double-right
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
       %section#s7
         %h2
           What is your role right now? <br> briefly describe your position.
@@ -71,13 +99,13 @@
           = f.text_area :position, placeholder: "Senior Lunch Quality Assurance Engineer leading a team of 7 expert sandwich developers"
           %button.submit
             =f.submit 'Submit', class: "submit"
-      %nav.progBar
-        %ul
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
+            %li.progDot
 
 
 

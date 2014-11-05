@@ -19,7 +19,7 @@ feature "A user must be able to sign in in a variety of ways" do
     page.must_have_content "Create Account"
   end
 
-  scenario "As a user I want to create a new mentee account " do
+  scenario "Sign up with existing email will be sent back to create account" do
     page.must_have_content"Dexter"
     first(:link, "Find a Mentor").click
     fill_in "Email", with: users(:mentee_user).email
@@ -28,9 +28,30 @@ feature "A user must be able to sign in in a variety of ways" do
     fill_in "Password", with: 12345678
     fill_in "user_password_confirmation", with: 12345678
     click_on "Submit"
+
     page.must_have_content "Create Account"
   end
 
+  scenario 'As a mentee, sign up and edit my profile' do
+    page.must_have_content "Dexter"
+    first(:link, "Find a Mentor").click
+    fill_in "Email", with: 'omg@omg.com'
+    fill_in "First Name", with: "Robin"
+    fill_in "Last Name", with: "Robin"
+    fill_in "Password", with: 12345678
+    fill_in "user_password_confirmation", with: 12345678
+    click_on "Submit"
+
+    fill_in 'Technologies', with: 'Javascript, Ruby'
+    fill_in 'Background', with: 'I love candy'
+    fill_in 'Accomplishments', with: 'I ate a lion once'
+    fill_in 'Professional summary', with: 'I am a pro'
+    fill_in 'Personal statement', with: 'I want a mentor'
+    click_on 'Submit'
+    first(:link, 'Look Good?').click
+
+    page.current_path.must_include 'dashboard'
+  end
 
   scenario "signed in users are taken to their dashboard" do
     sign_in_mentee
