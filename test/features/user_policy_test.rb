@@ -8,7 +8,7 @@ feature "user policy is enforced" do
 
   scenario "user can edit their own profile" do
     click_on "settings"
-    click_on "Edit"
+    first(:link, "Edit").click
     assert_content "quick questions to build your profile"
   end
 
