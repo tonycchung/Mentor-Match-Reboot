@@ -10,41 +10,42 @@
       .fieldWrap
         = f.label :background
         = f.text_area :background, placeholder: "Well, on Saturday's I like to juggle chainsaws dressed like a sailor..."
-        %span.next.fa.fa-angle-double-right
+        %span.next.fa.fa-angle-double-right#next_1
       %nav.progBar
         %ul
+          %li.progDot.active
           %li.progDot
           %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
-    %section#s2
-      %h2
-        Say a bit about what you've done.<br> What are you proud of?
-      .fieldWrap
-        = f.label :accomplishments
-        = f.text_area :accomplishments, placeholder:  "I arm wrestled Deniro once."
-        %span.next.fa.fa-angle-double-right
-      %nav.progBar
-        %ul
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
-          %li.progDot
+          - if current_user.role =="mentee"
+            %li.progDot
+            %li.progDot
     - if current_user.role == "mentee"
+      %section#s2
+        %h2
+          Say a bit about what you've done.<br> What are you proud of?
+        .fieldWrap
+          = f.label :accomplishments
+          = f.text_area :accomplishments, placeholder:  "I arm wrestled Deniro once."
+          %span.next.fa.fa-angle-double-right#next_2
+        %nav.progBar
+          %ul
+            %li.progDot
+            %li.progDot.active
+            %li.progDot
+            %li.progDot
+            %li.progDot
       %section#s3
         %h2
           What technologies are you familiar with?
         .fieldWrap
           = f.label :technologies
           = f.text_area :technologies, placeholder: 'Example: Python, JavaScript, and Node.js'
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-right#next_3
         %nav.progBar
           %ul
             %li.progDot
             %li.progDot
-            %li.progDot
+            %li.progDot.active
             %li.progDot
             %li.progDot
       %section#s4
@@ -53,13 +54,13 @@
         .fieldWrap
           = f.label :professional_summary
           = f.text_area :professional_summary, placeholder: "Spent 7 years fighting the robot uprising"
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-right#next_4
         %nav.progBar
           %ul
             %li.progDot
             %li.progDot
             %li.progDot
-            %li.progDot
+            %li.progDot.active
             %li.progDot
       %section#s5
         %h2
@@ -75,7 +76,7 @@
             %li.progDot
             %li.progDot
             %li.progDot
-            %li.progDot
+            %li.progDot.active
     - if current_user.role == "mentor"
       %section#s6
         %h2
@@ -83,13 +84,11 @@
         .fieldWrap
           = f.label :company
           = f.text_field :company, type: "text", placeholder: "ACME Corp."
-          %span.next.fa.fa-angle-double-right
+          %span.next.fa.fa-angle-double-right#next_6
         %nav.progBar
           %ul
             %li.progDot
-            %li.progDot
-            %li.progDot
-            %li.progDot
+            %li.progDot.active
             %li.progDot
       %section#s7
         %h2
@@ -103,12 +102,4 @@
           %ul
             %li.progDot
             %li.progDot
-            %li.progDot
-            %li.progDot
-            %li.progDot
-
-
-
-
-
-
+            %li.progDot.active

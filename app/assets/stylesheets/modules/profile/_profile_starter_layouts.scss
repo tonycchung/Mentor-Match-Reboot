@@ -158,6 +158,7 @@
     width: 100%;
     color: $bravo;
     font-size: 8vh;
+    cursor: pointer;
   }
   ul{
     margin-top: 15vh;
@@ -175,9 +176,9 @@
       &:hover{
         background: $bravo;
       }
-      &:active{
-        background: $delta;
-      }
+    }
+    .progDot.active{
+      background: $bravo_light20;
     }
   }
   .userProfile{
