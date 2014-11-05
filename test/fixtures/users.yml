@@ -39,5 +39,5 @@ mentee_user:
   stack: Rails
   role: mentee
   admin: false
+  sign_in_count: 2
   id: 2
-

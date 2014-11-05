@@ -109,12 +109,6 @@
       = link_to "Look Good?", dashboard_path, id: "lookGood"
     - else
       = link_to "Update", dashboard_path, id:"lookGood"
-
-  %button.lookGoodBtn
-    - if current_user.mentee?
-      = link_to "Request Mentor", friendships_path(friend_id: @user.id, state: 'pending'), method: :post, id:"lookGood"
-    - if current_user.mentor?
-      = link_to "Request Mentee", friendships_path(friend_id: @user.id), method: :post, id:"lookGood"
   /
     \============================================
     INTERACTIONS FOR EXPRESSING INTEREST
@@ -125,14 +119,15 @@
         / I also think we should change this to mean not 'end', but something along the lines of, 'transition'. Ending a mentorship for reasons of inappropriate behavior etc. should be an admin function. Mentors can effectively move their mentees to an inactive pile
         = link_to "End mentorship with #{User.find(approved_mentorship.user_id).email}", friendship_path(id: approved_mentorship.id, state: "ended"), method: :patch
     %aside
-      / I think the below if statement needs to be if current user is a mentee && the user being viewed is a mentor && that mentor has availability
-      - if current_user.mentee?
-        = link_to 'Introduce Yourself', friendships_path(:friend_id => @user.id), method: :post, class: "request"
-      / how does this post request work? can we formulate a message or give the user the option to write one?
-      / This needs to be depended on 'available' status
       = link_to "Add to Favorites", star_user_path(@user), method: :put, class: "addFav"
       / this option is only visible when user being viewed is a mentor, who is already in a mentees favorites list
       = link_to "Remove from Favorites", unstar_user_path(@user), method: :put, class: "remFav"
+
+      - if current_user.can_request?(@user)
+        = link_to "Request Mentor", friendships_path(friend_id: @user.id, user_id: current_user.id, state: 'pending'), method: :post, class: "addFav" if current_user.mentee?
+
+        = link_to "Request Mentee", friendships_path(friend_id: @user.id, user_id: current_user.id, state: 'pending'), method: :post, class: "addFav" if current_user.mentor?
+
       \\
     = link_to 'Apply', users_path, id: "back", class: "btn_txt"
     / This Apply Changes button should finalize any edits made to a users profile. Again, the user can only edit their own profile. When viewing other users, this button should function as a 'back'
