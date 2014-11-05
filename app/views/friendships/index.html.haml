@@ -1,0 +1,14 @@
+%section.people
+  %header
+    %h2 Mentorship Requests
+  %table.table
+    %thead
+      %tr
+        %th(width="30%")
+        %th(width="20%") Name
+        %th(width="20%")
+        %th(width="30%")
+    %tbody
+      - @friendships.each do |fship|
+        %tr
+          %td= fship.users.first_name + fship.users.last_name

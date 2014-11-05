@@ -25,7 +25,9 @@ mentee_user:
   stack: Rails
   role: mentee
   admin: false
+  sign_in_count: 2
   id: 2
+
 
 mentee_user_2:
   email: joe@bob.com
@@ -161,3 +163,4 @@ mentor_user_2:
   role: mentor
   admin: false
   id: 11
+

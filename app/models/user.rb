@@ -46,6 +46,10 @@ class User < ActiveRecord::Base
     admin == true
   end
 
+  def can_request?(user)
+    !friends.include?(user) && !inverse_friends.include?(user) && user != self
+  end
+
   def opposite_role
     return 'Mentees' if role == 'mentor'
     return 'Mentors'

@@ -1,16 +1,13 @@
 class FriendshipsController < ApplicationController
-
-  def show
-  end
-
   def create
+    user = User.find(params[:friend_id])
     @friendship = Friendship.new(friend_id: params[:friend_id], user_id: current_user.id, state: "pending")
     if @friendship.save
-      flash[:notice] = "Added Mentor"
-      redirect_to users_path
+      flash[:notice] = "Request sent!"
+      redirect_to root_path
     else
-      flash[:notice] = "Unable to add Mentor"
-      redirect_to users_path
+      flash[:notice] = "Unable to send request."
+      redirect_to user_path(user)
     end
   end
 
@@ -18,15 +15,15 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy
     flash[:notice] = "Succesfully deleted relationship"
-    redirect_to current_user
+    redirect_to root_path
   end
 
   def update
     @friendship = Friendship.find(params[:id])
-    @friendship.state = params[:state]
+    @friendship.accepted
     @friendship.save!
     flash[:notice] = "Mentorship approved"
-    redirect_to users_path
+    redirect_to root_path
   end
 
 end
