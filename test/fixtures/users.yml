@@ -12,20 +12,6 @@ admin_user:
   role: mentor
   admin: true
 
-mentor_user:
-  email: mentor@mentor.com
-  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: mentor
-  last_name: smith
-  background: coding
-  accomplishments: woke up
-  professional_summary: elite hacker
-  personal_statement: I am like to help
-  company: microsoft
-  position: SDET
-  role: mentor
-  admin: false
-
 mentee_user:
   email: mentee@mentee.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
@@ -41,3 +27,137 @@ mentee_user:
   admin: false
   id: 2
 
+mentee_user_2:
+  email: joe@bob.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: joe
+  last_name: bob
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: Rails
+  role: mentee
+  admin: false
+  id: 3
+
+mentee_user_3:
+  email: kate@mentee.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: kate
+  last_name: person
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: JavaScript
+  role: mentee
+  admin: false
+  id: 4
+
+mentee_user_4:
+  email: john@bob.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: john
+  last_name: bob
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: Python
+  role: mentee
+  admin: false
+  id: 5
+
+mentee_user_5:
+  email: aimee@mentee.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: aimee
+  last_name: person
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: iOS
+  role: mentee
+  admin: false
+  id: 6
+
+mentee_user_6:
+  email: ryan@bob.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: ryan
+  last_name: bob
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: Rails
+  role: mentee
+  admin: false
+  id: 7
+
+mentee_user_7:
+  email: jack@bob.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: jack
+  last_name: bob
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: iOS
+  role: mentee
+  admin: false
+  id: 8
+
+mentee_user_8:
+  email: francis@bob.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: francis
+  last_name: bob
+  background: not coding
+  accomplishments: got into cf
+  professional_summary: I want to be a dev
+  personal_statement: I work super hard
+  graduating_class: Spring 2014
+  stack: JavaScript
+  role: mentee
+  admin: false
+  id: 9
+
+mentor_user:
+  email: mentor@mentor.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: bill
+  last_name: smith
+  background: coding
+  accomplishments: woke up
+  professional_summary: elite hacker
+  personal_statement: I am like to help
+  company: microsoft
+  position: SDET
+  role: mentor
+  admin: false
+  id: 10
+
+mentor_user_2:
+  email: king@kong.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  first_name: king
+  last_name: kong
+  background: coding
+  accomplishments: woke up
+  professional_summary: elite hacker
+  personal_statement: I am like to help
+  company: microsoft
+  position: SDET
+  role: mentor
+  admin: false
+  id: 11
