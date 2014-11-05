@@ -20,6 +20,8 @@ gem 'minitest-rails-capybara', group: :test
 gem 'neat'
 gem 'omniauth-github'
 gem 'omniauth-linkedin'
+gem 'pg'
+gem 'pg_search', '~> 0.7.8'
 gem 'pry'
 gem 'pundit'
 gem 'quiet_assets', group: :development
@@ -33,7 +35,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.0.7'
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

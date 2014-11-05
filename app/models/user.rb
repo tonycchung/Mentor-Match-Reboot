@@ -15,6 +15,24 @@ class User < ActiveRecord::Base
   include Gravtastic
   gravtastic
 
+  include PgSearch
+  pg_search_scope :super_search,
+                  against: [:first_name, :last_name, :stack, :background,
+                    :professional_summary, :accomplishments,
+                    :personal_statement, :company, :position],
+                  using: {
+                    tsearch:    { dictionary: 'english' }
+                    # trigram:    { threshold:  0.1 },
+                    # dmetaphone: {}
+                  }
+
+  def self.search(query)
+    if query.present?
+      super_search query
+    else
+      order('users.created_at DESC').all
+    end
+  end
 
   def mentor?
     role == 'mentor'

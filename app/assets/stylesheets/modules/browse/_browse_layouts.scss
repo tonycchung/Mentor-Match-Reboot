@@ -2,10 +2,33 @@
               BACKGROUND
 ==============================================*/
 
+.browse-users {
+  background-color: $alpha;
+  background-image: url(image-path("bottle_tall.jpg"));
+  background-size: cover;
+  background-position: center;
+  img{
+    @extend %transition_pt1s
+  }
+
+  header{
+    padding-top: .25em;
+    display: flex;
+  }
+  .logo {
+    height: 3rem;
+    width: 3rem;
+    margin-left: 1em;
+    background-image: url(image-path("cflogo.png"));
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
 .users{
   text-align: center;
   background: transparent;
-  padding: 1rem 0 10vh 0;
+  padding: 0 8rem 10vh 8rem;
 
 
 /*==============================================
@@ -109,6 +132,26 @@
       &:hover{
         background-color: $bravo;
       }
+    }
+  }
+
+  #search{
+    display: inline-block;
+  }
+  .search-button{
+    padding: .5rem;
+    border-radius: 5px;
+    font-family: $header-font;
+    text-transform: uppercase;
+    font-size: .5rem;
+    background-color: $charlie;
+    border: none;
+    color: $alpha_light90;
+    display: inline-block;
+    justify-content: center;
+    margin-left: 1rem;
+    &:hover{
+      background-color: $bravo;
     }
   }
 }
