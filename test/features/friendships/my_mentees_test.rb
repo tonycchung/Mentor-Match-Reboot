@@ -7,13 +7,16 @@ feature 'As a mentor, I want to see mentees who are connected to me' do
     click_on 'Request Mentor'
     click_on 'Sign Out'
 
-    sign_in_mentee users(:mentee_user_2)
+    sign_in_mentee :mentee_user_2
+    click_on 'Sign Out'
+    sign_in_mentee :mentee_user_2
     visit user_path users(:mentor_user)
     click_on 'Request Mentor'
     click_on 'Sign Out'
 
     sign_in_mentor
     first(:link, 'Accept').click
+    visit root_path
     first(:link, 'Accept').click
   end
 
