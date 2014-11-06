@@ -11,4 +11,16 @@ class Friendship < ActiveRecord::Base
   def accept
     update(state: 'Accepted')
   end
+
+  def find_mentor
+    user = User.find(self.user_id)
+    friend = User.find(self.friend_id)
+    mentor = user.role == 'mentor' ? user : friend
+  end
+
+  def find_mentee
+    user = User.find(self.user_id)
+    friend = User.find(self.friend_id)
+    mentor = user.role == 'mentee' ? user : friend
+  end
 end

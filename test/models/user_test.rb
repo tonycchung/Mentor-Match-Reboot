@@ -1,10 +1,10 @@
 require 'test_helper'
 
-describe 'User' do
+class UserTest < ActiveSupport::TestCase
   describe '#can_request?(user)' do
     before do
-      @jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password')
-      @sally = User.create(first_name: 'Sally', last_name: 'Barns', email: 'sally@test.com', password: 'password')
+      @jim = users(:mentee_user)
+      @sally = users(:mentor_user)
     end
 
     it 'returns true if users do not have a friendship' do
@@ -16,11 +16,10 @@ describe 'User' do
     end
 
     it 'returns false if the users have a friendship' do
-      john = User.create(first_name: 'John', last_name: 'Jones', email: 'john@test.com', password: 'password')
-      sally = User.create(first_name: 'Sally', last_name: 'Barns', email: 'sally2@test.com', password: 'password')
-      friendship = Friendship.create!(user_id: john.id, friend_id: sally.id, state: 'pending')
-      sally.can_request?(john).must_equal false
-      john.can_request?(sally).must_equal false
+      friendship = Friendship.create(user: @jim, friend: @sally, state: 'pending')
+      #binding.pry
+      @sally.can_request?(@jim).must_equal false
+      @jim.can_request?(@sally).must_equal false
     end
   end
 
