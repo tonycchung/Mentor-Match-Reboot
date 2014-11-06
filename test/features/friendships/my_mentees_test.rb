@@ -51,28 +51,3 @@ feature 'As a mentor, I want to see mentees who are connected to me' do
     page.wont_have_content users(:mentee_user_4).fullname
   end
 end
-
-feature 'As a mentee, I should be able to view my connected mentors' do
-  before do
-    sign_in_mentee
-    visit user_path users(:mentor_user)
-    click_on 'Request Mentor'
-    click_on 'Sign Out'
-
-    sign_in_mentor
-    first(:link, 'Accept').click
-    visit user_path users(:mentee_user_3)
-    click_on 'Request Mentee'
-    click_on 'Sign Out'
-
-    sign_in_mentee
-  end
-
-  scenario 'I should see my mentors after clicking My Mentors link' do
-
-    click_on 'My Mentors'
-    save_and_open_page
-    page.must_have_content users(:mentor_user).first_name
-    page.must_have_content users(:mentor_user).last_name
-  end
-end
