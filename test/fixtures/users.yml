@@ -22,7 +22,7 @@ mentee_user:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: Rails
+  course: Rails
   role: mentee
   admin: false
   sign_in_count: 2
@@ -39,7 +39,7 @@ mentee_user_2:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: Rails
+  course: Rails
   role: mentee
   admin: false
   id: 3
@@ -54,7 +54,7 @@ mentee_user_3:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: JavaScript
+  course: JavaScript
   role: mentee
   admin: false
   id: 4
@@ -69,7 +69,7 @@ mentee_user_4:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: Python
+  course: Python
   role: mentee
   admin: false
   id: 5
@@ -84,7 +84,7 @@ mentee_user_5:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: iOS
+  course: iOS
   role: mentee
   admin: false
   id: 6
@@ -99,7 +99,7 @@ mentee_user_6:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: Rails
+  course: Rails
   role: mentee
   admin: false
   id: 7
@@ -114,7 +114,7 @@ mentee_user_7:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: iOS
+  course: iOS
   role: mentee
   admin: false
   id: 8
@@ -129,7 +129,7 @@ mentee_user_8:
   professional_summary: I want to be a dev
   personal_statement: I work super hard
   graduating_class: Spring 2014
-  stack: JavaScript
+  course: JavaScript
   role: mentee
   admin: false
   id: 9

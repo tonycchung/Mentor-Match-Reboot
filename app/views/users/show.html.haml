@@ -19,59 +19,29 @@
     %section
       %label{for: "Name"} Name:
       %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
-    %section
-      %input#showMoreBackground.showMore{type: "checkbox"}/
-      %label.showMore{for: "showMoreBackground"}
-        %span.fa.fa-angle-double-down
-      %label{for: "background"} Background:
-      %p#background= @user.background
-    %section
-      %input#showMoreAccomplishments.showMore{type: "checkbox"}/
-      %label.showMore{for: "showMoreAccomplishments"}
-        %span.fa.fa-angle-double-down
-      %label{for: "accomplishments"} Accomplishments:
-      %p#accomplishments= @user.accomplishments
     /
       \============================================
       MENTEE SPECIFIC SECTION
       \==============================================
-    - if current_user.mentee?
+    - if @user.mentee?
       %section
-        %label{for: 'technologies'} Technologies:
+        %label{for: "course"} Course:
+        %p= @user.course
+      %section
+        %label{for: 'technologies'} Other Technologies:
         %p#technologies= @user.technologies
-      %section
-        %input#showMoreProfSum.showMore{type: "checkbox"}/
-        %label.showMore{for: "showMoreProfSum"}
-          %span.fa.fa-angle-double-down
-        %label{for: "profSum"} Professional summary:
-        %p#profSum= @user.professional_summary
-      %section
-        %input#showMorePersonal.showMore{type: "checkbox"}/
-        %label.showMore{for: "showMorePersonal"}
-          %span.fa.fa-angle-double-down
-        %label{for: "personal"} Personal statement:
-        %p#personal= @user.personal_statement
-      %section
-        %label{for: "gradClass"} Graduating Class:
-        %p#gradClass= @user.graduating_class
-      %section
-        %label{for: "stack"} Stack:
-        %p= @user.stack
     /
       \============================================
       MENTOR SPECIFIC SECTION
       \==============================================
-    - if current_user.mentor?
-      %section
-        %label{for: "company"} Company
-        %p#company= @user.company
+    - if @user.mentor?
       %section
         %label{for: "position"} Position
         %p#position= @user.position
       %section
-        %input#showMore.showMore{type: "checkbox"}/
-        %label.showMore{for: "showMore"}
-          %span.fa.fa-angle-double-down
+        %label{for: "company"} Company
+        %p#company= @user.company
+      %section
         %label{for: "role"} Role:
         %p#role= @user.role
       %section
@@ -81,6 +51,13 @@
         - @pending.each do |pending|
           / I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.
           = link_to "Approve mentorship with #{User.find(pending.user_id).first_name}", friendship_path(id: pending.id, state: "approved"), method: :patch
+    /
+      \============================================
+      BIO FOR EVERYONE
+      \==============================================
+    %section
+      %label{for: "background"} Bio:
+      %p#background= @user.background
     /
       \============================================
       ADMIN-SPECIFIC SECTION

@@ -1,7 +1,4 @@
 %section.stack
-  = f.label :stack
-  = f.select :stack, options_for_select([["Front End"], ["Javascript"], ["Python"], ["Ruby on Rails"], ["iOS"]],)
+  = f.label :course
+  = f.text_field :course, placeholder: 'Ruby on Rails'
   .break
-%section.gradClass
-  = f.label :Class
-  = f.select :graduating_class, options_for_select([["May-June '14"], ["June-July '14"]])
