@@ -18,6 +18,15 @@ Rails.application.configure do
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: "http://mentormatch.herokuapp.com" }
+  config.action_mailer.smtp_settings = {
+      address: ENV['SES_ADDRESS'],
+      user_name: ENV['SES_USERNAME']
+      password:  ENV['SES_PASSWORD']
+      authentication: :login,
+      enable_starttls_auto: true
+  }
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = true
