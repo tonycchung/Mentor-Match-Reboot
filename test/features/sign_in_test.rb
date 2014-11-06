@@ -8,7 +8,7 @@ feature "A user must be able to sign in in a variety of ways" do
   end
 
   scenario "As a user I want to create a new mentor account " do
-    page.must_have_content"Dexter"
+    page.must_have_content "Dexter"
     first(:link, "Become a Mentor").click
     fill_in "Email", with: users(:mentor_user).email
     fill_in "First Name", with: "Bruce"

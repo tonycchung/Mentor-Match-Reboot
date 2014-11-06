@@ -41,6 +41,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def first_name=(new_name)
+    write_attribute(:first_name, new_name.capitalize)
+  end
+
+  def last_name=(new_name)
+    write_attribute(:last_name, new_name.capitalize)
+  end
+
   def mentor?
     role == 'mentor'
   end

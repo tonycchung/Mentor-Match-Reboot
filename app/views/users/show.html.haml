@@ -18,7 +18,7 @@
           %span.fa.fa-chevron-circle-right
     %section
       %label{for: "Name"} Name:
-      %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
+      %p#Name #{@user.first_name} #{@user.last_name}
     - if current_user.accepted_friends.include?(@user)
       %section
         %label{for: "email"} Email:
