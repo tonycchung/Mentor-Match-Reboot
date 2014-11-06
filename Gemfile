@@ -39,6 +39,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'simplecov'
   gem 'better_errors'
   gem 'faker', '~> 1.4.2'
 end
