@@ -9,7 +9,10 @@
       %section
         %p= link_to "My Account", user_path(current_user)
       %section
-        %p My Mentor
+        - if current_user.mentor?
+          %p= link_to "My Mentees", friendships_path
+        - else
+          %p= link_to "My Mentors", friendships_path
       %section
         %p= link_to "Browse", users_path
       %section
@@ -31,27 +34,19 @@
     -#     %h2 History
     -#     %button
     -#       = link_to "", history_path, class: "fa fa-chevron-right"
-    .mainAside
-      %section
-        %figure
-          =image_tag ("dexter_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bacon ipsum dolor sit amet enim
-      %section
-        %figure
-          =image_tag ("mark_square.jpg")
-        .paraWrap
-          %p.paraWrapP Bresaola landjaeger et filet mignon
-      %section
-        %figure
-          =image_tag ("gabe_square.jpg")
-        .paraWrap
-          %p.paraWrapP Strip steak labore frankfurter flank
-      %section
-        %figure
-          =image_tag ("gabe_square.jpg")
-        .paraWrap
-          %p.paraWrapP Strip steak labore frankfurter flank
+    - if current_user.inverse_friendships
+      .mainAside
+        - current_user.inverse_friendships.where(state: "pending").each do |request|
+          %section
+            %figure
+              = link_to(user_path(request.user)) do
+                = image_tag request.user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+            .paraWrap
+              %p.paraWrap #{ request.user.first_name } requested to be your #{ request.user.role }
+              %button
+                = link_to 'Accept', friendship_path(request), method: :patch
+              %button
+                = link_to 'Decline', friendship_path(request), method: :delete
     .users
       = form_tag users_path, :method => "get", id: "search-form" do
         = text_field_tag :search, nil, placeholder: 'example: ruby on rails'

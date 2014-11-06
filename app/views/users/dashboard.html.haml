@@ -9,7 +9,10 @@
       %section
         %p= link_to "My Account", user_path(current_user)
       %section
-        %p My Mentor
+        - if current_user.mentor?
+          %p= link_to "My Mentees", friendships_path
+        - else
+          %p= link_to "My Mentors", friendships_path
       %section
         %p= link_to "Browse", users_path
       %section
