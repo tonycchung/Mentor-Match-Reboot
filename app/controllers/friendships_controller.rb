@@ -22,7 +22,7 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
     mentor = @friendship.find_mentor
     mentee = @friendship.find_mentee
-    @friendship.accepted
+    @friendship.accept
     @friendship.save!
     MentorshipMailer.acceptance_email_to_mentee(mentor, mentee)
     MentorshipMailer.acceptance_email_to_mentor(mentor, mentee)
