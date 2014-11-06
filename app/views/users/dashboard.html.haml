@@ -36,7 +36,8 @@
         - current_user.inverse_friendships.where(state: "pending").each do |request|
           %section
             %figure
-              = image_tag request.user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
+              = link_to(user_path(request.user)) do
+                = image_tag request.user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
             .paraWrap
               %p.paraWrap #{ request.user.first_name } requested to be your #{ request.user.role }
               %button
