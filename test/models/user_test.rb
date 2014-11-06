@@ -21,4 +21,16 @@ describe 'User' do
       @jim.can_request?(@sally).must_equal false
     end
   end
+
+  describe '#change_availability' do
+    it 'sets the users available attribute to true' do
+      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: false)
+      jim.change_availability.must_equal true
+    end
+
+    it 'sets the users available attribute to false' do
+      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: true)
+      jim.change_availability.must_equal false
+    end
+  end
 end

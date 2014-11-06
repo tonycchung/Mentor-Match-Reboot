@@ -162,5 +162,6 @@ mentor_user_2:
   position: SDET
   role: mentor
   admin: false
+  available: false
   id: 11
 
