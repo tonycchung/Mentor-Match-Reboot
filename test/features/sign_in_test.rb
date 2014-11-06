@@ -45,7 +45,6 @@ feature "A user must be able to sign in in a variety of ways" do
     fill_in 'Technologies', with: 'Javascript, Ruby'
     fill_in 'Bio', with: 'I love candy'
     click_on 'Submit'
-    save_and_open_page
     first(:link, 'Home').click
 
     page.current_path.must_include 'dashboard'

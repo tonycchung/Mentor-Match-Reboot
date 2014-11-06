@@ -104,7 +104,26 @@ class User < ActiveRecord::Base
   end
 
   def fullname
-    first_name + " " + last_name
+    first_name + ' ' + last_name
   end
 
+  def accepted_friends
+    friends = []
+
+    friend_ids.each do |id|
+      friends << User.find(id)
+    end
+    friends
+  end
+
+  def friend_ids
+    id_collection = []
+    inverse_friendships.each do |friend|
+      id_collection << friend.user_id if friend.state == 'Accepted'
+    end
+    friendships.each do |friend|
+      id_collection << friend.friend_id if friend.state == 'Accepted'
+    end
+    id_collection
+  end
 end
