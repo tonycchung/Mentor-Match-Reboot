@@ -25,6 +25,14 @@ feature 'As a mentor I can view my own profile and other user profiles' do
 
     page.wont_have_content 'Company'
     page.wont_have_content 'Position'
+    page.wont_have_content 'Email'
+  end
+
+  scenario 'A mentor can view the email of an accepted menteee' do
+    create_mentorship
+    sign_in_mentor
+    visit user_path(users(:mentee_user))
+    page.must_have_content "Email: #{users(:mentee_user).email}"
   end
 end
 
@@ -46,7 +54,7 @@ feature 'As a mentee, I can view my own profile and other profile' do
     page.must_have_content 'Course'
   end
 
-  scenario 'As a mentee viewing a profiles of a mentor' do
+  scenario 'As a mentee viewing a profile of a mentor' do
     visit users_path
 
     first(:link, 'View Details').click
@@ -62,5 +70,14 @@ feature 'As a mentee, I can view my own profile and other profile' do
     page.wont_have_content 'Personal statement'
     page.wont_have_content 'Graduating Class'
     page.wont_have_content 'Course'
+    page.wont_have_content 'Email'
+  end
+
+  scenario 'A mentor can view the email of an accepted mentor' do
+    click_on 'Sign Out'
+    create_mentorship
+    sign_in_mentee
+    visit user_path(users(:mentor_user))
+    page.must_have_content "Email: #{users(:mentor_user).email}"
   end
 end

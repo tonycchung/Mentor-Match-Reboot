@@ -46,3 +46,13 @@ def sign_in_admin(role = :admin_user)
   fill_in "Password", with: 'password'
   click_button "Go get 'em"
 end
+
+def create_mentorship
+  sign_in_mentee
+  visit user_path(users(:mentor_user))
+  click_on "Request Mentor"
+  click_on 'Sign Out'
+  sign_in_mentor
+  first(:link, "Accept").click
+  click_on 'Sign Out'
+end

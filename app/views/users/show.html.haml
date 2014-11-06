@@ -19,6 +19,10 @@
     %section
       %label{for: "Name"} Name:
       %p#Name= @user.first_name.capitalize + " " + @user.last_name.capitalize
+    - if current_user.accepted_friends.include?(@user)
+      %section
+        %label{for: "email"} Email:
+        %p#email= @user.email
     /
       \============================================
       MENTEE SPECIFIC SECTION
@@ -55,6 +59,7 @@
     %section
       %label{for: "background"} Bio:
       %p#background= @user.background
+
     /
       \============================================
       ADMIN-SPECIFIC SECTION
@@ -76,10 +81,7 @@
             %li
               = user.first_name
               = user.last_name
-    /
-      \============================================
-      ACCOUNT CREATION SESSION ONLY
-      \==============================================
+
   - if policy(@user).update?
     %button.lookGoodBtn
       = link_to "Edit", edit_user_path(current_user), id:"lookGood"
