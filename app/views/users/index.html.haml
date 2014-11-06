@@ -62,8 +62,7 @@
           = image_tag user.gravatar_url(:d => "http%3A%2F%2Fi.imgur.com%2FUFa4kwT.png")
           %p#name= user.fullname
           - if user.mentee?
-            %p#stack= user.stack
-            %p#grad_class= user.graduating_class
+            %p#stack= user.course
           - if user.mentor?
             %p#position= user.position
             %p#company= user.company

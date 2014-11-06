@@ -8,82 +8,35 @@
         We'll use a few quick questions to build your profile.
         Tell us a little about yourself.<br> Anything you want.
       .fieldWrap
-        = f.label :background
+        = f.label :background, 'Bio'
         = f.text_area :background, placeholder: "Well, on Saturday's I like to juggle chainsaws dressed like a sailor..."
         %span.next.fa.fa-angle-double-right#next_1
       %nav.progBar
         %ul
           %li.progDot.active
           %li.progDot
-          %li.progDot
-          - if current_user.role =="mentee"
-            %li.progDot
+          - if current_user.role =="mentor"
             %li.progDot
     - if current_user.role == "mentee"
       %section#s2
-        %h2
-          Say a bit about what you've done.<br> What are you proud of?
-        .fieldWrap
-          = f.label :accomplishments
-          = f.text_area :accomplishments, placeholder:  "I arm wrestled Deniro once."
-          %span.next.fa.fa-angle-double-right#next_2
-        %nav.progBar
-          %ul
-            %li.progDot
-            %li.progDot.active
-            %li.progDot
-            %li.progDot
-            %li.progDot
-      %section#s3
         %h2
           What technologies are you familiar with?
         .fieldWrap
           = f.label :technologies
           = f.text_area :technologies, placeholder: 'Example: Python, JavaScript, and Node.js'
-          %span.next.fa.fa-angle-double-right#next_3
-        %nav.progBar
-          %ul
-            %li.progDot
-            %li.progDot
-            %li.progDot.active
-            %li.progDot
-            %li.progDot
-      %section#s4
-        %h2
-          Briefly describe your professional history. <br> Where have you been?
-        .fieldWrap
-          = f.label :professional_summary
-          = f.text_area :professional_summary, placeholder: "Spent 7 years fighting the robot uprising"
-          %span.next.fa.fa-angle-double-right#next_4
-        %nav.progBar
-          %ul
-            %li.progDot
-            %li.progDot
-            %li.progDot
-            %li.progDot.active
-            %li.progDot
-      %section#s5
-        %h2
-          Finally, throw in something random. <br> Go nuts. But not too nuts.
-        .fieldWrap
-          = f.label :personal_statement
-          = f.text_area :personal_statement, placeholder: "I can raise each of my eyebrows independently"
           %button.submit
-            =f.submit 'Submit', class: "submit"
+            = f.submit 'Submit', class: "submit"
         %nav.progBar
           %ul
-            %li.progDot
-            %li.progDot
-            %li.progDot
             %li.progDot
             %li.progDot.active
     - if current_user.role == "mentor"
       %section#s6
         %h2
-          Where do you work? <br> Just the company name is fine.
+          What is your role right now?
         .fieldWrap
-          = f.label :company
-          = f.text_field :company, type: "text", placeholder: "ACME Corp."
+          = f.label :position
+          = f.text_area :position, placeholder: "Example: Senior Engineer"
           %span.next.fa.fa-angle-double-right#next_6
         %nav.progBar
           %ul
@@ -92,12 +45,12 @@
             %li.progDot
       %section#s7
         %h2
-          What is your role right now? <br> briefly describe your position.
+          Where do you work? <br> Just the company name is fine.
         .fieldWrap
-          = f.label :position
-          = f.text_area :position, placeholder: "Senior Lunch Quality Assurance Engineer leading a team of 7 expert sandwich developers"
+          = f.label :company
+          = f.text_field :company, type: "text", placeholder: "ACME Corp."
           %button.submit
-            =f.submit 'Submit', class: "submit"
+            = f.submit 'Submit', class: "submit"
         %nav.progBar
           %ul
             %li.progDot
