@@ -50,10 +50,14 @@ class User < ActiveRecord::Base
     !friends.include?(user) && !inverse_friends.include?(user) && user != self
   end
 
-  def opposite_role
-    return 'Mentees' if role == 'mentor'
-    return 'Mentors'
+  def change_availability
+    available == true ? false : true
   end
+
+  def opposite_role
+    role == 'mentor' ? 'Mentee' : 'Mentor'
+  end
+
   # Courtesy of https://gist.github.com/ivanoats/7076128
   def self.from_omniauth(auth, role)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

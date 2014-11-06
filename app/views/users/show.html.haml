@@ -77,6 +77,8 @@
       %section
         %label{for: "availability"} Availability:
         %p#availability= @user.available
+        - if policy(@user).update?
+          = link_to 'Change', user_path(@user, user: { available: current_user.change_availability }), method: :patch
       - if @pending
         - @pending.each do |pending|
           / I would like to add an intermediary step here. Mentees and Mentors need to have an initial conversation to test the waters before plunging into a full on Mentorship. It needs to be something like, 'get introduced'.
