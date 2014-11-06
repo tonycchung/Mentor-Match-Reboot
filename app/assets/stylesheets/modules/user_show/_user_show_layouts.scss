@@ -299,6 +299,10 @@
       }
     }
   }
+  a{
+    color: $alpha_light40;
+    display: flex;
+  }
   button.lookGoodBtn{
     display: block;
     margin: 2vh auto 5vh auto;
