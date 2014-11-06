@@ -16,9 +16,11 @@ describe 'User' do
     end
 
     it 'returns false if the users have a friendship' do
-      friendship = Friendship.create(user: @sally, friend: @jim, state: 'pending')
-      @sally.can_request?(@jim).must_equal false
-      @jim.can_request?(@sally).must_equal false
+      john = User.create(first_name: 'John', last_name: 'Jones', email: 'john@test.com', password: 'password')
+      sally = User.create(first_name: 'Sally', last_name: 'Barns', email: 'sally2@test.com', password: 'password')
+      friendship = Friendship.create!(user_id: john.id, friend_id: sally.id, state: 'pending')
+      sally.can_request?(john).must_equal false
+      john.can_request?(sally).must_equal false
     end
   end
 
@@ -31,6 +33,18 @@ describe 'User' do
     it 'sets the users available attribute to false' do
       jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: true)
       jim.change_availability.must_equal false
+    end
+  end
+
+  describe '#display_availability' do
+    it 'returns unavailable if the available attribute of the user is false' do
+      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: false)
+      jim.display_availability.must_equal 'unavailable'
+    end
+
+    it 'returns available if the available attribute is true' do
+      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: true)
+      jim.display_availability.must_equal 'available'
     end
   end
 end

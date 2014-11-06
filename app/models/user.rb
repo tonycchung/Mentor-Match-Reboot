@@ -61,8 +61,12 @@ class User < ActiveRecord::Base
     available == true ? false : true
   end
 
+  def display_availability
+    available == true ? 'available' : 'unavailable'
+  end
+
   def opposite_role
-    role == 'mentor' ? 'Mentee' : 'Mentor'
+    role == 'mentor' ? 'mentee' : 'mentor'
   end
 
   # Courtesy of https://gist.github.com/ivanoats/7076128

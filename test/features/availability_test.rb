@@ -5,8 +5,7 @@ feature 'mentor availability' do
     sign_in_mentor
     visit user_path(users(:mentor_user))
     click_on 'Change'
-    #save_and_open_page
-    page.must_have_content 'Availability: false'
+    page.must_have_content 'Availability: unavailable'
   end
 
   scenario 'other users cannot make a mentor available' do

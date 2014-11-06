@@ -5,6 +5,8 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/pride"
 require "pry"
+require 'simplecov'
+SimpleCov.start
 
 
 class ActiveSupport::TestCase
