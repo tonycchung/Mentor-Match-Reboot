@@ -10,7 +10,7 @@ This is a Ruby on Rails app that hopes to make a simple system for Code Fellows 
 ##Final Project for CodeFellows Ruby on Rails Dev Accelator Fall 2014
 by Phil Nguyen and Reed Nelson-Saunders
 
-This a continuation of the hard work done by previous students Brian Studwell, Marco Lindsay and Tony Chung. Much of the backend was in place and the front end was beautifully styled.  Most of the work we did was wiring up the backend with the front end to achieve the intended functionality.  We also did cleaned up a lot of code that wasn't being used.
+This a continuation of the hard work done by previous students Brian Studwell, Marco Lindsay and Tony Chung. Much of the backend was in place and the front end was beautifully styled.  Most of the work we did was wiring up the backend with the front end to achieve the intended functionality.  We also did cleaned up a lot of code that wasn't being used. Also we increased test coverage quite a bit.  Acccording to Simplecov test coverage is 96%.
 
 List of current features:
 
