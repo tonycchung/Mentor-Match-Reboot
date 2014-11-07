@@ -40,10 +40,10 @@
       \==============================================
     - if @user.mentor?
       %section
-        %label{for: "position"} Position
+        %label{for: "position"} Position:
         %p#position= @user.position
       %section
-        %label{for: "company"} Company
+        %label{for: "company"} Company:
         %p#company= @user.company
       %section
         %label{for: "role"} Role:
@@ -97,7 +97,7 @@
       = link_to "Request Mentee", friendships_path(friend_id: @user.id, user_id: current_user.id, state: 'pending'), method: :post, class: "addFav" if current_user.mentor?
 
     - if current_user.accepted_friends.include?(@user)
-      = link_to "End Mentorship", friendship_path(@user.find_friendship(current_user)), method: :delete, data: { confirm: 'Are you sure?'}
+      = link_to "End Mentorship", friendship_path(@user.find_friendship(current_user)), method: :delete, data: { confirm: 'Are you sure?'}, class: 'addFav'
 
 
 
