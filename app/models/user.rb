@@ -4,21 +4,18 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :password, length: { minimum: 6 },
                        confirmation: true,
-                       if: lambda { new_record? || !password.nil? }
+                       if: -> { new_record? || !password.nil? }
 
   has_many :friendships
   has_many :friends, through: :friendships
 
-  has_many :inverse_friendships, class_name: :"Friendship", foreign_key: :"friend_id"
+  has_many :inverse_friendships, class_name: :"Friendship",
+                                 foreign_key: :"friend_id"
   has_many :inverse_friends, through: :inverse_friendships, source: :user
 
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  acts_as_votable
-  acts_as_voter
   include Gravtastic
   gravtastic
 
@@ -26,27 +23,20 @@ class User < ActiveRecord::Base
   pg_search_scope :super_search,
                   against: [:first_name, :last_name, :course, :background,
                             :professional_summary, :accomplishments,
-                            :personal_statement, :company, :position, :technologies],
-                  using: {
-                    tsearch:    { dictionary: 'english', prefix: true }
-                    # trigram:    { threshold:  0.1 },
-                    # dmetaphone: {}
-                  }
+                            :personal_statement, :company, :position,
+                            :technologies],
+                  using: { tsearch: { dictionary: 'english', prefix: true } }
 
   def self.search(query)
-    if query.present?
-      super_search query
-    else
-      order('users.created_at DESC').all
-    end
+    query.present? ? super_search(query) : order('users.created_at DESC').all
   end
 
   def first_name=(new_name)
-    write_attribute(:first_name, new_name.capitalize)
+    self[:first_name] = new_name.capitalize
   end
 
   def last_name=(new_name)
-    write_attribute(:last_name, new_name.capitalize)
+    self[:last_name] = new_name.capitalize
   end
 
   def mentor?
@@ -90,9 +80,9 @@ class User < ActiveRecord::Base
 
   def self.new_with_session(params, session)
     if session['devise.user_attributes']
-      new(session['devise.user_attributes'], without_protection: true) do |user|
-        user.attributes = params
-        user.valid?
+      new(session['devise.user_attributes'], without_protection: true) do |u|
+        u.attributes = params
+        u.valid?
       end
     else
       super
@@ -104,11 +94,7 @@ class User < ActiveRecord::Base
   end
 
   def update_with_password(params, *options)
-    if encrypted_password.blank?
-      update_attributes(params, *options)
-    else
-      super
-    end
+    encrypted_password.blank? ? update_attributes(params, *options) : super
   end
 
   def fullname
@@ -116,12 +102,7 @@ class User < ActiveRecord::Base
   end
 
   def accepted_friends
-    friends = []
-
-    friend_ids.each do |id|
-      friends << User.find(id)
-    end
-    friends
+    friend_ids.map { |id| User.find(id) }
   end
 
   def friend_ids

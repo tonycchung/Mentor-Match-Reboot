@@ -2,7 +2,9 @@ require 'test_helper'
 
 class MentorshipMailerTest < ActionMailer::TestCase
   test 'acceptance email to mentee' do
-    email = MentorshipMailer.acceptance_email_to_mentee(users(:mentor_user), users(:mentee_user)).deliver
+    email = MentorshipMailer.acceptance_email_to_mentee(
+      users(:mentor_user),
+      users(:mentee_user)).deliver
     assert_not ActionMailer::Base.deliveries.empty?
 
     assert_equal ['codefellows@info.org'], email.from
@@ -11,7 +13,9 @@ class MentorshipMailerTest < ActionMailer::TestCase
   end
 
   test 'acceptance email to mentor' do
-    email = MentorshipMailer.acceptance_email_to_mentor(users(:mentor_user), users(:mentee_user)).deliver
+    email = MentorshipMailer.acceptance_email_to_mentor(
+      users(:mentor_user),
+      users(:mentee_user)).deliver
     assert_not ActionMailer::Base.deliveries.empty?
 
     assert_equal ['codefellows@info.org'], email.from

@@ -15,12 +15,12 @@ class Friendship < ActiveRecord::Base
   def find_mentor
     user = User.find(user_id)
     friend = User.find(friend_id)
-    mentor = user.role == 'mentor' ? user : friend
+    user.role == 'mentor' ? user : friend
   end
 
   def find_mentee
     user = User.find(user_id)
     friend = User.find(friend_id)
-    mentor = user.role == 'mentee' ? user : friend
+    user.role == 'mentee' ? user : friend
   end
 end

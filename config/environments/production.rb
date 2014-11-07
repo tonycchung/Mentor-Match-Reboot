@@ -1,5 +1,6 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -16,16 +17,18 @@ Rails.application.configure do
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+  # For large-scale production use, consider using a caching reverse proxy
+  # like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "http://mentormatch.herokuapp.com" }
+  config.action_mailer.default_url_options = {
+    host: 'http://mentormatch.herokuapp.com' }
   config.action_mailer.smtp_settings = {
-      address: ENV['SES_ADDRESS'],
-      user_name: ENV['SES_USERNAME']
-      password:  ENV['SES_PASSWORD']
-      authentication: :login,
-      enable_starttls_auto: true
+    address: ENV['SES_ADDRESS'],
+    user_name: ENV['SES_USERNAME'],
+    password: ENV['SES_PASSWORD'],
+    authentication: :login,
+    enable_starttls_auto: true
   }
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
@@ -48,7 +51,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+  # Force all access to the app over SSL, use Strict-Transport-Security,
+  # and use secure cookies.
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
@@ -61,17 +65,20 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  #config.cache_store = :mem_cache_store
+  # config.cache_store = :mem_cache_store
 
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  # Enable serving of images, stylesheets, and JavaScripts from an asset
+  # server.
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets.
-  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+  # application.js, application.css, and all non-JS/CSS in app/assets
+  # folder are already added.
   # config.assets.precompile += %w( search.js )
 
   # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  # Set this to true and configure the email server for immediate delivery
+  # to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

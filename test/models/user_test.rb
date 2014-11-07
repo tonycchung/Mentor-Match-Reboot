@@ -16,7 +16,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     it 'returns false if the users have a friendship' do
-      friendship = Friendship.create(user: @jim, friend: @sally, state: 'pending')
+      Friendship.create(user: @jim, friend: @sally, state: 'pending')
       # binding.pry
       @sally.can_request?(@jim).must_equal false
       @jim.can_request?(@sally).must_equal false
@@ -25,24 +25,47 @@ class UserTest < ActiveSupport::TestCase
 
   describe '#change_availability' do
     it 'sets the users available attribute to true' do
-      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: false)
+      jim = User.create(
+        first_name: 'Jim',
+        last_name: 'Jones',
+        email: 'jim@test.com',
+        password: 'password',
+        available: false)
+
       jim.change_availability.must_equal true
     end
 
     it 'sets the users available attribute to false' do
-      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: true)
+      jim = User.create(
+        first_name: 'Jim',
+        last_name: 'Jones',
+        email: 'jim@test.com',
+        password: 'password',
+        available: true)
+
       jim.change_availability.must_equal false
     end
   end
 
   describe '#display_availability' do
     it 'returns unavailable if the available attribute of the user is false' do
-      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: false)
+      jim = User.create(
+        first_name: 'Jim',
+        last_name: 'Jones',
+        email: 'jim@test.com',
+        password: 'password',
+        available: false)
+
       jim.display_availability.must_equal 'unavailable'
     end
 
     it 'returns available if the available attribute is true' do
-      jim = User.create(first_name: 'Jim', last_name: 'Jones', email: 'jim@test.com', password: 'password', available: true)
+      jim = User.create(
+        first_name: 'Jim',
+        last_name: 'Jones',
+        email: 'jim@test.com',
+        password: 'password',
+        available: true)
       jim.display_availability.must_equal 'available'
     end
   end
@@ -51,7 +74,11 @@ class UserTest < ActiveSupport::TestCase
     it 'returns the friendship between the two users' do
       mentee = users(:mentee_user)
       mentor = users(:mentor_user)
-      friendship = Friendship.create(user: mentee, friend: mentor, state: 'Accepted')
+      friendship = Friendship.create(
+        user: mentee,
+        friend: mentor,
+        state: 'Accepted')
+
       mentee.find_friendship(mentor).must_equal friendship
       mentor.find_friendship(mentee).must_equal friendship
     end

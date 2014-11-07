@@ -1,18 +1,10 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :star, :unstar, :history]
-
-  def star
-    @user.liked_by current_user
-    redirect_to @user
-  end
-
-  def unstar
-    @user.unliked_by current_user
-    redirect_to @user
-  end
+  before_action :set_user, only:
+  [:show, :profile_starter, :edit, :update, :destroy, :dashboard, :history]
 
   def dashboard
-    @pending_friendships = Friendship.where('friend_id = ? AND state = ?', current_user.id, 'pending')
+    @pending_friendships = Friendship.where(
+      'friend_id = ? AND state = ?', current_user.id, 'pending')
   end
 
   def history
@@ -22,18 +14,16 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = policy_scope(User).search(params[:search]).paginate(page: params[:page], per_page: 20)
+    @users = policy_scope(User).search(params[:search]).paginate(
+      page: params[:page],
+      per_page: 20)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    if Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'pending')
-      @pending = Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'pending')
-    end
-    if Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'approved')
-      @approved_mentorship = Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'approved')
-    end
+    @pending = pending_mentorship if pending_mentorship
+    @approved_mentorship = approved_mentorship if approved_mentorship
   end
 
   # GET /users/new
@@ -54,14 +44,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     authorize @user
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update(user_params)
+      redirect_to @user, notice: 'User was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -69,10 +55,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
   private
@@ -82,8 +65,24 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
+  # Dont trust parameters from the internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :course, :available, :technologies)
+    params.require(:user).permit(
+      :first_name, :last_name, :background,
+      :accomplishments, :professional_summary, :personal_statement, :role,
+      :admin, :company, :position, :graduating_class, :course, :available,
+      :technologies)
+  end
+
+  def pending_mentorship
+    Friendship.where(
+      'friend_id = ? AND user_id = ? AND state = ?',
+      current_user.id, params[:id], 'pending')
+  end
+
+  def approved_mentorship
+    Friendship.where(
+      'friend_id = ? AND user_id = ? AND state = ?',
+      current_user.id, params[:id], 'approved')
   end
 end

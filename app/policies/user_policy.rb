@@ -4,12 +4,13 @@ class UserPolicy < ApplicationPolicy
   end
 
   class Scope < Struct.new(:user, :scope)
-    def resolve
-      if user.present? && user.admin?
+    def resolve # rubocop made me use a guard clause! Blame it on rubocop!!!
+      return false unless user.present?
+      if user.admin?
         scope.all
-      elsif user.present? && user.mentor?
+      elsif user.mentor?
         scope.where(role: 'mentee')
-      elsif user.present? && user.mentee?
+      elsif user.mentee?
         scope.where(role: 'mentor')
       end
     end

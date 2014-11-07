@@ -2,12 +2,15 @@ class FriendshipsController < ApplicationController
   def index
     # friendships = current_user.friends + current_user.inverse_friends
     # friends = current_user.friendships
-    @friendships = current_user.accepted_friends.paginate(page: params[:page], per_page: 20)
+    @friendships = current_user.accepted_friends.paginate(
+      page: params[:page],
+      per_page: 20)
   end
 
   def create
     user = User.find(params[:friend_id])
-    @friendship = Friendship.new(friend_id: params[:friend_id], user_id: current_user.id, state: 'pending')
+    @friendship = Friendship.new(friend_id: params[:friend_id],
+                                 user_id: current_user.id, state: 'pending')
     if @friendship.save
       flash[:notice] = 'Request sent!'
       redirect_to root_path
