@@ -25,8 +25,12 @@ class FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.find(params[:id])
+    mentor = @friendship.find_mentor
+    mentee = @friendship.find_mentee
     @friendship.accept
     @friendship.save!
+    MentorshipMailer.acceptance_email_to_mentee(mentor, mentee)
+    MentorshipMailer.acceptance_email_to_mentor(mentor, mentee)
     flash[:notice] = "Mentorship approved"
     redirect_to root_path
   end
