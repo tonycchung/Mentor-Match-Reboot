@@ -81,3 +81,21 @@ feature 'As a mentee, I can view my own profile and other profile' do
     page.must_have_content "Email: #{users(:mentor_user).email}"
   end
 end
+
+feature 'User names are automatically capitalized' do
+  scenario 'A user registers with a lowercase name' do
+    visit root_path
+    first(:link, 'Find a Mentor').click
+    fill_in 'Email', with: 'sally@test.com'
+    fill_in 'First Name', with: 'sally'
+    fill_in 'Last Name', with: 'miller'
+    fill_in 'Password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
+    click_on 'Submit'
+
+    first(:link, 'Save this Step for Later').click
+    first(:link, 'Home').click
+    first(:link, 'My Account').click
+    page.must_have_content 'Sally Miller'
+  end
+end

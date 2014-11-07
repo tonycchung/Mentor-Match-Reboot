@@ -3,8 +3,8 @@
 admin_user:
   email: admin@admin.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: admin
-  last_name: doe
+  first_name: Admin
+  last_name: Doe
   background: code
   accomplishments: tied shoes
   professional_summary: make things
@@ -15,8 +15,8 @@ admin_user:
 mentee_user:
   email: mentee@mentee.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: mentee
-  last_name: person
+  first_name: Sally
+  last_name: Person
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -32,8 +32,8 @@ mentee_user:
 mentee_user_2:
   email: joe@bob.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: joe
-  last_name: bob
+  first_name: Joe
+  last_name: Bob
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -47,8 +47,8 @@ mentee_user_2:
 mentee_user_3:
   email: kate@mentee.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: kate
-  last_name: person
+  first_name: Kate
+  last_name: Person
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -62,8 +62,8 @@ mentee_user_3:
 mentee_user_4:
   email: john@bob.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: john
-  last_name: bob
+  first_name: John
+  last_name: Bob
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -77,8 +77,8 @@ mentee_user_4:
 mentee_user_5:
   email: aimee@mentee.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: aimee
-  last_name: person
+  first_name: Aimee
+  last_name: Person
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -92,8 +92,8 @@ mentee_user_5:
 mentee_user_6:
   email: ryan@bob.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: ryan
-  last_name: bob
+  first_name: Ryan
+  last_name: Bob
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -107,8 +107,8 @@ mentee_user_6:
 mentee_user_7:
   email: jack@bob.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: jack
-  last_name: bob
+  first_name: Jack
+  last_name: Bob
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -122,8 +122,8 @@ mentee_user_7:
 mentee_user_8:
   email: francis@bob.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: francis
-  last_name: bob
+  first_name: Francis
+  last_name: Bob
   background: not coding
   accomplishments: got into cf
   professional_summary: I want to be a dev
@@ -137,8 +137,8 @@ mentee_user_8:
 mentor_user:
   email: mentor@mentor.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: bill
-  last_name: smith
+  first_name: Bill
+  last_name: Smith
   background: coding
   accomplishments: woke up
   professional_summary: elite hacker
@@ -152,8 +152,8 @@ mentor_user:
 mentor_user_2:
   email: king@kong.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-  first_name: king
-  last_name: kong
+  first_name: King
+  last_name: Kong
   background: coding
   accomplishments: woke up
   professional_summary: elite hacker
