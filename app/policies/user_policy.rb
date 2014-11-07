@@ -1,5 +1,4 @@
 class UserPolicy < ApplicationPolicy
-
   def update?
     user == record
   end
@@ -9,9 +8,9 @@ class UserPolicy < ApplicationPolicy
       if user.present? && user.admin?
         scope.all
       elsif user.present? && user.mentor?
-        scope.where(:role => "mentee")
+        scope.where(role: 'mentee')
       elsif user.present? && user.mentee?
-        scope.where(:role => "mentor")
+        scope.where(role: 'mentor')
       end
     end
   end

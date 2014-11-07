@@ -4,14 +4,15 @@ class FriendshipsController < ApplicationController
     # friends = current_user.friendships
     @friendships = current_user.accepted_friends.paginate(page: params[:page], per_page: 20)
   end
+
   def create
     user = User.find(params[:friend_id])
-    @friendship = Friendship.new(friend_id: params[:friend_id], user_id: current_user.id, state: "pending")
+    @friendship = Friendship.new(friend_id: params[:friend_id], user_id: current_user.id, state: 'pending')
     if @friendship.save
-      flash[:notice] = "Request sent!"
+      flash[:notice] = 'Request sent!'
       redirect_to root_path
     else
-      flash[:notice] = "Unable to send request."
+      flash[:notice] = 'Unable to send request.'
       redirect_to user_path(user)
     end
   end
@@ -19,7 +20,7 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = Friendship.find(params[:id])
     @friendship.destroy
-    flash[:notice] = "Succesfully deleted relationship"
+    flash[:notice] = 'Succesfully deleted relationship'
     redirect_to root_path
   end
 
@@ -31,8 +32,7 @@ class FriendshipsController < ApplicationController
     @friendship.save!
     MentorshipMailer.delay.acceptance_email_to_mentee(mentor, mentee)
     MentorshipMailer.delay.acceptance_email_to_mentor(mentor, mentee)
-    flash[:notice] = "Mentorship approved"
+    flash[:notice] = 'Mentorship approved'
     redirect_to root_path
   end
-
 end

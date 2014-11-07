@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @pending_friendships = Friendship.where("friend_id = ? AND state = ?", current_user.id, "pending")
+    @pending_friendships = Friendship.where('friend_id = ? AND state = ?', current_user.id, 'pending')
   end
 
   def history
@@ -28,11 +28,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
-      @pending = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "pending")
+    if Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'pending')
+      @pending = Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'pending')
     end
-    if Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
-      @approved_mentorship = Friendship.where("friend_id = ? AND user_id = ? AND state = ?", current_user.id, params[:id], "approved")
+    if Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'approved')
+      @approved_mentorship = Friendship.where('friend_id = ? AND user_id = ? AND state = ?', current_user.id, params[:id], 'approved')
     end
   end
 
@@ -76,14 +76,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :course, :available, :technologies)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :background, :accomplishments, :professional_summary, :personal_statement, :role, :admin, :company, :position, :graduating_class, :course, :available, :technologies)
+  end
 end
-

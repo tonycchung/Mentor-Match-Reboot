@@ -8,11 +8,11 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
 
-    def set_role
-      session[:role] = params[:user_type]
-    end
+  def set_role
+    session[:role] = params[:user_type]
+  end
 
-    def set_confirmation
-      devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:password, :password_confirmation, :email, :role, :course, :graduating_class, :last_name, :first_name )}
-    end
+  def set_confirmation
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:password, :password_confirmation, :email, :role, :course, :graduating_class, :last_name, :first_name) }
+  end
 end

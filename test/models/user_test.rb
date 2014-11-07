@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
 
     it 'returns false if the users have a friendship' do
       friendship = Friendship.create(user: @jim, friend: @sally, state: 'pending')
-      #binding.pry
+      # binding.pry
       @sally.can_request?(@jim).must_equal false
       @jim.can_request?(@sally).must_equal false
     end

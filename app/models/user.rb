@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :email, presence: true
   validates :password, length: { minimum: 6 },
-            confirmation: true,
-            :if => lambda{ new_record? || !password.nil? }
+                       confirmation: true,
+                       if: lambda { new_record? || !password.nil? }
 
   has_many :friendships
   has_many :friends, through: :friendships
@@ -25,8 +25,8 @@ class User < ActiveRecord::Base
   include PgSearch
   pg_search_scope :super_search,
                   against: [:first_name, :last_name, :course, :background,
-                    :professional_summary, :accomplishments,
-                    :personal_statement, :company, :position, :technologies],
+                            :professional_summary, :accomplishments,
+                            :personal_statement, :company, :position, :technologies],
                   using: {
                     tsearch:    { dictionary: 'english', prefix: true }
                     # trigram:    { threshold:  0.1 },
@@ -89,8 +89,8 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-    if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
+    if session['devise.user_attributes']
+      new(session['devise.user_attributes'], without_protection: true) do |user|
         user.attributes = params
         user.valid?
       end
@@ -136,8 +136,8 @@ class User < ActiveRecord::Base
   end
 
   def find_friendship(user)
-    f_ships = self.friendships.where(friend_id: user.id, state:'Accepted')
-    inverse = self.inverse_friendships.where(user_id: user.id, state: 'Accepted')
+    f_ships = friendships.where(friend_id: user.id, state: 'Accepted')
+    inverse = inverse_friendships.where(user_id: user.id, state: 'Accepted')
     friendship = (f_ships + inverse).first
     return nil if friendship.nil?
     friendship

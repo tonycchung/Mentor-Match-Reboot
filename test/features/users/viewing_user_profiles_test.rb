@@ -3,10 +3,10 @@ require 'test_helper'
 feature 'As a mentor I can view my own profile and other user profiles' do
   scenario 'A mentor views own profile and sees all of their attributes' do
     sign_in_mentor
-    click_link "My Account"
+    click_link 'My Account'
     page.must_have_content
-      "Name: #{users(:mentor_user).first_name.capitalize}
-      #{users(:mentor_user).last_name.capitalize}"
+    "Name: #{users(:mentor_user).first_name.capitalize}
+    #{users(:mentor_user).last_name.capitalize}"
     page.must_have_content 'Edit'
     page.must_have_content 'Home'
   end
@@ -47,8 +47,8 @@ feature 'As a mentee, I can view my own profile and other profile' do
     page.must_have_content 'Edit'
     page.must_have_content 'Home'
     page.must_have_content
-      "Name: #{users(:mentee_user).first_name.capitalize}
-      #{users(:mentee_user).last_name.capitalize}"
+    "Name: #{users(:mentee_user).first_name.capitalize}
+    #{users(:mentee_user).last_name.capitalize}"
     page.must_have_content 'Bio'
     page.must_have_content 'Technologies'
     page.must_have_content 'Course'

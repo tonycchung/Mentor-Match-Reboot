@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   resources :friendships
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
+  devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
 
   resources :users do
     member do
-      put "star", to: "users#star"
-      put "unstar", to: "users#unstar"
+      put 'star', to: 'users#star'
+      put 'unstar', to: 'users#unstar'
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

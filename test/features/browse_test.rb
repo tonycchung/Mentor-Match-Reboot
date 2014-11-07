@@ -1,12 +1,12 @@
 require 'test_helper'
 
-feature "As a mentor on the browse page" do
+feature 'As a mentor on the browse page' do
   before do
     sign_in_mentor
     click_on 'Browse'
   end
 
-  scenario "I can browse only mentees" do
+  scenario 'I can browse only mentees' do
     page.must_have_content users(:mentee_user).first_name
     page.must_have_content users(:mentee_user).last_name
     page.must_have_content users(:mentee_user_2).first_name
@@ -49,7 +49,7 @@ feature 'As a mentor, I want to search for mentees' do
   end
 
   scenario 'Mentor should find matching mentees through searching' do
-    fill_in 'search', with: "JavaScript"
+    fill_in 'search', with: 'JavaScript'
     click_on 'Search'
 
     page.must_have_content users(:mentee_user_3).first_name
