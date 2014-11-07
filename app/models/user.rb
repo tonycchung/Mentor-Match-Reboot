@@ -134,4 +134,12 @@ class User < ActiveRecord::Base
     end
     id_collection
   end
+
+  def find_friendship(user)
+    f_ships = self.friendships.where(friend_id: user.id, state:'Accepted')
+    inverse = self.inverse_friendships.where(user_id: user.id, state: 'Accepted')
+    friendship = (f_ships + inverse).first
+    return nil if friendship.nil?
+    friendship
+  end
 end

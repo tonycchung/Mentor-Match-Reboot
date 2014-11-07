@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature 'Mentorships' do
+feature 'Requesting mentorships' do
   scenario 'a mentee makes a request to be mentored' do
     sign_in_mentee
 
@@ -35,6 +35,17 @@ feature 'Mentorships' do
 
     sign_in_mentor
     first(:link, "Decline").click
+    page.wont_have_content users(:mentee_user).first_name
+  end
+end
+
+feature 'Ending a mentorship' do
+  scenario 'a mentor ends a mentorship' do
+    create_mentorship
+    sign_in_mentor
+    visit user_path(users(:mentee_user))
+    first(:link, 'End Mentorship').click
+    visit friendships_path
     page.wont_have_content users(:mentee_user).first_name
   end
 end

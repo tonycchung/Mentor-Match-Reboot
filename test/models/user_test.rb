@@ -46,4 +46,20 @@ class UserTest < ActiveSupport::TestCase
       jim.display_availability.must_equal 'available'
     end
   end
+
+  describe '#find_friendship(user)' do
+    it 'returns the friendship between the two users' do
+      mentee = users(:mentee_user)
+      mentor = users(:mentor_user)
+      friendship = Friendship.create(user: mentee, friend: mentor, state: 'Accepted')
+      mentee.find_friendship(mentor).must_equal friendship
+      mentor.find_friendship(mentee).must_equal friendship
+    end
+
+    it 'returns nil if the friendship does not exist' do
+      mentee = users(:mentee_user)
+      mentor = users(:mentor_user)
+      mentee.find_friendship(mentor).must_equal nil
+    end
+  end
 end
