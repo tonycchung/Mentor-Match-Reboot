@@ -21,7 +21,7 @@ This a continuation of the hard work done by previous students Brian Studwell, M
 - Users can end a mentorship.
 - Users can browse and search for potential mentees or mentors.
 
-List of issues and desired features:
+###List of issues and desired features:
 
 - A message system for mentees to communicate with mentors.
 - Fix some of the styling issues: approve/accept buttons on request notices in the dashboard should be stacked.
