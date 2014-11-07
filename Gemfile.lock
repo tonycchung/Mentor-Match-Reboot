@@ -80,6 +80,9 @@ GEM
       railties (>= 3.2, < 5.0)
     font-awesome-sass (4.2.2)
       sass (~> 3.2)
+    goldiloader (0.0.8)
+      activerecord (>= 3.2, < 4.3)
+      activesupport (>= 3.2, < 4.3)
     gravtastic (3.2.6)
     haml (4.0.5)
       tilt
@@ -277,6 +280,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails (~> 4.1.0.0)
   font-awesome-sass
+  goldiloader
   gravtastic
   haml
   haml-rails
