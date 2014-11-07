@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   root 'passthrough#index'
 
-  resources :codefellows_courses
-
   resources :friendships
 
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
 
   resources :users do
     member do
-      put "star", to: "users#star"
-      put "unstar", to: "users#unstar"
+      put 'star', to: 'users#star'
+      put 'unstar', to: 'users#unstar'
     end
   end
-  # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest
+  # priority.
   # See how all your routes lay out with "rake routes".
   get 'static_pages/splash' => 'static_pages#splash', as: :splash
   get 'static_pages/intro' => 'static_pages#intro', as: :intro

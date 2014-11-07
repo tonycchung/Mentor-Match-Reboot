@@ -19,4 +19,3 @@ class MentorshipMailer < ActionMailer::Base
       )
   end
 end
-
