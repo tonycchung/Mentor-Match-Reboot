@@ -14,14 +14,14 @@
         = link_to "", dashboard_path(id: current_user.id), class: "fa fa-home", id: "home"
         %label{for: "home"} home
       .verticalRule
-      %li
-        = link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox"
-        %label{for: "toolbox"} toolbox
-      .verticalRule
-      %li
-        = link_to "", feedback_path, class: "fa fa-bullhorn", id: "feedback"
-        %label{for: "feedback"} feedback
-      .verticalRule
+      / %li
+      /   = link_to "", toolbox_path, class: "fa fa-wrench", id: "toolbox"
+      /   %label{for: "toolbox"} toolbox
+      / .verticalRule
+      / %li
+      /   = link_to "", feedback_path, class: "fa fa-bullhorn", id: "feedback"
+      /   %label{for: "feedback"} feedback
+      / .verticalRule
       %li
         = link_to "", user_path(current_user), class: "fa fa-cog", id: "settings"
         %label{for: "settings"} settings
