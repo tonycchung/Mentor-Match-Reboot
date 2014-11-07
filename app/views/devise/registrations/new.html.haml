@@ -32,8 +32,8 @@
         %button.trans_wht_btn
           = f.submit "Submit", {class: "btn_txt"}
     = f.hidden_field :role, value: params[:user_type]
-    %section.submitOptions
-      %p or sign up with another account:
-      %section.links-wrapper
-        =link_to "", user_omniauth_authorize_path(:linkedin), class: "linkedin"
-        =link_to "", user_omniauth_authorize_path(:github), class: "github"
+    / %section.submitOptions
+    /   %p or sign up with another account:
+    /   %section.links-wrapper
+    /     =link_to "", user_omniauth_authorize_path(:linkedin), class: "linkedin"
+    /     =link_to "", user_omniauth_authorize_path(:github), class: "github"
