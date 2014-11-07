@@ -4,7 +4,7 @@ class MentorshipMailer < ActionMailer::Base
     @mentee = mentee
     mail(
       from: 'codefellows@info.org',
-      to: mentee.email,
+      to: @mentee.email,
       subject: 'You have a new mentor!'
       )
   end
@@ -14,7 +14,7 @@ class MentorshipMailer < ActionMailer::Base
     @mentee = mentee
     mail(
       from: 'codefellows@info.org',
-      to: mentor.email,
+      to: @mentor.email,
       subject: 'You have a new mentee!'
       )
   end

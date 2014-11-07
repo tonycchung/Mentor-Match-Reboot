@@ -29,7 +29,8 @@ class FriendshipsController < ApplicationController
     mentee = @friendship.find_mentee
     @friendship.accept
     @friendship.save!
-    EmailWorker.perform_async(mentor, mentee, 5)
+    MentorshipMailer.delay.acceptance_email_to_mentee(mentor, mentee)
+    MentorshipMailer.delay.acceptance_email_to_mentor(mentor, mentee)
     flash[:notice] = "Mentorship approved"
     redirect_to root_path
   end

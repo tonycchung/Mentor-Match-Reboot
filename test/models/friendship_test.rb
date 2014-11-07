@@ -19,6 +19,10 @@ class FriendshipTest < ActiveSupport::TestCase
     it 'determines which user is a mentor' do
       @friendship.find_mentor.must_equal @mentor
     end
+
+    it 'returns a user object' do
+      @friendship.find_mentor.must_be_instance_of User
+    end
   end
 
   describe '#find_mentee' do
