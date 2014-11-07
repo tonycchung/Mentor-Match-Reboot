@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
+  root 'passthrough#index'
 
   resources :codefellows_courses
 
-  # get 'friendship/create' => 'friendship#create'
-
-  # get 'friendship/destroy' => 'friendship#destroy'
   resources :friendships
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
@@ -22,11 +20,8 @@ Rails.application.routes.draw do
   get 'static_pages/toolbox' => 'static_pages#toolbox', as: :toolbox
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   get 'users/:id/history' => 'users#history', as: :history
-  get 'static_pages/feedback' => 'static_pages#feedback', as: :feedback
-  get 'static_pages/calendar' => 'static_pages#calendar', as: :calendar
-  # You can have the root of your site routed with "root"
 
-  root 'passthrough#index'
+  # You can have the root of your site routed with "root"
 
   get '/create_account' => 'user#new'
 
