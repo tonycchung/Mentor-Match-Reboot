@@ -33,6 +33,7 @@ gem 'spring', group: :development
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate', '~> 3.0.7'
+gem 'unicorn'
 
 group :production do
   gem 'rails_12factor'
