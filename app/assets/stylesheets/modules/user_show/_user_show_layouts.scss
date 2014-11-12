@@ -299,34 +299,17 @@
       }
     }
   }
-  a{
-    color: $alpha_light40;
+  a.lookGoodBtn{
+    @extend %transition_pt1s;
+    margin-right: auto;
+    margin-left: auto;
     display: flex;
-  }
-  button.lookGoodBtn{
-    display: block;
-    margin: 2vh auto 5vh auto;
-    border: 1px solid $bravo;
-    border-bottom: 3px solid $bravo;
-    background: $charlie;
-    height: auto;
-    padding: 0;
-    a#lookGood{
-      @extend %transition_pt1s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 8em;
-      height: 3em;
-      width: auto;
-      color: $delta;
-      font-family: $header-font;
-      text-transform: uppercase;
-      &:hover{
-        @extend %transition_pt1s;
-        background: $charlie_light20;
-      }
-    }
-
+    align-items: center;
+    justify-content: center;
+    width: 8em;
+    height: 3em;
+    color: $delta;
+    font-family: $header-font;
+    text-transform: uppercase;
   }
 }

@@ -1,10 +1,12 @@
-button {
-  width: 12em;
-  height: 3em;
+button, .button {
   border-radius: 5px;
-  padding: 0;
+  text-align: center;
+  padding: 1.5em;
   a.btn_txt {
     display: inline-block;
-    height: 3em;
   }
+}
+
+a{
+  color: $delta;
 }

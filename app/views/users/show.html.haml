@@ -83,8 +83,7 @@
               = user.last_name
 
   - if policy(@user).update?
-    %button.lookGoodBtn
-      = link_to "Edit", edit_user_path(current_user), id:"lookGood"
+    = link_to "Edit", edit_user_path(current_user), id:"lookGood", class: 'lookGoodBtn addFav'
   /
     \============================================
     INTERACTIONS FOR EXPRESSING INTEREST
