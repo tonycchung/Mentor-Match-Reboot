@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'binding_of_caller'
-gem 'bourbon'
-gem 'bower-rails', '~> 0.7.3'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'figaro'
@@ -33,6 +31,7 @@ gem 'will_paginate', '~> 3.0.7'
 gem 'unicorn'
 gem 'sidekiq'
 gem 'goldiloader'
+gem 'newrelic_rpm'
 
 group :production do
   gem 'rails_12factor'
