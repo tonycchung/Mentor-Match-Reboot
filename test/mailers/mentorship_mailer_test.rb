@@ -7,7 +7,7 @@ class MentorshipMailerTest < ActionMailer::TestCase
       users(:mentee_user)).deliver
     assert_not ActionMailer::Base.deliveries.empty?
 
-    assert_equal ['codefellows@info.org'], email.from
+    assert_equal [ENV['SES_EMAIL']], email.from
     assert_equal [users(:mentee_user).email], email.to
     assert_equal 'You have a new mentor!', email.subject
   end
@@ -18,7 +18,7 @@ class MentorshipMailerTest < ActionMailer::TestCase
       users(:mentee_user)).deliver
     assert_not ActionMailer::Base.deliveries.empty?
 
-    assert_equal ['codefellows@info.org'], email.from
+    assert_equal [ENV['SES_EMAIL']], email.from
     assert_equal [users(:mentor_user).email], email.to
     assert_equal 'You have a new mentee!', email.subject
   end
