@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141105224917) do
 
   create_table "codefellows_courses", force: true do |t|
     t.string   "kind"
-    t.string   "stack"
+    t.string   "course"
     t.string   "code"
     t.string   "section"
     t.date     "starts_at"
