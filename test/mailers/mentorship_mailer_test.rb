@@ -4,7 +4,7 @@ class MentorshipMailerTest < ActionMailer::TestCase
   test 'acceptance email to mentee' do
     email = MentorshipMailer.acceptance_email_to_mentee(
       users(:mentor_user),
-      users(:mentee_user)).deliver
+      users(:mentee_user)).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     assert_equal [ENV['SES_EMAIL']], email.from
@@ -15,7 +15,7 @@ class MentorshipMailerTest < ActionMailer::TestCase
   test 'acceptance email to mentor' do
     email = MentorshipMailer.acceptance_email_to_mentor(
       users(:mentor_user),
-      users(:mentee_user)).deliver
+      users(:mentee_user)).deliver_now
     assert_not ActionMailer::Base.deliveries.empty?
 
     assert_equal [ENV['SES_EMAIL']], email.from
