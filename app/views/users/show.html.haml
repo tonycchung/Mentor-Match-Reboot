@@ -90,7 +90,7 @@
     \==============================================
 
   %aside
-    - if @user.voted_for? current_user
+    - if current_user.voted_for? @user
       = link_to "Remove from favorites", unstar_user_path(@user), method: :put, class: "addFav"
     - else
       = link_to "Add to favorites", star_user_path(@user), method: :put, class: "addFav"
