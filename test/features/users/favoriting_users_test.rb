@@ -6,21 +6,21 @@ feature 'Favoriting Users' do
 
     # Add mentor to favorites
     visit user_path(users(:mentor_user))
-    click_on 'Add to Favorites'
-    page.must_have_content 'Remove from Favorites'
-    page.wont_have_content 'Add to Favorites'
+    click_on 'Add to favorites'
+    page.must_have_content 'Remove from favorites'
+    page.wont_have_content 'Add to favorites'
 
     # See mentor in favorites
-    visit favorites_path
+    visit favorites_path((users(:mentee_user).id))
     page.must_have_content 'Bill Smith'
 
     # Remove mentor from favorites
     visit user_path(users(:mentor_user))
-    click_on 'Remove from Favorites'
-    page.must_have_content 'Add to Favorites'
+    click_on 'Remove from favorites'
+    page.must_have_content 'Add to favorites'
 
     # No longer see mentor in favorites
-    visit favorites_path
+    visit favorites_path((users(:mentee_user).id))
     page.wont_have_content 'Bill Smith'
   end
 end

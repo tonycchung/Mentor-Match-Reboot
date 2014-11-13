@@ -2,7 +2,7 @@
 
 one:
   kind: MyString
-  stack: MyString
+  course: MyString
   code: MyString
   section: MyString
   starts_at: 2014-07-10
@@ -11,7 +11,7 @@ one:
 
 two:
   kind: MyString
-  stack: MyString
+  course: MyString
   code: MyString
   section: MyString
   starts_at: 2014-07-10
