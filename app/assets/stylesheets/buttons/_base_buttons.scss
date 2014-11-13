@@ -8,3 +8,16 @@ button {
     height: 3em;
   }
 }
+
+.button {
+  border-radius: 5px;
+  text-align: center;
+  padding: 1.5em;
+  a.btn_txt {
+    display: inline-block;
+  }
+}
+
+a{
+  color: $delta;
+}
