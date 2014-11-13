@@ -43,6 +43,7 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'spring'
+  gem 'faker', '~> 1.4.2'
 end
 
 group :test do
