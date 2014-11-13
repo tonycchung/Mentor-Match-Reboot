@@ -29,4 +29,3 @@ This a continuation of the hard work done by previous students Brian Studwell, M
 - Rename some classes to be consistent with the real world use of the app, e.g. Friendship model might be better named Mentorship.
 - Add a favorites feature so users can create a list of potential mentors or mentees that they can look at later to make a final choice.
 - Fix error with Faker gem data in a migration on Heroku.
-- Add accept and decline buttons to the mentee profile if the mentor viewing the profile has recieved a mentorship request from the mentee and vice versa.
