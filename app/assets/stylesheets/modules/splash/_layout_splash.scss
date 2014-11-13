@@ -24,6 +24,7 @@
       border: none;
       background: $charlie;
       color: $delta;
+      height: 3rem;
       &:hover{
         @extend %transition;
         border: 1px solid $charlie;

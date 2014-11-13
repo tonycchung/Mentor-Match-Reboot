@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'autoprefixer-rails', '~> 3.1.2.20141016'
 gem 'binding_of_caller'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
