@@ -1,4 +1,15 @@
-button, .button {
+button {
+  width: 12em;
+  height: 3em;
+  border-radius: 5px;
+  padding: 0;
+  a.btn_txt {
+    display: inline-block;
+    height: 3em;
+  }
+}
+
+.button {
   border-radius: 5px;
   text-align: center;
   padding: 1.5em;
